@@ -1,0 +1,53 @@
+# Inspect AI evaluation logs and transcripts (including JSON logs in logs/)
+/logs/
+*.eval
+*.log
+
+# Preserve evaluation logs and validation evidence submitted under results/
+!/results/**/*.eval
+!/results/**/*.log
+
+# Local credentials and configuration; keep shareable examples
+.env
+.env.*
+!.env.example
+!.env.*.example
+!.env.template
+
+# Python virtual environments
+.venv/
+venv/
+env/
+
+# Python bytecode and package build artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+/build/
+/dist/
+
+# Tool and model caches
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.tox/
+.nox/
+
+# Coverage reports
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Local OS and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
