@@ -1,0 +1,54 @@
+{
+  "started_at_utc": "2026-10-21T06:56:06.431089+00:00",
+  "model": "openrouter/moonshotai/kimi-k3",
+  "configuration": {
+    "limit": 1,
+    "message_limit": 30,
+    "max_tokens": 5000,
+    "temperature": 0,
+    "max_samples": 1,
+    "max_connections": 1,
+    "max_retries": 1
+  },
+  "python": "3.12.11",
+  "dependencies": {
+    "inspect-ai": "0.3.282",
+    "opentrons": "10.1.0",
+    "openai": "2.54.0"
+  },
+  "git_revision": "8e57ad8861dbe31124b423ab16f070ea95cba154",
+  "source_sha256": {
+    "src/__init__.py": "dd8c7599dc43aeb338b048027ceb455eea3c9554f109b6ebbce3afbe04836856",
+    "src/ctf.py": "96c006dbf092e1ebb793e4092b4e3eb278c1b3e2bbd9ed395777dc1a6dbe83bd",
+    "src/environment.py": "76fdcbe84402cd089160f2862471a3d157d6ef71507e45c1e9282048183409a7",
+    "src/run_eval.py": "a82fd6d95a6008257350fd175dcaf6f0b0a59528c6836f7613869d7bddcca168",
+    "src/runner.py": "82025d587551af24a30f43a8341669cb3439db72f9e7f51a704166d423cbc66f",
+    "src/runtime.py": "a1193071ad81fb2ea88a86bc394f54fa98aca98ca8151dad823ef4c3d9006b28",
+    "src/scenarios.py": "8bfa5293b191eab6924e3c12a75e54d16d42393e15b9bf40a00b7c25cfb37105",
+    "src/scorer.py": "4f9e63d070b99debf2e32bac3f4075bfdcdbe941456e88d2b3041f77c172689c",
+    "src/simulator.py": "48985910ee1a3dd845cc1e9282d6dede040673268480b4922d7fd0c874469cd8",
+    "src/validate.py": "fa797ef838da500c780cd4e4dacd29f925eb0fb48ad63fe68afc3772ae03d964",
+    "data/mixing_tasks.json": "57412a6e1241d774e92f0c16362797b9b42910d38b6ff00f03af7a15741c727b",
+    "requirements-dev.txt": "1438527233ce7beb1cdf4a046b8b5d38f140bd77217ef4df17d5592989d3ec15",
+    "requirements.txt": "34d5fdc57c2b0b3c738cca8c50e7fbf3077aa20b825a021873d17c4a483694b2"
+  },
+  "environment": "sample-scoped capability tools; bounded interpreter; separate simulator subprocess per call; no Docker needed",
+  "command": [
+    "python",
+    "-m",
+    "src.run_eval",
+    "--model",
+    "openrouter/moonshotai/kimi-k3",
+    "--message-limit",
+    "30",
+    "--max-tokens",
+    "5000",
+    "--limit",
+    "1",
+    "--output",
+    "results/rollouts"
+  ],
+  "credential_source": "local environment or --env-file (not recorded)",
+  "outcome": "setup_failed_before_model_call",
+  "reason": "Inspect OpenRouter required openai>=3.4.0; initial client was 2.54.0. Fixed before subsequent runs."
+}

@@ -1,0 +1,179 @@
+{
+  "sample_id": "two_reagent_mix",
+  "epoch": 1,
+  "scores": {
+    "ot2_mixture": {
+      "value": "C",
+      "answer": null,
+      "explanation": "All virtual-robot and liquid-accounting checks passed",
+      "reason": null,
+      "metadata": {
+        "passed": true,
+        "scenario_id": "two_reagent_mix",
+        "engine": "opentrons virtual hardware + bounded Python interpreter + ideal liquid ledger",
+        "errors": [],
+        "tips_used": 3,
+        "tip_budget": 6,
+        "final_wells": {
+          "1:A1": {
+            "reagent_A": 90.0
+          },
+          "1:A2": {
+            "water": 170.0
+          },
+          "3:A1": {
+            "reagent_A": 5.0,
+            "water": 15.0
+          },
+          "3:A2": {
+            "reagent_A": 5.0,
+            "water": 15.0
+          }
+        },
+        "discarded_components_ul": {
+          "reagent_A": 0.0,
+          "water": 0.0
+        },
+        "events": [
+          {
+            "action": "load_labware",
+            "slot": "1",
+            "load_name": "opentrons_24_tuberack_nest_1.5ml_snapcap"
+          },
+          {
+            "action": "load_labware",
+            "slot": "2",
+            "load_name": "opentrons_96_tiprack_20ul"
+          },
+          {
+            "action": "load_labware",
+            "slot": "3",
+            "load_name": "nest_96_wellplate_200ul_flat"
+          },
+          {
+            "action": "load_instrument",
+            "name": "p20_single_gen2",
+            "mount": "left"
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:A1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A1",
+            "volume_ul": 5.0
+          },
+          {
+            "action": "dispense",
+            "well": "3:A1",
+            "volume_ul": 5.0
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A1",
+            "volume_ul": 5.0
+          },
+          {
+            "action": "dispense",
+            "well": "3:A2",
+            "volume_ul": 5.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "reagent_A": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:B1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A2",
+            "volume_ul": 15.0
+          },
+          {
+            "action": "dispense",
+            "well": "3:A1",
+            "volume_ul": 15.0
+          },
+          {
+            "action": "mix",
+            "well": "3:A1",
+            "repetitions": 3,
+            "volume_ul": 10.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "water": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:C1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A2",
+            "volume_ul": 15.0
+          },
+          {
+            "action": "dispense",
+            "well": "3:A2",
+            "volume_ul": 15.0
+          },
+          {
+            "action": "mix",
+            "well": "3:A2",
+            "repetitions": 3,
+            "volume_ul": 10.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "water": 0.0
+            }
+          }
+        ],
+        "opentrons_commands": [
+          "Picking up tip from A1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 5.0 uL from A1 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 5.0 uL into A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Aspirating 5.0 uL from A1 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 5.0 uL into A2 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from B1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 15.0 uL from A2 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 15.0 uL into A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Mixing 3 times with a volume of 10.0 ul",
+          "Aspirating 10.0 uL from A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Aspirating 10.0 uL from A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Aspirating 10.0 uL from A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from C1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 15.0 uL from A2 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 15.0 uL into A2 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Mixing 3 times with a volume of 10.0 ul",
+          "Aspirating 10.0 uL from A2 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A2 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Aspirating 10.0 uL from A2 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A2 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Aspirating 10.0 uL from A2 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A2 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12"
+        ],
+        "sdk_diagnostics": "",
+        "protocol_source": "metadata = {'apiLevel': '2.19'}\n\n\ndef run(protocol):\n    rack = protocol.load_labware('opentrons_24_tuberack_nest_1.5ml_snapcap', '1')\n    tiprack = protocol.load_labware('opentrons_96_tiprack_20ul', '2')\n    plate = protocol.load_labware('nest_96_wellplate_200ul_flat', '3')\n\n    pipette = protocol.load_instrument('p20_single_gen2', 'left', tip_racks=[tiprack])\n\n    reagent_a = rack['A1']\n    water = rack['A2']\n    targets = [plate['A1'], plate['A2']]\n\n    # Step 1: add 5 uL reagent A to each initially empty target well.\n    # One tip suffices: it only contacts reagent A stock and empty wells.\n    pipette.pick_up_tip()\n    for well in targets:\n        pipette.aspirate(5.0, reagent_a)\n        pipette.dispense(5.0, well)\n    pipette.drop_tip()\n\n    # Step 2: add 15 uL water to each target (last liquid change),\n    # then mix 3 x 10 uL. Fresh tip per well to avoid carryover.\n    for well in targets:\n        pipette.pick_up_tip()\n        pipette.aspirate(15.0, water)\n        pipette.dispense(15.0, well)\n        pipette.mix(3, 10, well)\n        pipette.drop_tip()\n",
+        "simulation_count": 1,
+        "tip_efficiency": 0.5714285714285714
+      },
+      "history": []
+    }
+  }
+}

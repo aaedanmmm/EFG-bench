@@ -1,0 +1,86 @@
+{
+  "date_utc": "2026-10-21T07:06:48.733137+00:00",
+  "worktree": "/Users/aedanmccarthy/projects/MATS-work-test-worktree",
+  "branch": "codex/worktree",
+  "python": "3.12.11",
+  "dependencies": {
+    "inspect-ai": "0.3.282",
+    "opentrons": "8.8.2",
+    "openai": "3.35.1",
+    "pytest": "9.1.1"
+  },
+  "model": "openrouter/moonshotai/kimi-k3",
+  "rollout": "results/rollouts/20261021T065832Z/run.json",
+  "rollout_outcome": "3/3 samples passed with Opentrons 10.1.0 explicit virtual hardware; actual generation and tool use",
+  "commands": [
+    ".venv/bin/python -m src.run_eval --env-file ../MATS-work-test/.env",
+    ".venv/bin/python -m pytest -q tests --junitxml=results/tests.xml",
+    ".venv/bin/python results/revalidate.py results/rollouts/20261021T065832Z --output results/kimi_revalidation.json",
+    ".venv/bin/python results/check_native.py examples/two_reagent_mix.py examples/three_reagent_panel.py examples/serial_dilution.py --output results/native_reference_validation.json",
+    "uv pip check --python .venv/bin/python",
+    "git diff --check"
+  ],
+  "tests": {
+    "total": 34,
+    "failures_and_errors": 0,
+    "evidence": [
+      "results/tests.txt",
+      "results/tests.xml"
+    ]
+  },
+  "final_version_model_replay": {
+    "passed": true,
+    "count": 3,
+    "opentrons": "8.8.2",
+    "evidence": "results/kimi_revalidation.json"
+  },
+  "standard_native_simulator_constructed_references": {
+    "passed": true,
+    "count": 3,
+    "opentrons": "8.8.2",
+    "evidence": "results/native_reference_validation.json"
+  },
+  "dependency_check": {
+    "passed": true,
+    "output": "Checked 98 packages in 0.97ms\nAll installed packages are compatible"
+  },
+  "git_diff_check": {
+    "passed": true,
+    "output": ""
+  },
+  "credential_scan": {
+    "passed": true,
+    "scope": "All result files, including decoded Inspect logs, compared with configured secret values; values never recorded"
+  },
+  "source_sha256": {
+    ".python-version": "7b55f8e67b5623c4bef3fa691288da9437d79d3aba156de48d481db32ac7d16d",
+    "README.md": "5bc19e1de7b9fcd135e7649688bf323dd4e91bf69abed112cc794f9042c6aaac",
+    "data/mixing_tasks.json": "57412a6e1241d774e92f0c16362797b9b42910d38b6ff00f03af7a15741c727b",
+    "examples/serial_dilution.py": "fb6c9c0726dc6da6eb50da3880e112a71ac663fb7caaecfce2455c6d2bb13b36",
+    "examples/three_reagent_panel.py": "0088b1ad8ab56286ad6031cb75110df047a93106987a268aec5064376a2c1a37",
+    "examples/two_reagent_mix.py": "d8483f8bc2cbaa44c6ce149b5a89d901aef41b006eb780e607d6b72a1d51ffa9",
+    "requirements-dev.txt": "1438527233ce7beb1cdf4a046b8b5d38f140bd77217ef4df17d5592989d3ec15",
+    "requirements-lock.txt": "a5061c621e0caaf415b25923ad49bc213a7bd163c515d7ce7d0260e8ef492a9b",
+    "requirements.txt": "ada65286e00f8b91b1134d3c5e5fe6e40facc7eaab6205c125e3801e73c87495",
+    "results/check_native.py": "cdc9ff5eff3104322568fae109ff3a6129d36378558c515dfd8a1e61532386e0",
+    "results/revalidate.py": "60b21b44e794539f3b2576a14a4988cb7e6785db9f6c3553b5df2dce794936eb",
+    "src/__init__.py": "dd8c7599dc43aeb338b048027ceb455eea3c9554f109b6ebbce3afbe04836856",
+    "src/ctf.py": "96c006dbf092e1ebb793e4092b4e3eb278c1b3e2bbd9ed395777dc1a6dbe83bd",
+    "src/environment.py": "01c53570baebedaf50f8fbda619ce381527729ab2e9f71de8b0a7a29497fedc9",
+    "src/run_eval.py": "56c59637540097b0ad17eefc776a5b743b7d369051304ae4b4fa933e6e41ecd6",
+    "src/runner.py": "82025d587551af24a30f43a8341669cb3439db72f9e7f51a704166d423cbc66f",
+    "src/runtime.py": "a1193071ad81fb2ea88a86bc394f54fa98aca98ca8151dad823ef4c3d9006b28",
+    "src/scenarios.py": "8bfa5293b191eab6924e3c12a75e54d16d42393e15b9bf40a00b7c25cfb37105",
+    "src/scorer.py": "4f9e63d070b99debf2e32bac3f4075bfdcdbe941456e88d2b3041f77c172689c",
+    "src/simulator.py": "48985910ee1a3dd845cc1e9282d6dede040673268480b4922d7fd0c874469cd8",
+    "src/validate.py": "fa797ef838da500c780cd4e4dacd29f925eb0fb48ad63fe68afc3772ae03d964",
+    "tests/test_environment.py": "28cdc544a0988ca565038ef630f87903557be0393130d55e169dfe5b98c28365",
+    "tests/test_runtime.py": "a469e7a3590c0f769e4816cd78745a608e6fcae7469607bfd6f913232f3ab096",
+    "tests/test_validation.py": "0142dab54049795a2da5c50fdd3e21821f0037ede95e7ebb44cbd008aa5d18a0"
+  },
+  "limitations": [
+    "Synthetic task inventory; no biochemical predictions or physical robot runs",
+    "Restricted Python/API subset; no arbitrary code execution by the agent environment",
+    "Native Python execution checked constructed references only; real model submissions replayed through bounded interpreter"
+  ]
+}

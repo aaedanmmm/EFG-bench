@@ -1,0 +1,34 @@
+{
+  "command": [
+    "python",
+    "results/check_native.py",
+    "examples/two_reagent_mix.py",
+    "examples/three_reagent_panel.py",
+    "examples/serial_dilution.py",
+    "--output",
+    "results/native_reference_validation.json"
+  ],
+  "engine": "opentrons.simulate.simulate (native Python execution of reviewed code)",
+  "opentrons": "10.1.0",
+  "scope": "Virtual robot command acceptance only; mixture correctness is checked separately by src.validate",
+  "protocols": [
+    {
+      "protocol": "examples/two_reagent_mix.py",
+      "constructed_example": true,
+      "passed": false,
+      "error": "RuntimeError: This protocol is designed for an OT-2 robot. To utilize this protocol, please download the most recent version of the Opentrons-OT2 app from https://github.com/Opentrons/opentrons-ot2/releases"
+    },
+    {
+      "protocol": "examples/three_reagent_panel.py",
+      "constructed_example": true,
+      "passed": false,
+      "error": "RuntimeError: This protocol is designed for an OT-2 robot. To utilize this protocol, please download the most recent version of the Opentrons-OT2 app from https://github.com/Opentrons/opentrons-ot2/releases"
+    },
+    {
+      "protocol": "examples/serial_dilution.py",
+      "constructed_example": true,
+      "passed": false,
+      "error": "RuntimeError: This protocol is designed for an OT-2 robot. To utilize this protocol, please download the most recent version of the Opentrons-OT2 app from https://github.com/Opentrons/opentrons-ot2/releases"
+    }
+  ]
+}

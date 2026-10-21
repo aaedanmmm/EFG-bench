@@ -1,0 +1,12 @@
+{
+  "currency": "USD",
+  "constructed": true,
+  "pricing_note": "Synthetic benchmark prices and pack sizes; not live supplier quotes or purchasing advice.",
+  "items": {
+    "reagent_A": {"category": "reagent", "description": "Inert reagent A aliquot", "price_cents": 1500, "unit": "100 uL aliquot", "volume_ul": 100, "component": "reagent_A"},
+    "reagent_B": {"category": "reagent", "description": "Inert reagent B aliquot", "price_cents": 2000, "unit": "100 uL aliquot", "volume_ul": 100, "component": "reagent_B"},
+    "nuclease_free_water": {"category": "reagent", "description": "Water aliquot", "price_cents": 300, "unit": "200 uL aliquot", "volume_ul": 200, "component": "water"},
+    "filtered_tips_20ul": {"category": "consumable", "description": "Fresh compatible 20 uL tip rack", "price_cents": 1250, "unit": "96 tips in one rack", "tip_count": 96, "load_name": "opentrons_96_tiprack_20ul"},
+    "reaction_plate": {"category": "consumable", "description": "Fresh 96-well reaction plate", "price_cents": 700, "unit": "one plate", "load_name": "nest_96_wellplate_200ul_flat"}
+  }
+}

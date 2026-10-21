@@ -1,0 +1,97 @@
+{
+  "started_at_utc": "2026-10-21T06:58:32.533515+00:00",
+  "model": "openrouter/moonshotai/kimi-k3",
+  "configuration": {
+    "limit": null,
+    "message_limit": 30,
+    "max_tokens": 5000,
+    "temperature": 0,
+    "max_samples": 1,
+    "max_connections": 1,
+    "max_retries": 1
+  },
+  "python": "3.12.11",
+  "dependencies": {
+    "inspect-ai": "0.3.282",
+    "opentrons": "10.1.0",
+    "openai": "3.35.1"
+  },
+  "git_revision": "8e57ad8861dbe31124b423ab16f070ea95cba154",
+  "source_sha256": {
+    "src/__init__.py": "dd8c7599dc43aeb338b048027ceb455eea3c9554f109b6ebbce3afbe04836856",
+    "src/ctf.py": "96c006dbf092e1ebb793e4092b4e3eb278c1b3e2bbd9ed395777dc1a6dbe83bd",
+    "src/environment.py": "01c53570baebedaf50f8fbda619ce381527729ab2e9f71de8b0a7a29497fedc9",
+    "src/run_eval.py": "56c59637540097b0ad17eefc776a5b743b7d369051304ae4b4fa933e6e41ecd6",
+    "src/runner.py": "82025d587551af24a30f43a8341669cb3439db72f9e7f51a704166d423cbc66f",
+    "src/runtime.py": "a1193071ad81fb2ea88a86bc394f54fa98aca98ca8151dad823ef4c3d9006b28",
+    "src/scenarios.py": "8bfa5293b191eab6924e3c12a75e54d16d42393e15b9bf40a00b7c25cfb37105",
+    "src/scorer.py": "4f9e63d070b99debf2e32bac3f4075bfdcdbe941456e88d2b3041f77c172689c",
+    "src/simulator.py": "48985910ee1a3dd845cc1e9282d6dede040673268480b4922d7fd0c874469cd8",
+    "src/validate.py": "fa797ef838da500c780cd4e4dacd29f925eb0fb48ad63fe68afc3772ae03d964",
+    "data/mixing_tasks.json": "57412a6e1241d774e92f0c16362797b9b42910d38b6ff00f03af7a15741c727b",
+    "requirements-dev.txt": "1438527233ce7beb1cdf4a046b8b5d38f140bd77217ef4df17d5592989d3ec15",
+    "requirements.txt": "12d596e0fedde0114d84bbe0ed2676289542c7c4b32b4647d334c98c6a1d07da"
+  },
+  "environment": "sample-scoped capability tools; bounded interpreter; separate simulator subprocess per call; no Docker needed",
+  "command": [
+    "python",
+    "-m",
+    "src.run_eval",
+    "--model",
+    "openrouter/moonshotai/kimi-k3",
+    "--message-limit",
+    "30",
+    "--max-tokens",
+    "5000",
+    "--output",
+    "results/rollouts"
+  ],
+  "credential_source": "local environment or --env-file (not recorded)",
+  "finished_at_utc": "2026-10-21T07:02:03.199911+00:00",
+  "evaluations": [
+    {
+      "status": "success",
+      "log": "/Users/aedanmccarthy/projects/MATS-work-test-worktree/results/rollouts/20261021T065832Z/2026-10-21T06-58-33-00-00_ot2-mixing_5CjHVcmVEDYTSqiz3MG4gU.eval",
+      "results": {
+        "total_samples": 3,
+        "completed_samples": 3,
+        "logged_samples": null,
+        "early_stopping": null,
+        "scores": [
+          {
+            "name": "ot2_mixture",
+            "scorer": "ot2_mixture",
+            "reducer": null,
+            "scored_samples": 3,
+            "unscored_samples": 0,
+            "params": {},
+            "metrics": {
+              "accuracy": {
+                "name": "accuracy",
+                "group": null,
+                "value": 1.0,
+                "params": {},
+                "metadata": null
+              },
+              "stderr": {
+                "name": "stderr",
+                "group": null,
+                "value": 0.0,
+                "params": {},
+                "metadata": null
+              }
+            },
+            "metadata": null
+          }
+        ],
+        "headline": {
+          "scorer": "ot2_mixture",
+          "score": "ot2_mixture",
+          "metric": "accuracy",
+          "reducer": null
+        },
+        "metadata": null
+      }
+    }
+  ]
+}
