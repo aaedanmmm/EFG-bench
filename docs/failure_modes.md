@@ -54,7 +54,7 @@ distinguish an out-of-range block. At a 50 C setpoint the hot/cold tasks report
 establish whether a block is hot or cold. Normal stock lanes and a normal block
 narrow the problem but do not uniquely prove enzyme inactivity in real biology.
 
-[Diagnostic-observability evidence](../results/diagnostic_observability/README.md)
+[Diagnostic-observability evidence](../results/archive/diagnostic_observability/README.md)
 contains six actual tool-executed constructed controls and 39 passing tests,
 including localization from public observations with faults rotated across all
 three DNA inputs. No new model recovery claims are made.
@@ -106,6 +106,13 @@ in the liquid ledger represent labeled stock aliquots; hidden quality/absence
 state determines whether those labels deliver functional DNA in the outcome
 model. This layer does not alter the nominal FASTA sequence or pretend a missing
 physical molecule has been observed.
+
+Agent-visible dry-run feedback omits temperature-qualified incubation seconds,
+the incubation pass/fail gate and its associated error. Those values depend on
+hidden actual temperature and would reveal the fault category before a paid
+measurement. The private experiment report and final scorer retain the complete
+incubation evidence. The same redaction applies to non-recovery biochemical dry
+runs; public target durations and temperature requirements remain available.
 
 Faults persist across every simulation. Reordering an unrelated stock or topping
 up affected stock leaves its fault active. Only replacement of that specific

@@ -80,7 +80,9 @@ Biochemistry tasks additionally require the declared Gibson acceptance gates:
 DNA mass/molar ratios, enzyme mix concentration and supplied activity flag,
 exact unique terminal homology, full circular product sequence identity, and
 incubation after the final additions and mixing. Inspect biochemistry in the
-scenario for all thresholds and references. simulate_protocol returns every gate.
+scenario for all thresholds and references. Incubation qualification checks and
+qualifying seconds are private grading evidence, not dry-run feedback; use a paid
+thermometer check to measure the actual block temperature in recovery tasks.
 Passing is an in-silico assessment, not an experimental observation. The model
 does not estimate yield, kinetics, liquid height, pipetting error, residual films,
 or biological function. No physical robot is used.
@@ -203,6 +205,9 @@ def simulate_protocol():
             from src.failures import public_feedback
             feedback = public_feedback(report)
             feedback["experiment_id"] = experiment["id"]
+        else:
+            from src.failures import without_incubation_details
+            feedback = without_incubation_details(feedback)
         feedback["simulations_remaining"] = scenario["max_simulations"] - count - 1
         return json.dumps(feedback, indent=2)
     return execute

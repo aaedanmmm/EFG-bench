@@ -69,8 +69,8 @@ Scores report success plus tips used and correctness-gated tip efficiency:
 
 ```sh
 .venv/bin/python -m src.validate examples/two_reagent_mix.py \
-  --scenario two_reagent_mix --output results/reference_validation.json
-.venv/bin/python -m pytest -q tests --junitxml=results/tests.xml
+  --scenario two_reagent_mix --output results/local_checks/reference_validation.json
+.venv/bin/python -m pytest -q tests --junitxml=results/local_checks/tests.xml
 ```
 
 Opentrons is pinned to **8.8.2** for OT-2 compatibility. Version 10 removes OT-2
@@ -104,7 +104,7 @@ dispense counts as contact, even though real protocols may dispense above liquid
 It does not predict liquid height, residual films, pipetting accuracy, reaction
 kinetics, biochemical success, or physical robot safety. Reference protocols in
 `examples/` are constructed examples; real model artifacts are stored separately
-under `results/rollouts/`.
+under `results/archive/rollouts/`. New runs use their configured output directory.
 
 API references: [Opentrons simulation](https://docs.opentrons.com/python-api/reference/execute-simulate/),
 [Inspect custom tools](https://inspect.aisi.org.uk/tools-custom.html).
@@ -148,7 +148,7 @@ Replenishing tips restores physical availability; it does not increase the task'
 separate tip-use limit. Ordering and biochemistry tasks enable purchasing; the original
 three mixing tasks retain their supplied inventory. No real orders are placed.
 
-See [ordering evidence](results/ordering/README.md) for tests and actual agent runs.
+See [ordering evidence](results/archive/ordering/README.md) for tests and actual agent runs.
 
 ## Assembly from the supplied sequences
 
@@ -185,9 +185,10 @@ task retains unmodified raw aliquots and is a liquid-handling task only.
 The reference passes 37 acceptance gates. Preloaded recovery/assembly budgets are
 $700; the missing-supplies budget is $1300. Prices are unchanged: a complete
 missing-supplies order costs $1266.50. The reference uses nine tips from a budget
-of 12. Model execution through an external provider transmits sequence-derived
-task metadata and permits access to the sequence bases; the new Kimi rollout is
-pending explicit data-transfer approval after automatic review rejected it.
+of 12. After explicit data-transfer approval, Kimi K3 passed one actual seven-piece
+ligase-recovery rollout; its failed baseline, paid repair, successful final gel
+and independent replay are saved in the supplied-sequence results. Other fault
+cases have local controls and have not yet been tested with the model on these inputs.
 
 ## Failure diagnosis and repair
 

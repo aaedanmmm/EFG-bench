@@ -108,7 +108,9 @@ use `gibson_`; current prepared DNA uses `sequence_`, avoiding identity collisio
 A model run uses the same suites as before, for example
 `python -m src.run_eval --suite failures --limit 1`. That run exposes the
 sequence-derived task metadata to the selected provider and allows sequence access
-through `read_sequence`. The attempted new OpenRouter/Kimi rollout was rejected
-by automatic review pending explicit approval of that data transfer; no new
-sequence-based model rollout has been claimed. Earlier model logs are retained
-and belong to earlier benchmark inputs.
+through `read_sequence`. After explicit user approval of that data transfer, one real OpenRouter/Kimi K3
+ligase-recovery rollout passed with these seven inputs. Its complete log, generated
+protocol, experiment history and successful independent replay are saved under
+`results/supplied_sequence_assembly/`. This run does not establish model recovery
+for the other four faults. The initial pre-approval attempt was rejected before
+execution; earlier logs are retained and belong to earlier benchmark inputs.

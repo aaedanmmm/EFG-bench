@@ -25,7 +25,9 @@ backbone, exactly reconstructs the source.
 
 Reproduce from the repository root with `python3 src/split_sequence.py` (standard
 library only). Actual output hashes and validation results are recorded in
-[sequence_partition_validation.json](../../results/sequence_partition_validation.json).
+[raw_partition_baseline.json](../../results/supplied_sequence_assembly/raw_partition_baseline.json).
+Regenerated reports are saved separately as
+`results/supplied_sequence_assembly/partition_validation.json`.
 This local validation is not an Inspect agent rollout.
 
 ## Evaluation integration
@@ -41,5 +43,5 @@ derived from all seven raw cores, with their provenance recorded in
 [assembly design guide](../../docs/supplied_sequence_assembly.md).
 
 Run `.venv/bin/python -m src.fragments` to inspect the manifest, or
-`.venv/bin/python results/sequences/check_integration.py` for the fully local
-order-and-simulate check. Evidence is in `results/sequences/`.
+`.venv/bin/python results/archive/sequences/check_integration.py` for the fully local
+order-and-simulate check. Evidence is in `results/archive/sequences/`.

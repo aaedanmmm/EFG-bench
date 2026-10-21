@@ -121,9 +121,33 @@ def assess_failures(scenario, report):
             bio["checks"].append({"id": "reaction.assembly_outcome", "passed": False, "observed": "Expected complete product not obtained", "expected": "Complete expected assembly", "basis": "constructed persistent-fault benchmark"})
 
 
-def public_feedback(report):
-    """Do not disclose hidden fault names, source identities or actual temperatures."""
+def without_incubation_details(report):
+    """Project feedback without revealing hidden-temperature-derived evidence.
+
+    A pass/fail gate or its error reveals the same information as qualifying
+    seconds. Keep all three private, including for non-recovery dry runs. Work
+    on a copy so experiments, paid assays and final grading retain full evidence.
+    """
     result = copy.deepcopy(report)
+    bio = result.get("biochemistry", {})
+    checks = bio.get("checks", [])
+    incubation_ids = {
+        check["id"] for check in checks
+        if check.get("id", "").endswith(".incubation")
+    }
+    if "checks" in bio:
+        bio["checks"] = [check for check in checks if check.get("id") not in incubation_ids]
+    for reaction in bio.get("reactions", []):
+        reaction.pop("qualified_incubation_seconds", None)
+    if "errors" in result:
+        private_errors = {f"Biochemistry: {check_id}" for check_id in incubation_ids}
+        result["errors"] = [error for error in result["errors"] if error not in private_errors]
+    return result
+
+
+def public_feedback(report):
+    """Do not disclose hidden faults or actual-temperature-derived evidence."""
+    result = without_incubation_details(report)
     result.pop("failure_mode_assessment", None)
     for key in ("events", "opentrons_commands", "sdk_diagnostics"):
         result.pop(key, None)

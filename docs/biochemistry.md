@@ -2,12 +2,12 @@
 
 Current active tasks use **seven data/sequences-derived DNA pieces**, with a 12,484 bp target. See the [current design and configuration](supplied_sequence_assembly.md). Three-piece sizes/examples below describe archived regression profiles.
 
-Start with the [actual Kimi K3 biochemical review](../results/rollouts/20261021T071800Z/gibson_assembly_review/report.md).
+Start with the [actual Kimi K3 biochemical review](../results/archive/rollouts/20261021T071800Z/gibson_assembly_review/report.md).
 It includes expected and observed values for every gate, DNA amounts in ng and
 pmol, insert:backbone ratios, exact junction overlaps, the predicted product FASTA,
 incubation events, assumptions, references, and the full JSON evidence.
 
-Compare it with the [constructed failing control](../results/biochemistry/no_incubation_review/report.md):
+Compare it with the [constructed failing control](../results/archive/biochemistry/no_incubation_review/report.md):
 all liquid-handling checks pass, but incubation is missing, so the overall score
 is zero. This control is deliberately constructed, not a model rollout or an
 experimental result.
@@ -40,7 +40,7 @@ when temperature, mixing, final liquid revision, and component volumes all match
 report formatting. The refactor preserves the existing public report, check
 order, acceptance thresholds, and `configuration.valid` failure gate for malformed
 profiles or evidence. Its comparison evidence is in
-[results/biochemistry_refactor/](../results/biochemistry_refactor/README.md).
+[results/archive/biochemistry_refactor/](../results/archive/biochemistry_refactor/README.md).
 
 ## What the score means
 
@@ -136,8 +136,8 @@ are explicitly labeled constructed counterexamples. Integration tests call real
 Opentrons virtual hardware. Run with:
 
 ```sh
-.venv/bin/python -m pytest -q tests --junitxml=results/biochemistry_tests.xml
+.venv/bin/python -m pytest -q tests --junitxml=results/local_checks/biochemistry_tests.xml
 ```
 
 The actual rollout, test output, source hashes, final replay and credential-scan
-outcome are indexed in [results/biochemistry/README.md](../results/biochemistry/README.md).
+outcome are indexed in [results/archive/biochemistry/README.md](../results/archive/biochemistry/README.md).
