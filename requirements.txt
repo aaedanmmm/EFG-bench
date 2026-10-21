@@ -1,0 +1,2 @@
+# Runtime dependency imported by src/ctf.py.
+inspect-ai

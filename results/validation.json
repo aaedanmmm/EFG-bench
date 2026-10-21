@@ -1,0 +1,44 @@
+{
+  "checked_at_utc": "2026-10-21T06:40:14.270804+00:00",
+  "type": "actual local structural and syntax validation; not an agent rollout",
+  "model": null,
+  "configuration": {
+    "working_directory": "repository root",
+    "python": "3.12.1",
+    "scope": "syntax compilation, documented local file references, git whitespace checks"
+  },
+  "checks": [
+    {
+      "command": "python3 -m compileall -q src",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "python3 -c 'import re\nfrom pathlib import Path\nfor filename in (\"README.md\", \"results/README.md\"):\n    source = Path(filename)\n    for target in re.findall(r\"\\[[^\\]]+\\]\\(([^)]+)\\)\", source.read_text()):\n        path = source.parent / target\n        assert path.exists(), f\"{source}: missing {target}\"\nprint(\"All documented local file references resolve.\")\n'",
+      "exit_code": 0,
+      "stdout": "All documented local file references resolve.\n",
+      "stderr": ""
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "outcome": "passed",
+  "source_sha256": {
+    "src/costs.py": "a37e0fd0cac9b09f80d325d517c04f4c2c65d277bb2cbab2adbb60bbb54c0ae8",
+    "src/ctf.py": "fafed0f91d6ea94fd9c30f2c47acd9462dca48bb481445becbf302837e721ac8",
+    "src/fragments.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/scorer.py": "099aab3d6ca519ef80dc8afe54a46d77967dc70aabcaed30380856e6b321982f",
+    "src/validate.py": "bd7e009e9614b6b2177096b53faa9e7915102cf54d6486a9edfbe3e49f57cacc"
+  },
+  "evaluation_status": "not run",
+  "remaining_requirements": [
+    "Implement read_dataset() and supply dataset inputs.",
+    "Implement custom scoring and OT-2 protocol validation.",
+    "Run an actual agent evaluation and preserve logs, configuration, and validation evidence."
+  ]
+}
