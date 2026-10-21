@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Run the `failures` suite (all 5 constructed failure modes: inactive ligase,
-# damaged DNA, absent DNA, +12C offset, -12C offset) once per model.
+# damaged DNA, absent DNA, +12C offset, -12C offset) once per model, scored by
+# both the correctness scorer and the contamination-response judge.
 #
 # Usage:
 #   ./scripts/run_failures_models.sh [env-file]
@@ -15,6 +16,8 @@ cd "$(dirname "${BASH_SOURCE[0]}")/.."
 
 ENV_FILE="${1:-../MATS-work-test/.env}"
 OUTPUT_DIR="results/failures/rollouts"
+# Fixed across all runs so the judge is not a variable in the comparison.
+JUDGE_MODEL="openrouter/moonshotai/kimi-k3"
 
 MODELS=(
   "openrouter/moonshotai/kimi-k3"
@@ -30,5 +33,6 @@ for model in "${MODELS[@]}"; do
     --env-file "${ENV_FILE}" \
     --model "${model}" \
     --suite failures \
+    --judge-model "${JUDGE_MODEL}" \
     --output "${OUTPUT_DIR}"
 done
