@@ -1,0 +1,588 @@
+{
+  "passed": true,
+  "liquid_handling_passed": true,
+  "well_revisions": {
+    "1:A5": 1,
+    "4:A1": 5,
+    "1:A1": 1,
+    "1:A2": 1,
+    "1:A3": 1,
+    "1:A4": 1
+  },
+  "scenario_id": "gibson_assembly",
+  "engine": "opentrons virtual hardware + bounded Python interpreter + ideal liquid ledger",
+  "errors": [],
+  "tips_used": 5,
+  "tip_budget": 8,
+  "final_wells": {
+    "1:A1": {
+      "backbone": 99.0
+    },
+    "1:A2": {
+      "insert_A": 98.0
+    },
+    "1:A3": {
+      "insert_B": 98.0
+    },
+    "1:A4": {
+      "gibson_master_mix": 90.0
+    },
+    "1:A5": {
+      "water": 95.0
+    },
+    "4:A1": {
+      "water": 5.0,
+      "backbone": 1.0,
+      "insert_A": 2.0,
+      "insert_B": 2.0,
+      "gibson_master_mix": 10.0
+    }
+  },
+  "discarded_components_ul": {
+    "water": 0.0,
+    "backbone": 0.0,
+    "insert_A": 0.0,
+    "insert_B": 0.0,
+    "gibson_master_mix": 0.0
+  },
+  "events": [
+    {
+      "action": "load_labware",
+      "slot": "1",
+      "load_name": "opentrons_24_tuberack_nest_1.5ml_snapcap"
+    },
+    {
+      "action": "load_labware",
+      "slot": "2",
+      "load_name": "opentrons_96_tiprack_20ul"
+    },
+    {
+      "action": "load_module",
+      "slot": "4",
+      "model": "temperature module gen2"
+    },
+    {
+      "action": "load_module_labware",
+      "slot": "4",
+      "load_name": "opentrons_96_aluminumblock_biorad_wellplate_200ul"
+    },
+    {
+      "action": "load_instrument",
+      "name": "p20_single_gen2",
+      "mount": "left"
+    },
+    {
+      "action": "pick_up_tip",
+      "well": "2:A1"
+    },
+    {
+      "action": "aspirate",
+      "well": "1:A5",
+      "volume_ul": 5.0
+    },
+    {
+      "action": "dispense",
+      "well": "4:A1",
+      "volume_ul": 5.0
+    },
+    {
+      "action": "drop_tip",
+      "discarded_components_ul": {
+        "water": 0.0
+      }
+    },
+    {
+      "action": "pick_up_tip",
+      "well": "2:B1"
+    },
+    {
+      "action": "aspirate",
+      "well": "1:A1",
+      "volume_ul": 1.0
+    },
+    {
+      "action": "dispense",
+      "well": "4:A1",
+      "volume_ul": 1.0
+    },
+    {
+      "action": "drop_tip",
+      "discarded_components_ul": {
+        "backbone": 0.0
+      }
+    },
+    {
+      "action": "pick_up_tip",
+      "well": "2:C1"
+    },
+    {
+      "action": "aspirate",
+      "well": "1:A2",
+      "volume_ul": 2.0
+    },
+    {
+      "action": "dispense",
+      "well": "4:A1",
+      "volume_ul": 2.0
+    },
+    {
+      "action": "drop_tip",
+      "discarded_components_ul": {
+        "insert_A": 0.0
+      }
+    },
+    {
+      "action": "pick_up_tip",
+      "well": "2:D1"
+    },
+    {
+      "action": "aspirate",
+      "well": "1:A3",
+      "volume_ul": 2.0
+    },
+    {
+      "action": "dispense",
+      "well": "4:A1",
+      "volume_ul": 2.0
+    },
+    {
+      "action": "drop_tip",
+      "discarded_components_ul": {
+        "insert_B": 0.0
+      }
+    },
+    {
+      "action": "pick_up_tip",
+      "well": "2:E1"
+    },
+    {
+      "action": "aspirate",
+      "well": "1:A4",
+      "volume_ul": 10.0
+    },
+    {
+      "action": "dispense",
+      "well": "4:A1",
+      "volume_ul": 10.0
+    },
+    {
+      "action": "mix",
+      "well": "4:A1",
+      "repetitions": 3,
+      "volume_ul": 10.0
+    },
+    {
+      "action": "drop_tip",
+      "discarded_components_ul": {
+        "gibson_master_mix": 0.0
+      }
+    },
+    {
+      "action": "set_temperature",
+      "slot": "4",
+      "temperature_c": 50.0
+    },
+    {
+      "action": "incubate",
+      "well": "4:A1",
+      "temperature_c": 50.0,
+      "seconds": 3600.0,
+      "components_ul": {
+        "water": 5.0,
+        "backbone": 1.0,
+        "insert_A": 2.0,
+        "insert_B": 2.0,
+        "gibson_master_mix": 10.0
+      },
+      "mixed": true,
+      "revision": 5
+    },
+    {
+      "action": "delay",
+      "seconds": 3600.0
+    },
+    {
+      "action": "deactivate_temperature",
+      "slot": "4"
+    }
+  ],
+  "opentrons_commands": [
+    "Picking up tip from A1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+    "Aspirating 5.0 uL from A5 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+    "Dispensing 5.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+    "Dropping tip into Trash Bin on slot 12",
+    "Picking up tip from B1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+    "Aspirating 1.0 uL from A1 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+    "Dispensing 1.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+    "Dropping tip into Trash Bin on slot 12",
+    "Picking up tip from C1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+    "Aspirating 2.0 uL from A2 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+    "Dispensing 2.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+    "Dropping tip into Trash Bin on slot 12",
+    "Picking up tip from D1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+    "Aspirating 2.0 uL from A3 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+    "Dispensing 2.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+    "Dropping tip into Trash Bin on slot 12",
+    "Picking up tip from E1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+    "Aspirating 10.0 uL from A4 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+    "Dispensing 10.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+    "Mixing 3 times with a volume of 10.0 ul",
+    "Aspirating 10.0 uL from A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+    "Dispensing 10.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+    "Aspirating 10.0 uL from A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+    "Dispensing 10.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+    "Aspirating 10.0 uL from A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+    "Dispensing 10.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+    "Dropping tip into Trash Bin on slot 12",
+    "Setting Temperature Module temperature to 50.0 \u00b0C (rounded off to nearest integer)",
+    "Delaying for 60 minutes and 0.0 seconds",
+    "Deactivating Temperature Module"
+  ],
+  "biochemistry": {
+    "applicable": true,
+    "model": "gibson_v1",
+    "passed": true,
+    "status": "in_silico_conditions_satisfied",
+    "experimental_status": "not_measured",
+    "interpretation": "Passing means the declared in-silico acceptance criteria hold. No yield, colonies, enzyme activity or biological function has been measured.",
+    "checks": [
+      {
+        "id": "input.linear_purified_dsdna",
+        "passed": true,
+        "observed": {
+          "backbone": {
+            "linear": true,
+            "purified": true
+          },
+          "insert_A": {
+            "linear": true,
+            "purified": true
+          },
+          "insert_B": {
+            "linear": true,
+            "purified": true
+          }
+        },
+        "expected": "All specified DNA inputs are purified linear dsDNA",
+        "basis": "supplied metadata; not a purity assay"
+      },
+      {
+        "id": "junction.backbone->insert_A.homology",
+        "passed": true,
+        "observed": 20,
+        "expected": "Exact terminal overlap of 20..40 bp",
+        "basis": "benchmark assumption"
+      },
+      {
+        "id": "junction.backbone.specificity",
+        "passed": true,
+        "observed": [
+          "insert_A+"
+        ],
+        "expected": [
+          "insert_A+"
+        ],
+        "basis": "conservative terminal-overlap uniqueness rule; includes self-joining and reverse orientations"
+      },
+      {
+        "id": "junction.insert_A->insert_B.homology",
+        "passed": true,
+        "observed": 20,
+        "expected": "Exact terminal overlap of 20..40 bp",
+        "basis": "benchmark assumption"
+      },
+      {
+        "id": "junction.insert_A.specificity",
+        "passed": true,
+        "observed": [
+          "insert_B+"
+        ],
+        "expected": [
+          "insert_B+"
+        ],
+        "basis": "conservative terminal-overlap uniqueness rule; includes self-joining and reverse orientations"
+      },
+      {
+        "id": "junction.insert_B->backbone.homology",
+        "passed": true,
+        "observed": 20,
+        "expected": "Exact terminal overlap of 20..40 bp",
+        "basis": "benchmark assumption"
+      },
+      {
+        "id": "junction.insert_B.specificity",
+        "passed": true,
+        "observed": [
+          "backbone+"
+        ],
+        "expected": [
+          "backbone+"
+        ],
+        "basis": "conservative terminal-overlap uniqueness rule; includes self-joining and reverse orientations"
+      },
+      {
+        "id": "product.sequence_identity",
+        "passed": true,
+        "observed": {
+          "length_bp": 2340,
+          "sha256": "3ad8ae387d43b2cc0099aa9843f78ec60c1c16cf6033d39a61d9c9d7efc791fa"
+        },
+        "expected": {
+          "length_bp": 2340,
+          "sha256": "3ad8ae387d43b2cc0099aa9843f78ec60c1c16cf6033d39a61d9c9d7efc791fa",
+          "comparison": "Full circular sequence identity allowing rotation and whole-product reverse complement"
+        },
+        "basis": "benchmark assumption"
+      },
+      {
+        "id": "enzyme.active",
+        "passed": true,
+        "observed": true,
+        "expected": true,
+        "basis": "supplied reagent metadata; not an enzyme activity measurement"
+      },
+      {
+        "id": "4:A1.reaction_volume",
+        "passed": true,
+        "observed": 20.0,
+        "expected": {
+          "volume_ul": 20.0,
+          "tolerance_ul": 0.01
+        },
+        "basis": "NEB 20 uL reference formulation, parameterized in benchmark"
+      },
+      {
+        "id": "4:A1.reagent_identity",
+        "passed": true,
+        "observed": [],
+        "expected": [],
+        "basis": "closed reagent identity model; unmodeled additives fail"
+      },
+      {
+        "id": "4:A1.master_mix_concentration",
+        "passed": true,
+        "observed": 1.0,
+        "expected": {
+          "range_x": [
+            0.95,
+            1.05
+          ]
+        },
+        "basis": "NEB 2X stock diluted to 1X; tolerance is a benchmark assumption"
+      },
+      {
+        "id": "4:A1.dna_present.backbone",
+        "passed": true,
+        "observed": 1.0,
+        "expected": ">0 uL",
+        "basis": "benchmark assumption"
+      },
+      {
+        "id": "4:A1.dna_present.insert_A",
+        "passed": true,
+        "observed": 2.0,
+        "expected": ">0 uL",
+        "basis": "benchmark assumption"
+      },
+      {
+        "id": "4:A1.dna_present.insert_B",
+        "passed": true,
+        "observed": 2.0,
+        "expected": ">0 uL",
+        "basis": "benchmark assumption"
+      },
+      {
+        "id": "4:A1.vector_mass",
+        "passed": true,
+        "observed": 50.0,
+        "expected": {
+          "range_ng": [
+            50,
+            100
+          ]
+        },
+        "basis": "NEB recommended vector mass; enforced here as an acceptance gate"
+      },
+      {
+        "id": "4:A1.total_dna",
+        "passed": true,
+        "observed": 0.38461538461538464,
+        "expected": {
+          "range_pmol": [
+            0.02,
+            0.5
+          ],
+          "formula": "mass_ng * 1000 / (length_bp * molecular_weight_per_bp)",
+          "molecular_weight_g_mol_bp": 650.0
+        },
+        "basis": "NEB E2611 DNA-input guidance; dsDNA approximation"
+      },
+      {
+        "id": "4:A1.molar_ratio.insert_A",
+        "passed": true,
+        "observed": 2.0,
+        "expected": {
+          "insert_to_backbone_range": [
+            2,
+            3
+          ]
+        },
+        "basis": "NEB recommended insert excess; enforced here as an acceptance gate"
+      },
+      {
+        "id": "4:A1.molar_ratio.insert_B",
+        "passed": true,
+        "observed": 2.0,
+        "expected": {
+          "insert_to_backbone_range": [
+            2,
+            3
+          ]
+        },
+        "basis": "NEB recommended insert excess; enforced here as an acceptance gate"
+      },
+      {
+        "id": "4:A1.incubation",
+        "passed": true,
+        "observed": {
+          "qualified_seconds": 3600.0,
+          "all_incubation_events": [
+            {
+              "action": "incubate",
+              "well": "4:A1",
+              "temperature_c": 50.0,
+              "seconds": 3600.0,
+              "components_ul": {
+                "water": 5.0,
+                "backbone": 1.0,
+                "insert_A": 2.0,
+                "insert_B": 2.0,
+                "gibson_master_mix": 10.0
+              },
+              "mixed": true,
+              "revision": 5
+            }
+          ]
+        },
+        "expected": {
+          "seconds": [
+            900,
+            3600
+          ],
+          "temperature_c": [
+            49,
+            51
+          ],
+          "after_final_addition_and_mixing": true
+        },
+        "basis": "NEB 50 C and 15-60 min for 2-3 fragments; temperature tolerance and final-state requirement are benchmark assumptions"
+      },
+      {
+        "id": "execution.liquid_handling",
+        "passed": true,
+        "observed": true,
+        "expected": true,
+        "basis": "independent virtual-robot and liquid-accounting checks"
+      }
+    ],
+    "reactions": [
+      {
+        "well": "4:A1",
+        "volume_ul": 20.0,
+        "master_mix_final_x": 1.0,
+        "dna": {
+          "backbone": {
+            "volume_ul": 1.0,
+            "mass_ng": 50.0,
+            "length_bp": 1000,
+            "pmol": 0.07692307692307693,
+            "concentration_ng_ul": 50
+          },
+          "insert_A": {
+            "volume_ul": 2.0,
+            "mass_ng": 60.0,
+            "length_bp": 600,
+            "pmol": 0.15384615384615385,
+            "concentration_ng_ul": 30
+          },
+          "insert_B": {
+            "volume_ul": 2.0,
+            "mass_ng": 80.0,
+            "length_bp": 800,
+            "pmol": 0.15384615384615385,
+            "concentration_ng_ul": 40
+          }
+        },
+        "insert_backbone_ratios": {
+          "insert_A": 2.0,
+          "insert_B": 2.0
+        },
+        "total_dna_pmol": 0.38461538461538464,
+        "qualified_incubation_seconds": 3600.0
+      }
+    ],
+    "references": [
+      {
+        "url": "https://nebuilderv1.neb.com/media/manualE2611.pdf",
+        "description": "NEB E2611 manual: DNA mass-to-pmol calculation, total DNA, vector mass/insert ratios, 2X mix dilution and 50 C incubation."
+      },
+      {
+        "url": "https://www.neb.com/en/products/e2611-gibson-assembly-master-mix",
+        "description": "NEB product protocol overview; appropriate terminal overlaps and 50 C incubation."
+      }
+    ],
+    "assumptions": [
+      "Exact unique terminal homology of 20-40 bp; no mismatches tolerated. This is a conservative benchmark rule, not a universal Gibson success boundary.",
+      "49-51 C is a benchmark tolerance around the published 50 C setpoint, not a validated activity curve.",
+      "All input fragments are purified linear dsDNA with the stated concentrations. Enzyme active/inactive labels are supplied metadata, not measured activity.",
+      "No kinetic/yield model; circular sequence identity does not establish transformation, expression, or biological function.",
+      "Heating must occur after the final liquid change and final mixing; post-incubation transfers require a new qualifying incubation."
+    ],
+    "assembly": {
+      "order": [
+        "backbone",
+        "insert_A",
+        "insert_B"
+      ],
+      "topology": "circular",
+      "junctions": [
+        {
+          "left": "backbone",
+          "right": "insert_A",
+          "overlap_bp": 20,
+          "overlap_sequence": "TCTCTCGCCAGGCCAGTCTT"
+        },
+        {
+          "left": "insert_A",
+          "right": "insert_B",
+          "overlap_bp": 20,
+          "overlap_sequence": "GCTTTGCTAAACATACTTGC"
+        },
+        {
+          "left": "insert_B",
+          "right": "backbone",
+          "overlap_bp": 20,
+          "overlap_sequence": "TGGTGTATTGCCTTGTTACT"
+        }
+      ],
+      "predicted_sequence": "TGGTGTATTGCCTTGTTACTCATCTCGATGCGGTGTAACCGGCTGTGGCAACTGCGACTGTGAGCCTAATTGAGAAAAGCGAAAATGCCGTACTGAACCCGACACGGGTTCGGAAGAGTTCATGTGCATACAGTATTAAAGGCCGGAAAATTTAGGCGACCGACTTCCTCATAATTACTGGTTAGATTGCCAACGTCACTTGCGAGCTTTGTTTTCTTTGCCGGGGGTACGGGGGGTATTAGGACTTCTAATGCGAGATTCCGGCGGTAATAGATTATGACACCATTTTGCAAGTCCGTCCCCAGCCCTATATCCGTCTGGGTTGGCATTAGTTTTTCCCTGCCTTGCATTTCAGCATTGGCGTTCTGTCTTACGGACGGATACACGTTAAGCCCATACTGACACGCGTGGGCAGAAATATGATAGGACGTCGAGCTTATAAGACGGTGACGGACGGTGTAATCATTACGATCGTCCTTCGTGTAGTCAGCCTTCACTCCTCGTAACCGATGACACCTACTCGGATGTTCGGCGGGGACTCAGATGGCACGATGGCAGCAGTTTTTCACACCTGTATGCGAATCGGGCTACAAGACAACGAATGGTTATCTCGTGATTAAGACAACCACGCTATATATAGGTTCCCCGAAAACTCTAAACTGTTACCCCACTCTCAATGTTATTGCGGAATTTAGTTCCGTAGGCAAAGTGTGAACCGACGATGGGCTTACACCGGGCATGCTAACTGCGAACCCCGTCGTAGTGTCGTGCGCAGGTAAAGCTATTAGGAAGCTGCACCGGCGGAGGCTGTGACTAGCCATAGCCAAGCACCACGTCAAGAGCATCAAATAAATGTTAGATTCGATCATTGATAGCGTATCGGATTAAAGCGTGTGCTCTATTGCTGTGCACGTGCTACGTCGGCTTTCGTTACGTCGGTGCTGCCAGGAGGGGGATAGACACGCGCCGGCAAGTGAACCTCTCTCGCCAGGCCAGTCTTCTAGCGTAGTACACGCCCGCCTAGAAAGTCCTATTTCCATATATCCGAACGTGCAAGGGCCATGAACCAATCAGTCTTAATATGTCAGATGCAGGTTCAGGTAAGTTGAAGCCAATTCCTGTTCTGATGAAGCCCTGCGAGTGAACCCCCGCTGCCGCATGTAAATATACTTATGTGTCCAAAAAGTCAGTAACTCAGCAATGCAATCGATGTCGACAGTGCGGTTTCCAAAAATAGTTTGACCGGCGAAAAATCTGGTCAGTCAAGACGTGCAGCTTGTTCCTATGTCGTGCGGCGCGGCAATCGGAAGATTAGCTATGAATTGCCGCCACAAAGACACCACCCATATCACTCGTGAATGCGATACGGCTTCTTTCGTTAGTACCTACCAAGTAAGCTGCGCTGCACAAATAACTTCGTGATAATCGCGGCAGGCGCAGGCCGCTGAGGTTACAGCTACCAACTATGGTCGTTCACCTTTCGCCCGTCCTCGCATCCTGATCCGGCAAGTGTGACTCGGATGGTATGCCCTACTGGTACCATTTCAGCTGGATATCCCGGCTTTGCTAAACATACTTGCAGCTGCAGACTGAGTGACCGGTAACACGACCTTAGACTTCTGAATGCAATGTGTATGAGAGGAGTTCAATCCCCCGATTGGTTCGCATATGGTGTTACTTTATCAGATAGATGGATCCCATAACAACCCAACAACGCGCCGGATGGCTATGTCTATGACCATGTACGATGGGATTCATGGCGTGTGGTAGGCCATGACGTCATAGGTCGATAATATGCACGACGAAATCCCAATACCGAGGTTTTGATGTTACTTGCCATTTAGAATATGTGGATGCCTCCGAGTTATACCTTCACAGAGAGCTTAGCGTACCCACTGAAAAGTTAGTCTTCGATCATAAATCGTTATGGATTCGTGTGGGCCACCCAGACACACGAAGAAGTCATAGATGAGTGTGGCTGGTGTCATATCAGTTGATCTTTCGTCGGTGCTGCATGAAGAAACCTAGGACGGCACCCAAGAAGCAACATCGAACTCTCTTTATGAACATTGTTTCGTAGAACCCACTTGCCTAATGGATACCGATTCGCTATAAAGTCAAATGGCCATGTCATGGAGAGTATAACGGTTGTACTTGAGGGGATAGACACCGCCAAACCGTGGCCGCGTGACTGATTCATGTCATTGTACTTTGCATGTTGAGAAATAGCCATTAGCACCTCCGCCGTAGCGTTCTCATAGTCACGTCGACGTCATGAATGGCAAGGACATCTTGCCTGTGAAGGAATGTACGCAAGGAGAAAATTGCTCAGGGTCCCCT",
+      "expected_sequence": "TGGTGTATTGCCTTGTTACTCATCTCGATGCGGTGTAACCGGCTGTGGCAACTGCGACTGTGAGCCTAATTGAGAAAAGCGAAAATGCCGTACTGAACCCGACACGGGTTCGGAAGAGTTCATGTGCATACAGTATTAAAGGCCGGAAAATTTAGGCGACCGACTTCCTCATAATTACTGGTTAGATTGCCAACGTCACTTGCGAGCTTTGTTTTCTTTGCCGGGGGTACGGGGGGTATTAGGACTTCTAATGCGAGATTCCGGCGGTAATAGATTATGACACCATTTTGCAAGTCCGTCCCCAGCCCTATATCCGTCTGGGTTGGCATTAGTTTTTCCCTGCCTTGCATTTCAGCATTGGCGTTCTGTCTTACGGACGGATACACGTTAAGCCCATACTGACACGCGTGGGCAGAAATATGATAGGACGTCGAGCTTATAAGACGGTGACGGACGGTGTAATCATTACGATCGTCCTTCGTGTAGTCAGCCTTCACTCCTCGTAACCGATGACACCTACTCGGATGTTCGGCGGGGACTCAGATGGCACGATGGCAGCAGTTTTTCACACCTGTATGCGAATCGGGCTACAAGACAACGAATGGTTATCTCGTGATTAAGACAACCACGCTATATATAGGTTCCCCGAAAACTCTAAACTGTTACCCCACTCTCAATGTTATTGCGGAATTTAGTTCCGTAGGCAAAGTGTGAACCGACGATGGGCTTACACCGGGCATGCTAACTGCGAACCCCGTCGTAGTGTCGTGCGCAGGTAAAGCTATTAGGAAGCTGCACCGGCGGAGGCTGTGACTAGCCATAGCCAAGCACCACGTCAAGAGCATCAAATAAATGTTAGATTCGATCATTGATAGCGTATCGGATTAAAGCGTGTGCTCTATTGCTGTGCACGTGCTACGTCGGCTTTCGTTACGTCGGTGCTGCCAGGAGGGGGATAGACACGCGCCGGCAAGTGAACCTCTCTCGCCAGGCCAGTCTTCTAGCGTAGTACACGCCCGCCTAGAAAGTCCTATTTCCATATATCCGAACGTGCAAGGGCCATGAACCAATCAGTCTTAATATGTCAGATGCAGGTTCAGGTAAGTTGAAGCCAATTCCTGTTCTGATGAAGCCCTGCGAGTGAACCCCCGCTGCCGCATGTAAATATACTTATGTGTCCAAAAAGTCAGTAACTCAGCAATGCAATCGATGTCGACAGTGCGGTTTCCAAAAATAGTTTGACCGGCGAAAAATCTGGTCAGTCAAGACGTGCAGCTTGTTCCTATGTCGTGCGGCGCGGCAATCGGAAGATTAGCTATGAATTGCCGCCACAAAGACACCACCCATATCACTCGTGAATGCGATACGGCTTCTTTCGTTAGTACCTACCAAGTAAGCTGCGCTGCACAAATAACTTCGTGATAATCGCGGCAGGCGCAGGCCGCTGAGGTTACAGCTACCAACTATGGTCGTTCACCTTTCGCCCGTCCTCGCATCCTGATCCGGCAAGTGTGACTCGGATGGTATGCCCTACTGGTACCATTTCAGCTGGATATCCCGGCTTTGCTAAACATACTTGCAGCTGCAGACTGAGTGACCGGTAACACGACCTTAGACTTCTGAATGCAATGTGTATGAGAGGAGTTCAATCCCCCGATTGGTTCGCATATGGTGTTACTTTATCAGATAGATGGATCCCATAACAACCCAACAACGCGCCGGATGGCTATGTCTATGACCATGTACGATGGGATTCATGGCGTGTGGTAGGCCATGACGTCATAGGTCGATAATATGCACGACGAAATCCCAATACCGAGGTTTTGATGTTACTTGCCATTTAGAATATGTGGATGCCTCCGAGTTATACCTTCACAGAGAGCTTAGCGTACCCACTGAAAAGTTAGTCTTCGATCATAAATCGTTATGGATTCGTGTGGGCCACCCAGACACACGAAGAAGTCATAGATGAGTGTGGCTGGTGTCATATCAGTTGATCTTTCGTCGGTGCTGCATGAAGAAACCTAGGACGGCACCCAAGAAGCAACATCGAACTCTCTTTATGAACATTGTTTCGTAGAACCCACTTGCCTAATGGATACCGATTCGCTATAAAGTCAAATGGCCATGTCATGGAGAGTATAACGGTTGTACTTGAGGGGATAGACACCGCCAAACCGTGGCCGCGTGACTGATTCATGTCATTGTACTTTGCATGTTGAGAAATAGCCATTAGCACCTCCGCCGTAGCGTTCTCATAGTCACGTCGACGTCATGAATGGCAAGGACATCTTGCCTGTGAAGGAATGTACGCAAGGAGAAAATTGCTCAGGGTCCCCT",
+      "sequence_file": "data/biochemistry/synthetic_gibson.fasta",
+      "sequence_file_sha256": "89ed69fe4c8b43d58cec356163ab120ad35a048c4bfd16a3d67ba36c2569f6a4"
+    }
+  },
+  "sdk_diagnostics": "",
+  "protocol_sha256": "dc053cc2e13aed0c0c63c3eec4f26f7dd0057754fe9cd9653ef338fcd9a38edd",
+  "review_command": [
+    "python",
+    "-m",
+    "src.review",
+    "results/rollouts/20261021T071800Z/gibson_assembly.py",
+    "--scenario",
+    "gibson_assembly",
+    "--output",
+    "results/biochemistry/final_model_replay",
+    "--origin",
+    "replay of actual Kimi K3 submission from Inspect rollout 20261021T071800Z"
+  ]
+}
