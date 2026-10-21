@@ -1,0 +1,91 @@
+{
+  "origin": "Behavior comparison of real archived Kimi artifacts using the current bounded interpreter; no new model generation and no changes to archived hashes",
+  "date_utc": "2026-10-21T08:17:52.933061+00:00",
+  "model": "openrouter/moonshotai/kimi-k3",
+  "command": [
+    "python",
+    "results/failure_system_review/assess_replay.py",
+    "results/failures/rollouts/20261021T080902Z/2026-10-21T08-09-03-00-00_ot2-mixing_Y5egFzQbuVvRXbyAqU2k3z.eval",
+    "--output",
+    "results/failure_system_review/behavioral_replay.json"
+  ],
+  "log_sha256": "451a92d5a503deb927697425897145c60961757ed5521b9af3afaf415ce5226b",
+  "passed": true,
+  "samples": [
+    {
+      "sample_id": "assembly_recovery_01",
+      "archived_score": "C",
+      "current_final_protocol_passed": true,
+      "current_cost_cents": 29400,
+      "recorded_cost_cents": 29400,
+      "experiments": [
+        {
+          "experiment_id": "experiment-0001",
+          "behavior_checks": {
+            "passed": true,
+            "liquid_handling_passed": true,
+            "failure_mode_assessment": true,
+            "final_wells": true,
+            "tips_used": true,
+            "biochemistry_passed": true
+          },
+          "behavior_matched": true,
+          "exact_inventory_hash_matched": true,
+          "inventory_equal_after_removing_retired_usable_true_fields": true
+        },
+        {
+          "experiment_id": "experiment-0002",
+          "behavior_checks": {
+            "passed": true,
+            "liquid_handling_passed": true,
+            "failure_mode_assessment": true,
+            "final_wells": true,
+            "tips_used": true,
+            "biochemistry_passed": true
+          },
+          "behavior_matched": true,
+          "exact_inventory_hash_matched": false,
+          "inventory_equal_after_removing_retired_usable_true_fields": true
+        }
+      ],
+      "gels": [
+        {
+          "experiment_id": "experiment-0001",
+          "observation_checks": {
+            "constructed": true,
+            "assay": true,
+            "sample": true,
+            "sample_type": true,
+            "interpretation": true,
+            "expected_size_bp": true,
+            "experiment_id": true,
+            "protocol_sha256": true,
+            "bands_bp": true,
+            "smear_range_bp": true,
+            "observation": true
+          },
+          "observations_matched": true
+        },
+        {
+          "experiment_id": "experiment-0002",
+          "observation_checks": {
+            "constructed": true,
+            "assay": true,
+            "sample": true,
+            "sample_type": true,
+            "interpretation": true,
+            "expected_size_bp": true,
+            "experiment_id": true,
+            "protocol_sha256": true,
+            "bands_bp": true,
+            "smear_range_bp": true,
+            "observation": true
+          },
+          "observations_matched": true
+        }
+      ],
+      "behavioral_match": true
+    }
+  ],
+  "limitation": "Strict replay remains incompatible with historical post-order inventory hashes because removed usable=true fields contributed to those hashes; see replay.json"
+}

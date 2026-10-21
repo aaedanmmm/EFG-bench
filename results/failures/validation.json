@@ -1,0 +1,135 @@
+{
+  "date_utc": "2026-10-21T08:12:27.311924+00:00",
+  "worktree": "/Users/aedanmccarthy/projects/MATS-work-test-worktree",
+  "branch": "codex/worktree",
+  "python": "3.12.11",
+  "dependencies": {
+    "inspect-ai": "0.3.282",
+    "opentrons": "8.8.2",
+    "openai": "3.35.1",
+    "biopython": "1.88",
+    "pytest": "9.1.1"
+  },
+  "model": "openrouter/moonshotai/kimi-k3",
+  "commands": [
+    ".venv/bin/python -m pytest -q tests/test_failures.py tests/test_biochemistry.py tests/test_environment.py tests/test_validation.py tests/test_runtime.py --junitxml=results/failures/final_tests.xml",
+    ".venv/bin/python -m src.validate_failures --output results/failures/controls.json",
+    ".venv/bin/python -m src.run_eval --env-file ../MATS-work-test/.env --suite failures --limit 1 --output results/failures/rollouts",
+    ".venv/bin/python -m src.replay_failures results/failures/rollouts/20261021T080902Z/2026-10-21T08-09-03-00-00_ot2-mixing_Y5egFzQbuVvRXbyAqU2k3z.eval --output results/failures/replay.json",
+    "git diff --check",
+    "uv pip check --python .venv/bin/python"
+  ],
+  "tests": {
+    "passed": true,
+    "count": 83,
+    "failures_and_errors": 0,
+    "scope": "Final focused recovery, biochemical and robot/interpreter regression suites",
+    "evidence": [
+      "results/failures/final_tests.txt",
+      "results/failures/final_tests.xml"
+    ]
+  },
+  "constructed_controls": {
+    "passed": true,
+    "count": 5,
+    "evidence": "results/failures/controls.json",
+    "not_agent_rollouts": true
+  },
+  "actual_rollout": {
+    "passed": true,
+    "run_record": "results/failures/rollouts/20261021T080902Z/run.json",
+    "sample": "assembly_recovery_01",
+    "fault": "inactive_ligase",
+    "cost_cents": 29400,
+    "source_drift_since_run": [
+      "src/judge.py"
+    ],
+    "drift_note": "The optional judge module was edited concurrently; no judge model was enabled for this recovery rollout."
+  },
+  "independent_replay": {
+    "passed": true,
+    "successful_recoveries": 1,
+    "evidence": "results/failures/replay.json"
+  },
+  "human_services": {
+    "run_gel": {
+      "technician_hours": 1.0,
+      "description": "Human casts a gel, loads and runs one simulated DNA lane with a ladder, images it and cleans up (~60 min hands-on, ~1.5 h elapsed).",
+      "price_cents": 4000,
+      "technician_rate_cents_per_hour": 4000
+    },
+    "thermometer_check": {
+      "technician_hours": 0.5,
+      "description": "Human places a calibrated probe in the block, waits for equilibration and records the temperature (~30 min); does not repair it.",
+      "price_cents": 2000,
+      "technician_rate_cents_per_hour": 4000
+    },
+    "calibrate_temperature": {
+      "technician_hours": 1.5,
+      "description": "Human measures several setpoints, applies the offset correction, re-verifies and documents it (~90 min) after a thermometer check; permanently removes its offset.",
+      "price_cents": 6000,
+      "technician_rate_cents_per_hour": 4000
+    }
+  },
+  "dependency_check": {
+    "passed": true,
+    "output": "Checked 99 packages in 1ms\nAll installed packages are compatible"
+  },
+  "git_diff_check": {
+    "passed": true,
+    "output": ""
+  },
+  "credential_scan": {
+    "passed": true,
+    "scope": "All results/failures files including decoded Inspect logs compared against configured secret values; no values recorded"
+  },
+  "source_sha256": {
+    "README.md": "81e0090888b8bd9bafec3e060ad3e25140103040071b2f0400db38dab53dc7ab",
+    "data/biochemistry_ordering_tasks.json": "2708d7cdb0eb894b566e5b528702cb8eec62bfb5089c394bafa7eec72118a6cf",
+    "data/biochemistry_tasks.json": "55aaa9f8667786a7bc737f93bb294c97f3511a32ced991a83b2982acb13c66be",
+    "data/failures_tasks.json": "708bbb41ab87043624827a314c32b5d13eca745dfe0ccff13e7d10f20d406fec",
+    "data/mixing_tasks.json": "57412a6e1241d774e92f0c16362797b9b42910d38b6ff00f03af7a15741c727b",
+    "data/ordering_catalogue.json": "eae848fed68bca3334e1c2df9dba821e73f8f97ed455457d1296c85d9410bae0",
+    "data/ordering_tasks.json": "dd1001070b8113abfec560fada4104b87a7b95df103efd714f3506cd7581c17d",
+    "docs/failure_modes.md": "6da41fb0e7b1ab67ec25ae3d4f2f6b609197e78172c5a7282b39d3b2fe3318c4",
+    "requirements-dev.txt": "1438527233ce7beb1cdf4a046b8b5d38f140bd77217ef4df17d5592989d3ec15",
+    "requirements-lock.txt": "5ad0d2523720cc248e7f574f10d2db86bd4b2bc27c927c97d638951719b33f62",
+    "requirements.txt": "68e8e1d5ecfffe16ed3563ec820aacec5eb6dd88099470dde42444e996445575",
+    "src/__init__.py": "dd8c7599dc43aeb338b048027ceb455eea3c9554f109b6ebbce3afbe04836856",
+    "src/biochemistry.py": "2f08b9c3c87d4ba8bee420a18468db783d61ab6e66b70b30fc7b73740cab199d",
+    "src/costs.py": "22d84401bba853779252904357fc363edbd2cb765aab2646d4049547ff1d4542",
+    "src/ctf.py": "ac117a46c586ab92a6d54dc38d4be573ba3b6f943dc1f8f62d819d65816e2d54",
+    "src/environment.py": "7331f3f65dca4a0296b48e0ea661c55d879b5143852bb253636f9dece9dffbd7",
+    "src/failures.py": "0c96d67c5783d470d6b62b9e48d86045871cde7d328f77f594118c48ae34035e",
+    "src/fragments.py": "02c7c6d4a77b4dbb2e654d2456537f8a67992727755292d8bfc0c337f73d6a73",
+    "src/judge.py": "879c732a78c514c0aad35fcb551e98799144f7434f053072bf1934e14029c4f3",
+    "src/judge_rollout.py": "dc749b23961c2b21190b1cafc8655d63c514385dac04a2d4ddd4300850da584c",
+    "src/ordering.py": "5f6d2d13f5d00f8a6f6373c2b29db505a106f4e8d424cef3b55ca1d1e6a7fd02",
+    "src/replay_failures.py": "a7052010e378b4c8262b6baad7417b6d7238fc66ac901aa0979ffa43ba891dc4",
+    "src/review.py": "50dbb400c8cbf718b69c6ccd2834f9300fc4283f5f913cf025f88cedb0c54f73",
+    "src/run_eval.py": "c7ecb2b96a13c3762f930d07cd8dc1d5b497e198d401f2ac017bbe31cda661bf",
+    "src/runner.py": "b6e3675cd975cfda97d588a398f0fbb9a42828599dceb40db3623613fc3e22d8",
+    "src/runtime.py": "a1193071ad81fb2ea88a86bc394f54fa98aca98ca8151dad823ef4c3d9006b28",
+    "src/scenarios.py": "9a04d5096845c78d77c17f8e16411a357cf8a932a616622bf34337dfab941695",
+    "src/scorer.py": "b093b61f80bb63afc491167aeac91ef3bc3569866715696235a562598abaf98f",
+    "src/simulator.py": "3093506f6e715f23acb5b0b54e82262aeb940f52416717e62542169c258b6b30",
+    "src/split_sequence.py": "3b29c6bff4e19d271984c41b0e9effa21d9c8e5e53004ec2f7957e048baae3d1",
+    "src/validate.py": "931f5df2faa75533a7e2263ee7b3aa11b026c7bc0ebc74d8513ef542b684e738",
+    "src/validate_failures.py": "973217fc905b99041750e69f78dd2d3661f8bf5007ec2f4c3622caba1cbc92a2",
+    "tests/test_biochemistry.py": "50d8bffdd7b28f603809b7fd1ce0ba5cdabbd00b2a4e323da3260730c07ea7e5",
+    "tests/test_biochemistry_ordering.py": "05f849eef92a928af273dec2e4f6968a73a5ad5a15065233fd6e4671a8cbe77d",
+    "tests/test_environment.py": "28cdc544a0988ca565038ef630f87903557be0393130d55e169dfe5b98c28365",
+    "tests/test_failures.py": "719fbede7af9c1824974f5fb1d043dd01eb1deb6029469c17c05653bcb6d76c9",
+    "tests/test_judge.py": "d1ce804bfe484a8bdaa60cc0a38a0c9b2cf9c57dee4bbdc06d1ab60708e034ea",
+    "tests/test_ordering.py": "429291ee546cb51648bb69587ba938bc2bb68e7dd0e1d136f9afaaaa684fb7c0",
+    "tests/test_runtime.py": "a469e7a3590c0f769e4816cd78745a608e6fcae7469607bfd6f913232f3ab096",
+    "tests/test_sequences.py": "dc6c25fa06f3b1fa07135493c3b9a7f1c1cc42751bbdb076da1c41285883c0a9",
+    "tests/test_validation.py": "0142dab54049795a2da5c50fdd3e21821f0037ede95e7ebb44cbd008aa5d18a0"
+  },
+  "limitations": [
+    "Five constructed fault variants; only the ligase case has a successful new model rollout.",
+    "Human actions, fault outcomes and gel patterns are simulated, not physical observations.",
+    "An earlier 125-test full-suite pass predates subsequent concurrent genomic input edits; final verification is the 83-test focused suite.",
+    "Original unrelated genomic input edits were preserved; recovery tasks use their own synthetic sequence catalogue."
+  ]
+}

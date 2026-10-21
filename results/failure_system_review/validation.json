@@ -1,0 +1,151 @@
+{
+  "date_utc": "2026-10-21T08:22:03.038720+00:00",
+  "worktree": "/Users/aedanmccarthy/projects/MATS-work-test-worktree",
+  "branch": "codex/worktree",
+  "python": "3.12.11",
+  "dependencies": {
+    "inspect-ai": "0.3.282",
+    "opentrons": "8.8.2",
+    "openai": "3.35.1",
+    "biopython": "1.88",
+    "pytest": "9.1.1"
+  },
+  "commands": [
+    ".venv/bin/python -m pytest -q tests --junitxml=results/failure_system_review/tests.xml",
+    ".venv/bin/python -m pytest -q tests/test_failures.py --junitxml=results/failure_system_review/recovery_tests.xml",
+    "python -m src.validate_failures --output results/failure_system_review/controls.json",
+    "python -m src.replay_failures results/failures/rollouts/20261021T080902Z/2026-10-21T08-09-03-00-00_ot2-mixing_Y5egFzQbuVvRXbyAqU2k3z.eval --output results/failure_system_review/replay.json",
+    "python results/failure_system_review/assess_replay.py results/failures/rollouts/20261021T080902Z/2026-10-21T08-09-03-00-00_ot2-mixing_Y5egFzQbuVvRXbyAqU2k3z.eval --output results/failure_system_review/behavioral_replay.json",
+    ".venv/bin/python results/failure_system_review/record_validation.py",
+    "git diff --check"
+  ],
+  "retired_task_and_schedules_absent_from_active_data": true,
+  "full_tests": {
+    "total": 146,
+    "passed": 113,
+    "failed": 32,
+    "error": 1,
+    "suites": {
+      "tests.test_biochemistry": {
+        "passed": 24
+      },
+      "tests.test_biochemistry_ordering": {
+        "failed": 9,
+        "error": 1,
+        "passed": 1
+      },
+      "tests.test_environment": {
+        "passed": 4
+      },
+      "tests.test_failures": {
+        "passed": 25
+      },
+      "tests.test_judge": {
+        "passed": 20
+      },
+      "tests.test_ordering": {
+        "failed": 15,
+        "passed": 7
+      },
+      "tests.test_runtime": {
+        "passed": 13
+      },
+      "tests.test_sequences": {
+        "failed": 8,
+        "passed": 2
+      },
+      "tests.test_validation": {
+        "passed": 17
+      }
+    },
+    "all_failure_messages_include_partition_length_error": true
+  },
+  "post_rename_recovery_tests": {
+    "total": 25,
+    "passed": 25,
+    "suites": {
+      "tests.test_failures": {
+        "passed": 25
+      }
+    },
+    "all_failure_messages_include_partition_length_error": true
+  },
+  "constructed_fault_controls": {
+    "passed": true,
+    "count": 5,
+    "evidence": "controls.json",
+    "not_model_rollouts": true
+  },
+  "historical_model": "openrouter/moonshotai/kimi-k3",
+  "new_model_calls": 0,
+  "strict_archived_replay": {
+    "passed": false,
+    "evidence": "replay.json",
+    "reason": "Historical post-order inventory hashes include the removed usable=true field"
+  },
+  "archived_behavior_comparison": {
+    "passed": true,
+    "samples": 1,
+    "evidence": "behavioral_replay.json",
+    "not_an_exact_replay_or_new_rollout": true
+  },
+  "git_diff_check": {
+    "passed": true,
+    "output": ""
+  },
+  "source_sha256": {
+    "README.md": "9d9e5a2509b688988bab6d8e4b986da3794983c680a8dc9b2277501e226aac0c",
+    "data/biochemistry/synthetic_gibson.fasta": "89ed69fe4c8b43d58cec356163ab120ad35a048c4bfd16a3d67ba36c2569f6a4",
+    "data/biochemistry_ordering_tasks.json": "5e4e45591762fb09958dbb80f54441560774961e2818fb577bddc8f5ea26ce07",
+    "data/biochemistry_tasks.json": "913a994da8775d17dd9134fd36b599aacec1354f2d3ab4d42c769a1cfce7d60f",
+    "data/failures_tasks.json": "f98b04eb84ad69f56f1990802bfaed6568b85a1dc31a853badf69d66a5bb5e4c",
+    "data/mixing_tasks.json": "57412a6e1241d774e92f0c16362797b9b42910d38b6ff00f03af7a15741c727b",
+    "data/ordering_catalogue.json": "eae848fed68bca3334e1c2df9dba821e73f8f97ed455457d1296c85d9410bae0",
+    "data/ordering_tasks.json": "61d0e3869f3e2f34625ffb7acfdf9e2911e3616c4bcd787b022c869ada20f85c",
+    "data/sequences/ENST00000297261.7.fasta": "4389c638c15b4b162e31f2fc242b3007c861a8e448d6366b2e4cefb7f3fe176e",
+    "data/sequences/backbone.fasta": "38541cb58347a7defb1943cf6ff467ff71d2c7d638b3629cd819f7b16def922a",
+    "data/sequences/fragment_001.fasta": "a9beaadbaac75746644a8c11c54c8186091189902ba2dbfad788affc51d08052",
+    "data/sequences/fragment_002.fasta": "4f89e9b32eac999f1fa64f6d8f695c0788240e93cd577c6b5e10c3726f4067b2",
+    "data/sequences/fragment_003.fasta": "2aeddcf73e696b80cdd15af6adee76fe79c58745fd8961107e6d915d62f990df",
+    "data/sequences/fragment_004.fasta": "6098c100066dd18d69099ca1ad589b41e5db6b28071b847c25adfa38e11b0250",
+    "data/sequences/fragment_005.fasta": "0fdbbe55f48bfd501a4b9380ac586a2072057d864872fe7b46445fc7d4c18469",
+    "data/sequences/fragment_006.fasta": "abf02f7a7d08d283fa18ad549f8d93d0087cc1577b99a18f49a6fd645e5e6288",
+    "docs/failure_modes.md": "4914b383430882e8b2ccaa22be8a39e1afbc9aaa54dd2632865f9c13a0d90c4b",
+    "requirements-dev.txt": "1438527233ce7beb1cdf4a046b8b5d38f140bd77217ef4df17d5592989d3ec15",
+    "requirements-lock.txt": "5ad0d2523720cc248e7f574f10d2db86bd4b2bc27c927c97d638951719b33f62",
+    "requirements.txt": "68e8e1d5ecfffe16ed3563ec820aacec5eb6dd88099470dde42444e996445575",
+    "results/failure_system_review/assess_replay.py": "0758be6946f15f45a2d414668355502de758358c75ea745e6e1a90902b378dca",
+    "results/failure_system_review/record_validation.py": "58b27c2c18420f1d731652671119e1a4f6b0e103cb0b91eb8f50fc950fdb512a",
+    "src/__init__.py": "dd8c7599dc43aeb338b048027ceb455eea3c9554f109b6ebbce3afbe04836856",
+    "src/abc-2.py": "5d90e822dbc775ec35aa86d2e02e336d6c581768bf8d7911128167b0c9d7c884",
+    "src/biochemistry.py": "5dbf97ff19c40ad338cc97026f0c176037f3d059785dca2761a138760172995b",
+    "src/costs.py": "22d84401bba853779252904357fc363edbd2cb765aab2646d4049547ff1d4542",
+    "src/environment.py": "10ebf3bbd8a70d346298f2ffd61b785154778a52feedff93bf759c1a06fcda04",
+    "src/failures.py": "a891de490b07c17725fed84085a89ee4bed51d588a99bc920208de9363813ac1",
+    "src/fragments.py": "9be824892721118c457e471a487471fac19b13cdf74147df467bc2ad546101ce",
+    "src/judge.py": "879c732a78c514c0aad35fcb551e98799144f7434f053072bf1934e14029c4f3",
+    "src/judge_rollout.py": "dc749b23961c2b21190b1cafc8655d63c514385dac04a2d4ddd4300850da584c",
+    "src/ordering.py": "6fab49abbaf0f093042cc62e5197cb507cd14f0d8f081f9d7888697758313855",
+    "src/replay_failures.py": "a7052010e378b4c8262b6baad7417b6d7238fc66ac901aa0979ffa43ba891dc4",
+    "src/review.py": "50dbb400c8cbf718b69c6ccd2834f9300fc4283f5f913cf025f88cedb0c54f73",
+    "src/run_eval.py": "262880651671cb25a8c698d26bbc3ffb3a49f6227c0b9f3eb31211b0103a26f8",
+    "src/runner.py": "b6e3675cd975cfda97d588a398f0fbb9a42828599dceb40db3623613fc3e22d8",
+    "src/runtime.py": "a1193071ad81fb2ea88a86bc394f54fa98aca98ca8151dad823ef4c3d9006b28",
+    "src/scenarios.py": "9a04d5096845c78d77c17f8e16411a357cf8a932a616622bf34337dfab941695",
+    "src/scorer.py": "b093b61f80bb63afc491167aeac91ef3bc3569866715696235a562598abaf98f",
+    "src/simulator.py": "5722ae4deba3489ee039ed058291f3bce4a2c9625a3442f0139d062b4df2e354",
+    "src/split_sequence.py": "3b29c6bff4e19d271984c41b0e9effa21d9c8e5e53004ec2f7957e048baae3d1",
+    "src/validate.py": "931f5df2faa75533a7e2263ee7b3aa11b026c7bc0ebc74d8513ef542b684e738",
+    "src/validate_failures.py": "973217fc905b99041750e69f78dd2d3661f8bf5007ec2f4c3622caba1cbc92a2",
+    "tests/test_biochemistry.py": "50d8bffdd7b28f603809b7fd1ce0ba5cdabbd00b2a4e323da3260730c07ea7e5",
+    "tests/test_biochemistry_ordering.py": "86f7a8aadb0993d722ac3c84f61aa7852064d4063a513509388ef7b464b71ab5",
+    "tests/test_environment.py": "28cdc544a0988ca565038ef630f87903557be0393130d55e169dfe5b98c28365",
+    "tests/test_failures.py": "c19454f2e4d7c78db096ba3ce0ccca6e217ed9db87a07bb8f5fd183c6c101619",
+    "tests/test_judge.py": "d296a9d3bdbab8d957f90dcdcd9ef18adbb0821daffd305ecac2b7d0074968f3",
+    "tests/test_ordering.py": "998514fdf37362618099cce06cc554e9b12d29177bde62b317d1ba7fdc339dd7",
+    "tests/test_runtime.py": "a469e7a3590c0f769e4816cd78745a608e6fcae7469607bfd6f913232f3ab096",
+    "tests/test_sequences.py": "dc6c25fa06f3b1fa07135493c3b9a7f1c1cc42751bbdb076da1c41285883c0a9",
+    "tests/test_validation.py": "0142dab54049795a2da5c50fdd3e21821f0037ede95e7ebb44cbd008aa5d18a0"
+  },
+  "assessment": "Legacy failed-lot mechanism removed. All five current fault controls pass. Global benchmark remains blocked by unrelated sequence/catalogue validation. Successful model evidence covers ligase only."
+}

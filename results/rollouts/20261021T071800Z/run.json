@@ -1,0 +1,110 @@
+{
+  "started_at_utc": "2026-10-21T07:18:00.612079+00:00",
+  "model": "openrouter/moonshotai/kimi-k3",
+  "configuration": {
+    "suite": "biochemistry",
+    "limit": null,
+    "message_limit": 40,
+    "max_tokens": 5000,
+    "temperature": 0,
+    "max_samples": 1,
+    "max_connections": 1,
+    "max_retries": 1
+  },
+  "python": "3.12.11",
+  "dependencies": {
+    "inspect-ai": "0.3.282",
+    "opentrons": "8.8.2",
+    "openai": "3.35.1",
+    "biopython": "1.88"
+  },
+  "git_revision": "91914cc501cf12591609da1cf197c75092c40651",
+  "source_sha256": {
+    "src/__init__.py": "dd8c7599dc43aeb338b048027ceb455eea3c9554f109b6ebbce3afbe04836856",
+    "src/biochemistry.py": "c11059f0d0ac7b9fba80f669ac96d2cf067ffcf970c6a3f8854446a99c5da0eb",
+    "src/costs.py": "aed2f9f9f37ea17f8daf3bce64f5f73a34fdc8b2cb8f326f81e3cd12735a4310",
+    "src/ctf.py": "2ef950beac7f8af7347527fd698f7e8a8be2be05a7039be9b84403038219e338",
+    "src/environment.py": "2045f1aae2ee7dff34e934194d9c5fb975085f27b3e5657b07e14fa75ed35bc4",
+    "src/ordering.py": "a4900ed655849b1c6ef1d5fa4444a3291003187a597ca3670f1fc1b74da95d5f",
+    "src/review.py": "50dbb400c8cbf718b69c6ccd2834f9300fc4283f5f913cf025f88cedb0c54f73",
+    "src/run_eval.py": "36e84f7134f197e2eacba7719b969ef8f3eb7602cd10af9d1be087387326d66e",
+    "src/runner.py": "b6e3675cd975cfda97d588a398f0fbb9a42828599dceb40db3623613fc3e22d8",
+    "src/runtime.py": "a1193071ad81fb2ea88a86bc394f54fa98aca98ca8151dad823ef4c3d9006b28",
+    "src/scenarios.py": "499e2dc5c303930025ad15de91cf4e6008d480fefd0d94fcab0bf10ee45642b9",
+    "src/scorer.py": "646309d5b2b5a33513ef6af212142dbe2e61588fbda519d952dd90150cc2c502",
+    "src/simulator.py": "d43584bb00fc0740440ec8d61214883f1ec072f1d4f6e3087a4076ee885f7dfd",
+    "src/validate.py": "931f5df2faa75533a7e2263ee7b3aa11b026c7bc0ebc74d8513ef542b684e738",
+    "data/biochemistry_tasks.json": "a37c64cc7332f0972784ab04ff37ce535e57cb5a34bf038866e8c0fc10635262",
+    "data/mixing_tasks.json": "57412a6e1241d774e92f0c16362797b9b42910d38b6ff00f03af7a15741c727b",
+    "data/ordering_catalogue.json": "2aff646985484cb6246cbad242375c19f52af9540dec75201922991918ec4a13",
+    "data/ordering_tasks.json": "dd1001070b8113abfec560fada4104b87a7b95df103efd714f3506cd7581c17d",
+    "data/biochemistry/synthetic_gibson.fasta": "89ed69fe4c8b43d58cec356163ab120ad35a048c4bfd16a3d67ba36c2569f6a4",
+    "requirements-dev.txt": "1438527233ce7beb1cdf4a046b8b5d38f140bd77217ef4df17d5592989d3ec15",
+    "requirements-lock.txt": "a5061c621e0caaf415b25923ad49bc213a7bd163c515d7ce7d0260e8ef492a9b",
+    "requirements.txt": "d355f780f28e6ef6a8149cc4414f13f70afa31e8fe2162a41b894890d9d4000e"
+  },
+  "environment": "sample-scoped capability tools; bounded interpreter; separate simulator subprocess per call; no Docker needed",
+  "command": [
+    "python",
+    "-m",
+    "src.run_eval",
+    "--model",
+    "openrouter/moonshotai/kimi-k3",
+    "--suite",
+    "biochemistry",
+    "--message-limit",
+    "40",
+    "--max-tokens",
+    "5000",
+    "--output",
+    "results/rollouts"
+  ],
+  "credential_source": "local environment or --env-file (not recorded)",
+  "finished_at_utc": "2026-10-21T07:18:42.971793+00:00",
+  "evaluations": [
+    {
+      "status": "success",
+      "log": "/Users/aedanmccarthy/projects/MATS-work-test-worktree/results/rollouts/20261021T071800Z/2026-10-21T07-18-01-00-00_ot2-mixing_PTvb4dRjixq5kzXvbDoycQ.eval",
+      "results": {
+        "total_samples": 1,
+        "completed_samples": 1,
+        "logged_samples": null,
+        "early_stopping": null,
+        "scores": [
+          {
+            "name": "ot2_mixture",
+            "scorer": "ot2_mixture",
+            "reducer": null,
+            "scored_samples": 1,
+            "unscored_samples": 0,
+            "params": {},
+            "metrics": {
+              "accuracy": {
+                "name": "accuracy",
+                "group": null,
+                "value": 1.0,
+                "params": {},
+                "metadata": null
+              },
+              "stderr": {
+                "name": "stderr",
+                "group": null,
+                "value": 0.0,
+                "params": {},
+                "metadata": null
+              }
+            },
+            "metadata": null
+          }
+        ],
+        "headline": {
+          "scorer": "ot2_mixture",
+          "score": "ot2_mixture",
+          "metric": "accuracy",
+          "reducer": null
+        },
+        "metadata": null
+      }
+    }
+  ]
+}
