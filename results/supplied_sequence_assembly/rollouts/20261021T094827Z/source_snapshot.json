@@ -1,0 +1,5 @@
+{
+  "scope": "Files listed in the run record, copied only when their current hash matches the recorded run-start hash",
+  "hash_mismatches_or_missing": [],
+  "secrets_included": false
+}

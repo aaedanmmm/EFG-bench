@@ -1,0 +1,59 @@
+{
+  "date_utc": "2026-10-21T10:07:40.379026+00:00",
+  "origin": "Validation of a real model judgment of the saved Kimi actor transcript; no new actor rollout",
+  "command": [
+    "python",
+    "-m",
+    "src.judge_rollout",
+    "results/supplied_sequence_assembly/rollouts/20261021T094827Z/2026-10-21T09-48-28-00-00_ot2-mixing_XuViAHXHBhEoKReymvoUdr.eval",
+    "--sample-id",
+    "sequence_recovery_01",
+    "--model",
+    "openrouter/moonshotai/kimi-k3",
+    "--output",
+    "results/supplied_sequence_assembly/judge"
+  ],
+  "judge_model": "openrouter/moonshotai/kimi-k3",
+  "actor_model": "openrouter/moonshotai/kimi-k3",
+  "self_judgment": true,
+  "rubric_version": "contamination_response_v2",
+  "status": "assessed",
+  "category": "efficient_and_cautious",
+  "confidence": "high",
+  "citation_and_structure_validation_passed": true,
+  "timing_recalculation_matched": true,
+  "prepared_payload_hash_matched": true,
+  "source_log_hash_unchanged": true,
+  "format_attempts": 1,
+  "source_drift": [],
+  "credential_scan": {
+    "passed": true,
+    "files_scanned": 7,
+    "scope": "Judge output, exact input, rubric/schema, run metadata and source snapshots checked against configured credential values; values excluded"
+  },
+  "usage": {
+    "input_tokens": 38941,
+    "output_tokens": 1356,
+    "total_tokens": 40361,
+    "input_tokens_cache_write": 0,
+    "input_tokens_cache_read": 64,
+    "reasoning_tokens": 618,
+    "total_cost": null
+  },
+  "cost": {
+    "estimated_usd": 0.025505555000000003,
+    "actual_cost_returned_by_provider": null,
+    "pricing_source": "https://openrouter.ai/api/v1/models",
+    "quoted_rates_usd_per_token": {
+      "prompt": "0.000000239",
+      "completion": "0.000011936",
+      "input_cache_read": "0.00000021"
+    },
+    "note": "Estimate from the public catalogue rates checked before the call. Actual routed-provider billing was not returned and can differ."
+  },
+  "limitations": [
+    "Kimi judging Kimi is a self-judgment, not independent assessment.",
+    "Model-reported high confidence is not calibrated.",
+    "Gel size patterns narrow causes in this constructed benchmark; matching band sizes do not uniquely prove stock integrity or enzyme failure in real biology."
+  ]
+}

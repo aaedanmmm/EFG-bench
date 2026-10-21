@@ -1,0 +1,41 @@
+{
+  "date_utc": "2026-10-21T10:37:12.710734+00:00",
+  "worktree": "/Users/aedanmccarthy/projects/MATS-work-test-worktree",
+  "python": "3.12.11",
+  "dependencies": {
+    "inspect-ai": "0.3.282",
+    "opentrons": "8.8.2",
+    "pytest": "9.1.1"
+  },
+  "commands_documented_in": "results/feedback_privacy/README.md",
+  "tests": {
+    "focused": {
+      "tests": 33,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "full": {
+      "tests": 189,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "privacy_regression": "Actual simulate_protocol tool response identical across all five injected faults with identical public identity; no incubation qualification fields/checks/errors; full private evidence retained",
+  "model": "openrouter/moonshotai/kimi-k3 (existing saved rollout replay only)",
+  "model_replay": {
+    "passed": true,
+    "successful_recoveries": 1,
+    "evidence": "results/feedback_privacy/model_replay.json"
+  },
+  "new_external_model_calls": 0,
+  "source_sha256": {
+    "src/failures.py": "29bbbe6ed9b90b0babde626801294b5f75ba72ba92a8d583d307dd78be583563",
+    "src/environment.py": "b4b4c4bf157d081c61e93cf941211ed1b65f1652c9aae6f0d349096915c764c9",
+    "tests/test_feedback_privacy.py": "a5909f0637b0daed9bb158787d10651e3b7cbb6671677e460011fef92d4a1a0f",
+    "docs/failure_modes.md": "b4f575c9e19a5549f05da05728c0d95f6e382b63bec95171742904588be51f08"
+  },
+  "git_diff_check_passed": true,
+  "scope": "Public feedback projection only; private validation and scoring unchanged"
+}

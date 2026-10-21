@@ -1,0 +1,50 @@
+{
+  "date_utc": "2026-10-21T09:53:00.983453+00:00",
+  "authorization": "User explicitly answered Yes when asked to send these sequence-derived inputs to OpenRouter/Kimi K3 for a real test rollout.",
+  "model": "openrouter/moonshotai/kimi-k3",
+  "run_record": "results/supplied_sequence_assembly/rollouts/20261021T094827Z/run.json",
+  "log_sha256": "fb006cbecb30fd102360d1dd95bb3074c1fa1d54deb3bddcd13c696e967a8d13",
+  "sample_id": "sequence_recovery_01",
+  "score": "C",
+  "simulated_cost_cents": 29400,
+  "tips_used": 9,
+  "simulation_count": 2,
+  "recovery": {
+    "passed": true,
+    "failed_reaction_observed": true,
+    "current_success_verified": true
+  },
+  "reaction_gels": [
+    {
+      "experiment_id": "experiment-0001",
+      "bands_bp": [
+        648,
+        772,
+        1135,
+        1300,
+        1566,
+        1923,
+        5350
+      ],
+      "expected_size_bp": 12484
+    },
+    {
+      "experiment_id": "experiment-0002",
+      "bands_bp": [
+        12484
+      ],
+      "expected_size_bp": 12484
+    }
+  ],
+  "independent_replay_passed": true,
+  "successful_recoveries": 1,
+  "source_drift_since_run": [],
+  "snapshot_hash_mismatches": [],
+  "raw_fasta_unchanged_against_prior_partition_report": true,
+  "credential_scan": {
+    "passed": true,
+    "files_scanned": 51,
+    "scope": "Every saved run file and decoded Inspect log checked against configured credential values; no values retained"
+  },
+  "scope": "One actual seven-piece ligase-recovery model rollout; other faults have constructed controls only. No physical experiment or real purchase."
+}

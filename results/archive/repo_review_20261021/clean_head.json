@@ -1,0 +1,14 @@
+{
+  "kind": "actual local clean-HEAD import check; no model calls",
+  "model": null,
+  "git_revision": "5c6f1c65bb15a00f0a569f5682b401cadc5c5139",
+  "setup": "git archive HEAD extracted into a temporary directory",
+  "command": [
+    "/Users/aedanmccarthy/projects/MATS-work-test-worktree/.venv/bin/python",
+    "-c",
+    "from src.scenarios import load_scenarios; load_scenarios('failures')"
+  ],
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/var/folders/vg/w7m6lknn5c3dprbr3zp4hfpw0000gn/T/mats-head-review-8l2g9q5w/checkout/src/scenarios.py\", line 11, in load_scenarios\n    raise ValueError(f\"Unknown task suite: {suite}\")\nValueError: Unknown task suite: failures\n"
+}

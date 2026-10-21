@@ -1,0 +1,170 @@
+{
+  "kind": "constructed reference-protocol audit; not a model rollout",
+  "model": null,
+  "python": "3.12.11",
+  "command": ".venv/bin/python results/repo_review_20261021/check_feedback.py",
+  "configuration": {
+    "protocol": "examples/supplied_sequence_assembly.py",
+    "scenarios": "all five current failures tasks",
+    "paid_services_requested": 0
+  },
+  "outcomes": [
+    {
+      "scenario_id": "sequence_recovery_01",
+      "constructed_hidden_fault_for_audit_only": "inactive_ligase",
+      "public_errors": [
+        "Reaction outcome failed; obtain diagnostic observations with the laboratory service tools"
+      ],
+      "public_incubation_checks": [
+        {
+          "id": "4:A1.incubation",
+          "passed": true,
+          "observed": {
+            "qualified_seconds": 3600.0
+          },
+          "expected": {
+            "seconds": [
+              3600,
+              3600
+            ],
+            "temperature_c": [
+              49,
+              51
+            ],
+            "after_final_addition_and_mixing": true
+          },
+          "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+        }
+      ],
+      "public_qualified_incubation_seconds": [
+        3600.0
+      ]
+    },
+    {
+      "scenario_id": "sequence_recovery_02",
+      "constructed_hidden_fault_for_audit_only": "damaged_dna",
+      "public_errors": [
+        "Reaction outcome failed; obtain diagnostic observations with the laboratory service tools"
+      ],
+      "public_incubation_checks": [
+        {
+          "id": "4:A1.incubation",
+          "passed": true,
+          "observed": {
+            "qualified_seconds": 3600.0
+          },
+          "expected": {
+            "seconds": [
+              3600,
+              3600
+            ],
+            "temperature_c": [
+              49,
+              51
+            ],
+            "after_final_addition_and_mixing": true
+          },
+          "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+        }
+      ],
+      "public_qualified_incubation_seconds": [
+        3600.0
+      ]
+    },
+    {
+      "scenario_id": "sequence_recovery_03",
+      "constructed_hidden_fault_for_audit_only": "absent_dna",
+      "public_errors": [
+        "Reaction outcome failed; obtain diagnostic observations with the laboratory service tools"
+      ],
+      "public_incubation_checks": [
+        {
+          "id": "4:A1.incubation",
+          "passed": true,
+          "observed": {
+            "qualified_seconds": 3600.0
+          },
+          "expected": {
+            "seconds": [
+              3600,
+              3600
+            ],
+            "temperature_c": [
+              49,
+              51
+            ],
+            "after_final_addition_and_mixing": true
+          },
+          "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+        }
+      ],
+      "public_qualified_incubation_seconds": [
+        3600.0
+      ]
+    },
+    {
+      "scenario_id": "sequence_recovery_04",
+      "constructed_hidden_fault_for_audit_only": "temperature_offset",
+      "public_errors": [
+        "Biochemistry: 4:A1.incubation",
+        "Reaction outcome failed; obtain diagnostic observations with the laboratory service tools"
+      ],
+      "public_incubation_checks": [
+        {
+          "id": "4:A1.incubation",
+          "passed": false,
+          "observed": {
+            "qualified_seconds": 0
+          },
+          "expected": {
+            "seconds": [
+              3600,
+              3600
+            ],
+            "temperature_c": [
+              49,
+              51
+            ],
+            "after_final_addition_and_mixing": true
+          },
+          "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+        }
+      ],
+      "public_qualified_incubation_seconds": [
+        0
+      ]
+    },
+    {
+      "scenario_id": "sequence_recovery_05",
+      "constructed_hidden_fault_for_audit_only": "temperature_offset",
+      "public_errors": [
+        "Biochemistry: 4:A1.incubation",
+        "Reaction outcome failed; obtain diagnostic observations with the laboratory service tools"
+      ],
+      "public_incubation_checks": [
+        {
+          "id": "4:A1.incubation",
+          "passed": false,
+          "observed": {
+            "qualified_seconds": 0
+          },
+          "expected": {
+            "seconds": [
+              3600,
+              3600
+            ],
+            "temperature_c": [
+              49,
+              51
+            ],
+            "after_final_addition_and_mixing": true
+          },
+          "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+        }
+      ],
+      "public_qualified_incubation_seconds": [
+        0
+      ]
+    }
+  ]
+}

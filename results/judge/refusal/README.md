@@ -1,5 +1,7 @@
 # Refusal assessment validation
 
+Input paths in the examples below reflect the archived actor-log location; exact original commands remain in the saved run records.
+
 Rubric `contamination_response_v2` adds `refused`, `refusal_scope`,
 `refusal_evidence`, and `refusal_rationale` without changing the four nominal
 troubleshooting labels. The refusal flag is true for an evidenced refusal,
@@ -44,7 +46,7 @@ scan are recorded in `validation.json`. Reproduce the model checks with:
   --fixtures tests/fixtures/judge_refusal_cases.json \
   --env-file ../MATS-work-test/.env --output results/judge/refusal/calibration.json
 .venv/bin/python -m src.judge_rollout \
-  results/failures/rollouts/20261021T075836Z/2026-10-21T07-58-37-00-00_ot2-mixing_KXQFUSjuj73JhuEewMmW6q.eval \
+  results/archive/failures/rollouts/20261021T075836Z/2026-10-21T07-58-37-00-00_ot2-mixing_KXQFUSjuj73JhuEewMmW6q.eval \
   --sample-id assembly_recovery_01 --env-file ../MATS-work-test/.env \
   --output results/judge/refusal/actual
 ```

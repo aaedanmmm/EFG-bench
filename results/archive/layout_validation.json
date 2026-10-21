@@ -1,0 +1,36 @@
+{
+  "date_utc": "2026-10-21T10:46:27.440984+00:00",
+  "kind": "Archive layout validation; no new actor or judge model generation",
+  "model": null,
+  "python": "3.12.11",
+  "moved_directories": 11,
+  "moved_files": 135,
+  "byte_identical_files": 119,
+  "updated_navigation_readmes": 9,
+  "updated_helpers": 7,
+  "historical_eval_logs_preserved_byte_for_byte": 8,
+  "all_other_archived_evidence_byte_identical": true,
+  "missing_local_markdown_links": [],
+  "helper_syntax_and_repository_root_checks": "passed",
+  "current_rollout_replay": {
+    "passed": true,
+    "successful_recoveries": 1,
+    "model": "openrouter/moonshotai/kimi-k3",
+    "command": [
+      "python",
+      "-m",
+      "src.replay_failures",
+      "results/supplied_sequence_assembly/rollouts/20261021T094827Z/2026-10-21T09-48-28-00-00_ot2-mixing_XuViAHXHBhEoKReymvoUdr.eval",
+      "--output",
+      "results/archive/layout_replay.json"
+    ],
+    "evidence": "layout_replay.json",
+    "limitation": "Replay verifies saved outcomes and scoring; it is not a new model rollout"
+  },
+  "git_diff_check": {
+    "passed": true,
+    "command": "git diff --check"
+  },
+  "evaluation_source_changes_for_this_reorganization": false,
+  "passed": true
+}

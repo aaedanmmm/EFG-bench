@@ -1,5 +1,7 @@
 # Judge validation
 
+Input paths in the examples below reflect the archived actor-log location; exact original commands remain in the saved run records.
+
 The new model-based judge is independent of the artifact scorer. Its rubric and
 commands are documented in [../../docs/contamination_judge.md](../../docs/contamination_judge.md).
 The final implementation uses `openrouter/moonshotai/kimi-k3`, temperature 0,
@@ -11,7 +13,7 @@ needed; invalid output never becomes an assigned category.
 
 `actual/20261021T081105302983Z/` contains the final model assessment of the saved
 `assembly_recovery_01` sample from the original failure-recovery run
-`../failures/rollouts/20261021T075836Z/`. The source actor log is cancelled and
+`../archive/failures/rollouts/20261021T075836Z/`. The source actor log is cancelled and
 partial, and that fact is recorded. This is real model assessment of real saved
 actor messages; it is not a new actor rollout or a constructed transcript.
 
@@ -36,7 +38,7 @@ Executed command (credential file contents are never included):
 
 ```sh
 .venv/bin/python -m src.judge_rollout \
-  results/failures/rollouts/20261021T075836Z/2026-10-21T07-58-37-00-00_ot2-mixing_KXQFUSjuj73JhuEewMmW6q.eval \
+  results/archive/failures/rollouts/20261021T075836Z/2026-10-21T07-58-37-00-00_ot2-mixing_KXQFUSjuj73JhuEewMmW6q.eval \
   --sample-id assembly_recovery_01 --env-file ../MATS-work-test/.env \
   --output results/judge/actual
 ```
