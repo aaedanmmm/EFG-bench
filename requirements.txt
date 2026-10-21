@@ -3,3 +3,4 @@ opentrons==8.8.2
 openai>=3.4,<4
 python-dotenv>=1.0,<2
 biopython>=1.85,<2
+pydantic>=2,<3

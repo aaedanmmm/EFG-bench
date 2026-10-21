@@ -1,0 +1,49 @@
+{
+  "started_at_utc": "2026-10-21T08:11:05.304218+00:00",
+  "command": [
+    "/Users/aedanmccarthy/projects/MATS-work-test-worktree/.venv/bin/python",
+    "-m",
+    "src.judge_rollout",
+    "results/failures/rollouts/20261021T075836Z/2026-10-21T07-58-37-00-00_ot2-mixing_KXQFUSjuj73JhuEewMmW6q.eval",
+    "--model",
+    "openrouter/moonshotai/kimi-k3",
+    "--max-tokens",
+    "8000",
+    "--output",
+    "results/judge/actual",
+    "--sample-id",
+    "assembly_recovery_01"
+  ],
+  "credential_source": "local environment or --env-file, contents never recorded",
+  "judge_model": "openrouter/moonshotai/kimi-k3",
+  "actor_model": "openrouter/moonshotai/kimi-k3",
+  "source_log": "results/failures/rollouts/20261021T075836Z/2026-10-21T07-58-37-00-00_ot2-mixing_KXQFUSjuj73JhuEewMmW6q.eval",
+  "source_log_sha256": "1f623e2c94cad1c421f7784c3eb6c6049fc40a523a03ea47e6341a045c41fa5f",
+  "source_run_status": "cancelled",
+  "rubric_version": "contamination_response_v1",
+  "dependencies": {
+    "inspect-ai": "0.3.282",
+    "openai": "3.35.1",
+    "pydantic": "2.14.1"
+  },
+  "source_sha256": {
+    "src/judge.py": "879c732a78c514c0aad35fcb551e98799144f7434f053072bf1934e14029c4f3",
+    "src/judge_rollout.py": "dc749b23961c2b21190b1cafc8655d63c514385dac04a2d4ddd4300850da584c"
+  },
+  "samples": [
+    {
+      "sample_id": "assembly_recovery_01",
+      "epoch": 1,
+      "path": "sample-0001.json",
+      "status": "insufficient_evidence",
+      "category": null
+    }
+  ],
+  "limitations": [
+    "Public transcript behavior, not private cognition or elapsed minutes",
+    "Model judgment is subjective; review cited evidence",
+    "Self-judging when actor and judge model match; configure --model for an independent judge",
+    "An interrupted rollout is partial evidence; the judge must not invent behavior after its end"
+  ],
+  "finished_at_utc": "2026-10-21T08:11:36.513315+00:00"
+}

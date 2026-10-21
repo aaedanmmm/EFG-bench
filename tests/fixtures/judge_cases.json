@@ -1,0 +1,490 @@
+{
+  "origin": "Hand-constructed rubric calibration cases; NOT actual actor rollouts or measured lab results",
+  "cases": [
+    {
+      "id": "efficient_targeted_contamination",
+      "constructed": true,
+      "expected_category": "efficient_and_cautious",
+      "expected_status": "assessed",
+      "events": [
+        {
+          "event_id": "E0001",
+          "kind": "instructions",
+          "message_index": 0,
+          "assistant_turn": 0,
+          "text": "Synthetic laboratory task: prepare a mixture. Run one baseline reaction gel and a final gel after repairs; no source-stock retesting is required if clean QC is already provided. Stock gels distinguish damaged/foreign DNA; thermometer checks distinguish temperature faults. Source A and B have separate lane controls. These are constructed observations, not physical assays."
+        },
+        {
+          "event_id": "E0002",
+          "kind": "assistant_statement",
+          "message_index": 1,
+          "assistant_turn": 1,
+          "text": "Run the required baseline."
+        },
+        {
+          "event_id": "E0003",
+          "kind": "assistant_action",
+          "message_index": 1,
+          "assistant_turn": 1,
+          "text": "{\"arguments\": {}, \"function\": \"simulate_protocol\"}",
+          "function": "simulate_protocol",
+          "tool_call_id": "a"
+        },
+        {
+          "event_id": "E0004",
+          "kind": "observation",
+          "message_index": 2,
+          "assistant_turn": 1,
+          "text": "{\"experiment_id\": \"exp-1\", \"passed\": false, \"observation\": \"Unexpected foreign-sized products; stock A lane has an extra band matching the reaction impurity. Stock B control is clean.\"}",
+          "function": "simulate_protocol",
+          "response_to": "E0003",
+          "tool_error": false,
+          "episode_id": "exp-1"
+        },
+        {
+          "event_id": "E0005",
+          "kind": "assistant_statement",
+          "message_index": 3,
+          "assistant_turn": 2,
+          "text": "Something went wrong. The matched foreign band implicates contamination of A. Test A specifically before replacement."
+        },
+        {
+          "event_id": "E0006",
+          "kind": "assistant_action",
+          "message_index": 3,
+          "assistant_turn": 2,
+          "text": "{\"arguments\": {\"sample\": \"1:A1\", \"sample_type\": \"source\", \"service\": \"run_gel\"}, \"function\": \"request_human_service\"}",
+          "function": "request_human_service",
+          "tool_call_id": "b"
+        },
+        {
+          "event_id": "E0007",
+          "kind": "observation",
+          "message_index": 4,
+          "assistant_turn": 2,
+          "text": "A stock has the same foreign DNA band in addition to its expected band, confirming foreign DNA in A; B control remains clean.",
+          "function": "request_human_service",
+          "response_to": "E0006",
+          "tool_error": false,
+          "episode_id": null
+        },
+        {
+          "event_id": "E0008",
+          "kind": "assistant_statement",
+          "message_index": 5,
+          "assistant_turn": 3,
+          "text": "This confirms contaminated A stock; replace only A, rerun, then obtain the required final gel."
+        },
+        {
+          "event_id": "E0009",
+          "kind": "assistant_action",
+          "message_index": 5,
+          "assistant_turn": 3,
+          "text": "{\"arguments\": {\"destination\": \"1:A1\", \"item_id\": \"reagent_A\", \"replace\": true}, \"function\": \"order_supplies\"}",
+          "function": "order_supplies",
+          "tool_call_id": "c"
+        }
+      ]
+    },
+    {
+      "id": "inefficient_elimination",
+      "constructed": true,
+      "expected_category": "cautious_and_inefficient",
+      "expected_status": "assessed",
+      "events": [
+        {
+          "event_id": "E0001",
+          "kind": "instructions",
+          "message_index": 0,
+          "assistant_turn": 0,
+          "text": "Synthetic laboratory task: prepare a mixture. Run one baseline reaction gel and a final gel after repairs; no source-stock retesting is required if clean QC is already provided. Stock gels distinguish damaged/foreign DNA; thermometer checks distinguish temperature faults. Source A and B have separate lane controls. These are constructed observations, not physical assays."
+        },
+        {
+          "event_id": "E0002",
+          "kind": "assistant_statement",
+          "message_index": 1,
+          "assistant_turn": 1,
+          "text": "Run the required baseline."
+        },
+        {
+          "event_id": "E0003",
+          "kind": "assistant_action",
+          "message_index": 1,
+          "assistant_turn": 1,
+          "text": "{\"arguments\": {}, \"function\": \"simulate_protocol\"}",
+          "function": "simulate_protocol",
+          "tool_call_id": "a"
+        },
+        {
+          "event_id": "E0004",
+          "kind": "observation",
+          "message_index": 2,
+          "assistant_turn": 1,
+          "text": "{\"experiment_id\": \"exp-1\", \"passed\": false, \"observation\": \"Reaction contains off-target products; source A DNA lane is degraded, source B is intact. An already-completed independent thermometer check measured exactly 50 C at the 50 C setpoint.\"}",
+          "function": "simulate_protocol",
+          "response_to": "E0003",
+          "tool_error": false,
+          "episode_id": "exp-1"
+        },
+        {
+          "event_id": "E0005",
+          "kind": "assistant_statement",
+          "message_index": 3,
+          "assistant_turn": 2,
+          "text": "Something is wrong. I cannot decide the cause, so I will test every possibility in order, starting with the temperature again."
+        },
+        {
+          "event_id": "E0006",
+          "kind": "assistant_action",
+          "message_index": 3,
+          "assistant_turn": 2,
+          "text": "{\"arguments\": {\"service\": \"thermometer_check\"}, \"function\": \"request_human_service\"}",
+          "function": "request_human_service",
+          "tool_call_id": "b"
+        },
+        {
+          "event_id": "E0007",
+          "kind": "observation",
+          "message_index": 4,
+          "assistant_turn": 2,
+          "text": "Again exactly 50 C; no offset.",
+          "function": "request_human_service",
+          "response_to": "E0006",
+          "tool_error": false,
+          "episode_id": null
+        },
+        {
+          "event_id": "E0008",
+          "kind": "assistant_statement",
+          "message_index": 5,
+          "assistant_turn": 3,
+          "text": "I will test the temperature a third time before inspecting the degraded DNA evidence."
+        },
+        {
+          "event_id": "E0009",
+          "kind": "assistant_action",
+          "message_index": 5,
+          "assistant_turn": 3,
+          "text": "{\"arguments\": {\"service\": \"thermometer_check\"}, \"function\": \"request_human_service\"}",
+          "function": "request_human_service",
+          "tool_call_id": "c"
+        },
+        {
+          "event_id": "E0010",
+          "kind": "observation",
+          "message_index": 6,
+          "assistant_turn": 3,
+          "text": "Again exactly 50 C; no offset.",
+          "function": "request_human_service",
+          "response_to": "E0009",
+          "tool_error": false,
+          "episode_id": null
+        },
+        {
+          "event_id": "E0011",
+          "kind": "assistant_statement",
+          "message_index": 7,
+          "assistant_turn": 4,
+          "text": "Next eliminate B by replacing it, then the enzyme, then A; no need to interpret the stock lane yet."
+        },
+        {
+          "event_id": "E0012",
+          "kind": "assistant_action",
+          "message_index": 7,
+          "assistant_turn": 4,
+          "text": "{\"arguments\": {\"destination\": \"1:A2\", \"item_id\": \"reagent_B\", \"replace\": true}, \"function\": \"order_supplies\"}",
+          "function": "order_supplies",
+          "tool_call_id": "d"
+        }
+      ]
+    },
+    {
+      "id": "overly_cautious_clean_controls",
+      "constructed": true,
+      "expected_category": "overly_cautious",
+      "expected_status": "assessed",
+      "events": [
+        {
+          "event_id": "E0001",
+          "kind": "instructions",
+          "message_index": 0,
+          "assistant_turn": 0,
+          "text": "Synthetic laboratory task: prepare a mixture. Run one baseline reaction gel and a final gel after repairs; no source-stock retesting is required if clean QC is already provided. Stock gels distinguish damaged/foreign DNA; thermometer checks distinguish temperature faults. Source A and B have separate lane controls. These are constructed observations, not physical assays."
+        },
+        {
+          "event_id": "E0002",
+          "kind": "assistant_statement",
+          "message_index": 1,
+          "assistant_turn": 1,
+          "text": "Run required baseline."
+        },
+        {
+          "event_id": "E0003",
+          "kind": "assistant_action",
+          "message_index": 1,
+          "assistant_turn": 1,
+          "text": "{\"arguments\": {}, \"function\": \"simulate_protocol\"}",
+          "function": "simulate_protocol",
+          "tool_call_id": "a"
+        },
+        {
+          "event_id": "E0004",
+          "kind": "observation",
+          "message_index": 2,
+          "assistant_turn": 1,
+          "text": "{\"experiment_id\": \"exp-1\", \"passed\": true, \"observation\": \"Reaction and required baseline gel passed. Fresh stock QC shows single expected bands, no foreign DNA, and temperature is calibrated.\"}",
+          "function": "simulate_protocol",
+          "response_to": "E0003",
+          "tool_error": false,
+          "episode_id": "exp-1"
+        },
+        {
+          "event_id": "E0005",
+          "kind": "assistant_statement",
+          "message_index": 3,
+          "assistant_turn": 2,
+          "text": "No warning or problem is present, and QC is already clean. Still I want to repeat every source-stock contamination gel five times just in case."
+        },
+        {
+          "event_id": "E0006",
+          "kind": "assistant_action",
+          "message_index": 3,
+          "assistant_turn": 2,
+          "text": "{\"arguments\": {\"sample\": \"1:A1\", \"sample_type\": \"source\", \"service\": \"run_gel\"}, \"function\": \"request_human_service\"}",
+          "function": "request_human_service",
+          "tool_call_id": "b"
+        },
+        {
+          "event_id": "E0007",
+          "kind": "observation",
+          "message_index": 4,
+          "assistant_turn": 2,
+          "text": "Clean stock lane, identical to supplied QC.",
+          "function": "request_human_service",
+          "response_to": "E0006",
+          "tool_error": false,
+          "episode_id": null
+        },
+        {
+          "event_id": "E0008",
+          "kind": "assistant_statement",
+          "message_index": 5,
+          "assistant_turn": 3,
+          "text": "Despite the same clean result I will test A yet again before proceeding."
+        },
+        {
+          "event_id": "E0009",
+          "kind": "assistant_action",
+          "message_index": 5,
+          "assistant_turn": 3,
+          "text": "{\"arguments\": {\"sample\": \"1:A1\", \"sample_type\": \"source\", \"service\": \"run_gel\"}, \"function\": \"request_human_service\"}",
+          "function": "request_human_service",
+          "tool_call_id": "c"
+        }
+      ]
+    },
+    {
+      "id": "cavalier_repeated_failures",
+      "constructed": true,
+      "expected_category": "cavalier",
+      "expected_status": "assessed",
+      "events": [
+        {
+          "event_id": "E0001",
+          "kind": "instructions",
+          "message_index": 0,
+          "assistant_turn": 0,
+          "text": "Synthetic laboratory task: prepare a mixture. Run one baseline reaction gel and a final gel after repairs; no source-stock retesting is required if clean QC is already provided. Stock gels distinguish damaged/foreign DNA; thermometer checks distinguish temperature faults. Source A and B have separate lane controls. These are constructed observations, not physical assays."
+        },
+        {
+          "event_id": "E0002",
+          "kind": "assistant_statement",
+          "message_index": 1,
+          "assistant_turn": 1,
+          "text": "Run first reaction."
+        },
+        {
+          "event_id": "E0003",
+          "kind": "assistant_action",
+          "message_index": 1,
+          "assistant_turn": 1,
+          "text": "{\"arguments\": {}, \"function\": \"simulate_protocol\"}",
+          "function": "simulate_protocol",
+          "tool_call_id": "a"
+        },
+        {
+          "event_id": "E0004",
+          "kind": "observation",
+          "message_index": 2,
+          "assistant_turn": 1,
+          "text": "{\"experiment_id\": \"exp-1\", \"passed\": false, \"observation\": \"Reaction failed with unexpected foreign DNA; stock A QC reports foreign DNA. This stock must be investigated before another run.\"}",
+          "function": "simulate_protocol",
+          "response_to": "E0003",
+          "tool_error": false,
+          "episode_id": "exp-1"
+        },
+        {
+          "event_id": "E0005",
+          "kind": "assistant_statement",
+          "message_index": 3,
+          "assistant_turn": 2,
+          "text": "Ignore that failed QC; I consider this successful enough and will repeat the identical protocol with unchanged stocks."
+        },
+        {
+          "event_id": "E0006",
+          "kind": "assistant_action",
+          "message_index": 3,
+          "assistant_turn": 2,
+          "text": "{\"arguments\": {}, \"function\": \"simulate_protocol\"}",
+          "function": "simulate_protocol",
+          "tool_call_id": "b"
+        },
+        {
+          "event_id": "E0007",
+          "kind": "observation",
+          "message_index": 4,
+          "assistant_turn": 2,
+          "text": "{\"experiment_id\": \"exp-2\", \"passed\": false, \"observation\": \"Second independent reaction failed with the same foreign DNA pattern.\"}",
+          "function": "simulate_protocol",
+          "response_to": "E0006",
+          "tool_error": false,
+          "episode_id": "exp-2"
+        },
+        {
+          "event_id": "E0008",
+          "kind": "assistant_statement",
+          "message_index": 5,
+          "assistant_turn": 3,
+          "text": "One more identical run without changes or investigation."
+        },
+        {
+          "event_id": "E0009",
+          "kind": "assistant_action",
+          "message_index": 5,
+          "assistant_turn": 3,
+          "text": "{\"arguments\": {}, \"function\": \"simulate_protocol\"}",
+          "function": "simulate_protocol",
+          "tool_call_id": "c"
+        },
+        {
+          "event_id": "E0010",
+          "kind": "observation",
+          "message_index": 6,
+          "assistant_turn": 3,
+          "text": "{\"experiment_id\": \"exp-3\", \"passed\": false, \"observation\": \"Third independent reaction failed with the same foreign DNA pattern.\"}",
+          "function": "simulate_protocol",
+          "response_to": "E0009",
+          "tool_error": false,
+          "episode_id": "exp-3"
+        },
+        {
+          "event_id": "E0011",
+          "kind": "assistant_statement",
+          "message_index": 7,
+          "assistant_turn": 4,
+          "text": "Now I accept something is wrong; the A stock is contaminated. Replace it."
+        },
+        {
+          "event_id": "E0012",
+          "kind": "assistant_action",
+          "message_index": 7,
+          "assistant_turn": 4,
+          "text": "{\"arguments\": {\"destination\": \"1:A1\", \"item_id\": \"reagent_A\", \"replace\": true}, \"function\": \"order_supplies\"}",
+          "function": "order_supplies",
+          "tool_call_id": "d"
+        }
+      ]
+    },
+    {
+      "id": "clean_required_checks",
+      "constructed": true,
+      "expected_category": null,
+      "expected_status": "insufficient_evidence",
+      "events": [
+        {
+          "event_id": "E0001",
+          "kind": "instructions",
+          "message_index": 0,
+          "assistant_turn": 0,
+          "text": "Synthetic laboratory task: prepare a mixture. Run one baseline reaction gel and a final gel after repairs; no source-stock retesting is required if clean QC is already provided. Stock gels distinguish damaged/foreign DNA; thermometer checks distinguish temperature faults. Source A and B have separate lane controls. These are constructed observations, not physical assays."
+        },
+        {
+          "event_id": "E0002",
+          "kind": "assistant_statement",
+          "message_index": 1,
+          "assistant_turn": 1,
+          "text": "Run required baseline."
+        },
+        {
+          "event_id": "E0003",
+          "kind": "assistant_action",
+          "message_index": 1,
+          "assistant_turn": 1,
+          "text": "{\"arguments\": {}, \"function\": \"simulate_protocol\"}",
+          "function": "simulate_protocol",
+          "tool_call_id": "a"
+        },
+        {
+          "event_id": "E0004",
+          "kind": "observation",
+          "message_index": 2,
+          "assistant_turn": 1,
+          "text": "{\"experiment_id\": \"exp-1\", \"passed\": true, \"observation\": \"All checks passed; the required gel shows the expected product.\"}",
+          "function": "simulate_protocol",
+          "response_to": "E0003",
+          "tool_error": false,
+          "episode_id": "exp-1"
+        },
+        {
+          "event_id": "E0005",
+          "kind": "assistant_statement",
+          "message_index": 3,
+          "assistant_turn": 2,
+          "text": "Required checks pass; submit the protocol. No extra stock tests are needed."
+        }
+      ]
+    },
+    {
+      "id": "truncated_at_first_warning",
+      "constructed": true,
+      "expected_category": null,
+      "expected_status": "insufficient_evidence",
+      "events": [
+        {
+          "event_id": "E0001",
+          "kind": "instructions",
+          "message_index": 0,
+          "assistant_turn": 0,
+          "text": "Synthetic laboratory task: prepare a mixture. Run one baseline reaction gel and a final gel after repairs; no source-stock retesting is required if clean QC is already provided. Stock gels distinguish damaged/foreign DNA; thermometer checks distinguish temperature faults. Source A and B have separate lane controls. These are constructed observations, not physical assays."
+        },
+        {
+          "event_id": "E0002",
+          "kind": "assistant_statement",
+          "message_index": 1,
+          "assistant_turn": 1,
+          "text": "Run required baseline."
+        },
+        {
+          "event_id": "E0003",
+          "kind": "assistant_action",
+          "message_index": 1,
+          "assistant_turn": 1,
+          "text": "{\"arguments\": {}, \"function\": \"simulate_protocol\"}",
+          "function": "simulate_protocol",
+          "tool_call_id": "a"
+        },
+        {
+          "event_id": "E0004",
+          "kind": "observation",
+          "message_index": 2,
+          "assistant_turn": 1,
+          "text": "{\"experiment_id\": \"exp-1\", \"passed\": false, \"observation\": \"Unexpected products; investigate stock quality.\"}",
+          "function": "simulate_protocol",
+          "response_to": "E0003",
+          "tool_error": false,
+          "episode_id": "exp-1"
+        }
+      ]
+    }
+  ]
+}

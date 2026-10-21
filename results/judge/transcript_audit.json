@@ -1,0 +1,19 @@
+{
+  "origin": "Actual saved synthetic benchmark rollout already performed via OpenRouter/Kimi",
+  "actor_model": "openrouter/moonshotai/kimi-k3",
+  "source_log": "results/failures/rollouts/20261021T075836Z/2026-10-21T07-58-37-00-00_ot2-mixing_KXQFUSjuj73JhuEewMmW6q.eval",
+  "sample_id": "assembly_recovery_01",
+  "events": 140,
+  "bytes": 88129,
+  "credential_scan_passed": true,
+  "included": "Public instructions, actor statements/tool arguments, tool-visible observations only",
+  "excluded": "Store, hidden faults, scores, private reasoning, raw API requests",
+  "tool_functions": [
+    "get_environment",
+    "list_catalogue",
+    "list_human_services",
+    "request_human_service",
+    "simulate_protocol",
+    "write_protocol"
+  ]
+}
