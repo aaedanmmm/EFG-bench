@@ -3,7 +3,7 @@
 The active assembly and recovery datasets now use all seven raw cores from
 `data/sequences`: six fragments plus the backbone remainder. Their exact target
 is the original **12,484-base** sequence. Raw FASTA bytes are unchanged, including
-against the existing `results/sequence_partition_validation.json` hashes.
+against the existing `results/supplied_sequence_assembly/raw_partition_baseline.json` hashes.
 
 The original fragments have no assembly overlaps. Separate, explicitly constructed
 prepared stocks preserve each entire core and append the next core's first 30

@@ -1,3 +1,5 @@
+> The formerly loose reports and helper scripts referenced here are grouped in [legacy_root_files/](legacy_root_files/README.md). Original commands remain in saved run records.
+
 > Paths in this index have been adapted to the archive layout; original run records remain unchanged. Historical results index. Statements about current status below refer to earlier repository states; use the [current index](../README.md).
 
 # Results and evidence
@@ -64,12 +66,12 @@ compatibility evidence, not a failed biological experiment.
 Reproduce validation from the worktree root:
 
 ```sh
-.venv/bin/python -m pytest -q tests --junitxml=results/tests.xml
-.venv/bin/python results/revalidate.py results/archive/rollouts/20261021T065832Z \
-  --output results/kimi_revalidation.json
-.venv/bin/python results/check_native.py examples/two_reagent_mix.py \
+.venv/bin/python -m pytest -q tests --junitxml=results/archive/legacy_root_files/tests.xml
+.venv/bin/python results/archive/legacy_root_files/revalidate.py results/archive/rollouts/20261021T065832Z \
+  --output results/archive/legacy_root_files/kimi_revalidation.json
+.venv/bin/python results/archive/legacy_root_files/check_native.py examples/two_reagent_mix.py \
   examples/three_reagent_panel.py examples/serial_dilution.py \
-  --output results/native_reference_validation.json
+  --output results/archive/legacy_root_files/native_reference_validation.json
 ```
 
 `check_native.py` executes Python through Opentrons' standard entry point. It is

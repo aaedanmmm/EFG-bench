@@ -19,10 +19,13 @@ repository state when those artifacts were recorded. Start with the
 | [repo_review_20261021](repo_review_20261021/README.md) | Repository review and pre-fix feedback leak reproduction |
 | [rollouts](rollouts/) | Initial mixing and three-piece assembly model runs |
 | [sequences](sequences/README.md) | Raw sequence partition and ordering validation |
+| [legacy_root_files](legacy_root_files/README.md) | Former loose reports, compatibility checks, and replay helpers |
 
 The [earlier results index](legacy_results_index.md) preserves the detailed
-historical narrative. Supporting files directly under `results/` remain in place;
-the active provenance script still reads `results/sequence_partition_validation.json`.
+historical narrative. The raw partition baseline remains available to current
+validation at
+[raw_partition_baseline.json](../supplied_sequence_assembly/raw_partition_baseline.json).
+Regenerated partition reports use a separate filename to preserve that baseline.
 
 All saved logs, JSON/XML/text evidence, generated protocols/reports, and source
 snapshots were moved without changing their bytes. Navigation READMEs and seven
@@ -34,3 +37,6 @@ remain as originally recorded. Use the old-to-new paths and hashes in the
 
 `layout_validation.json` and `layout_replay.json` record local checks of this
 archive reorganization. They are administrative validation, not new model runs.
+The follow-up [loose-file manifest](loose_file_relocation_manifest.json) records
+the former root files' new locations and hashes; `loose_file_validation.json`
+records checks of their links, helper imports, and the relocated baseline.

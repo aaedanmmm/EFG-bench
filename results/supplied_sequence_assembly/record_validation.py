@@ -22,7 +22,7 @@ def tests(name):
 reference=json.loads((directory/'reference.json').read_text())
 controls=json.loads((directory/'failure_controls.json').read_text())
 diagnostics=json.loads((directory/'diagnostics.json').read_text())
-prior=json.loads((root/'results/sequence_partition_validation.json').read_text())
+prior=json.loads((root/'results/supplied_sequence_assembly/raw_partition_baseline.json').read_text())
 raw_checks={piece['file']:hashlib.sha256((root/piece['file']).read_bytes()).hexdigest()==piece['sha256'] for piece in prior['pieces']}
 raw_checks[prior['source']]=hashlib.sha256((root/prior['source']).read_bytes()).hexdigest()==prior['source_sha256']
 check=subprocess.run(['git','diff','--check'],cwd=root,capture_output=True,text=True)
@@ -77,7 +77,7 @@ record={
     ],
     'full_tests':tests('tests.xml'), 'final_focused_tests':tests('final_focused_tests.xml'),
     'seven_piece_reference':{'passed':reference['passed'],'gate_count':len(reference['biochemistry']['checks']),'product_length_bp':len(reference['biochemistry']['assembly']['predicted_sequence']),'evidence':'reference.json'},
-    'raw_fasta_unchanged_against_prior_partition_report':{'passed':all(raw_checks.values()),'checks':raw_checks,'baseline':'results/sequence_partition_validation.json'},
+    'raw_fasta_unchanged_against_prior_partition_report':{'passed':all(raw_checks.values()),'checks':raw_checks,'baseline':'results/supplied_sequence_assembly/raw_partition_baseline.json'},
     'constructed_failure_controls':{'passed':controls['passed'],'count':len(controls['controls']),'evidence':'failure_controls.json'},
     'constructed_diagnostic_controls':{'passed':diagnostics['passed'],'count':len(diagnostics['controls']),'evidence':'diagnostics.json'},
     'external_model_run':external_status,

@@ -52,7 +52,7 @@
     "feedback_privacy",
     "judge"
   ],
-  "root_supporting_files": "Retained in results/ to preserve current provenance-script inputs",
+  "root_supporting_files": "Moved subsequently; see loose_file_relocation_manifest.json. Current baseline: results/supplied_sequence_assembly/raw_partition_baseline.json",
   "policy": "Historical evidence files, generated protocols/reports, and source snapshots remain byte-identical; only navigation READMEs and seven standalone helpers are updated",
   "updated_navigation_and_helpers": [
     "README.md",
@@ -84,7 +84,7 @@
       "original_path": "results/biochemistry/README.md",
       "archived_path": "results/archive/biochemistry/README.md",
       "original_sha256": "52855dc69e1cc79dd2b168d329f749a3ec0188ea6d2b03f8d907a44ea7d18b28",
-      "archived_sha256": "921cad0a0bfaa22df1770aef362bf82af9bad8e36cd85da25f3660684b2699fc",
+      "archived_sha256": "22b929ef2844df0313cd37b6cb46bf5b88c558b5d12875451ae69cf7c683d894",
       "unchanged": false
     },
     {
@@ -1001,7 +1001,7 @@
       "original_path": "results/sequences/README.md",
       "archived_path": "results/archive/sequences/README.md",
       "original_sha256": "5b37ebb9d2dd0e3833813d82955492f7f367cf4728775711a80022fb0d3b4cac",
-      "archived_sha256": "8d4cdc318c89ef764d0aaeae6ad8a064aa01c31eb31656cc60e7c2d353c06f76",
+      "archived_sha256": "106e6fb899d56a397faf3dfa754e162f967fc4609a9af9ab23dabe8e36d10e5f",
       "unchanged": false
     },
     {

@@ -26,8 +26,8 @@ available, and one API retry. Configuration, dependency versions and source
 hashes are recorded in the run record. The key is neither copied nor logged.
 
 [validation.json](validation.json) records the final checks and replay under the
-final source tree. [Test output](../../biochemistry_tests.txt) and
-[JUnit XML](../../biochemistry_tests.xml) are actual test results. Test doubles and
+final source tree. [Test output](../legacy_root_files/biochemistry_tests.txt) and
+[JUnit XML](../legacy_root_files/biochemistry_tests.xml) are actual test results. Test doubles and
 perturbed states are unit-test fixtures, not actual biochemical observations.
 The saved actual model submission is replayed through the bounded interpreter
 only; native unrestricted Python execution is not required.

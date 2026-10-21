@@ -14,7 +14,7 @@ parser.add_argument("protocols", type=Path, nargs="+")
 parser.add_argument("--output", type=Path, required=True)
 args = parser.parse_args()
 record = {
-    "command": ["python", "results/check_native.py", *[str(p) for p in args.protocols], "--output", str(args.output)],
+    "command": ["python", "results/archive/legacy_root_files/check_native.py", *[str(p) for p in args.protocols], "--output", str(args.output)],
     "engine": "opentrons.simulate.simulate (native Python execution of reviewed code)",
     "opentrons": importlib.metadata.version("opentrons"),
     "scope": "Virtual robot command acceptance only; mixture correctness is checked separately by src.validate",

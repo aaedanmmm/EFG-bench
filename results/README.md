@@ -26,14 +26,16 @@ establish success on all five current recovery tasks.
 
 ## Archive and supporting files
 
-[archive/README.md](archive/README.md) indexes eleven historical folders,
+[archive/README.md](archive/README.md) indexes the historical folders,
 including unsuccessful model attempts. The [relocation manifest](archive/relocation_manifest.json)
 maps their original paths to archived paths and records original/current hashes.
 Historical logs and evidence retain their original contents, recorded paths,
 commands, and source hashes.
 
-Root-level support files are retained for existing provenance and replay scripts.
-In particular, `sequence_partition_validation.json` provides the original raw-input
-hash baseline used by the current supplied-sequence validation script. Older
-root-level test reports and JSON summaries describe their recorded repository
-state; use `feedback_privacy/` for the latest full-suite validation.
+The former loose reports and helpers are grouped in
+[archive/legacy_root_files/](archive/legacy_root_files/README.md). The original
+raw-input hash baseline is preserved beside the current assembly evidence as
+[raw_partition_baseline.json](supplied_sequence_assembly/raw_partition_baseline.json).
+Regenerating partitions writes `supplied_sequence_assembly/partition_validation.json`
+without overwriting that baseline. Use `feedback_privacy/` for the latest saved
+full-suite validation; new ad hoc checks can write to `results/local_checks/`.

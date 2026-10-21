@@ -16,8 +16,9 @@ the reference mixing protocol used here are constructed benchmark assumptions.
   seven-part mixture passed with eight tips. This is not an agent rollout.
 - `check_integration.py`: reproduces the local check. It also invokes the restored
   partitioning script and verifies that every FASTA byte is unchanged. The
-  partitioning script records its own evidence in
-  `../../sequence_partition_validation.json`.
+  original report is retained in
+  `../../supplied_sequence_assembly/raw_partition_baseline.json`; regenerated
+  reports use `results/supplied_sequence_assembly/partition_validation.json`.
 - `../ordering/tests.txt` and `../ordering/tests.xml`: full test results, including
   malformed/missing FASTA rejection, source-coordinate validation, catalogue and
   receipt identity, changed-identity rejection, real simulator integration and

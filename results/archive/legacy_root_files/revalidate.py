@@ -8,8 +8,8 @@ from pathlib import Path
 import platform
 import sys
 
-# Enable `python results/revalidate.py ...` from the repository root.
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+# Enable `python results/archive/legacy_root_files/revalidate.py ...` from the repository root.
+sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 from src.runner import validate_code
 from src.scenarios import ROOT, get_scenario
 from src.ordering import replay_orders, account_summary
@@ -21,7 +21,7 @@ async def main():
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     record = {
-        "command": ["python", "results/revalidate.py", str(args.directory), "--output", str(args.output)],
+        "command": ["python", "results/archive/legacy_root_files/revalidate.py", str(args.directory), "--output", str(args.output)],
         "scope": "Actual saved model artifacts revalidated by the bounded interpreter; no new model generation",
         "python": platform.python_version(),
         "opentrons": importlib.metadata.version("opentrons"),
