@@ -1,5 +1,9 @@
 # Results and evidence
 
+Current assembly/recovery tasks use seven inputs derived from data/sequences. See [current validation](supplied_sequence_assembly/README.md). Older three-piece logs and the failed-lot-removal assessment below describe historical benchmark states.
+
+Current benchmark status after legacy failed-lot removal: [failure-system review](failure_system_review/README.md), including fresh controls and outstanding repository failures.
+
 ## Actual model rollout
 
 `rollouts/20261021T065832Z/` contains a completed Inspect evaluation of
@@ -84,3 +88,45 @@ results establish success under virtual robot commands and ideal liquid
 accounting only. They are not measurements of actual mixing, biochemical
 activity, Gibson assembly, or physical OT-2 execution. Three initial tasks are a
 smoke test, not a broad estimate of model capability.
+
+## Biochemical scoring extension
+
+The [biochemical evidence index](biochemistry/README.md) records a new actual
+Kimi K3 Gibson task rollout, per-gate review reports, final tests, and a
+constructed control demonstrating that correct pipetting without incubation
+fails the biochemical score. These are in-silico acceptance results; experimental
+outcomes remain unmeasured.
+
+## Restored ordering and supplied sequences
+
+See [ordering evidence](ordering/README.md) for the restored budget/order system
+and synthetic Kimi K3 rollout. See [sequence evidence](sequences/README.md) for
+validated FASTA identities, exact source reconstruction, unchanged input bytes
+and a local order-to-simulator check. Historical runs above retain their original
+source/dependency records; they do not claim validation of later changes.
+
+## Biochemistry ordering
+
+[Biochemistry ordering evidence](biochemistry_ordering/README.md) records a local
+purchase-to-reaction validation, stock/sequence identity checks and 101 passing
+tests. The new order-first suite has not been claimed as an actual agent rollout.
+
+## Persistent failure and recovery system
+
+See [failures/README.md](failures/README.md) for five constructed fault controls,
+paid diagnostic/repair services, the complete regression results, and real Kimi K3
+recovery rollouts. These add a hidden laboratory-state layer to the existing
+liquid-handling and biochemical gates. Repair outcomes are synthetic; no actual
+human interaction or biochemical experiment was performed.
+
+## Model-based contamination-response judge
+
+[Judge validation](judge/README.md) records the separate assessment of a real
+saved failure-recovery transcript, six explicitly constructed rubric controls,
+exact evidence/timing, automated checks, and earlier invalid model responses.
+The new judge does not replace or alter the protocol correctness score.
+
+## Biochemical checker readability refactor
+
+[Before/after validation](biochemistry_refactor/README.md) records exact report
+equivalence across 99 cases, the existing test baseline, and final test outcomes.

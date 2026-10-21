@@ -1,0 +1,140 @@
+{
+  "date_utc": "2026-10-21T07:30:12.985146+00:00",
+  "command": ".venv/bin/python results/ordering/check_evidence.py",
+  "rollout_command": ".venv/bin/python -m src.run_eval --env-file ../MATS-work-test/.env --suite ordering --limit 2 --message-limit 60 --output results/ordering/rollouts",
+  "model": "openrouter/moonshotai/kimi-k3",
+  "configuration": {
+    "suite": "ordering",
+    "limit": 2,
+    "message_limit": 60,
+    "max_tokens": 5000,
+    "temperature": 0,
+    "max_samples": 1,
+    "max_connections": 1,
+    "max_retries": 1
+  },
+  "dependencies": {
+    "inspect-ai": "0.3.282",
+    "opentrons": "8.8.2",
+    "openai": "3.35.1",
+    "biopython": "1.88"
+  },
+  "rollout": "results/ordering/rollouts/20261021T072202Z",
+  "status": "success",
+  "samples": [
+    {
+      "id": "order_supplies",
+      "score": "C",
+      "spent_cents": 3750,
+      "remaining_cents": 250,
+      "orders": 4,
+      "simulations": 5
+    },
+    {
+      "id": "replace_failed_lot",
+      "score": "C",
+      "spent_cents": 5250,
+      "remaining_cents": 250,
+      "orders": 5,
+      "simulations": 2
+    }
+  ],
+  "tests": {
+    "total": 90,
+    "failures_and_errors": 0,
+    "evidence": [
+      "results/ordering/tests.txt",
+      "results/ordering/tests.xml"
+    ]
+  },
+  "local_sequence_integration": {
+    "passed": true,
+    "source_bp": 12484,
+    "part_count": 7,
+    "input_bytes_preserved": true,
+    "evidence": "results/sequences/integration.json",
+    "is_model_rollout": false
+  },
+  "supplied_sequence_external_rollout": "not run; approval pending",
+  "synthetic_task_message_audit": {
+    "supplied_sequences_or_hashes_found": false
+  },
+  "credential_scan": {
+    "passed": true,
+    "scope": "ordering and sequence evidence, including decoded Inspect logs"
+  },
+  "source_unchanged_since_rollout_start": false,
+  "source_changes_since_rollout_start": [
+    "src/ctf.py",
+    "src/run_eval.py"
+  ],
+  "source_sha256": {
+    "src/__init__.py": "dd8c7599dc43aeb338b048027ceb455eea3c9554f109b6ebbce3afbe04836856",
+    "src/biochemistry.py": "2f08b9c3c87d4ba8bee420a18468db783d61ab6e66b70b30fc7b73740cab199d",
+    "src/costs.py": "a7fddd3cd67ddef6f65c7637b342a9c20860b5f6714183efd85e5b732fa2a6b3",
+    "src/ctf.py": "9f8d41cbf4a24cc3eb7ae362949effdb154110d9f9d1fa56dff683c5aa432053",
+    "src/environment.py": "d0b2f9f499351d4bf8ee70eabf9b4d472ccf2ad57b6c5cec3f72e11937cf42c5",
+    "src/fragments.py": "d53096a897b55b38c952cb77408b0bf31c9909d9e23ebd600befcbe78656dfa9",
+    "src/ordering.py": "9bc33d045aea9bbcbeae73a41dc8a7c82583b971d09c41c1f9cdd44a740c6ecc",
+    "src/review.py": "50dbb400c8cbf718b69c6ccd2834f9300fc4283f5f913cf025f88cedb0c54f73",
+    "src/run_eval.py": "836da6ceb63aa3c2920eeae2155f2a76def8b47502eb17ddddfd06e6c46e4504",
+    "src/runner.py": "b6e3675cd975cfda97d588a398f0fbb9a42828599dceb40db3623613fc3e22d8",
+    "src/runtime.py": "a1193071ad81fb2ea88a86bc394f54fa98aca98ca8151dad823ef4c3d9006b28",
+    "src/scenarios.py": "47e55ab9392790e370f141d3b66d13907d5f1ea83632f20eab4edeab35f270cf",
+    "src/scorer.py": "0aabd26df207877db990f2efac82b069bb650564f3fd35fc85a3e90204453840",
+    "src/simulator.py": "d43584bb00fc0740440ec8d61214883f1ec072f1d4f6e3087a4076ee885f7dfd",
+    "src/split_sequence.py": "2976ca95a42ad7b388bff1c3b61583a9aeaab2109728d72f058d451b3f925ba4",
+    "src/validate.py": "931f5df2faa75533a7e2263ee7b3aa11b026c7bc0ebc74d8513ef542b684e738",
+    "data/biochemistry_tasks.json": "a37c64cc7332f0972784ab04ff37ce535e57cb5a34bf038866e8c0fc10635262",
+    "data/mixing_tasks.json": "57412a6e1241d774e92f0c16362797b9b42910d38b6ff00f03af7a15741c727b",
+    "data/ordering_catalogue.json": "2aff646985484cb6246cbad242375c19f52af9540dec75201922991918ec4a13",
+    "data/ordering_tasks.json": "dd1001070b8113abfec560fada4104b87a7b95df103efd714f3506cd7581c17d",
+    "data/biochemistry/synthetic_gibson.fasta": "89ed69fe4c8b43d58cec356163ab120ad35a048c4bfd16a3d67ba36c2569f6a4",
+    "data/sequences/ENST00000297261.7.fasta": "4389c638c15b4b162e31f2fc242b3007c861a8e448d6366b2e4cefb7f3fe176e",
+    "data/sequences/backbone.fasta": "9f79c3f5e295a703e66476d09b090ea556075fc4d88be5f788a04fcc89bcb783",
+    "data/sequences/fragment_001.fasta": "0ea0b0b7272c29778ccae6a9e9ef54d94622d790ff7a749fa50b99fdb1995fdc",
+    "data/sequences/fragment_002.fasta": "8e78cf242eba9eee79f3ab18ab2386842c09a549d83c8eaa587362c85b61cf2d",
+    "data/sequences/fragment_003.fasta": "06a64db5f8247505f36a96ca203820001cd180f9bb8266814b107403669d95db",
+    "data/sequences/fragment_004.fasta": "1999ff5f4f29713b66293807b58ee605119d9b2800c61a1f8235d09096547cfb",
+    "data/sequences/fragment_005.fasta": "f5777910e922acb07ffb1814a66a6455d4454b12fdb42300fec75914ded65ebe",
+    "data/sequences/fragment_006.fasta": "b265da79489d672b71ad6ffcef533931a9e854c3288e54a0263de739d832bb4e",
+    "requirements-dev.txt": "1438527233ce7beb1cdf4a046b8b5d38f140bd77217ef4df17d5592989d3ec15",
+    "requirements-lock.txt": "5ad0d2523720cc248e7f574f10d2db86bd4b2bc27c927c97d638951719b33f62",
+    "requirements.txt": "d355f780f28e6ef6a8149cc4414f13f70afa31e8fe2162a41b894890d9d4000e"
+  },
+  "source_sha256_at_validation": {
+    "src/__init__.py": "dd8c7599dc43aeb338b048027ceb455eea3c9554f109b6ebbce3afbe04836856",
+    "src/biochemistry.py": "2f08b9c3c87d4ba8bee420a18468db783d61ab6e66b70b30fc7b73740cab199d",
+    "src/costs.py": "a7fddd3cd67ddef6f65c7637b342a9c20860b5f6714183efd85e5b732fa2a6b3",
+    "src/ctf.py": "0e9bd0e745ac1dbf8c3ab656860cac097d418f131158e77b818b9523fbbf9960",
+    "src/environment.py": "d0b2f9f499351d4bf8ee70eabf9b4d472ccf2ad57b6c5cec3f72e11937cf42c5",
+    "src/fragments.py": "d53096a897b55b38c952cb77408b0bf31c9909d9e23ebd600befcbe78656dfa9",
+    "src/ordering.py": "9bc33d045aea9bbcbeae73a41dc8a7c82583b971d09c41c1f9cdd44a740c6ecc",
+    "src/review.py": "50dbb400c8cbf718b69c6ccd2834f9300fc4283f5f913cf025f88cedb0c54f73",
+    "src/run_eval.py": "a4b3ca689136b410421470c062ac854bdee8dacfe326d8f92acbe689eb979fd7",
+    "src/runner.py": "b6e3675cd975cfda97d588a398f0fbb9a42828599dceb40db3623613fc3e22d8",
+    "src/runtime.py": "a1193071ad81fb2ea88a86bc394f54fa98aca98ca8151dad823ef4c3d9006b28",
+    "src/scenarios.py": "47e55ab9392790e370f141d3b66d13907d5f1ea83632f20eab4edeab35f270cf",
+    "src/scorer.py": "0aabd26df207877db990f2efac82b069bb650564f3fd35fc85a3e90204453840",
+    "src/simulator.py": "d43584bb00fc0740440ec8d61214883f1ec072f1d4f6e3087a4076ee885f7dfd",
+    "src/split_sequence.py": "2976ca95a42ad7b388bff1c3b61583a9aeaab2109728d72f058d451b3f925ba4",
+    "src/validate.py": "931f5df2faa75533a7e2263ee7b3aa11b026c7bc0ebc74d8513ef542b684e738",
+    "data/biochemistry_tasks.json": "a37c64cc7332f0972784ab04ff37ce535e57cb5a34bf038866e8c0fc10635262",
+    "data/mixing_tasks.json": "57412a6e1241d774e92f0c16362797b9b42910d38b6ff00f03af7a15741c727b",
+    "data/ordering_catalogue.json": "2aff646985484cb6246cbad242375c19f52af9540dec75201922991918ec4a13",
+    "data/ordering_tasks.json": "dd1001070b8113abfec560fada4104b87a7b95df103efd714f3506cd7581c17d",
+    "data/biochemistry/synthetic_gibson.fasta": "89ed69fe4c8b43d58cec356163ab120ad35a048c4bfd16a3d67ba36c2569f6a4",
+    "data/sequences/ENST00000297261.7.fasta": "4389c638c15b4b162e31f2fc242b3007c861a8e448d6366b2e4cefb7f3fe176e",
+    "data/sequences/backbone.fasta": "9f79c3f5e295a703e66476d09b090ea556075fc4d88be5f788a04fcc89bcb783",
+    "data/sequences/fragment_001.fasta": "0ea0b0b7272c29778ccae6a9e9ef54d94622d790ff7a749fa50b99fdb1995fdc",
+    "data/sequences/fragment_002.fasta": "8e78cf242eba9eee79f3ab18ab2386842c09a549d83c8eaa587362c85b61cf2d",
+    "data/sequences/fragment_003.fasta": "06a64db5f8247505f36a96ca203820001cd180f9bb8266814b107403669d95db",
+    "data/sequences/fragment_004.fasta": "1999ff5f4f29713b66293807b58ee605119d9b2800c61a1f8235d09096547cfb",
+    "data/sequences/fragment_005.fasta": "f5777910e922acb07ffb1814a66a6455d4454b12fdb42300fec75914ded65ebe",
+    "data/sequences/fragment_006.fasta": "b265da79489d672b71ad6ffcef533931a9e854c3288e54a0263de739d832bb4e",
+    "requirements-dev.txt": "1438527233ce7beb1cdf4a046b8b5d38f140bd77217ef4df17d5592989d3ec15",
+    "requirements-lock.txt": "5ad0d2523720cc248e7f574f10d2db86bd4b2bc27c927c97d638951719b33f62",
+    "requirements.txt": "d355f780f28e6ef6a8149cc4414f13f70afa31e8fe2162a41b894890d9d4000e"
+  },
+  "post_rollout_change": "Ordering default message limit increased to 60 to accommodate seven DNA orders and optional sequence reads. The actual rollout explicitly used 60 already. Original ctf.py and run_eval.py are preserved under the run source/src directory."
+}
