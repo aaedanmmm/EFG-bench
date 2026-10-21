@@ -1,7 +1,7 @@
 [
   {
     "id": "order_supplies",
-    "description": "Order the missing reagent aliquots, water, compatible tips and reaction plate, then prepare the two target mixtures. All orders are simulated and charge the task budget. Some reagent lots may fail during simulation; replace failed stock if needed.",
+    "description": "Order the missing reagent aliquots, water, compatible tips and reaction plate, then prepare the two target mixtures. All orders are simulated and charge the task budget.",
     "constructed": true,
     "api_level": "2.19",
     "labware": {
@@ -59,75 +59,6 @@
       "source_capacity_ul": {
         "1:A1": 1500,
         "1:A2": 1500
-      },
-      "faulty_lots": {}
-    }
-  },
-  {
-    "id": "replace_failed_lot",
-    "description": "Order the missing reagent aliquots, water, compatible tips and reaction plate, then prepare the two target mixtures. All orders are simulated and charge the task budget. Some reagent lots may fail during simulation; replace failed stock if needed.",
-    "constructed": true,
-    "api_level": "2.19",
-    "labware": {
-      "1": "opentrons_24_tuberack_nest_1.5ml_snapcap",
-      "2": "opentrons_96_tiprack_20ul",
-      "3": "nest_96_wellplate_200ul_flat"
-    },
-    "pipette": {
-      "name": "p20_single_gen2",
-      "mount": "left",
-      "tip_slots": [
-        "2"
-      ]
-    },
-    "sources": {
-      "1:A1": {
-        "components": {
-          "reagent_A": 0
-        },
-        "dead_volume_ul": 10
-      },
-      "1:A2": {
-        "components": {
-          "water": 0
-        },
-        "dead_volume_ul": 10
-      }
-    },
-    "targets": {
-      "3:A1": {
-        "reagent_A": 5.0,
-        "water": 15.0
-      },
-      "3:A2": {
-        "reagent_A": 5.0,
-        "water": 15.0
-      }
-    },
-    "mix": {
-      "repetitions": 3,
-      "volume_ul": 10
-    },
-    "tolerance_ul": 0.01,
-    "tip_budget": 6,
-    "max_simulations": 5,
-    "unavailable_labware_slots": [
-      "2",
-      "3"
-    ],
-    "available_tips": {
-      "2": 0
-    },
-    "ordering": {
-      "budget_cents": 5500,
-      "source_capacity_ul": {
-        "1:A1": 1500,
-        "1:A2": 1500
-      },
-      "faulty_lots": {
-        "reagent_A": [
-          1
-        ]
       }
     }
   }

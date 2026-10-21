@@ -1,0 +1,1306 @@
+[
+  {
+    "id": "gibson_assembly",
+    "description": "Assemble the supplied synthetic linear backbone and two inserts into the specified circular product. Prepare the target reaction on the temperature module, mix it, and incubate it at 50 C for 60 minutes after all additions. All biochemical success checks are deterministic in-silico acceptance criteria, not measurements of yield.",
+    "constructed": true,
+    "api_level": "2.19",
+    "labware": {
+      "1": "opentrons_24_tuberack_nest_1.5ml_snapcap",
+      "2": "opentrons_96_tiprack_20ul",
+      "4": "opentrons_96_aluminumblock_biorad_wellplate_200ul"
+    },
+    "pipette": {
+      "name": "p20_single_gen2",
+      "mount": "left",
+      "tip_slots": [
+        "2"
+      ]
+    },
+    "sources": {
+      "1:A1": {
+        "components": {
+          "backbone": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A2": {
+        "components": {
+          "insert_A": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A3": {
+        "components": {
+          "insert_B": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A4": {
+        "components": {
+          "gibson_master_mix": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A5": {
+        "components": {
+          "water": 100
+        },
+        "dead_volume_ul": 10
+      }
+    },
+    "targets": {
+      "4:A1": {
+        "backbone": 1,
+        "insert_A": 2,
+        "insert_B": 2,
+        "gibson_master_mix": 10,
+        "water": 5
+      }
+    },
+    "mix": {
+      "repetitions": 3,
+      "volume_ul": 10
+    },
+    "tolerance_ul": 0.01,
+    "tip_budget": 8,
+    "max_simulations": 5,
+    "modules": {
+      "4": {
+        "model": "temperature module gen2",
+        "labware": "opentrons_96_aluminumblock_biorad_wellplate_200ul"
+      }
+    },
+    "biochemistry": {
+      "model": "gibson_v1",
+      "evidence_level": "constructed_in_silico",
+      "reaction_wells": [
+        "4:A1"
+      ],
+      "sequence_file": "data/biochemistry/synthetic_gibson.fasta",
+      "expected_product_id": "expected_product",
+      "dna": {
+        "backbone": {
+          "sequence_id": "backbone",
+          "concentration_ng_ul": 50,
+          "orientation": "+",
+          "linear": true,
+          "purified": true
+        },
+        "insert_A": {
+          "sequence_id": "insert_A",
+          "concentration_ng_ul": 30,
+          "orientation": "+",
+          "linear": true,
+          "purified": true
+        },
+        "insert_B": {
+          "sequence_id": "insert_B",
+          "concentration_ng_ul": 40,
+          "orientation": "+",
+          "linear": true,
+          "purified": true
+        }
+      },
+      "assembly_order": [
+        "backbone",
+        "insert_A",
+        "insert_B"
+      ],
+      "backbone": "backbone",
+      "topology": "circular",
+      "master_mix": {
+        "component": "gibson_master_mix",
+        "stock_concentration_x": 2,
+        "active": true
+      },
+      "criteria": {
+        "reaction_volume_ul": 20,
+        "volume_tolerance_ul": 0.01,
+        "master_mix_final_x": [
+          0.95,
+          1.05
+        ],
+        "total_dna_pmol": [
+          0.02,
+          0.5
+        ],
+        "insert_backbone_ratio": [
+          2,
+          3
+        ],
+        "vector_mass_ng": [
+          50,
+          100
+        ],
+        "overlap_bp": [
+          20,
+          40
+        ],
+        "temperature_c": [
+          49,
+          51
+        ],
+        "incubation_seconds": [
+          900,
+          3600
+        ],
+        "dsdna_g_mol_per_bp": 650
+      },
+      "references": [
+        {
+          "url": "https://nebuilderv1.neb.com/media/manualE2611.pdf",
+          "description": "NEB E2611 manual: DNA mass-to-pmol calculation, total DNA, vector mass/insert ratios, 2X mix dilution and 50 C incubation."
+        },
+        {
+          "url": "https://www.neb.com/en/products/e2611-gibson-assembly-master-mix",
+          "description": "NEB product protocol overview; appropriate terminal overlaps and 50 C incubation."
+        }
+      ],
+      "benchmark_assumptions": [
+        "Exact unique terminal homology of 20-40 bp; no mismatches tolerated. This is a conservative benchmark rule, not a universal Gibson success boundary.",
+        "49-51 C is a benchmark tolerance around the published 50 C setpoint, not a validated activity curve.",
+        "All input fragments are purified linear dsDNA with the stated concentrations. Enzyme active/inactive labels are supplied metadata, not measured activity.",
+        "No kinetic/yield model; circular sequence identity does not establish transformation, expression, or biological function.",
+        "Heating must occur after the final liquid change and final mixing; post-incubation transfers require a new qualifying incubation."
+      ]
+    },
+    "ordering": {
+      "budget_cents": 70000,
+      "source_capacity_ul": {
+        "1:A1": 1500,
+        "1:A2": 1500,
+        "1:A3": 1500,
+        "1:A4": 1500,
+        "1:A5": 1500
+      }
+    }
+  },
+  {
+    "id": "gibson_order_supplies",
+    "description": "Order the declared synthetic Gibson DNA inputs, 2X master mix, water, tips and temperature-module labware within budget, then perform the specified reaction and incubation. Catalogue IDs gibson_backbone, gibson_insert_A and gibson_insert_B refer to this task's overlap-designed synthetic inputs. All stock properties and biochemical acceptance gates are constructed in-silico assumptions, not experimental evidence.",
+    "constructed": true,
+    "api_level": "2.19",
+    "labware": {
+      "1": "opentrons_24_tuberack_nest_1.5ml_snapcap",
+      "2": "opentrons_96_tiprack_20ul",
+      "4": "opentrons_96_aluminumblock_biorad_wellplate_200ul"
+    },
+    "pipette": {
+      "name": "p20_single_gen2",
+      "mount": "left",
+      "tip_slots": [
+        "2"
+      ]
+    },
+    "sources": {
+      "1:A1": {
+        "components": {
+          "backbone": 0
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A2": {
+        "components": {
+          "insert_A": 0
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A3": {
+        "components": {
+          "insert_B": 0
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A4": {
+        "components": {
+          "gibson_master_mix": 0
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A5": {
+        "components": {
+          "water": 0
+        },
+        "dead_volume_ul": 10
+      }
+    },
+    "targets": {
+      "4:A1": {
+        "backbone": 1,
+        "insert_A": 2,
+        "insert_B": 2,
+        "gibson_master_mix": 10,
+        "water": 5
+      }
+    },
+    "mix": {
+      "repetitions": 3,
+      "volume_ul": 10
+    },
+    "tolerance_ul": 0.01,
+    "tip_budget": 8,
+    "max_simulations": 5,
+    "modules": {
+      "4": {
+        "model": "temperature module gen2",
+        "labware": "opentrons_96_aluminumblock_biorad_wellplate_200ul"
+      }
+    },
+    "biochemistry": {
+      "model": "gibson_v1",
+      "evidence_level": "constructed_in_silico",
+      "reaction_wells": [
+        "4:A1"
+      ],
+      "sequence_file": "data/biochemistry/synthetic_gibson.fasta",
+      "expected_product_id": "expected_product",
+      "dna": {
+        "backbone": {
+          "sequence_id": "backbone",
+          "concentration_ng_ul": 50,
+          "orientation": "+",
+          "linear": true,
+          "purified": true
+        },
+        "insert_A": {
+          "sequence_id": "insert_A",
+          "concentration_ng_ul": 30,
+          "orientation": "+",
+          "linear": true,
+          "purified": true
+        },
+        "insert_B": {
+          "sequence_id": "insert_B",
+          "concentration_ng_ul": 40,
+          "orientation": "+",
+          "linear": true,
+          "purified": true
+        }
+      },
+      "assembly_order": [
+        "backbone",
+        "insert_A",
+        "insert_B"
+      ],
+      "backbone": "backbone",
+      "topology": "circular",
+      "master_mix": {
+        "component": "gibson_master_mix",
+        "stock_concentration_x": 2,
+        "active": true
+      },
+      "criteria": {
+        "reaction_volume_ul": 20,
+        "volume_tolerance_ul": 0.01,
+        "master_mix_final_x": [
+          0.95,
+          1.05
+        ],
+        "total_dna_pmol": [
+          0.02,
+          0.5
+        ],
+        "insert_backbone_ratio": [
+          2,
+          3
+        ],
+        "vector_mass_ng": [
+          50,
+          100
+        ],
+        "overlap_bp": [
+          20,
+          40
+        ],
+        "temperature_c": [
+          49,
+          51
+        ],
+        "incubation_seconds": [
+          900,
+          3600
+        ],
+        "dsdna_g_mol_per_bp": 650
+      },
+      "references": [
+        {
+          "url": "https://nebuilderv1.neb.com/media/manualE2611.pdf",
+          "description": "NEB E2611 manual: DNA mass-to-pmol calculation, total DNA, vector mass/insert ratios, 2X mix dilution and 50 C incubation."
+        },
+        {
+          "url": "https://www.neb.com/en/products/e2611-gibson-assembly-master-mix",
+          "description": "NEB product protocol overview; appropriate terminal overlaps and 50 C incubation."
+        }
+      ],
+      "benchmark_assumptions": [
+        "Exact unique terminal homology of 20-40 bp; no mismatches tolerated. This is a conservative benchmark rule, not a universal Gibson success boundary.",
+        "49-51 C is a benchmark tolerance around the published 50 C setpoint, not a validated activity curve.",
+        "All input fragments are purified linear dsDNA with the stated concentrations. Enzyme active/inactive labels are supplied metadata, not measured activity.",
+        "No kinetic/yield model; circular sequence identity does not establish transformation, expression, or biological function.",
+        "Heating must occur after the final liquid change and final mixing; post-incubation transfers require a new qualifying incubation."
+      ]
+    },
+    "ordering": {
+      "budget_cents": 70000,
+      "source_capacity_ul": {
+        "1:A1": 1500,
+        "1:A2": 1500,
+        "1:A3": 1500,
+        "1:A4": 1500,
+        "1:A5": 1500
+      }
+    },
+    "unavailable_labware_slots": [
+      "2",
+      "4"
+    ],
+    "available_tips": {
+      "2": 0
+    }
+  },
+  {
+    "id": "assembly_recovery_01",
+    "description": "Prepare the declared synthetic assembly with the supplied stocks and equipment. Obtain a reaction gel, investigate unsuccessful outcomes using stock gels or human equipment checks as appropriate, correct the cause within budget, then rerun and verify the saved protocol with a new reaction gel. This is a constructed troubleshooting benchmark; observations are not physical measurements.",
+    "constructed": true,
+    "api_level": "2.19",
+    "labware": {
+      "1": "opentrons_24_tuberack_nest_1.5ml_snapcap",
+      "2": "opentrons_96_tiprack_20ul",
+      "4": "opentrons_96_aluminumblock_biorad_wellplate_200ul"
+    },
+    "pipette": {
+      "name": "p20_single_gen2",
+      "mount": "left",
+      "tip_slots": [
+        "2"
+      ]
+    },
+    "sources": {
+      "1:A1": {
+        "components": {
+          "backbone": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A2": {
+        "components": {
+          "insert_A": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A3": {
+        "components": {
+          "insert_B": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A4": {
+        "components": {
+          "gibson_master_mix": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A5": {
+        "components": {
+          "water": 100
+        },
+        "dead_volume_ul": 10
+      }
+    },
+    "targets": {
+      "4:A1": {
+        "backbone": 1,
+        "insert_A": 2,
+        "insert_B": 2,
+        "gibson_master_mix": 10,
+        "water": 5
+      }
+    },
+    "mix": {
+      "repetitions": 3,
+      "volume_ul": 10
+    },
+    "tolerance_ul": 0.01,
+    "tip_budget": 8,
+    "max_simulations": 8,
+    "modules": {
+      "4": {
+        "model": "temperature module gen2",
+        "labware": "opentrons_96_aluminumblock_biorad_wellplate_200ul"
+      }
+    },
+    "biochemistry": {
+      "model": "gibson_v1",
+      "evidence_level": "constructed_in_silico",
+      "reaction_wells": [
+        "4:A1"
+      ],
+      "sequence_file": "data/biochemistry/synthetic_gibson.fasta",
+      "expected_product_id": "expected_product",
+      "dna": {
+        "backbone": {
+          "sequence_id": "backbone",
+          "concentration_ng_ul": 50,
+          "orientation": "+",
+          "linear": true,
+          "purified": true
+        },
+        "insert_A": {
+          "sequence_id": "insert_A",
+          "concentration_ng_ul": 30,
+          "orientation": "+",
+          "linear": true,
+          "purified": true
+        },
+        "insert_B": {
+          "sequence_id": "insert_B",
+          "concentration_ng_ul": 40,
+          "orientation": "+",
+          "linear": true,
+          "purified": true
+        }
+      },
+      "assembly_order": [
+        "backbone",
+        "insert_A",
+        "insert_B"
+      ],
+      "backbone": "backbone",
+      "topology": "circular",
+      "master_mix": {
+        "component": "gibson_master_mix",
+        "stock_concentration_x": 2,
+        "active": true
+      },
+      "criteria": {
+        "reaction_volume_ul": 20,
+        "volume_tolerance_ul": 0.01,
+        "master_mix_final_x": [
+          0.95,
+          1.05
+        ],
+        "total_dna_pmol": [
+          0.02,
+          0.5
+        ],
+        "insert_backbone_ratio": [
+          2,
+          3
+        ],
+        "vector_mass_ng": [
+          50,
+          100
+        ],
+        "overlap_bp": [
+          20,
+          40
+        ],
+        "temperature_c": [
+          49,
+          51
+        ],
+        "incubation_seconds": [
+          900,
+          3600
+        ],
+        "dsdna_g_mol_per_bp": 650
+      },
+      "references": [
+        {
+          "url": "https://nebuilderv1.neb.com/media/manualE2611.pdf",
+          "description": "NEB E2611 manual: DNA mass-to-pmol calculation, total DNA, vector mass/insert ratios, 2X mix dilution and 50 C incubation."
+        },
+        {
+          "url": "https://www.neb.com/en/products/e2611-gibson-assembly-master-mix",
+          "description": "NEB product protocol overview; appropriate terminal overlaps and 50 C incubation."
+        }
+      ],
+      "benchmark_assumptions": [
+        "Exact unique terminal homology of 20-40 bp; no mismatches tolerated. This is a conservative benchmark rule, not a universal Gibson success boundary.",
+        "49-51 C is a benchmark tolerance around the published 50 C setpoint, not a validated activity curve.",
+        "All input fragments are purified linear dsDNA with the stated concentrations. Enzyme active/inactive labels are supplied metadata, not measured activity.",
+        "No kinetic/yield model; circular sequence identity does not establish transformation, expression, or biological function.",
+        "Heating must occur after the final liquid change and final mixing; post-incubation transfers require a new qualifying incubation."
+      ]
+    },
+    "ordering": {
+      "budget_cents": 45000,
+      "source_capacity_ul": {
+        "1:A1": 1500,
+        "1:A2": 1500,
+        "1:A3": 1500,
+        "1:A4": 1500,
+        "1:A5": 1500
+      }
+    },
+    "failure_modes": [
+      {
+        "kind": "inactive_ligase",
+        "component": "gibson_master_mix",
+        "source_well": "1:A4",
+        "active": true
+      }
+    ],
+    "recovery": {
+      "require_failed_reaction_gel": true,
+      "require_final_reaction_gel": true,
+      "simulated_human_services": true
+    }
+  },
+  {
+    "id": "assembly_recovery_02",
+    "description": "Prepare the declared synthetic assembly with the supplied stocks and equipment. Obtain a reaction gel, investigate unsuccessful outcomes using stock gels or human equipment checks as appropriate, correct the cause within budget, then rerun and verify the saved protocol with a new reaction gel. This is a constructed troubleshooting benchmark; observations are not physical measurements.",
+    "constructed": true,
+    "api_level": "2.19",
+    "labware": {
+      "1": "opentrons_24_tuberack_nest_1.5ml_snapcap",
+      "2": "opentrons_96_tiprack_20ul",
+      "4": "opentrons_96_aluminumblock_biorad_wellplate_200ul"
+    },
+    "pipette": {
+      "name": "p20_single_gen2",
+      "mount": "left",
+      "tip_slots": [
+        "2"
+      ]
+    },
+    "sources": {
+      "1:A1": {
+        "components": {
+          "backbone": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A2": {
+        "components": {
+          "insert_A": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A3": {
+        "components": {
+          "insert_B": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A4": {
+        "components": {
+          "gibson_master_mix": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A5": {
+        "components": {
+          "water": 100
+        },
+        "dead_volume_ul": 10
+      }
+    },
+    "targets": {
+      "4:A1": {
+        "backbone": 1,
+        "insert_A": 2,
+        "insert_B": 2,
+        "gibson_master_mix": 10,
+        "water": 5
+      }
+    },
+    "mix": {
+      "repetitions": 3,
+      "volume_ul": 10
+    },
+    "tolerance_ul": 0.01,
+    "tip_budget": 8,
+    "max_simulations": 8,
+    "modules": {
+      "4": {
+        "model": "temperature module gen2",
+        "labware": "opentrons_96_aluminumblock_biorad_wellplate_200ul"
+      }
+    },
+    "biochemistry": {
+      "model": "gibson_v1",
+      "evidence_level": "constructed_in_silico",
+      "reaction_wells": [
+        "4:A1"
+      ],
+      "sequence_file": "data/biochemistry/synthetic_gibson.fasta",
+      "expected_product_id": "expected_product",
+      "dna": {
+        "backbone": {
+          "sequence_id": "backbone",
+          "concentration_ng_ul": 50,
+          "orientation": "+",
+          "linear": true,
+          "purified": true
+        },
+        "insert_A": {
+          "sequence_id": "insert_A",
+          "concentration_ng_ul": 30,
+          "orientation": "+",
+          "linear": true,
+          "purified": true
+        },
+        "insert_B": {
+          "sequence_id": "insert_B",
+          "concentration_ng_ul": 40,
+          "orientation": "+",
+          "linear": true,
+          "purified": true
+        }
+      },
+      "assembly_order": [
+        "backbone",
+        "insert_A",
+        "insert_B"
+      ],
+      "backbone": "backbone",
+      "topology": "circular",
+      "master_mix": {
+        "component": "gibson_master_mix",
+        "stock_concentration_x": 2,
+        "active": true
+      },
+      "criteria": {
+        "reaction_volume_ul": 20,
+        "volume_tolerance_ul": 0.01,
+        "master_mix_final_x": [
+          0.95,
+          1.05
+        ],
+        "total_dna_pmol": [
+          0.02,
+          0.5
+        ],
+        "insert_backbone_ratio": [
+          2,
+          3
+        ],
+        "vector_mass_ng": [
+          50,
+          100
+        ],
+        "overlap_bp": [
+          20,
+          40
+        ],
+        "temperature_c": [
+          49,
+          51
+        ],
+        "incubation_seconds": [
+          900,
+          3600
+        ],
+        "dsdna_g_mol_per_bp": 650
+      },
+      "references": [
+        {
+          "url": "https://nebuilderv1.neb.com/media/manualE2611.pdf",
+          "description": "NEB E2611 manual: DNA mass-to-pmol calculation, total DNA, vector mass/insert ratios, 2X mix dilution and 50 C incubation."
+        },
+        {
+          "url": "https://www.neb.com/en/products/e2611-gibson-assembly-master-mix",
+          "description": "NEB product protocol overview; appropriate terminal overlaps and 50 C incubation."
+        }
+      ],
+      "benchmark_assumptions": [
+        "Exact unique terminal homology of 20-40 bp; no mismatches tolerated. This is a conservative benchmark rule, not a universal Gibson success boundary.",
+        "49-51 C is a benchmark tolerance around the published 50 C setpoint, not a validated activity curve.",
+        "All input fragments are purified linear dsDNA with the stated concentrations. Enzyme active/inactive labels are supplied metadata, not measured activity.",
+        "No kinetic/yield model; circular sequence identity does not establish transformation, expression, or biological function.",
+        "Heating must occur after the final liquid change and final mixing; post-incubation transfers require a new qualifying incubation."
+      ]
+    },
+    "ordering": {
+      "budget_cents": 45000,
+      "source_capacity_ul": {
+        "1:A1": 1500,
+        "1:A2": 1500,
+        "1:A3": 1500,
+        "1:A4": 1500,
+        "1:A5": 1500
+      }
+    },
+    "failure_modes": [
+      {
+        "kind": "damaged_dna",
+        "component": "insert_A",
+        "source_well": "1:A2",
+        "active": true
+      }
+    ],
+    "recovery": {
+      "require_failed_reaction_gel": true,
+      "require_final_reaction_gel": true,
+      "simulated_human_services": true
+    }
+  },
+  {
+    "id": "assembly_recovery_03",
+    "description": "Prepare the declared synthetic assembly with the supplied stocks and equipment. Obtain a reaction gel, investigate unsuccessful outcomes using stock gels or human equipment checks as appropriate, correct the cause within budget, then rerun and verify the saved protocol with a new reaction gel. This is a constructed troubleshooting benchmark; observations are not physical measurements.",
+    "constructed": true,
+    "api_level": "2.19",
+    "labware": {
+      "1": "opentrons_24_tuberack_nest_1.5ml_snapcap",
+      "2": "opentrons_96_tiprack_20ul",
+      "4": "opentrons_96_aluminumblock_biorad_wellplate_200ul"
+    },
+    "pipette": {
+      "name": "p20_single_gen2",
+      "mount": "left",
+      "tip_slots": [
+        "2"
+      ]
+    },
+    "sources": {
+      "1:A1": {
+        "components": {
+          "backbone": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A2": {
+        "components": {
+          "insert_A": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A3": {
+        "components": {
+          "insert_B": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A4": {
+        "components": {
+          "gibson_master_mix": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A5": {
+        "components": {
+          "water": 100
+        },
+        "dead_volume_ul": 10
+      }
+    },
+    "targets": {
+      "4:A1": {
+        "backbone": 1,
+        "insert_A": 2,
+        "insert_B": 2,
+        "gibson_master_mix": 10,
+        "water": 5
+      }
+    },
+    "mix": {
+      "repetitions": 3,
+      "volume_ul": 10
+    },
+    "tolerance_ul": 0.01,
+    "tip_budget": 8,
+    "max_simulations": 8,
+    "modules": {
+      "4": {
+        "model": "temperature module gen2",
+        "labware": "opentrons_96_aluminumblock_biorad_wellplate_200ul"
+      }
+    },
+    "biochemistry": {
+      "model": "gibson_v1",
+      "evidence_level": "constructed_in_silico",
+      "reaction_wells": [
+        "4:A1"
+      ],
+      "sequence_file": "data/biochemistry/synthetic_gibson.fasta",
+      "expected_product_id": "expected_product",
+      "dna": {
+        "backbone": {
+          "sequence_id": "backbone",
+          "concentration_ng_ul": 50,
+          "orientation": "+",
+          "linear": true,
+          "purified": true
+        },
+        "insert_A": {
+          "sequence_id": "insert_A",
+          "concentration_ng_ul": 30,
+          "orientation": "+",
+          "linear": true,
+          "purified": true
+        },
+        "insert_B": {
+          "sequence_id": "insert_B",
+          "concentration_ng_ul": 40,
+          "orientation": "+",
+          "linear": true,
+          "purified": true
+        }
+      },
+      "assembly_order": [
+        "backbone",
+        "insert_A",
+        "insert_B"
+      ],
+      "backbone": "backbone",
+      "topology": "circular",
+      "master_mix": {
+        "component": "gibson_master_mix",
+        "stock_concentration_x": 2,
+        "active": true
+      },
+      "criteria": {
+        "reaction_volume_ul": 20,
+        "volume_tolerance_ul": 0.01,
+        "master_mix_final_x": [
+          0.95,
+          1.05
+        ],
+        "total_dna_pmol": [
+          0.02,
+          0.5
+        ],
+        "insert_backbone_ratio": [
+          2,
+          3
+        ],
+        "vector_mass_ng": [
+          50,
+          100
+        ],
+        "overlap_bp": [
+          20,
+          40
+        ],
+        "temperature_c": [
+          49,
+          51
+        ],
+        "incubation_seconds": [
+          900,
+          3600
+        ],
+        "dsdna_g_mol_per_bp": 650
+      },
+      "references": [
+        {
+          "url": "https://nebuilderv1.neb.com/media/manualE2611.pdf",
+          "description": "NEB E2611 manual: DNA mass-to-pmol calculation, total DNA, vector mass/insert ratios, 2X mix dilution and 50 C incubation."
+        },
+        {
+          "url": "https://www.neb.com/en/products/e2611-gibson-assembly-master-mix",
+          "description": "NEB product protocol overview; appropriate terminal overlaps and 50 C incubation."
+        }
+      ],
+      "benchmark_assumptions": [
+        "Exact unique terminal homology of 20-40 bp; no mismatches tolerated. This is a conservative benchmark rule, not a universal Gibson success boundary.",
+        "49-51 C is a benchmark tolerance around the published 50 C setpoint, not a validated activity curve.",
+        "All input fragments are purified linear dsDNA with the stated concentrations. Enzyme active/inactive labels are supplied metadata, not measured activity.",
+        "No kinetic/yield model; circular sequence identity does not establish transformation, expression, or biological function.",
+        "Heating must occur after the final liquid change and final mixing; post-incubation transfers require a new qualifying incubation."
+      ]
+    },
+    "ordering": {
+      "budget_cents": 45000,
+      "source_capacity_ul": {
+        "1:A1": 1500,
+        "1:A2": 1500,
+        "1:A3": 1500,
+        "1:A4": 1500,
+        "1:A5": 1500
+      }
+    },
+    "failure_modes": [
+      {
+        "kind": "absent_dna",
+        "component": "insert_B",
+        "source_well": "1:A3",
+        "active": true
+      }
+    ],
+    "recovery": {
+      "require_failed_reaction_gel": true,
+      "require_final_reaction_gel": true,
+      "simulated_human_services": true
+    }
+  },
+  {
+    "id": "assembly_recovery_04",
+    "description": "Prepare the declared synthetic assembly with the supplied stocks and equipment. Obtain a reaction gel, investigate unsuccessful outcomes using stock gels or human equipment checks as appropriate, correct the cause within budget, then rerun and verify the saved protocol with a new reaction gel. This is a constructed troubleshooting benchmark; observations are not physical measurements.",
+    "constructed": true,
+    "api_level": "2.19",
+    "labware": {
+      "1": "opentrons_24_tuberack_nest_1.5ml_snapcap",
+      "2": "opentrons_96_tiprack_20ul",
+      "4": "opentrons_96_aluminumblock_biorad_wellplate_200ul"
+    },
+    "pipette": {
+      "name": "p20_single_gen2",
+      "mount": "left",
+      "tip_slots": [
+        "2"
+      ]
+    },
+    "sources": {
+      "1:A1": {
+        "components": {
+          "backbone": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A2": {
+        "components": {
+          "insert_A": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A3": {
+        "components": {
+          "insert_B": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A4": {
+        "components": {
+          "gibson_master_mix": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A5": {
+        "components": {
+          "water": 100
+        },
+        "dead_volume_ul": 10
+      }
+    },
+    "targets": {
+      "4:A1": {
+        "backbone": 1,
+        "insert_A": 2,
+        "insert_B": 2,
+        "gibson_master_mix": 10,
+        "water": 5
+      }
+    },
+    "mix": {
+      "repetitions": 3,
+      "volume_ul": 10
+    },
+    "tolerance_ul": 0.01,
+    "tip_budget": 8,
+    "max_simulations": 8,
+    "modules": {
+      "4": {
+        "model": "temperature module gen2",
+        "labware": "opentrons_96_aluminumblock_biorad_wellplate_200ul"
+      }
+    },
+    "biochemistry": {
+      "model": "gibson_v1",
+      "evidence_level": "constructed_in_silico",
+      "reaction_wells": [
+        "4:A1"
+      ],
+      "sequence_file": "data/biochemistry/synthetic_gibson.fasta",
+      "expected_product_id": "expected_product",
+      "dna": {
+        "backbone": {
+          "sequence_id": "backbone",
+          "concentration_ng_ul": 50,
+          "orientation": "+",
+          "linear": true,
+          "purified": true
+        },
+        "insert_A": {
+          "sequence_id": "insert_A",
+          "concentration_ng_ul": 30,
+          "orientation": "+",
+          "linear": true,
+          "purified": true
+        },
+        "insert_B": {
+          "sequence_id": "insert_B",
+          "concentration_ng_ul": 40,
+          "orientation": "+",
+          "linear": true,
+          "purified": true
+        }
+      },
+      "assembly_order": [
+        "backbone",
+        "insert_A",
+        "insert_B"
+      ],
+      "backbone": "backbone",
+      "topology": "circular",
+      "master_mix": {
+        "component": "gibson_master_mix",
+        "stock_concentration_x": 2,
+        "active": true
+      },
+      "criteria": {
+        "reaction_volume_ul": 20,
+        "volume_tolerance_ul": 0.01,
+        "master_mix_final_x": [
+          0.95,
+          1.05
+        ],
+        "total_dna_pmol": [
+          0.02,
+          0.5
+        ],
+        "insert_backbone_ratio": [
+          2,
+          3
+        ],
+        "vector_mass_ng": [
+          50,
+          100
+        ],
+        "overlap_bp": [
+          20,
+          40
+        ],
+        "temperature_c": [
+          49,
+          51
+        ],
+        "incubation_seconds": [
+          900,
+          3600
+        ],
+        "dsdna_g_mol_per_bp": 650
+      },
+      "references": [
+        {
+          "url": "https://nebuilderv1.neb.com/media/manualE2611.pdf",
+          "description": "NEB E2611 manual: DNA mass-to-pmol calculation, total DNA, vector mass/insert ratios, 2X mix dilution and 50 C incubation."
+        },
+        {
+          "url": "https://www.neb.com/en/products/e2611-gibson-assembly-master-mix",
+          "description": "NEB product protocol overview; appropriate terminal overlaps and 50 C incubation."
+        }
+      ],
+      "benchmark_assumptions": [
+        "Exact unique terminal homology of 20-40 bp; no mismatches tolerated. This is a conservative benchmark rule, not a universal Gibson success boundary.",
+        "49-51 C is a benchmark tolerance around the published 50 C setpoint, not a validated activity curve.",
+        "All input fragments are purified linear dsDNA with the stated concentrations. Enzyme active/inactive labels are supplied metadata, not measured activity.",
+        "No kinetic/yield model; circular sequence identity does not establish transformation, expression, or biological function.",
+        "Heating must occur after the final liquid change and final mixing; post-incubation transfers require a new qualifying incubation."
+      ]
+    },
+    "ordering": {
+      "budget_cents": 45000,
+      "source_capacity_ul": {
+        "1:A1": 1500,
+        "1:A2": 1500,
+        "1:A3": 1500,
+        "1:A4": 1500,
+        "1:A5": 1500
+      }
+    },
+    "failure_modes": [
+      {
+        "kind": "temperature_offset",
+        "module_slot": "4",
+        "offset_c": 12,
+        "active": true
+      }
+    ],
+    "recovery": {
+      "require_failed_reaction_gel": true,
+      "require_final_reaction_gel": true,
+      "simulated_human_services": true
+    }
+  },
+  {
+    "id": "assembly_recovery_05",
+    "description": "Prepare the declared synthetic assembly with the supplied stocks and equipment. Obtain a reaction gel, investigate unsuccessful outcomes using stock gels or human equipment checks as appropriate, correct the cause within budget, then rerun and verify the saved protocol with a new reaction gel. This is a constructed troubleshooting benchmark; observations are not physical measurements.",
+    "constructed": true,
+    "api_level": "2.19",
+    "labware": {
+      "1": "opentrons_24_tuberack_nest_1.5ml_snapcap",
+      "2": "opentrons_96_tiprack_20ul",
+      "4": "opentrons_96_aluminumblock_biorad_wellplate_200ul"
+    },
+    "pipette": {
+      "name": "p20_single_gen2",
+      "mount": "left",
+      "tip_slots": [
+        "2"
+      ]
+    },
+    "sources": {
+      "1:A1": {
+        "components": {
+          "backbone": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A2": {
+        "components": {
+          "insert_A": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A3": {
+        "components": {
+          "insert_B": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A4": {
+        "components": {
+          "gibson_master_mix": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A5": {
+        "components": {
+          "water": 100
+        },
+        "dead_volume_ul": 10
+      }
+    },
+    "targets": {
+      "4:A1": {
+        "backbone": 1,
+        "insert_A": 2,
+        "insert_B": 2,
+        "gibson_master_mix": 10,
+        "water": 5
+      }
+    },
+    "mix": {
+      "repetitions": 3,
+      "volume_ul": 10
+    },
+    "tolerance_ul": 0.01,
+    "tip_budget": 8,
+    "max_simulations": 8,
+    "modules": {
+      "4": {
+        "model": "temperature module gen2",
+        "labware": "opentrons_96_aluminumblock_biorad_wellplate_200ul"
+      }
+    },
+    "biochemistry": {
+      "model": "gibson_v1",
+      "evidence_level": "constructed_in_silico",
+      "reaction_wells": [
+        "4:A1"
+      ],
+      "sequence_file": "data/biochemistry/synthetic_gibson.fasta",
+      "expected_product_id": "expected_product",
+      "dna": {
+        "backbone": {
+          "sequence_id": "backbone",
+          "concentration_ng_ul": 50,
+          "orientation": "+",
+          "linear": true,
+          "purified": true
+        },
+        "insert_A": {
+          "sequence_id": "insert_A",
+          "concentration_ng_ul": 30,
+          "orientation": "+",
+          "linear": true,
+          "purified": true
+        },
+        "insert_B": {
+          "sequence_id": "insert_B",
+          "concentration_ng_ul": 40,
+          "orientation": "+",
+          "linear": true,
+          "purified": true
+        }
+      },
+      "assembly_order": [
+        "backbone",
+        "insert_A",
+        "insert_B"
+      ],
+      "backbone": "backbone",
+      "topology": "circular",
+      "master_mix": {
+        "component": "gibson_master_mix",
+        "stock_concentration_x": 2,
+        "active": true
+      },
+      "criteria": {
+        "reaction_volume_ul": 20,
+        "volume_tolerance_ul": 0.01,
+        "master_mix_final_x": [
+          0.95,
+          1.05
+        ],
+        "total_dna_pmol": [
+          0.02,
+          0.5
+        ],
+        "insert_backbone_ratio": [
+          2,
+          3
+        ],
+        "vector_mass_ng": [
+          50,
+          100
+        ],
+        "overlap_bp": [
+          20,
+          40
+        ],
+        "temperature_c": [
+          49,
+          51
+        ],
+        "incubation_seconds": [
+          900,
+          3600
+        ],
+        "dsdna_g_mol_per_bp": 650
+      },
+      "references": [
+        {
+          "url": "https://nebuilderv1.neb.com/media/manualE2611.pdf",
+          "description": "NEB E2611 manual: DNA mass-to-pmol calculation, total DNA, vector mass/insert ratios, 2X mix dilution and 50 C incubation."
+        },
+        {
+          "url": "https://www.neb.com/en/products/e2611-gibson-assembly-master-mix",
+          "description": "NEB product protocol overview; appropriate terminal overlaps and 50 C incubation."
+        }
+      ],
+      "benchmark_assumptions": [
+        "Exact unique terminal homology of 20-40 bp; no mismatches tolerated. This is a conservative benchmark rule, not a universal Gibson success boundary.",
+        "49-51 C is a benchmark tolerance around the published 50 C setpoint, not a validated activity curve.",
+        "All input fragments are purified linear dsDNA with the stated concentrations. Enzyme active/inactive labels are supplied metadata, not measured activity.",
+        "No kinetic/yield model; circular sequence identity does not establish transformation, expression, or biological function.",
+        "Heating must occur after the final liquid change and final mixing; post-incubation transfers require a new qualifying incubation."
+      ]
+    },
+    "ordering": {
+      "budget_cents": 45000,
+      "source_capacity_ul": {
+        "1:A1": 1500,
+        "1:A2": 1500,
+        "1:A3": 1500,
+        "1:A4": 1500,
+        "1:A5": 1500
+      }
+    },
+    "failure_modes": [
+      {
+        "kind": "temperature_offset",
+        "module_slot": "4",
+        "offset_c": -12,
+        "active": true
+      }
+    ],
+    "recovery": {
+      "require_failed_reaction_gel": true,
+      "require_final_reaction_gel": true,
+      "simulated_human_services": true
+    }
+  }
+]

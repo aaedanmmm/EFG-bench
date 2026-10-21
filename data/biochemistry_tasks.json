@@ -1,7 +1,7 @@
 [
   {
-    "id": "gibson_assembly",
-    "description": "Assemble the supplied synthetic linear backbone and two inserts into the specified circular product. Prepare the target reaction on the temperature module, mix it, and incubate it at 50 C for 60 minutes after all additions. All biochemical success checks are deterministic in-silico acceptance criteria, not measurements of yield.",
+    "id": "sequence_assembly",
+    "description": "Stitch all seven supplied DNA pieces (fragment_001 through fragment_006 and backbone) into the circular benchmark target matching the full original sequence. Raw input cores come from data/sequences. The available constructed, overlap-ready stocks preserve each raw core and append the next core's first 30 bases. Use read_sequence and the diagnostic size reference to inspect their identities; prepare the exact target mixture, mix and incubate at 50 C for 60 minutes. The named backbone is a source remainder, not an added plasmid. Seven-piece reaction criteria and stock concentrations are benchmark assumptions, not validated experimental conditions.",
     "constructed": true,
     "api_level": "2.19",
     "labware": {
@@ -19,29 +19,53 @@
     "sources": {
       "1:A1": {
         "components": {
-          "backbone": 100
+          "fragment_001": 100
         },
         "dead_volume_ul": 10
       },
       "1:A2": {
         "components": {
-          "insert_A": 100
+          "fragment_002": 100
         },
         "dead_volume_ul": 10
       },
       "1:A3": {
         "components": {
-          "insert_B": 100
+          "fragment_003": 100
         },
         "dead_volume_ul": 10
       },
       "1:A4": {
         "components": {
-          "gibson_master_mix": 100
+          "fragment_004": 100
         },
         "dead_volume_ul": 10
       },
       "1:A5": {
+        "components": {
+          "fragment_005": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:A6": {
+        "components": {
+          "fragment_006": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:B1": {
+        "components": {
+          "backbone": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:B2": {
+        "components": {
+          "gibson_master_mix": 100
+        },
+        "dead_volume_ul": 10
+      },
+      "1:B3": {
         "components": {
           "water": 100
         },
@@ -50,11 +74,15 @@
     },
     "targets": {
       "4:A1": {
+        "fragment_001": 1,
+        "fragment_002": 1,
+        "fragment_003": 1,
+        "fragment_004": 1,
+        "fragment_005": 1,
+        "fragment_006": 1,
         "backbone": 1,
-        "insert_A": 2,
-        "insert_B": 2,
         "gibson_master_mix": 10,
-        "water": 5
+        "water": 3
       }
     },
     "mix": {
@@ -62,7 +90,7 @@
       "volume_ul": 10
     },
     "tolerance_ul": 0.01,
-    "tip_budget": 8,
+    "tip_budget": 12,
     "max_simulations": 5,
     "modules": {
       "4": {
@@ -76,35 +104,172 @@
       "reaction_wells": [
         "4:A1"
       ],
-      "sequence_file": "data/biochemistry/synthetic_gibson.fasta",
+      "sequence_file": "data/biochemistry/supplied_partitions_gibson.fasta",
       "expected_product_id": "expected_product",
       "dna": {
+        "fragment_001": {
+          "sequence_id": "fragment_001",
+          "concentration_ng_ul": 15.054,
+          "orientation": "+",
+          "linear": true,
+          "purified": true,
+          "raw_input": {
+            "name": "fragment_001",
+            "record_id": "fragment_001",
+            "sequence_file": "data/sequences/fragment_001.fasta",
+            "length_bp": 742,
+            "sha256": "20739b322314ad528b89fda5cb43138aeea3f7796468fa5ccbda569d719e75d2",
+            "file_sha256": "a9beaadbaac75746644a8c11c54c8186091189902ba2dbfad788affc51d08052",
+            "source": "user_supplied_sequence_partition",
+            "source_coordinates_1based_inclusive": [
+              1,
+              742
+            ]
+          },
+          "core_length_bp": 742,
+          "three_prime_overlap_bp": 30
+        },
+        "fragment_002": {
+          "sequence_id": "fragment_002",
+          "concentration_ng_ul": 30.537,
+          "orientation": "+",
+          "linear": true,
+          "purified": true,
+          "raw_input": {
+            "name": "fragment_002",
+            "record_id": "fragment_002",
+            "sequence_file": "data/sequences/fragment_002.fasta",
+            "length_bp": 1536,
+            "sha256": "e8617cdb91b1f1473cdabbe74f8103d3833a64ce7acddf5a65b61685613cb6bd",
+            "file_sha256": "4f89e9b32eac999f1fa64f6d8f695c0788240e93cd577c6b5e10c3726f4067b2",
+            "source": "user_supplied_sequence_partition",
+            "source_coordinates_1based_inclusive": [
+              743,
+              2278
+            ]
+          },
+          "core_length_bp": 1536,
+          "three_prime_overlap_bp": 30
+        },
+        "fragment_003": {
+          "sequence_id": "fragment_003",
+          "concentration_ng_ul": 22.1325,
+          "orientation": "+",
+          "linear": true,
+          "purified": true,
+          "raw_input": {
+            "name": "fragment_003",
+            "record_id": "fragment_003",
+            "sequence_file": "data/sequences/fragment_003.fasta",
+            "length_bp": 1105,
+            "sha256": "84297c8f33d761002538bb834b5a2970dc4e36ee5372692ce6b1a31755a464a1",
+            "file_sha256": "2aeddcf73e696b80cdd15af6adee76fe79c58745fd8961107e6d915d62f990df",
+            "source": "user_supplied_sequence_partition",
+            "source_coordinates_1based_inclusive": [
+              2279,
+              3383
+            ]
+          },
+          "core_length_bp": 1105,
+          "three_prime_overlap_bp": 30
+        },
+        "fragment_004": {
+          "sequence_id": "fragment_004",
+          "concentration_ng_ul": 12.636,
+          "orientation": "+",
+          "linear": true,
+          "purified": true,
+          "raw_input": {
+            "name": "fragment_004",
+            "record_id": "fragment_004",
+            "sequence_file": "data/sequences/fragment_004.fasta",
+            "length_bp": 618,
+            "sha256": "f729c0b3c16c3372fe83ead7932c1e83237950a50ba608102a8e19eea14529b2",
+            "file_sha256": "6098c100066dd18d69099ca1ad589b41e5db6b28071b847c25adfa38e11b0250",
+            "source": "user_supplied_sequence_partition",
+            "source_coordinates_1based_inclusive": [
+              3384,
+              4001
+            ]
+          },
+          "core_length_bp": 618,
+          "three_prime_overlap_bp": 30
+        },
+        "fragment_005": {
+          "sequence_id": "fragment_005",
+          "concentration_ng_ul": 37.4985,
+          "orientation": "+",
+          "linear": true,
+          "purified": true,
+          "raw_input": {
+            "name": "fragment_005",
+            "record_id": "fragment_005",
+            "sequence_file": "data/sequences/fragment_005.fasta",
+            "length_bp": 1893,
+            "sha256": "ff0e0cd9e19e574016195abeef519cec7b6023f5977987b065a253bdf2da8f49",
+            "file_sha256": "0fdbbe55f48bfd501a4b9380ac586a2072057d864872fe7b46445fc7d4c18469",
+            "source": "user_supplied_sequence_partition",
+            "source_coordinates_1based_inclusive": [
+              4002,
+              5894
+            ]
+          },
+          "core_length_bp": 1893,
+          "three_prime_overlap_bp": 30
+        },
+        "fragment_006": {
+          "sequence_id": "fragment_006",
+          "concentration_ng_ul": 25.35,
+          "orientation": "+",
+          "linear": true,
+          "purified": true,
+          "raw_input": {
+            "name": "fragment_006",
+            "record_id": "fragment_006",
+            "sequence_file": "data/sequences/fragment_006.fasta",
+            "length_bp": 1270,
+            "sha256": "0dd0632d12499631654f0478231d6b05bda9ef25131074c143347adc07f1258e",
+            "file_sha256": "abf02f7a7d08d283fa18ad549f8d93d0087cc1577b99a18f49a6fd645e5e6288",
+            "source": "user_supplied_sequence_partition",
+            "source_coordinates_1based_inclusive": [
+              5895,
+              7164
+            ]
+          },
+          "core_length_bp": 1270,
+          "three_prime_overlap_bp": 30
+        },
         "backbone": {
           "sequence_id": "backbone",
-          "concentration_ng_ul": 50,
+          "concentration_ng_ul": 104.325,
           "orientation": "+",
           "linear": true,
-          "purified": true
-        },
-        "insert_A": {
-          "sequence_id": "insert_A",
-          "concentration_ng_ul": 30,
-          "orientation": "+",
-          "linear": true,
-          "purified": true
-        },
-        "insert_B": {
-          "sequence_id": "insert_B",
-          "concentration_ng_ul": 40,
-          "orientation": "+",
-          "linear": true,
-          "purified": true
+          "purified": true,
+          "raw_input": {
+            "name": "backbone",
+            "record_id": "backbone",
+            "sequence_file": "data/sequences/backbone.fasta",
+            "length_bp": 5320,
+            "sha256": "864f6393e50d004a5aab949350cddd7722f1cb5de460bbec8bf14f2d46b432b9",
+            "file_sha256": "38541cb58347a7defb1943cf6ff467ff71d2c7d638b3629cd819f7b16def922a",
+            "source": "user_supplied_sequence_partition",
+            "source_coordinates_1based_inclusive": [
+              7165,
+              12484
+            ]
+          },
+          "core_length_bp": 5320,
+          "three_prime_overlap_bp": 30
         }
       },
       "assembly_order": [
-        "backbone",
-        "insert_A",
-        "insert_B"
+        "fragment_001",
+        "fragment_002",
+        "fragment_003",
+        "fragment_004",
+        "fragment_005",
+        "fragment_006",
+        "backbone"
       ],
       "backbone": "backbone",
       "topology": "circular",
@@ -121,16 +286,16 @@
           1.05
         ],
         "total_dna_pmol": [
-          0.02,
+          0.2,
           0.5
         ],
         "insert_backbone_ratio": [
-          2,
-          3
+          0.95,
+          1.05
         ],
         "vector_mass_ng": [
-          50,
-          100
+          100,
+          110
         ],
         "overlap_bp": [
           20,
@@ -141,7 +306,7 @@
           51
         ],
         "incubation_seconds": [
-          900,
+          3600,
           3600
         ],
         "dsdna_g_mol_per_bp": 650
@@ -157,12 +322,30 @@
         }
       ],
       "benchmark_assumptions": [
-        "Exact unique terminal homology of 20-40 bp; no mismatches tolerated. This is a conservative benchmark rule, not a universal Gibson success boundary.",
-        "49-51 C is a benchmark tolerance around the published 50 C setpoint, not a validated activity curve.",
-        "All input fragments are purified linear dsDNA with the stated concentrations. Enzyme active/inactive labels are supplied metadata, not measured activity.",
-        "No kinetic/yield model; circular sequence identity does not establish transformation, expression, or biological function.",
-        "Heating must occur after the final liquid change and final mixing; post-incubation transfers require a new qualifying incubation."
-      ]
-    }
+        "Seven prepared stocks each contain an exact data/sequences core plus a constructed 30 bp closing/adjacent overlap. Preparation is assumed, not performed by the OT-2.",
+        "Equal 0.03 pmol per piece at 1 uL each is set by constructed stock concentrations. 20 uL reaction, 1X master mix, 50 C and 60 min are benchmark gates.",
+        "Seven-piece acceptance criteria extrapolate beyond the cited NEB 4-6 piece formulation; no seven-piece efficiency or yield is claimed.",
+        "The sequence called backbone is the original trailing genomic remainder, not a cloning vector. Circularity is a constructed target topology.",
+        "No kinetic/yield or functional biological model. Heating must follow final additions/mixing."
+      ],
+      "input_design_manifest": "data/biochemistry/supplied_partition_design.json",
+      "catalogue_prefix": "sequence_",
+      "criteria_basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+    },
+    "ordering": {
+      "budget_cents": 70000,
+      "source_capacity_ul": {
+        "1:A1": 1500,
+        "1:A2": 1500,
+        "1:A3": 1500,
+        "1:A4": 1500,
+        "1:A5": 1500,
+        "1:A6": 1500,
+        "1:B1": 1500,
+        "1:B2": 1500,
+        "1:B3": 1500
+      }
+    },
+    "reference_protocol": "examples/supplied_sequence_assembly.py"
   }
 ]
