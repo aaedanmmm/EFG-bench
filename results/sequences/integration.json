@@ -1,0 +1,786 @@
+{
+  "type": "Actual local validation using constructed order requests/protocol; not an agent rollout or biochemical measurement",
+  "command": [
+    ".venv/bin/python",
+    "results/sequences/check_integration.py"
+  ],
+  "date_utc": "2026-10-21T07:21:42.828635+00:00",
+  "dependencies": {
+    "biopython": "1.88",
+    "opentrons": "8.8.2",
+    "inspect-ai": "0.3.282"
+  },
+  "partition_command": [
+    ".venv/bin/python",
+    "src/split_sequence.py"
+  ],
+  "input_fasta_bytes_preserved": true,
+  "input_file_sha256": {
+    "data/sequences/ENST00000297261.7.fasta": "4389c638c15b4b162e31f2fc242b3007c861a8e448d6366b2e4cefb7f3fe176e",
+    "data/sequences/backbone.fasta": "9f79c3f5e295a703e66476d09b090ea556075fc4d88be5f788a04fcc89bcb783",
+    "data/sequences/fragment_001.fasta": "0ea0b0b7272c29778ccae6a9e9ef54d94622d790ff7a749fa50b99fdb1995fdc",
+    "data/sequences/fragment_002.fasta": "8e78cf242eba9eee79f3ab18ab2386842c09a549d83c8eaa587362c85b61cf2d",
+    "data/sequences/fragment_003.fasta": "06a64db5f8247505f36a96ca203820001cd180f9bb8266814b107403669d95db",
+    "data/sequences/fragment_004.fasta": "1999ff5f4f29713b66293807b58ee605119d9b2800c61a1f8235d09096547cfb",
+    "data/sequences/fragment_005.fasta": "f5777910e922acb07ffb1814a66a6455d4454b12fdb42300fec75914ded65ebe",
+    "data/sequences/fragment_006.fasta": "b265da79489d672b71ad6ffcef533931a9e854c3288e54a0263de739d832bb4e"
+  },
+  "manifest": {
+    "source": {
+      "sequence_file": "data/sequences/ENST00000297261.7.fasta",
+      "record_id": "ENSG00000164690.8",
+      "header": "ENSG00000164690.8 genomic",
+      "length_bp": 12484,
+      "sha256": "57e23d1a07494e60968118ad7524152c67b61b21f7102ba92be5884575cad921",
+      "file_sha256": "4389c638c15b4b162e31f2fc242b3007c861a8e448d6366b2e4cefb7f3fe176e"
+    },
+    "fragments": {
+      "fragment_001": {
+        "name": "fragment_001",
+        "record_id": "fragment_001",
+        "sequence_file": "data/sequences/fragment_001.fasta",
+        "length_bp": 1000,
+        "sha256": "e0ea704989eccaf8d6b607268eca9d1b6d4d54e4768e33aadc1533ed5cf487b8",
+        "file_sha256": "0ea0b0b7272c29778ccae6a9e9ef54d94622d790ff7a749fa50b99fdb1995fdc",
+        "source": "user_supplied_sequence_partition",
+        "source_coordinates_1based_inclusive": [
+          1,
+          1000
+        ]
+      },
+      "fragment_002": {
+        "name": "fragment_002",
+        "record_id": "fragment_002",
+        "sequence_file": "data/sequences/fragment_002.fasta",
+        "length_bp": 1000,
+        "sha256": "265daa2ea49ed7f9e1bae83dfc4c9a33b3f554caf641e504d2c52ba133a64dff",
+        "file_sha256": "8e78cf242eba9eee79f3ab18ab2386842c09a549d83c8eaa587362c85b61cf2d",
+        "source": "user_supplied_sequence_partition",
+        "source_coordinates_1based_inclusive": [
+          1001,
+          2000
+        ]
+      },
+      "fragment_003": {
+        "name": "fragment_003",
+        "record_id": "fragment_003",
+        "sequence_file": "data/sequences/fragment_003.fasta",
+        "length_bp": 1000,
+        "sha256": "1deff100de826f57c97e1905aa8ace28eaf8efdbfd7d36da296aadc0c9598da2",
+        "file_sha256": "06a64db5f8247505f36a96ca203820001cd180f9bb8266814b107403669d95db",
+        "source": "user_supplied_sequence_partition",
+        "source_coordinates_1based_inclusive": [
+          2001,
+          3000
+        ]
+      },
+      "fragment_004": {
+        "name": "fragment_004",
+        "record_id": "fragment_004",
+        "sequence_file": "data/sequences/fragment_004.fasta",
+        "length_bp": 1000,
+        "sha256": "19c8de4228f93498cd5b41cbf42ae04395d9b0177cafe8c364a07203b6d88ce6",
+        "file_sha256": "1999ff5f4f29713b66293807b58ee605119d9b2800c61a1f8235d09096547cfb",
+        "source": "user_supplied_sequence_partition",
+        "source_coordinates_1based_inclusive": [
+          3001,
+          4000
+        ]
+      },
+      "fragment_005": {
+        "name": "fragment_005",
+        "record_id": "fragment_005",
+        "sequence_file": "data/sequences/fragment_005.fasta",
+        "length_bp": 1000,
+        "sha256": "8468d642385dc610f7822e71f60930bd55c81a6ef15bbdf471ccf3dc5f123152",
+        "file_sha256": "f5777910e922acb07ffb1814a66a6455d4454b12fdb42300fec75914ded65ebe",
+        "source": "user_supplied_sequence_partition",
+        "source_coordinates_1based_inclusive": [
+          4001,
+          5000
+        ]
+      },
+      "fragment_006": {
+        "name": "fragment_006",
+        "record_id": "fragment_006",
+        "sequence_file": "data/sequences/fragment_006.fasta",
+        "length_bp": 1000,
+        "sha256": "48bfcec36899f299e0829445034c79b4add59585e8b050b9c8ad3b6682425189",
+        "file_sha256": "b265da79489d672b71ad6ffcef533931a9e854c3288e54a0263de739d832bb4e",
+        "source": "user_supplied_sequence_partition",
+        "source_coordinates_1based_inclusive": [
+          5001,
+          6000
+        ]
+      },
+      "backbone": {
+        "name": "backbone",
+        "record_id": "backbone",
+        "sequence_file": "data/sequences/backbone.fasta",
+        "length_bp": 6484,
+        "sha256": "7871cf6b2f8281b8bc29431ff4336540829cd0f34e3de831b6ac66e3edc6243a",
+        "file_sha256": "9f79c3f5e295a703e66476d09b090ea556075fc4d88be5f788a04fcc89bcb783",
+        "source": "user_supplied_sequence_partition",
+        "source_coordinates_1based_inclusive": [
+          6001,
+          12484
+        ]
+      }
+    },
+    "reconstruction_order": [
+      "fragment_001",
+      "fragment_002",
+      "fragment_003",
+      "fragment_004",
+      "fragment_005",
+      "fragment_006",
+      "backbone"
+    ],
+    "exact_reconstruction": true,
+    "identity_verification": "not_performed; source header and filename identify different accession strings",
+    "assembly_design": "not_provided; no overlaps or vector sequence have been added; backbone is the trailing source remainder"
+  },
+  "orders": {
+    "currency": "USD",
+    "budget_cents": 110000,
+    "spent_cents": 107250,
+    "remaining_cents": 2750,
+    "orders": [
+      {
+        "order_id": "order-0001",
+        "request": {
+          "item_id": "fragment_001",
+          "destination": "1:A1",
+          "quantity": 1,
+          "replace": false,
+          "request_id": ""
+        },
+        "status": "delivered",
+        "currency": "USD",
+        "total_cents": 15000,
+        "remaining_cents": 95000,
+        "delivery": {
+          "source_well": "1:A1",
+          "component": "fragment_001",
+          "volume_ul": 50,
+          "lot_id": "order-0001",
+          "quality": "unverified",
+          "sequence": {
+            "name": "fragment_001",
+            "record_id": "fragment_001",
+            "sequence_file": "data/sequences/fragment_001.fasta",
+            "length_bp": 1000,
+            "sha256": "e0ea704989eccaf8d6b607268eca9d1b6d4d54e4768e33aadc1533ed5cf487b8",
+            "file_sha256": "0ea0b0b7272c29778ccae6a9e9ef54d94622d790ff7a749fa50b99fdb1995fdc",
+            "source": "user_supplied_sequence_partition",
+            "source_coordinates_1based_inclusive": [
+              1,
+              1000
+            ]
+          },
+          "concentration_ng_per_ul": 20.0,
+          "physical_stock_provenance": "constructed benchmark assumption; not measured from FASTA"
+        }
+      },
+      {
+        "order_id": "order-0002",
+        "request": {
+          "item_id": "fragment_002",
+          "destination": "1:A2",
+          "quantity": 1,
+          "replace": false,
+          "request_id": ""
+        },
+        "status": "delivered",
+        "currency": "USD",
+        "total_cents": 15000,
+        "remaining_cents": 80000,
+        "delivery": {
+          "source_well": "1:A2",
+          "component": "fragment_002",
+          "volume_ul": 50,
+          "lot_id": "order-0002",
+          "quality": "unverified",
+          "sequence": {
+            "name": "fragment_002",
+            "record_id": "fragment_002",
+            "sequence_file": "data/sequences/fragment_002.fasta",
+            "length_bp": 1000,
+            "sha256": "265daa2ea49ed7f9e1bae83dfc4c9a33b3f554caf641e504d2c52ba133a64dff",
+            "file_sha256": "8e78cf242eba9eee79f3ab18ab2386842c09a549d83c8eaa587362c85b61cf2d",
+            "source": "user_supplied_sequence_partition",
+            "source_coordinates_1based_inclusive": [
+              1001,
+              2000
+            ]
+          },
+          "concentration_ng_per_ul": 20.0,
+          "physical_stock_provenance": "constructed benchmark assumption; not measured from FASTA"
+        }
+      },
+      {
+        "order_id": "order-0003",
+        "request": {
+          "item_id": "fragment_003",
+          "destination": "1:A3",
+          "quantity": 1,
+          "replace": false,
+          "request_id": ""
+        },
+        "status": "delivered",
+        "currency": "USD",
+        "total_cents": 15000,
+        "remaining_cents": 65000,
+        "delivery": {
+          "source_well": "1:A3",
+          "component": "fragment_003",
+          "volume_ul": 50,
+          "lot_id": "order-0003",
+          "quality": "unverified",
+          "sequence": {
+            "name": "fragment_003",
+            "record_id": "fragment_003",
+            "sequence_file": "data/sequences/fragment_003.fasta",
+            "length_bp": 1000,
+            "sha256": "1deff100de826f57c97e1905aa8ace28eaf8efdbfd7d36da296aadc0c9598da2",
+            "file_sha256": "06a64db5f8247505f36a96ca203820001cd180f9bb8266814b107403669d95db",
+            "source": "user_supplied_sequence_partition",
+            "source_coordinates_1based_inclusive": [
+              2001,
+              3000
+            ]
+          },
+          "concentration_ng_per_ul": 20.0,
+          "physical_stock_provenance": "constructed benchmark assumption; not measured from FASTA"
+        }
+      },
+      {
+        "order_id": "order-0004",
+        "request": {
+          "item_id": "fragment_004",
+          "destination": "1:A4",
+          "quantity": 1,
+          "replace": false,
+          "request_id": ""
+        },
+        "status": "delivered",
+        "currency": "USD",
+        "total_cents": 15000,
+        "remaining_cents": 50000,
+        "delivery": {
+          "source_well": "1:A4",
+          "component": "fragment_004",
+          "volume_ul": 50,
+          "lot_id": "order-0004",
+          "quality": "unverified",
+          "sequence": {
+            "name": "fragment_004",
+            "record_id": "fragment_004",
+            "sequence_file": "data/sequences/fragment_004.fasta",
+            "length_bp": 1000,
+            "sha256": "19c8de4228f93498cd5b41cbf42ae04395d9b0177cafe8c364a07203b6d88ce6",
+            "file_sha256": "1999ff5f4f29713b66293807b58ee605119d9b2800c61a1f8235d09096547cfb",
+            "source": "user_supplied_sequence_partition",
+            "source_coordinates_1based_inclusive": [
+              3001,
+              4000
+            ]
+          },
+          "concentration_ng_per_ul": 20.0,
+          "physical_stock_provenance": "constructed benchmark assumption; not measured from FASTA"
+        }
+      },
+      {
+        "order_id": "order-0005",
+        "request": {
+          "item_id": "fragment_005",
+          "destination": "1:A5",
+          "quantity": 1,
+          "replace": false,
+          "request_id": ""
+        },
+        "status": "delivered",
+        "currency": "USD",
+        "total_cents": 15000,
+        "remaining_cents": 35000,
+        "delivery": {
+          "source_well": "1:A5",
+          "component": "fragment_005",
+          "volume_ul": 50,
+          "lot_id": "order-0005",
+          "quality": "unverified",
+          "sequence": {
+            "name": "fragment_005",
+            "record_id": "fragment_005",
+            "sequence_file": "data/sequences/fragment_005.fasta",
+            "length_bp": 1000,
+            "sha256": "8468d642385dc610f7822e71f60930bd55c81a6ef15bbdf471ccf3dc5f123152",
+            "file_sha256": "f5777910e922acb07ffb1814a66a6455d4454b12fdb42300fec75914ded65ebe",
+            "source": "user_supplied_sequence_partition",
+            "source_coordinates_1based_inclusive": [
+              4001,
+              5000
+            ]
+          },
+          "concentration_ng_per_ul": 20.0,
+          "physical_stock_provenance": "constructed benchmark assumption; not measured from FASTA"
+        }
+      },
+      {
+        "order_id": "order-0006",
+        "request": {
+          "item_id": "fragment_006",
+          "destination": "1:A6",
+          "quantity": 1,
+          "replace": false,
+          "request_id": ""
+        },
+        "status": "delivered",
+        "currency": "USD",
+        "total_cents": 15000,
+        "remaining_cents": 20000,
+        "delivery": {
+          "source_well": "1:A6",
+          "component": "fragment_006",
+          "volume_ul": 50,
+          "lot_id": "order-0006",
+          "quality": "unverified",
+          "sequence": {
+            "name": "fragment_006",
+            "record_id": "fragment_006",
+            "sequence_file": "data/sequences/fragment_006.fasta",
+            "length_bp": 1000,
+            "sha256": "48bfcec36899f299e0829445034c79b4add59585e8b050b9c8ad3b6682425189",
+            "file_sha256": "b265da79489d672b71ad6ffcef533931a9e854c3288e54a0263de739d832bb4e",
+            "source": "user_supplied_sequence_partition",
+            "source_coordinates_1based_inclusive": [
+              5001,
+              6000
+            ]
+          },
+          "concentration_ng_per_ul": 20.0,
+          "physical_stock_provenance": "constructed benchmark assumption; not measured from FASTA"
+        }
+      },
+      {
+        "order_id": "order-0007",
+        "request": {
+          "item_id": "backbone",
+          "destination": "1:B1",
+          "quantity": 1,
+          "replace": false,
+          "request_id": ""
+        },
+        "status": "delivered",
+        "currency": "USD",
+        "total_cents": 15000,
+        "remaining_cents": 5000,
+        "delivery": {
+          "source_well": "1:B1",
+          "component": "backbone",
+          "volume_ul": 50,
+          "lot_id": "order-0007",
+          "quality": "unverified",
+          "sequence": {
+            "name": "backbone",
+            "record_id": "backbone",
+            "sequence_file": "data/sequences/backbone.fasta",
+            "length_bp": 6484,
+            "sha256": "7871cf6b2f8281b8bc29431ff4336540829cd0f34e3de831b6ac66e3edc6243a",
+            "file_sha256": "9f79c3f5e295a703e66476d09b090ea556075fc4d88be5f788a04fcc89bcb783",
+            "source": "user_supplied_sequence_partition",
+            "source_coordinates_1based_inclusive": [
+              6001,
+              12484
+            ]
+          },
+          "concentration_ng_per_ul": 20.0,
+          "physical_stock_provenance": "constructed benchmark assumption; not measured from FASTA"
+        }
+      },
+      {
+        "order_id": "order-0008",
+        "request": {
+          "item_id": "nuclease_free_water",
+          "destination": "1:B2",
+          "quantity": 1,
+          "replace": false,
+          "request_id": ""
+        },
+        "status": "delivered",
+        "currency": "USD",
+        "total_cents": 300,
+        "remaining_cents": 4700,
+        "delivery": {
+          "source_well": "1:B2",
+          "component": "water",
+          "volume_ul": 200,
+          "lot_id": "order-0008",
+          "quality": "unverified"
+        }
+      },
+      {
+        "order_id": "order-0009",
+        "request": {
+          "item_id": "filtered_tips_20ul",
+          "destination": "2",
+          "quantity": 1,
+          "replace": false,
+          "request_id": ""
+        },
+        "status": "delivered",
+        "currency": "USD",
+        "total_cents": 1250,
+        "remaining_cents": 3450,
+        "delivery": {
+          "slot": "2",
+          "load_name": "opentrons_96_tiprack_20ul",
+          "available_tips": 96
+        }
+      },
+      {
+        "order_id": "order-0010",
+        "request": {
+          "item_id": "reaction_plate",
+          "destination": "3",
+          "quantity": 1,
+          "replace": false,
+          "request_id": ""
+        },
+        "status": "delivered",
+        "currency": "USD",
+        "total_cents": 700,
+        "remaining_cents": 2750,
+        "delivery": {
+          "slot": "3",
+          "load_name": "nest_96_wellplate_200ul_flat"
+        }
+      }
+    ]
+  },
+  "simulation": {
+    "passed": true,
+    "liquid_handling_passed": true,
+    "well_revisions": {
+      "1:A1": 1,
+      "3:A1": 8,
+      "1:A2": 1,
+      "1:A3": 1,
+      "1:A4": 1,
+      "1:A5": 1,
+      "1:A6": 1,
+      "1:B1": 1,
+      "1:B2": 1
+    },
+    "scenario_id": "order_sequence_partitions",
+    "engine": "opentrons virtual hardware + bounded Python interpreter + ideal liquid ledger",
+    "errors": [],
+    "tips_used": 8,
+    "tip_budget": 10,
+    "final_wells": {
+      "1:A1": {
+        "fragment_001": 48.0
+      },
+      "1:A2": {
+        "fragment_002": 48.0
+      },
+      "1:A3": {
+        "fragment_003": 48.0
+      },
+      "1:A4": {
+        "fragment_004": 48.0
+      },
+      "1:A5": {
+        "fragment_005": 48.0
+      },
+      "1:A6": {
+        "fragment_006": 48.0
+      },
+      "1:B1": {
+        "backbone": 48.0
+      },
+      "1:B2": {
+        "water": 194.0
+      },
+      "3:A1": {
+        "fragment_001": 2.0,
+        "fragment_002": 2.0,
+        "fragment_003": 2.0,
+        "fragment_004": 2.0,
+        "fragment_005": 2.0,
+        "fragment_006": 2.0,
+        "backbone": 2.0,
+        "water": 6.0
+      }
+    },
+    "discarded_components_ul": {
+      "fragment_001": 0.0,
+      "fragment_002": 0.0,
+      "fragment_003": 0.0,
+      "fragment_004": 0.0,
+      "fragment_005": 0.0,
+      "fragment_006": 0.0,
+      "backbone": 0.0,
+      "water": 0.0
+    },
+    "events": [
+      {
+        "action": "load_labware",
+        "slot": "1",
+        "load_name": "opentrons_24_tuberack_nest_1.5ml_snapcap"
+      },
+      {
+        "action": "load_labware",
+        "slot": "2",
+        "load_name": "opentrons_96_tiprack_20ul"
+      },
+      {
+        "action": "load_labware",
+        "slot": "3",
+        "load_name": "nest_96_wellplate_200ul_flat"
+      },
+      {
+        "action": "load_instrument",
+        "name": "p20_single_gen2",
+        "mount": "left"
+      },
+      {
+        "action": "pick_up_tip",
+        "well": "2:A1"
+      },
+      {
+        "action": "aspirate",
+        "well": "1:A1",
+        "volume_ul": 2.0
+      },
+      {
+        "action": "dispense",
+        "well": "3:A1",
+        "volume_ul": 2.0
+      },
+      {
+        "action": "drop_tip",
+        "discarded_components_ul": {
+          "fragment_001": 0.0
+        }
+      },
+      {
+        "action": "pick_up_tip",
+        "well": "2:B1"
+      },
+      {
+        "action": "aspirate",
+        "well": "1:A2",
+        "volume_ul": 2.0
+      },
+      {
+        "action": "dispense",
+        "well": "3:A1",
+        "volume_ul": 2.0
+      },
+      {
+        "action": "drop_tip",
+        "discarded_components_ul": {
+          "fragment_002": 0.0
+        }
+      },
+      {
+        "action": "pick_up_tip",
+        "well": "2:C1"
+      },
+      {
+        "action": "aspirate",
+        "well": "1:A3",
+        "volume_ul": 2.0
+      },
+      {
+        "action": "dispense",
+        "well": "3:A1",
+        "volume_ul": 2.0
+      },
+      {
+        "action": "drop_tip",
+        "discarded_components_ul": {
+          "fragment_003": 0.0
+        }
+      },
+      {
+        "action": "pick_up_tip",
+        "well": "2:D1"
+      },
+      {
+        "action": "aspirate",
+        "well": "1:A4",
+        "volume_ul": 2.0
+      },
+      {
+        "action": "dispense",
+        "well": "3:A1",
+        "volume_ul": 2.0
+      },
+      {
+        "action": "drop_tip",
+        "discarded_components_ul": {
+          "fragment_004": 0.0
+        }
+      },
+      {
+        "action": "pick_up_tip",
+        "well": "2:E1"
+      },
+      {
+        "action": "aspirate",
+        "well": "1:A5",
+        "volume_ul": 2.0
+      },
+      {
+        "action": "dispense",
+        "well": "3:A1",
+        "volume_ul": 2.0
+      },
+      {
+        "action": "drop_tip",
+        "discarded_components_ul": {
+          "fragment_005": 0.0
+        }
+      },
+      {
+        "action": "pick_up_tip",
+        "well": "2:F1"
+      },
+      {
+        "action": "aspirate",
+        "well": "1:A6",
+        "volume_ul": 2.0
+      },
+      {
+        "action": "dispense",
+        "well": "3:A1",
+        "volume_ul": 2.0
+      },
+      {
+        "action": "drop_tip",
+        "discarded_components_ul": {
+          "fragment_006": 0.0
+        }
+      },
+      {
+        "action": "pick_up_tip",
+        "well": "2:G1"
+      },
+      {
+        "action": "aspirate",
+        "well": "1:B1",
+        "volume_ul": 2.0
+      },
+      {
+        "action": "dispense",
+        "well": "3:A1",
+        "volume_ul": 2.0
+      },
+      {
+        "action": "drop_tip",
+        "discarded_components_ul": {
+          "backbone": 0.0
+        }
+      },
+      {
+        "action": "pick_up_tip",
+        "well": "2:H1"
+      },
+      {
+        "action": "aspirate",
+        "well": "1:B2",
+        "volume_ul": 6.0
+      },
+      {
+        "action": "dispense",
+        "well": "3:A1",
+        "volume_ul": 6.0
+      },
+      {
+        "action": "mix",
+        "well": "3:A1",
+        "repetitions": 3,
+        "volume_ul": 10.0
+      },
+      {
+        "action": "drop_tip",
+        "discarded_components_ul": {
+          "water": 0.0
+        }
+      }
+    ],
+    "opentrons_commands": [
+      "Picking up tip from A1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+      "Aspirating 2.0 uL from A1 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+      "Dispensing 2.0 uL into A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+      "Dropping tip into Trash Bin on slot 12",
+      "Picking up tip from B1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+      "Aspirating 2.0 uL from A2 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+      "Dispensing 2.0 uL into A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+      "Dropping tip into Trash Bin on slot 12",
+      "Picking up tip from C1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+      "Aspirating 2.0 uL from A3 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+      "Dispensing 2.0 uL into A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+      "Dropping tip into Trash Bin on slot 12",
+      "Picking up tip from D1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+      "Aspirating 2.0 uL from A4 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+      "Dispensing 2.0 uL into A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+      "Dropping tip into Trash Bin on slot 12",
+      "Picking up tip from E1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+      "Aspirating 2.0 uL from A5 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+      "Dispensing 2.0 uL into A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+      "Dropping tip into Trash Bin on slot 12",
+      "Picking up tip from F1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+      "Aspirating 2.0 uL from A6 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+      "Dispensing 2.0 uL into A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+      "Dropping tip into Trash Bin on slot 12",
+      "Picking up tip from G1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+      "Aspirating 2.0 uL from B1 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+      "Dispensing 2.0 uL into A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+      "Dropping tip into Trash Bin on slot 12",
+      "Picking up tip from H1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+      "Aspirating 6.0 uL from B2 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+      "Dispensing 6.0 uL into A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+      "Mixing 3 times with a volume of 10.0 ul",
+      "Aspirating 10.0 uL from A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+      "Dispensing 10.0 uL into A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+      "Aspirating 10.0 uL from A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+      "Dispensing 10.0 uL into A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+      "Aspirating 10.0 uL from A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+      "Dispensing 10.0 uL into A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+      "Dropping tip into Trash Bin on slot 12"
+    ],
+    "biochemistry": {
+      "applicable": false,
+      "model": "gibson_v1",
+      "passed": null,
+      "status": "not_applicable",
+      "experimental_status": "not_measured",
+      "interpretation": "Passing means the declared in-silico acceptance criteria hold. No yield, colonies, enzyme activity or biological function has been measured.",
+      "checks": [],
+      "reactions": []
+    },
+    "sdk_diagnostics": ""
+  },
+  "source_sha256": {
+    "src/__init__.py": "dd8c7599dc43aeb338b048027ceb455eea3c9554f109b6ebbce3afbe04836856",
+    "src/biochemistry.py": "2f08b9c3c87d4ba8bee420a18468db783d61ab6e66b70b30fc7b73740cab199d",
+    "src/costs.py": "a7fddd3cd67ddef6f65c7637b342a9c20860b5f6714183efd85e5b732fa2a6b3",
+    "src/ctf.py": "9f8d41cbf4a24cc3eb7ae362949effdb154110d9f9d1fa56dff683c5aa432053",
+    "src/environment.py": "d0b2f9f499351d4bf8ee70eabf9b4d472ccf2ad57b6c5cec3f72e11937cf42c5",
+    "src/fragments.py": "d53096a897b55b38c952cb77408b0bf31c9909d9e23ebd600befcbe78656dfa9",
+    "src/ordering.py": "9bc33d045aea9bbcbeae73a41dc8a7c82583b971d09c41c1f9cdd44a740c6ecc",
+    "src/review.py": "50dbb400c8cbf718b69c6ccd2834f9300fc4283f5f913cf025f88cedb0c54f73",
+    "src/run_eval.py": "836da6ceb63aa3c2920eeae2155f2a76def8b47502eb17ddddfd06e6c46e4504",
+    "src/runner.py": "b6e3675cd975cfda97d588a398f0fbb9a42828599dceb40db3623613fc3e22d8",
+    "src/runtime.py": "a1193071ad81fb2ea88a86bc394f54fa98aca98ca8151dad823ef4c3d9006b28",
+    "src/scenarios.py": "47e55ab9392790e370f141d3b66d13907d5f1ea83632f20eab4edeab35f270cf",
+    "src/scorer.py": "0aabd26df207877db990f2efac82b069bb650564f3fd35fc85a3e90204453840",
+    "src/simulator.py": "d43584bb00fc0740440ec8d61214883f1ec072f1d4f6e3087a4076ee885f7dfd",
+    "src/split_sequence.py": "2976ca95a42ad7b388bff1c3b61583a9aeaab2109728d72f058d451b3f925ba4",
+    "src/validate.py": "931f5df2faa75533a7e2263ee7b3aa11b026c7bc0ebc74d8513ef542b684e738"
+  },
+  "passed": true
+}
