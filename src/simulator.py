@@ -118,7 +118,9 @@ class Robot(Capability):
             if module.temperature is not None:
                 for well, contents in self.liquids.items():
                     if well.startswith(slot + ":") and total(contents) > EPS:
-                        self.event("incubate", well=well, temperature_c=module.temperature,
+                        from src.failures import temperature_offset
+                        self.event("incubate", well=well, temperature_c=module.temperature + temperature_offset(self.scenario, slot),
+                                   setpoint_c=module.temperature,
                                    seconds=seconds, components_ul=dict(contents),
                                    mixed=self.mixed.get(well) == self.fingerprint(well),
                                    revision=self.revisions.get(well, 0))
@@ -183,6 +185,8 @@ class TemperatureModule(Capability):
         self.temperature = None
 
     def load_labware(self, name):
+        if self.slot in self.robot.scenario.get("unavailable_labware_slots", []):
+            raise ProtocolError(f"Module labware in slot {self.slot} is unavailable; order compatible consumables first")
         if self.slot in self.robot.labware or name != self.robot.scenario["modules"][self.slot]["labware"]:
             raise ProtocolError("Use the configured module labware once")
         native = self.native.load_labware(name)
@@ -274,9 +278,6 @@ class PipetteHandle(Capability):
         amount = self.check_volume(volume)
         rate = globals()["volume"](rate)
         contents = self.robot.contents(location)
-        source = self.robot.scenario["sources"].get(location.key, {})
-        if not source.get("usable", True):
-            raise ProtocolError(f"Reagent lot {source.get('lot_id', 'unknown')} in {location.key} failed quality check; order a replacement with replace=true")
         self.check_contact(contents)
         available = total(contents)
         dead = self.robot.scenario["sources"].get(location.key, {}).get("dead_volume_ul", 0)
@@ -418,4 +419,6 @@ def simulate_protocol(code, scenario):
     if report["biochemistry"]["applicable"] and not report["biochemistry"]["passed"]:
         report["passed"] = False
         report["errors"].extend("Biochemistry: " + check["id"] for check in report["biochemistry"]["checks"] if not check["passed"])
+    from src.failures import assess_failures
+    assess_failures(scenario, report)
     return report

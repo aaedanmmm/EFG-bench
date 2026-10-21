@@ -8,7 +8,8 @@ import pytest
 from inspect_ai.scorer import CORRECT, INCORRECT, Target
 from inspect_ai.tool import ToolError
 from inspect_ai.util import Store
-from src import environment
+from src import environment, ordering
+from src.costs import get_catalogue
 from src.ordering import OrderError, account_summary, new_account, place_order, public_scenario, replay_orders
 from src.runner import validate_code
 from src.scenarios import get_scenario
@@ -83,13 +84,14 @@ def test_idempotent_retry_and_conflicting_retry():
 
 
 def test_replacement_discards_stock_and_charges_again():
-    scenario, account = prepared("replace_failed_lot")
-    with pytest.raises(OrderError, match="Replace the failed lot"):
-        place_order(scenario, account, "reagent_A", "1:A1")
+    scenario = get_scenario("order_supplies")
+    scenario["ordering"]["budget_cents"] = 5500
+    account = new_account(scenario)
+    for item, destination in ITEMS:
+        scenario, account, _ = place_order(scenario, account, item, destination)
     scenario, account, receipt = place_order(scenario, account, "reagent_A", "1:A1", replace=True)
     assert account["spent_cents"] == 5250
     assert scenario["sources"]["1:A1"]["components"]["reagent_A"] == 100
-    assert scenario["sources"]["1:A1"]["usable"]
     assert receipt["discarded_stock"]["components"]["reagent_A"] == 100
 
 
@@ -103,25 +105,26 @@ def test_occupied_consumable_requires_explicit_replacement():
     assert account["spent_cents"] == 1400
 
 
-def test_replay_uses_trusted_prices_and_preserves_quality():
-    scenario, account = prepared("replace_failed_lot")
+def test_replay_uses_trusted_prices_and_preserves_inventory():
+    scenario, account = prepared()
     orders = copy.deepcopy(account["orders"])
     for receipt in orders:
         receipt["total_cents"] = 0
         receipt["remaining_cents"] = 999999
-    replayed, rebuilt = replay_orders(get_scenario("replace_failed_lot"), orders)
+    replayed, rebuilt = replay_orders(get_scenario("order_supplies"), orders)
     assert rebuilt["spent_cents"] == 3750
-    assert not replayed["sources"]["1:A1"]["usable"]
     assert replayed == scenario
 
 
-def test_fault_schedule_not_visible_to_agent():
-    scenario, account = prepared("replace_failed_lot")
-    visible = public_scenario(scenario)
-    assert "faulty_lots" not in visible["ordering"]
-    assert "usable" not in visible["sources"]["1:A1"]
-    assert "faulty_lots" in scenario["ordering"]
-    assert account["orders"][0]["delivery"]["quality"] == "unverified"
+def test_retired_quality_failure_task_is_not_in_benchmark():
+    tasks = json.loads((Path(__file__).resolve().parents[1] / "data/ordering_tasks.json").read_text())
+    assert "replace_failed_lot" not in {task["id"] for task in tasks}
+    with pytest.raises(ValueError, match="Unknown scenario"):
+        get_scenario("replace_failed_lot")
+    for suite in ("ordering", "biochemistry", "biochemistry_ordering", "failures"):
+        for task in json.loads((Path(__file__).resolve().parents[1] / "data" / f"{suite}_tasks.json").read_text()):
+            assert "faulty_lots" not in task.get("ordering", {})
+            assert all("usable" not in source for source in task["sources"].values())
 
 
 def test_missing_supplies_fail_then_ordered_inventory_passes_real_sdk():
@@ -136,14 +139,22 @@ def test_missing_supplies_fail_then_ordered_inventory_passes_real_sdk():
     assert account["spent_cents"] == 3750
 
 
-def test_failed_lot_is_discovered_and_replacement_works_real_sdk():
-    scenario, account = prepared("replace_failed_lot")
-    failed = asyncio.run(validate_code(REFERENCE, scenario["id"], inventory=scenario))
-    assert not failed["passed"]
-    assert "failed quality check" in " ".join(failed["errors"])
-    scenario, account, _ = place_order(scenario, account, "reagent_A", "1:A1", replace=True)
-    ready = asyncio.run(validate_code(REFERENCE, scenario["id"], inventory=scenario))
-    assert ready["passed"], ready["errors"]
+def test_repeated_replacement_orders_do_not_inject_failures_real_sdk(monkeypatch):
+    # Isolate the unrelated invalid genomic partitions; catalogue entries and SDK
+    # are real. This does not assert that the current global catalogue loads.
+    catalogue = get_catalogue(include_partitions=False)
+    monkeypatch.setattr(ordering, "get_catalogue", lambda: copy.deepcopy(catalogue))
+    scenario = get_scenario("order_supplies")
+    scenario["ordering"]["budget_cents"] = 10000
+    account = new_account(scenario)
+    for item, destination in ITEMS:
+        scenario, account, _ = place_order(scenario, account, item, destination)
+    for attempt in range(3):
+        ready = asyncio.run(validate_code(REFERENCE, scenario["id"], inventory=scenario))
+        assert ready["passed"], ready["errors"]
+        assert "usable" not in scenario["sources"]["1:A1"]
+        if attempt < 2:
+            scenario, account, _ = place_order(scenario, account, "reagent_A", "1:A1", replace=True)
 
 
 def test_scorer_rebuilds_inventory_and_finances():
