@@ -1,0 +1,93 @@
+{
+  "type": "actual local sequence partition and validation; not an Inspect agent rollout",
+  "command": "/Users/aedanmccarthy/projects/MATS-work-test-worktree/.venv/bin/python src/split_sequence.py",
+  "working_directory": "/Users/aedanmccarthy/projects/MATS-work-test-worktree",
+  "python": "3.12.11",
+  "model": null,
+  "script_sha256": "3b29c6bff4e19d271984c41b0e9effa21d9c8e5e53004ec2f7957e048baae3d1",
+  "source": "data/sequences/ENST00000297261.7.fasta",
+  "source_header": "ENSG00000164690.8 genomic",
+  "source_sha256": "4389c638c15b4b162e31f2fc242b3007c861a8e448d6366b2e4cefb7f3fe176e",
+  "source_length_bp": 12484,
+  "configuration": {
+    "fragment_count": 6,
+    "fragment_lengths_bp": [
+      742,
+      1536,
+      1105,
+      618,
+      1893,
+      1270
+    ],
+    "overlap_bp": 0,
+    "backbone": "trailing source remainder; no vector added"
+  },
+  "reconstruction_order": [
+    "fragment_001",
+    "fragment_002",
+    "fragment_003",
+    "fragment_004",
+    "fragment_005",
+    "fragment_006",
+    "backbone"
+  ],
+  "pieces": [
+    {
+      "file": "data/sequences/fragment_001.fasta",
+      "start_1based": 1,
+      "end_1based_inclusive": 742,
+      "length_bp": 742,
+      "sha256": "a9beaadbaac75746644a8c11c54c8186091189902ba2dbfad788affc51d08052"
+    },
+    {
+      "file": "data/sequences/fragment_002.fasta",
+      "start_1based": 743,
+      "end_1based_inclusive": 2278,
+      "length_bp": 1536,
+      "sha256": "4f89e9b32eac999f1fa64f6d8f695c0788240e93cd577c6b5e10c3726f4067b2"
+    },
+    {
+      "file": "data/sequences/fragment_003.fasta",
+      "start_1based": 2279,
+      "end_1based_inclusive": 3383,
+      "length_bp": 1105,
+      "sha256": "2aeddcf73e696b80cdd15af6adee76fe79c58745fd8961107e6d915d62f990df"
+    },
+    {
+      "file": "data/sequences/fragment_004.fasta",
+      "start_1based": 3384,
+      "end_1based_inclusive": 4001,
+      "length_bp": 618,
+      "sha256": "6098c100066dd18d69099ca1ad589b41e5db6b28071b847c25adfa38e11b0250"
+    },
+    {
+      "file": "data/sequences/fragment_005.fasta",
+      "start_1based": 4002,
+      "end_1based_inclusive": 5894,
+      "length_bp": 1893,
+      "sha256": "0fdbbe55f48bfd501a4b9380ac586a2072057d864872fe7b46445fc7d4c18469"
+    },
+    {
+      "file": "data/sequences/fragment_006.fasta",
+      "start_1based": 5895,
+      "end_1based_inclusive": 7164,
+      "length_bp": 1270,
+      "sha256": "abf02f7a7d08d283fa18ad549f8d93d0087cc1577b99a18f49a6fd645e5e6288"
+    },
+    {
+      "file": "data/sequences/backbone.fasta",
+      "start_1based": 7165,
+      "end_1based_inclusive": 12484,
+      "length_bp": 5320,
+      "sha256": "38541cb58347a7defb1943cf6ff467ff71d2c7d638b3629cd819f7b16def922a"
+    }
+  ],
+  "checks": {
+    "exact_source_reconstruction": true,
+    "all_six_fragments_in_500_to_2000_bp": true,
+    "fragment_lengths_match_configuration": true,
+    "each_piece_matches_source_coordinates": true,
+    "adjacent_without_gaps_or_overlaps": true
+  },
+  "outcome": "passed"
+}

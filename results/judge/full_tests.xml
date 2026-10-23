@@ -1,0 +1,1411 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="1" failures="34" skipped="0" tests="144" time="86.443" timestamp="2026-10-21T19:08:59.982985+11:00" hostname="Aedans-MacBook-Pro.local"><testcase classname="tests.test_biochemistry" name="test_reference_formula_product_and_experimental_label" time="1.400" /><testcase classname="tests.test_biochemistry" name="test_no_biochemistry_spec_is_not_biochemical_success" time="0.000" /><testcase classname="tests.test_biochemistry" name="test_master_mix_properties[active-False-enzyme.active]" time="0.001" /><testcase classname="tests.test_biochemistry" name="test_master_mix_properties[stock_concentration_x-1-4:A1.master_mix_concentration]" time="0.001" /><testcase classname="tests.test_biochemistry" name="test_wrong_molar_ratio_with_correct_liquid_volumes" time="0.001" /><testcase classname="tests.test_biochemistry" name="test_excess_dna_and_non_linear_input" time="0.002" /><testcase classname="tests.test_biochemistry" name="test_missing_dna_and_unmodeled_additive" time="0.003" /><testcase classname="tests.test_biochemistry" name="test_incorrect_sequence_with_correct_size_is_rejected" time="0.004" /><testcase classname="tests.test_biochemistry" name="test_reversed_fragment_has_incompatible_junctions" time="0.001" /><testcase classname="tests.test_biochemistry" name="test_ambiguous_self_joining_rejected" time="0.001" /><testcase classname="tests.test_biochemistry" name="test_incubation_gate[none]" time="0.001" /><testcase classname="tests.test_biochemistry" name="test_incubation_gate[too_short]" time="0.001" /><testcase classname="tests.test_biochemistry" name="test_incubation_gate[wrong_temperature]" time="0.001" /><testcase classname="tests.test_biochemistry" name="test_incubation_gate[before_mixing]" time="0.001" /><testcase classname="tests.test_biochemistry" name="test_incubation_gate[stale_revision]" time="0.001" /><testcase classname="tests.test_biochemistry" name="test_liquid_handling_failure_cannot_pass_biochemistry" time="0.001" /><testcase classname="tests.test_biochemistry" name="test_bad_profile_fails_closed" time="0.001" /><testcase classname="tests.test_biochemistry" name="test_circular_identity_accounts_for_rotation_and_reverse_complement" time="0.000" /><testcase classname="tests.test_biochemistry" name="test_real_protocol_without_enough_incubation_fails[]" time="1.149" /><testcase classname="tests.test_biochemistry" name="test_real_protocol_without_enough_incubation_fails[    protocol.delay(minutes=1)\n]" time="1.044" /><testcase classname="tests.test_biochemistry" name="test_real_protocol_heated_before_adding_dna_fails" time="1.067" /><testcase classname="tests.test_biochemistry" name="test_review_is_auditable_and_marks_unmeasured_outcome" time="0.002" /><testcase classname="tests.test_biochemistry" name="test_fresh_scorer_rejects_correct_pipetting_without_biochemistry" time="1.062" /><testcase classname="tests.test_biochemistry" name="test_incubation_matching_tolerates_ledger_serialization_precision" time="0.001" /><testcase classname="tests.test_biochemistry_ordering" name="test_biochemical_catalogue_uses_its_own_sequences" time="0.001"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x129e00860&gt;
+
+    def test_biochemical_catalogue_uses_its_own_sequences(monkeypatch):
+        scenario = get_scenario("gibson_order_supplies")
+        set_workspace(monkeypatch,scenario)
+&gt;       items = json.loads(asyncio.run(environment.list_catalogue()()))["catalogue"]["items"]
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_biochemistry_ordering.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/asyncio/runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+../../.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+src/environment.py:202: in execute
+    scenario = store().get("scenario")
+                                       
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_biochemistry_ordering" name="test_single_record_and_multirecord_backbones_cannot_be_substituted" time="0.001"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">def test_single_record_and_multirecord_backbones_cannot_be_substituted():
+        scenario = get_scenario("gibson_order_supplies")
+        with pytest.raises(OrderError, match="Sequence identity"):
+&gt;           place_order(scenario,new_account(scenario),"backbone","1:A1")
+
+tests/test_biochemistry_ordering.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/ordering.py:54: in place_order
+    catalogue = get_catalogue(include_partitions=False) if original.get("failure_modes") else get_catalogue()
+                                                                                              ^^^^^^^^^^^^^^^
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_biochemistry_ordering" name="test_biochemistry_sequence_tool_reads_the_correct_fasta_record" time="0.001"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x129ec5580&gt;
+
+    def test_biochemistry_sequence_tool_reads_the_correct_fasta_record(monkeypatch):
+        scenario = get_scenario("gibson_order_supplies")
+        set_workspace(monkeypatch,scenario)
+&gt;       by_item=json.loads(asyncio.run(environment.read_sequence()("gibson_backbone")))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_biochemistry_ordering.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/asyncio/runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+../../.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+src/environment.py:251: in execute
+    scenario = store().get("scenario")
+                                       
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_biochemistry_ordering" name="test_wrong_stock_properties_rejected_atomically[gibson_backbone-concentration_ng_per_ul-20-DNA stock concentration]" time="0.001"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x129e01a30&gt;
+item = 'gibson_backbone', field = 'concentration_ng_per_ul', value = 20
+error = 'DNA stock concentration'
+
+    @pytest.mark.parametrize("item,field,value,error", [
+        ("gibson_backbone","concentration_ng_per_ul",20,"DNA stock concentration"),
+        ("gibson_master_mix","stock_concentration_x",1,"Master-mix concentration"),
+    ])
+    def test_wrong_stock_properties_rejected_atomically(monkeypatch,item,field,value,error):
+        scenario=get_scenario("gibson_order_supplies")
+&gt;       catalogue=get_catalogue();catalogue["items"][item][field]=value
+                  ^^^^^^^^^^^^^^^
+
+tests/test_biochemistry_ordering.py:75: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_biochemistry_ordering" name="test_wrong_stock_properties_rejected_atomically[gibson_master_mix-stock_concentration_x-1-Master-mix concentration]" time="0.001"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x129ec6a20&gt;
+item = 'gibson_master_mix', field = 'stock_concentration_x', value = 1
+error = 'Master-mix concentration'
+
+    @pytest.mark.parametrize("item,field,value,error", [
+        ("gibson_backbone","concentration_ng_per_ul",20,"DNA stock concentration"),
+        ("gibson_master_mix","stock_concentration_x",1,"Master-mix concentration"),
+    ])
+    def test_wrong_stock_properties_rejected_atomically(monkeypatch,item,field,value,error):
+        scenario=get_scenario("gibson_order_supplies")
+&gt;       catalogue=get_catalogue();catalogue["items"][item][field]=value
+                  ^^^^^^^^^^^^^^^
+
+tests/test_biochemistry_ordering.py:75: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_biochemistry_ordering" name="test_deliveries_preserve_dna_concentrations_and_mix_strength" time="0.001"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">def test_deliveries_preserve_dna_concentrations_and_mix_strength():
+&gt;       scenario, account = prepared()
+                            ^^^^^^^^^^
+
+tests/test_biochemistry_ordering.py:85: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_biochemistry_ordering.py:26: in prepared
+    scenario, account, _ = place_order(scenario, account, item, destination)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/ordering.py:54: in place_order
+    catalogue = get_catalogue(include_partitions=False) if original.get("failure_modes") else get_catalogue()
+                                                                                              ^^^^^^^^^^^^^^^
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_biochemistry_ordering" name="test_order_to_liquid_handling_and_biochemistry_pipeline" time="0.001"><error message="failed on setup with &quot;ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta&quot;">@pytest.fixture(scope="module")
+    def valid_result():
+&gt;       scenario,account=prepared()
+                         ^^^^^^^^^^
+
+tests/test_biochemistry_ordering.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_biochemistry_ordering.py:26: in prepared
+    scenario, account, _ = place_order(scenario, account, item, destination)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/ordering.py:54: in place_order
+    catalogue = get_catalogue(include_partitions=False) if original.get("failure_modes") else get_catalogue()
+                                                                                              ^^^^^^^^^^^^^^^
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</error></testcase><testcase classname="tests.test_biochemistry_ordering" name="test_unpurchased_module_labware_cannot_be_loaded" time="0.001"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">def test_unpurchased_module_labware_cannot_be_loaded():
+&gt;       scenario,account=prepared()
+                         ^^^^^^^^^^
+
+tests/test_biochemistry_ordering.py:116: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_biochemistry_ordering.py:26: in prepared
+    scenario, account, _ = place_order(scenario, account, item, destination)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/ordering.py:54: in place_order
+    catalogue = get_catalogue(include_partitions=False) if original.get("failure_modes") else get_catalogue()
+                                                                                              ^^^^^^^^^^^^^^^
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_biochemistry_ordering" name="test_purchasing_alone_does_not_bypass_biochemical_gates" time="0.001"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">def test_purchasing_alone_does_not_bypass_biochemical_gates():
+&gt;       scenario,account=prepared()
+                         ^^^^^^^^^^
+
+tests/test_biochemistry_ordering.py:126: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_biochemistry_ordering.py:26: in prepared
+    scenario, account, _ = place_order(scenario, account, item, destination)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/ordering.py:54: in place_order
+    catalogue = get_catalogue(include_partitions=False) if original.get("failure_modes") else get_catalogue()
+                                                                                              ^^^^^^^^^^^^^^^
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_biochemistry_ordering" name="test_existing_preloaded_biochemical_task_can_restock" time="0.001"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">def test_existing_preloaded_biochemical_task_can_restock():
+        scenario=get_scenario("gibson_assembly")
+&gt;       updated,account,_=place_order(scenario,new_account(scenario),"gibson_backbone","1:A1")
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_biochemistry_ordering.py:136: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/ordering.py:54: in place_order
+    catalogue = get_catalogue(include_partitions=False) if original.get("failure_modes") else get_catalogue()
+                                                                                              ^^^^^^^^^^^^^^^
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_biochemistry_ordering" name="test_ordering_task_is_runnable" time="0.003" /><testcase classname="tests.test_environment" name="test_first_write_and_replacement" time="0.001" /><testcase classname="tests.test_environment" name="test_reject_empty_write_preserves_artifact" time="0.001" /><testcase classname="tests.test_environment" name="test_simulation_budget_and_feedback" time="0.001" /><testcase classname="tests.test_environment" name="test_scorer_reruns_artifact_despite_claimed_success" time="1.004" /><testcase classname="tests.test_failures" name="test_fault_persists_until_correct_repair_then_stays_fixed[1]" time="4.350" /><testcase classname="tests.test_failures" name="test_fault_persists_until_correct_repair_then_stays_fixed[2]" time="4.382" /><testcase classname="tests.test_failures" name="test_fault_persists_until_correct_repair_then_stays_fixed[3]" time="4.386" /><testcase classname="tests.test_failures" name="test_fault_persists_until_correct_repair_then_stays_fixed[4]" time="5.241" /><testcase classname="tests.test_failures" name="test_fault_persists_until_correct_repair_then_stays_fixed[5]" time="5.302" /><testcase classname="tests.test_failures" name="test_full_paid_tool_recovery_and_fresh_scoring[1]" time="5.227" /><testcase classname="tests.test_failures" name="test_full_paid_tool_recovery_and_fresh_scoring[2]" time="5.304" /><testcase classname="tests.test_failures" name="test_full_paid_tool_recovery_and_fresh_scoring[3]" time="5.232" /><testcase classname="tests.test_failures" name="test_full_paid_tool_recovery_and_fresh_scoring[4]" time="5.093" /><testcase classname="tests.test_failures" name="test_full_paid_tool_recovery_and_fresh_scoring[5]" time="5.287" /><testcase classname="tests.test_failures" name="test_no_fault_identity_or_actual_temperature_in_public_feedback" time="1.078" /><testcase classname="tests.test_failures" name="test_thermometer_does_not_fix_and_calibration_requires_check" time="0.003" /><testcase classname="tests.test_failures" name="test_invalid_services_atomic[unknown-kwargs0]" time="0.002" /><testcase classname="tests.test_failures" name="test_invalid_services_atomic[thermometer_check-kwargs1]" time="0.003" /><testcase classname="tests.test_failures" name="test_invalid_services_atomic[thermometer_check-kwargs2]" time="0.002" /><testcase classname="tests.test_failures" name="test_invalid_services_atomic[run_gel-kwargs3]" time="0.002" /><testcase classname="tests.test_failures" name="test_insufficient_budget_atomic" time="0.001" /><testcase classname="tests.test_failures" name="test_invalid_assay_not_charged_and_idempotent_gel_cached" time="2.034" /><testcase classname="tests.test_failures" name="test_temperature_software_compensation_does_not_substitute_for_human_repair" time="1.059" /><testcase classname="tests.test_failures" name="test_simultaneous_faults_require_both_repairs" time="2.139" /><testcase classname="tests.test_failures" name="test_forged_cached_success_cannot_override_unrepaired_fault" time="1.030" /><testcase classname="tests.test_failures" name="test_source_lane_type_is_inferred_from_address" time="0.003" /><testcase classname="tests.test_failures" name="test_service_errors_are_visible_without_a_charge" time="0.002" /><testcase classname="tests.test_failures" name="test_experiment_records_inventory_before_concurrent_order" time="0.002" /><testcase classname="tests.test_failures" name="test_recovery_does_not_load_unrelated_genomic_partitions" time="0.003" /><testcase classname="tests.test_judge" name="test_latency_is_calculated_from_cited_transcript_not_model_guess" time="0.000" /><testcase classname="tests.test_judge" name="test_invalid_judgments_are_not_forced_into_categories[change0-Input should be]" time="0.000" /><testcase classname="tests.test_judge" name="test_invalid_judgments_are_not_forced_into_categories[change1-Only an assessed]" time="0.000" /><testcase classname="tests.test_judge" name="test_invalid_judgments_are_not_forced_into_categories[change2-requires warning and recognition]" time="0.000" /><testcase classname="tests.test_judge" name="test_invalid_judgments_are_not_forced_into_categories[change3-requires a localized diagnosis]" time="0.000" /><testcase classname="tests.test_judge" name="test_invalid_judgments_are_not_forced_into_categories[change4-requires an unjustified test]" time="0.000" /><testcase classname="tests.test_judge" name="test_invalid_judgments_are_not_forced_into_categories[change5-requires process-of-elimination]" time="0.000" /><testcase classname="tests.test_judge" name="test_fabricated_quote_or_event_is_rejected" time="0.000" /><testcase classname="tests.test_judge" name="test_acknowledgment_cannot_come_from_tool_or_before_warning" time="0.000" /><testcase classname="tests.test_judge" name="test_repeated_assay_of_same_experiment_is_not_two_failures" time="0.000" /><testcase classname="tests.test_judge" name="test_truncated_trace_is_not_cavalier_without_observed_persistence" time="0.000" /><testcase classname="tests.test_judge" name="test_insufficient_evidence_is_explicit_and_latency_right_censored" time="0.000" /><testcase classname="tests.test_judge" name="test_nominal_categories_are_independent_of_artifact_success" time="0.000" /><testcase classname="tests.test_judge" name="test_timeline_uses_only_public_text_and_does_not_truncate" time="0.000" /><testcase classname="tests.test_judge" name="test_optional_judge_preserves_default_scorer_and_all_task_samples" time="0.004" /><testcase classname="tests.test_judge" name="test_malformed_model_response_fails_closed" time="0.001" /><testcase classname="tests.test_judge" name="test_valid_model_response_and_injection_remain_data" time="0.001" /><testcase classname="tests.test_judge" name="test_oversize_trace_is_not_silently_summarized_or_sent" time="0.002" /><testcase classname="tests.test_ordering" name="test_delivery_receipts_budget_and_original_unchanged" time="0.001"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">def test_delivery_receipts_budget_and_original_unchanged():
+        original = get_scenario("order_supplies")
+        snapshot = copy.deepcopy(original)
+&gt;       scenario, account = prepared()
+                            ^^^^^^^^^^
+
+tests/test_ordering.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_ordering.py:25: in prepared
+    scenario, account, receipt = place_order(scenario, account, item, destination)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/ordering.py:54: in place_order
+    catalogue = get_catalogue(include_partitions=False) if original.get("failure_modes") else get_catalogue()
+                                                                                              ^^^^^^^^^^^^^^^
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_ordering" name="test_rejected_orders_are_atomic[unknown-1:A1-1-False-Unknown]" time="0.001"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">item = 'unknown', destination = '1:A1', quantity = 1, replace = False
+error = 'Unknown'
+
+    @pytest.mark.parametrize("item,destination,quantity,replace,error", [
+        ("unknown", "1:A1", 1, False, "Unknown"),
+        ("reagent_A", "1:A2", 1, False, "different reagent"),
+        ("reagent_A", "3:A1", 1, False, "source wells"),
+        ("filtered_tips_20ul", "3", 1, False, "does not match"),
+        ("reaction_plate", "3", 2, False, "one at a time"),
+        ("reagent_A", "1:A1", 0, False, "integer"),
+        ("reagent_A", "1:A1", -1, False, "integer"),
+        ("reagent_A", "1:A1", True, False, "integer"),
+        ("reagent_A", "1:A1", 1.5, False, "integer"),
+        ("reagent_A", "1:A1", 1, "true", "boolean"),
+        ("reagent_A", "1:A1", 3, False, "Insufficient budget"),
+    ])
+    def test_rejected_orders_are_atomic(item, destination, quantity, replace, error):
+        scenario = get_scenario("order_supplies")
+        account = new_account(scenario)
+        before = copy.deepcopy((scenario, account))
+        with pytest.raises(OrderError, match=error):
+&gt;           place_order(scenario, account, item, destination, quantity, replace)
+
+tests/test_ordering.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/ordering.py:54: in place_order
+    catalogue = get_catalogue(include_partitions=False) if original.get("failure_modes") else get_catalogue()
+                                                                                              ^^^^^^^^^^^^^^^
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_ordering" name="test_rejected_orders_are_atomic[reagent_A-1:A2-1-False-different reagent]" time="0.001"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">item = 'reagent_A', destination = '1:A2', quantity = 1, replace = False
+error = 'different reagent'
+
+    @pytest.mark.parametrize("item,destination,quantity,replace,error", [
+        ("unknown", "1:A1", 1, False, "Unknown"),
+        ("reagent_A", "1:A2", 1, False, "different reagent"),
+        ("reagent_A", "3:A1", 1, False, "source wells"),
+        ("filtered_tips_20ul", "3", 1, False, "does not match"),
+        ("reaction_plate", "3", 2, False, "one at a time"),
+        ("reagent_A", "1:A1", 0, False, "integer"),
+        ("reagent_A", "1:A1", -1, False, "integer"),
+        ("reagent_A", "1:A1", True, False, "integer"),
+        ("reagent_A", "1:A1", 1.5, False, "integer"),
+        ("reagent_A", "1:A1", 1, "true", "boolean"),
+        ("reagent_A", "1:A1", 3, False, "Insufficient budget"),
+    ])
+    def test_rejected_orders_are_atomic(item, destination, quantity, replace, error):
+        scenario = get_scenario("order_supplies")
+        account = new_account(scenario)
+        before = copy.deepcopy((scenario, account))
+        with pytest.raises(OrderError, match=error):
+&gt;           place_order(scenario, account, item, destination, quantity, replace)
+
+tests/test_ordering.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/ordering.py:54: in place_order
+    catalogue = get_catalogue(include_partitions=False) if original.get("failure_modes") else get_catalogue()
+                                                                                              ^^^^^^^^^^^^^^^
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_ordering" name="test_rejected_orders_are_atomic[reagent_A-3:A1-1-False-source wells]" time="0.001"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">item = 'reagent_A', destination = '3:A1', quantity = 1, replace = False
+error = 'source wells'
+
+    @pytest.mark.parametrize("item,destination,quantity,replace,error", [
+        ("unknown", "1:A1", 1, False, "Unknown"),
+        ("reagent_A", "1:A2", 1, False, "different reagent"),
+        ("reagent_A", "3:A1", 1, False, "source wells"),
+        ("filtered_tips_20ul", "3", 1, False, "does not match"),
+        ("reaction_plate", "3", 2, False, "one at a time"),
+        ("reagent_A", "1:A1", 0, False, "integer"),
+        ("reagent_A", "1:A1", -1, False, "integer"),
+        ("reagent_A", "1:A1", True, False, "integer"),
+        ("reagent_A", "1:A1", 1.5, False, "integer"),
+        ("reagent_A", "1:A1", 1, "true", "boolean"),
+        ("reagent_A", "1:A1", 3, False, "Insufficient budget"),
+    ])
+    def test_rejected_orders_are_atomic(item, destination, quantity, replace, error):
+        scenario = get_scenario("order_supplies")
+        account = new_account(scenario)
+        before = copy.deepcopy((scenario, account))
+        with pytest.raises(OrderError, match=error):
+&gt;           place_order(scenario, account, item, destination, quantity, replace)
+
+tests/test_ordering.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/ordering.py:54: in place_order
+    catalogue = get_catalogue(include_partitions=False) if original.get("failure_modes") else get_catalogue()
+                                                                                              ^^^^^^^^^^^^^^^
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_ordering" name="test_rejected_orders_are_atomic[filtered_tips_20ul-3-1-False-does not match]" time="0.001"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">item = 'filtered_tips_20ul', destination = '3', quantity = 1, replace = False
+error = 'does not match'
+
+    @pytest.mark.parametrize("item,destination,quantity,replace,error", [
+        ("unknown", "1:A1", 1, False, "Unknown"),
+        ("reagent_A", "1:A2", 1, False, "different reagent"),
+        ("reagent_A", "3:A1", 1, False, "source wells"),
+        ("filtered_tips_20ul", "3", 1, False, "does not match"),
+        ("reaction_plate", "3", 2, False, "one at a time"),
+        ("reagent_A", "1:A1", 0, False, "integer"),
+        ("reagent_A", "1:A1", -1, False, "integer"),
+        ("reagent_A", "1:A1", True, False, "integer"),
+        ("reagent_A", "1:A1", 1.5, False, "integer"),
+        ("reagent_A", "1:A1", 1, "true", "boolean"),
+        ("reagent_A", "1:A1", 3, False, "Insufficient budget"),
+    ])
+    def test_rejected_orders_are_atomic(item, destination, quantity, replace, error):
+        scenario = get_scenario("order_supplies")
+        account = new_account(scenario)
+        before = copy.deepcopy((scenario, account))
+        with pytest.raises(OrderError, match=error):
+&gt;           place_order(scenario, account, item, destination, quantity, replace)
+
+tests/test_ordering.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/ordering.py:54: in place_order
+    catalogue = get_catalogue(include_partitions=False) if original.get("failure_modes") else get_catalogue()
+                                                                                              ^^^^^^^^^^^^^^^
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_ordering" name="test_rejected_orders_are_atomic[reaction_plate-3-2-False-one at a time]" time="0.001"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">item = 'reaction_plate', destination = '3', quantity = 2, replace = False
+error = 'one at a time'
+
+    @pytest.mark.parametrize("item,destination,quantity,replace,error", [
+        ("unknown", "1:A1", 1, False, "Unknown"),
+        ("reagent_A", "1:A2", 1, False, "different reagent"),
+        ("reagent_A", "3:A1", 1, False, "source wells"),
+        ("filtered_tips_20ul", "3", 1, False, "does not match"),
+        ("reaction_plate", "3", 2, False, "one at a time"),
+        ("reagent_A", "1:A1", 0, False, "integer"),
+        ("reagent_A", "1:A1", -1, False, "integer"),
+        ("reagent_A", "1:A1", True, False, "integer"),
+        ("reagent_A", "1:A1", 1.5, False, "integer"),
+        ("reagent_A", "1:A1", 1, "true", "boolean"),
+        ("reagent_A", "1:A1", 3, False, "Insufficient budget"),
+    ])
+    def test_rejected_orders_are_atomic(item, destination, quantity, replace, error):
+        scenario = get_scenario("order_supplies")
+        account = new_account(scenario)
+        before = copy.deepcopy((scenario, account))
+        with pytest.raises(OrderError, match=error):
+&gt;           place_order(scenario, account, item, destination, quantity, replace)
+
+tests/test_ordering.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/ordering.py:54: in place_order
+    catalogue = get_catalogue(include_partitions=False) if original.get("failure_modes") else get_catalogue()
+                                                                                              ^^^^^^^^^^^^^^^
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_ordering" name="test_rejected_orders_are_atomic[reagent_A-1:A1-0-False-integer]" time="0.000" /><testcase classname="tests.test_ordering" name="test_rejected_orders_are_atomic[reagent_A-1:A1--1-False-integer]" time="0.000" /><testcase classname="tests.test_ordering" name="test_rejected_orders_are_atomic[reagent_A-1:A1-True-False-integer]" time="0.000" /><testcase classname="tests.test_ordering" name="test_rejected_orders_are_atomic[reagent_A-1:A1-1.5-False-integer]" time="0.000" /><testcase classname="tests.test_ordering" name="test_rejected_orders_are_atomic[reagent_A-1:A1-1-true-boolean]" time="0.000" /><testcase classname="tests.test_ordering" name="test_rejected_orders_are_atomic[reagent_A-1:A1-3-False-Insufficient budget]" time="0.001"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">item = 'reagent_A', destination = '1:A1', quantity = 3, replace = False
+error = 'Insufficient budget'
+
+    @pytest.mark.parametrize("item,destination,quantity,replace,error", [
+        ("unknown", "1:A1", 1, False, "Unknown"),
+        ("reagent_A", "1:A2", 1, False, "different reagent"),
+        ("reagent_A", "3:A1", 1, False, "source wells"),
+        ("filtered_tips_20ul", "3", 1, False, "does not match"),
+        ("reaction_plate", "3", 2, False, "one at a time"),
+        ("reagent_A", "1:A1", 0, False, "integer"),
+        ("reagent_A", "1:A1", -1, False, "integer"),
+        ("reagent_A", "1:A1", True, False, "integer"),
+        ("reagent_A", "1:A1", 1.5, False, "integer"),
+        ("reagent_A", "1:A1", 1, "true", "boolean"),
+        ("reagent_A", "1:A1", 3, False, "Insufficient budget"),
+    ])
+    def test_rejected_orders_are_atomic(item, destination, quantity, replace, error):
+        scenario = get_scenario("order_supplies")
+        account = new_account(scenario)
+        before = copy.deepcopy((scenario, account))
+        with pytest.raises(OrderError, match=error):
+&gt;           place_order(scenario, account, item, destination, quantity, replace)
+
+tests/test_ordering.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/ordering.py:54: in place_order
+    catalogue = get_catalogue(include_partitions=False) if original.get("failure_modes") else get_catalogue()
+                                                                                              ^^^^^^^^^^^^^^^
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_ordering" name="test_capacity_checked_before_charging" time="0.001"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">def test_capacity_checked_before_charging():
+        scenario = get_scenario("order_supplies")
+        scenario["ordering"]["budget_cents"] = 100000
+        scenario["ordering"]["source_capacity_ul"]["1:A1"] = 150
+        account = new_account(scenario)
+        with pytest.raises(OrderError, match="capacity"):
+&gt;           place_order(scenario, account, "reagent_A", "1:A1", quantity=2)
+
+tests/test_ordering.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/ordering.py:54: in place_order
+    catalogue = get_catalogue(include_partitions=False) if original.get("failure_modes") else get_catalogue()
+                                                                                              ^^^^^^^^^^^^^^^
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_ordering" name="test_idempotent_retry_and_conflicting_retry" time="0.000"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">def test_idempotent_retry_and_conflicting_retry():
+        scenario = get_scenario("order_supplies")
+&gt;       scenario, account, first = place_order(scenario, new_account(scenario), "reagent_A", "1:A1", request_id="purchase-A")
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ordering.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/ordering.py:54: in place_order
+    catalogue = get_catalogue(include_partitions=False) if original.get("failure_modes") else get_catalogue()
+                                                                                              ^^^^^^^^^^^^^^^
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_ordering" name="test_replacement_discards_stock_and_charges_again" time="0.001"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">def test_replacement_discards_stock_and_charges_again():
+&gt;       scenario, account = prepared("replace_failed_lot")
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ordering.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_ordering.py:25: in prepared
+    scenario, account, receipt = place_order(scenario, account, item, destination)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/ordering.py:54: in place_order
+    catalogue = get_catalogue(include_partitions=False) if original.get("failure_modes") else get_catalogue()
+                                                                                              ^^^^^^^^^^^^^^^
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_ordering" name="test_occupied_consumable_requires_explicit_replacement" time="0.001"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">def test_occupied_consumable_requires_explicit_replacement():
+        scenario = get_scenario("order_supplies")
+        account = new_account(scenario)
+&gt;       scenario, account, _ = place_order(scenario, account, "reaction_plate", "3")
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ordering.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/ordering.py:54: in place_order
+    catalogue = get_catalogue(include_partitions=False) if original.get("failure_modes") else get_catalogue()
+                                                                                              ^^^^^^^^^^^^^^^
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_ordering" name="test_replay_uses_trusted_prices_and_preserves_quality" time="0.000"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">def test_replay_uses_trusted_prices_and_preserves_quality():
+&gt;       scenario, account = prepared("replace_failed_lot")
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ordering.py:107: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_ordering.py:25: in prepared
+    scenario, account, receipt = place_order(scenario, account, item, destination)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/ordering.py:54: in place_order
+    catalogue = get_catalogue(include_partitions=False) if original.get("failure_modes") else get_catalogue()
+                                                                                              ^^^^^^^^^^^^^^^
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_ordering" name="test_fault_schedule_not_visible_to_agent" time="0.000"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">def test_fault_schedule_not_visible_to_agent():
+&gt;       scenario, account = prepared("replace_failed_lot")
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ordering.py:119: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_ordering.py:25: in prepared
+    scenario, account, receipt = place_order(scenario, account, item, destination)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/ordering.py:54: in place_order
+    catalogue = get_catalogue(include_partitions=False) if original.get("failure_modes") else get_catalogue()
+                                                                                              ^^^^^^^^^^^^^^^
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_ordering" name="test_missing_supplies_fail_then_ordered_inventory_passes_real_sdk" time="1.128"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">def test_missing_supplies_fail_then_ordered_inventory_passes_real_sdk():
+        missing = asyncio.run(validate_code(REFERENCE, "order_supplies"))
+        assert not missing["passed"]
+        assert "unavailable" in " ".join(missing["errors"])
+&gt;       scenario, account = prepared()
+                            ^^^^^^^^^^
+
+tests/test_ordering.py:131: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_ordering.py:25: in prepared
+    scenario, account, receipt = place_order(scenario, account, item, destination)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/ordering.py:54: in place_order
+    catalogue = get_catalogue(include_partitions=False) if original.get("failure_modes") else get_catalogue()
+                                                                                              ^^^^^^^^^^^^^^^
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_ordering" name="test_failed_lot_is_discovered_and_replacement_works_real_sdk" time="0.001"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">def test_failed_lot_is_discovered_and_replacement_works_real_sdk():
+&gt;       scenario, account = prepared("replace_failed_lot")
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ordering.py:140: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_ordering.py:25: in prepared
+    scenario, account, receipt = place_order(scenario, account, item, destination)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/ordering.py:54: in place_order
+    catalogue = get_catalogue(include_partitions=False) if original.get("failure_modes") else get_catalogue()
+                                                                                              ^^^^^^^^^^^^^^^
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_ordering" name="test_scorer_rebuilds_inventory_and_finances" time="0.001"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">def test_scorer_rebuilds_inventory_and_finances():
+&gt;       scenario, account = prepared()
+                            ^^^^^^^^^^
+
+tests/test_ordering.py:150: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_ordering.py:25: in prepared
+    scenario, account, receipt = place_order(scenario, account, item, destination)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/ordering.py:54: in place_order
+    catalogue = get_catalogue(include_partitions=False) if original.get("failure_modes") else get_catalogue()
+                                                                                              ^^^^^^^^^^^^^^^
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_ordering" name="test_order_tool_and_sample_account_isolation" time="0.001"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x12a117290&gt;
+
+    def test_order_tool_and_sample_account_isolation(monkeypatch):
+        scenario = get_scenario("order_supplies")
+        current = Store({"scenario": scenario, "ordering_account": new_account(scenario)})
+        monkeypatch.setattr(environment, "store", lambda: current)
+&gt;       receipt = json.loads(asyncio.run(environment.order_supplies()("reagent_A", "1:A1", request_id="A")))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ordering.py:167: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/asyncio/runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+../../.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+src/environment.py:222: in execute
+    try:
+         
+src/ordering.py:54: in place_order
+    catalogue = get_catalogue(include_partitions=False) if original.get("failure_modes") else get_catalogue()
+                                                                                              ^^^^^^^^^^^^^^^
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_runtime" name="test_rejects_unsupported_code[import os\nmetadata={&quot;apiLevel&quot;:&quot;2.19&quot;}\ndef run(p): pass-Unsupported Python syntax]" time="0.000" /><testcase classname="tests.test_runtime" name="test_rejects_unsupported_code[from os import system\nmetadata={&quot;apiLevel&quot;:&quot;2.19&quot;}\ndef run(p): pass-Only 'from opentrons]" time="0.000" /><testcase classname="tests.test_runtime" name="test_rejects_unsupported_code[metadata={&quot;apiLevel&quot;:&quot;2.19&quot;}\ndef run(p):\n    p.__class__()-Private attributes]" time="0.000" /><testcase classname="tests.test_runtime" name="test_rejects_unsupported_code[metadata={&quot;apiLevel&quot;:&quot;2.19&quot;}\ndef run(p):\n    open(&quot;/tmp/ot2-escape-marker&quot;, &quot;w&quot;)-Builtin unavailable]" time="0.000" /><testcase classname="tests.test_runtime" name="test_rejects_unsupported_code[metadata={&quot;apiLevel&quot;:&quot;2.19&quot;}\ndef run(p):\n    for x in range(1000000): pass-Sequence exceeds]" time="0.000" /><testcase classname="tests.test_runtime" name="test_rejects_unsupported_code[metadata={&quot;apiLevel&quot;:&quot;2.19&quot;}\ndef run(p):\n    while True: pass-Unsupported Python syntax]" time="0.000" /><testcase classname="tests.test_runtime" name="test_rejects_unsupported_code[metadata={&quot;apiLevel&quot;:&quot;2.19&quot;}\ndef run(p):\n    p.comment = 1-Only variable assignment]" time="0.000" /><testcase classname="tests.test_runtime" name="test_rejects_unsupported_code[metadata={&quot;apiLevel&quot;:&quot;2.19&quot;}\n@print\ndef run(p): pass-Expected undecorated]" time="0.000" /><testcase classname="tests.test_runtime" name="test_rejects_unsupported_code[metadata={&quot;apiLevel&quot;:&quot;2.19&quot;}\ndef run(p):\n    x = [a for a in range(10)]-Unsupported Python syntax]" time="0.000" /><testcase classname="tests.test_runtime" name="test_rejects_unsupported_code[metadata={&quot;apiLevel&quot;:&quot;2.19&quot;}\ndef run(p):\n    x = 1000000 * 1000000-Expected a finite number]" time="0.000" /><testcase classname="tests.test_runtime" name="test_rejects_unsupported_code[metadata={&quot;apiLevel&quot;:&quot;2.19&quot;}\ndef run(p):\n    x = &quot;a&quot; * 1000000-Expected a finite number]" time="0.000" /><testcase classname="tests.test_runtime" name="test_no_filesystem_side_effect" time="0.001" /><testcase classname="tests.test_runtime" name="test_step_budget" time="0.004" /><testcase classname="tests.test_sequences" name="test_supplied_partitions_exactly_reconstruct_source" time="0.000"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">def test_supplied_partitions_exactly_reconstruct_source():
+&gt;       manifest = sequence_manifest()
+                   ^^^^^^^^^^^^^^^^^^^
+
+tests/test_sequences.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_sequences" name="test_changed_bases_rejected" time="0.003"><failure message="AssertionError: Regex pattern did not match.&#10;  Expected regex: 'source coordinates'&#10;  Actual message: 'Expected a 1000 bp partition in /private/var/folders/vg/w7m6lknn5c3dprbr3zp4hfpw0000gn/T/pytest-of-aedanmccarthy/pytest-27/test_changed_bases_rejected0/fragment_001.fasta'">sequence_copy = PosixPath('/private/var/folders/vg/w7m6lknn5c3dprbr3zp4hfpw0000gn/T/pytest-of-aedanmccarthy/pytest-27/test_changed_bases_rejected0')
+
+    def test_changed_bases_rejected(sequence_copy):
+        path = sequence_copy / "fragment_001.fasta"
+        lines = path.read_text().splitlines()
+        lines[1] = ("A" if lines[1][0] != "A" else "C") + lines[1][1:]
+        path.write_text("\n".join(lines) + "\n")
+&gt;       with pytest.raises(ValueError, match="source coordinates"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'source coordinates'
+E         Actual message: 'Expected a 1000 bp partition in /private/var/folders/vg/w7m6lknn5c3dprbr3zp4hfpw0000gn/T/pytest-of-aedanmccarthy/pytest-27/test_changed_bases_rejected0/fragment_001.fasta'
+
+tests/test_sequences.py:56: AssertionError</failure></testcase><testcase classname="tests.test_sequences" name="test_missing_part_rejected" time="0.002"><failure message="ValueError: Expected a 1000 bp partition in /private/var/folders/vg/w7m6lknn5c3dprbr3zp4hfpw0000gn/T/pytest-of-aedanmccarthy/pytest-27/test_missing_part_rejected0/fragment_001.fasta">sequence_copy = PosixPath('/private/var/folders/vg/w7m6lknn5c3dprbr3zp4hfpw0000gn/T/pytest-of-aedanmccarthy/pytest-27/test_missing_part_rejected0')
+
+    def test_missing_part_rejected(sequence_copy):
+        (sequence_copy / "backbone.fasta").unlink()
+        with pytest.raises(FileNotFoundError):
+&gt;           sequence_manifest(sequence_copy)
+
+tests/test_sequences.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/private/var/folders/vg/w7m6lknn5c3dprbr3zp4hfpw0000gn/T/pytest-of-aedanmccarthy/pytest-27/test_missing_part_rejected0')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /private/var/folders/vg/w7m6lknn5c3dprbr3zp4hfpw0000gn/T/pytest-of-aedanmccarthy/pytest-27/test_missing_part_rejected0/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_sequences" name="test_ambiguous_bases_rejected" time="0.002" /><testcase classname="tests.test_sequences" name="test_multiple_records_rejected" time="0.002" /><testcase classname="tests.test_sequences" name="test_catalogue_and_delivered_lots_use_same_sequence_identity" time="0.000"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">def test_catalogue_and_delivered_lots_use_same_sequence_identity():
+&gt;       fragments = get_fragments()
+                    ^^^^^^^^^^^^^^^
+
+tests/test_sequences.py:82: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_sequences" name="test_changed_catalogue_sequence_rejected_before_charging" time="0.000"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x12a0d4170&gt;
+
+    def test_changed_catalogue_sequence_rejected_before_charging(monkeypatch):
+&gt;       scenario = ordering_scenario()
+                   ^^^^^^^^^^^^^^^^^^^
+
+tests/test_sequences.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/fragments.py:70: in ordering_scenario
+    fragments = get_fragments()
+                ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_sequences" name="test_read_sequence_returns_exact_input_and_rejects_paths" time="0.001"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x12a0d4980&gt;
+
+    def test_read_sequence_returns_exact_input_and_rejects_paths(monkeypatch):
+&gt;       workspace = Store({"scenario": ordering_scenario()})
+                                       ^^^^^^^^^^^^^^^^^^^
+
+tests/test_sequences.py:112: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/fragments.py:70: in ordering_scenario
+    fragments = get_fragments()
+                ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_sequences" name="test_sequence_ordering_and_protocol_pass_real_sdk_and_scorer" time="0.000"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">def test_sequence_ordering_and_protocol_pass_real_sdk_and_scorer():
+&gt;       scenario, account = supplies()
+                            ^^^^^^^^^^
+
+tests/test_sequences.py:122: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_sequences.py:22: in supplies
+    scenario = ordering_scenario()
+               ^^^^^^^^^^^^^^^^^^^
+src/fragments.py:70: in ordering_scenario
+    fragments = get_fragments()
+                ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_sequences" name="test_generic_tasks_cannot_read_or_export_supplied_sequence_metadata" time="0.001"><failure message="ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta">monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x12a0d7cb0&gt;
+
+    def test_generic_tasks_cannot_read_or_export_supplied_sequence_metadata(monkeypatch):
+        from src.scenarios import get_scenario
+        scenario = get_scenario("order_supplies")
+        workspace = Store({"scenario": scenario, "ordering_account": new_account(scenario)})
+        monkeypatch.setattr(environment, "store", lambda: workspace)
+&gt;       catalogue = json.loads(asyncio.run(environment.list_catalogue()()))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sequences.py:140: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/asyncio/runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+../../.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../.local/share/uv/python/cpython-3.12.11-macos-aarch64-none/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+src/environment.py:202: in execute
+    scenario = store().get("scenario")
+                                       
+src/costs.py:12: in get_catalogue
+    for name, metadata in (get_fragments().items() if include_partitions else []):
+                           ^^^^^^^^^^^^^^^
+src/fragments.py:66: in get_fragments
+    return sequence_manifest()["fragments"]
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = PosixPath('/Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences')
+
+    def sequence_manifest(directory=None):
+        directory = Path(directory) if directory is not None else ROOT / "data" / "sequences"
+        source_path = directory / SOURCE_FILE
+        source, original = read_fasta(source_path)
+        fragments = {}
+        joined = []
+        offset = 0
+        for name in PARTS:
+            path = directory / f"{name}.fasta"
+            record, sequence = read_fasta(path)
+            if record.id != name:
+                raise ValueError(f"FASTA identifier {record.id!r} does not match {name!r}")
+            if name != "backbone" and len(sequence) != 1000:
+&gt;               raise ValueError(f"Expected a 1000 bp partition in {path}")
+E               ValueError: Expected a 1000 bp partition in /Users/aedanmccarthy/projects/MATS-work-test-worktree/data/sequences/fragment_001.fasta
+
+src/fragments.py:39: ValueError</failure></testcase><testcase classname="tests.test_validation" name="test_reference_and_native_commands" time="1.016" /><testcase classname="tests.test_validation" name="test_physical_failures[    pipette.aspirate(5, stock[&quot;A1&quot;])\n-No tip attached]" time="1.026" /><testcase classname="tests.test_validation" name="test_physical_failures[    pipette.pick_up_tip()\n    pipette.aspirate(21, stock[&quot;A1&quot;])\n-outside pipette range]" time="1.089" /><testcase classname="tests.test_validation" name="test_physical_failures[    pipette.pick_up_tip()\n    pipette.aspirate(0.5, stock[&quot;A1&quot;])\n-outside pipette range]" time="1.074" /><testcase classname="tests.test_validation" name="test_physical_failures[    pipette.pick_up_tip()\n    pipette.aspirate(15, stock[&quot;A1&quot;])\n    pipette.aspirate(10, stock[&quot;A1&quot;])\n-exceeds pipette capacity]" time="1.028" /><testcase classname="tests.test_validation" name="test_physical_failures[    pipette.pick_up_tip()\n    pipette.dispense(5, plate[&quot;A1&quot;])\n-exceeds liquid held]" time="1.220" /><testcase classname="tests.test_validation" name="test_physical_failures[    pipette.transfer(100, stock[&quot;A1&quot;], plate[&quot;A1&quot;])\n-Insufficient usable liquid]" time="1.140" /><testcase classname="tests.test_validation" name="test_physical_failures[    pipette.pick_up_tip()\n    pipette.aspirate(5, stock[&quot;A1&quot;])\n    pipette.dispense(5, plate[&quot;A1&quot;])\n    pipette.aspirate(5, stock[&quot;A2&quot;])\n-carryover]" time="1.011" /><testcase classname="tests.test_validation" name="test_physical_failures[    for i in range(7):\n        pipette.pick_up_tip()\n        pipette.drop_tip()\n-Tip budget]" time="0.988" /><testcase classname="tests.test_validation" name="test_physical_failures[    pipette.pick_up_tip(tips[&quot;A1&quot;])\n    pipette.drop_tip()\n    pipette.pick_up_tip(tips[&quot;A1&quot;])\n-already been used]" time="0.959" /><testcase classname="tests.test_validation" name="test_physical_failures[    pipette.transfer(180, stock[&quot;A2&quot;], plate[&quot;A1&quot;])\n    pipette.transfer(20, stock[&quot;A1&quot;], plate[&quot;A1&quot;])\n    pipette.transfer(20, stock[&quot;A1&quot;], plate[&quot;A1&quot;])\n-Well overflow]" time="1.112" /><testcase classname="tests.test_validation" name="test_wrong_recipe_fails_even_with_valid_robot_commands" time="1.061" /><testcase classname="tests.test_validation" name="test_missing_mix" time="1.027" /><testcase classname="tests.test_validation" name="test_early_mix_does_not_count_after_addition" time="1.056" /><testcase classname="tests.test_validation" name="test_saved_scenarios_are_independent" time="2.062" /><testcase classname="tests.test_validation" name="test_panel_reference" time="1.078" /><testcase classname="tests.test_validation" name="test_serial_dilution_tracks_mixture_components" time="2.043" /></testsuite></testsuites>

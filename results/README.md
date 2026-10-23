@@ -1,31 +1,41 @@
 # Results and evidence
 
-[AGENTS.md](../AGENTS.md) requires actual agent rollouts and validation evidence
-to be preserved here. No existing rollout logs were found during reorganization.
-The repository does not yet meet the runnable-evaluation or actual-rollout
-requirements; moving files does not resolve the implementation gaps.
+Start with the current seven-piece assembly/recovery evidence below. Historical
+runs and intermediate assessments are retained in [archive/](archive/README.md).
+All biological outcomes here are constructed in-silico acceptance results;
+experimental outcomes have not been measured.
 
-## Available evidence
+## Current submission evidence
 
-- [validation.json](validation.json): actual local structural and syntax checks
-  performed after the move, including the command, environment, and outcome.
-  These checks do not execute an agent or validate an OT-2 protocol.
-- [../src/ctf.py](../src/ctf.py): current evaluation scaffold; dataset loading is
-  undefined and the custom scorer and validator are placeholders.
-- [../README.md](../README.md): setup and future evaluation command template.
+| Folder | Contents |
+| --- | --- |
+| [supplied_sequence_assembly](supplied_sequence_assembly/README.md) | Actual Kimi K3 seven-piece ligase-recovery rollout, run configuration/source snapshot, reference, five fault controls, diagnostics, replay, and post-hoc judgment |
+| [feedback_privacy](feedback_privacy/README.md) | Subsequent simulator-feedback privacy fix, 189 passing tests, and replay of the saved rollout |
+| [judge](judge/README.md) | Judge calibration and refusal controls, with earlier actor-trace assessments identified as historical |
 
-## Recording an actual run
+The actual current-input model evidence covers **one ligase-recovery sample**.
+The other four faults have constructed controls, rather than established model
+recoveries. The saved actor transcript predates the feedback privacy fix; the
+subsequent replay verifies scoring compatibility, not behavior under the revised
+feedback. The post-hoc judgment uses the same model family as the actor and is
+not an independent behavioral assessment.
 
-Store Inspect logs under `results/rollouts/`. Alongside each run, save a Markdown
-or JSON record containing:
+The earlier **3/3 mixing result** belongs to the initial benchmark and is retained
+in the [historical results index](archive/legacy_results_index.md). It does not
+establish success on all five current recovery tasks.
 
-- The exact executed command, date, and code revision or source hashes.
-- The resolved provider/model and dependency versions.
-- Dataset inputs, task parameters (including attempts and message limit), and
-  relevant Docker sandbox configuration.
-- Links to the actual Inspect log and any exported transcript or protocol.
-- The validation command, its output, and the validation outcome.
+## Archive and supporting files
 
-Label constructed examples and mocked components explicitly. Never describe a
-mock run, syntax check, or unexecuted command as an actual agent rollout. Review
-logs for credentials and secrets before committing them.
+[archive/README.md](archive/README.md) indexes the historical folders,
+including unsuccessful model attempts. The [relocation manifest](archive/relocation_manifest.json)
+maps their original paths to archived paths and records original/current hashes.
+Historical logs and evidence retain their original contents, recorded paths,
+commands, and source hashes.
+
+The former loose reports and helpers are grouped in
+[archive/legacy_root_files/](archive/legacy_root_files/README.md). The original
+raw-input hash baseline is preserved beside the current assembly evidence as
+[raw_partition_baseline.json](supplied_sequence_assembly/raw_partition_baseline.json).
+Regenerating partitions writes `supplied_sequence_assembly/partition_validation.json`
+without overwriting that baseline. Use `feedback_privacy/` for the latest saved
+full-suite validation; new ad hoc checks can write to `results/local_checks/`.

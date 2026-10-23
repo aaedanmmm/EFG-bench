@@ -1,0 +1,68 @@
+{
+  "date_utc": "2026-10-21T08:54:08.729727+00:00",
+  "worktree": "/Users/aedanmccarthy/projects/MATS-work-test-worktree",
+  "model": null,
+  "new_model_calls": 0,
+  "commands": [
+    ".venv/bin/python -m pytest -q tests/test_diagnostics.py tests/test_failures.py --junitxml=results/diagnostic_observability/tests.xml",
+    "python -m src.validate_diagnostics --output results/diagnostic_observability/observations.json",
+    "git diff --check"
+  ],
+  "dependencies": {
+    "inspect-ai": "0.3.282",
+    "opentrons": "8.8.2",
+    "biopython": "1.88",
+    "pytest": "9.1.1"
+  },
+  "tests": {
+    "passed": true,
+    "count": 39,
+    "failures_and_errors": 0
+  },
+  "constructed_tool_controls": {
+    "passed": true,
+    "count": 6,
+    "evidence": "observations.json"
+  },
+  "diagnostic_scope": "Public source lanes identify absent/damaged pieces; thermometer identifies hot/cold block. Reaction gel alone cannot uniquely localize all faults.",
+  "gel_semantics": "Existing synthetic band sizes unchanged; new diagnostic_reference exposes known input sizes and well mapping.",
+  "git_diff_check": {
+    "passed": true,
+    "output": ""
+  },
+  "source_sha256": {
+    "src/__init__.py": "dd8c7599dc43aeb338b048027ceb455eea3c9554f109b6ebbce3afbe04836856",
+    "src/abc-2.py": "5d90e822dbc775ec35aa86d2e02e336d6c581768bf8d7911128167b0c9d7c884",
+    "src/biochemistry.py": "5dbf97ff19c40ad338cc97026f0c176037f3d059785dca2761a138760172995b",
+    "src/costs.py": "22d84401bba853779252904357fc363edbd2cb765aab2646d4049547ff1d4542",
+    "src/environment.py": "0542529e4e0d0de14c8b9a6d5bed11df149781d21e18ae1933ab9fb4694fb1b5",
+    "src/failures.py": "023d9998ab764a4f3d480c5eaae14148a94dcaf661f85624e7da189db62d68f3",
+    "src/fragments.py": "9be824892721118c457e471a487471fac19b13cdf74147df467bc2ad546101ce",
+    "src/judge.py": "d691dc1ec74519b21087a7ba5fc72f0c968929de21291793922b38b574ab576f",
+    "src/judge_rollout.py": "13606a3afbf5676412f572bef65cf0fd2d23d169d6f9ca45a4b8f44686817743",
+    "src/ordering.py": "6fab49abbaf0f093042cc62e5197cb507cd14f0d8f081f9d7888697758313855",
+    "src/replay_failures.py": "a7052010e378b4c8262b6baad7417b6d7238fc66ac901aa0979ffa43ba891dc4",
+    "src/review.py": "50dbb400c8cbf718b69c6ccd2834f9300fc4283f5f913cf025f88cedb0c54f73",
+    "src/run_eval.py": "262880651671cb25a8c698d26bbc3ffb3a49f6227c0b9f3eb31211b0103a26f8",
+    "src/runner.py": "b6e3675cd975cfda97d588a398f0fbb9a42828599dceb40db3623613fc3e22d8",
+    "src/runtime.py": "a1193071ad81fb2ea88a86bc394f54fa98aca98ca8151dad823ef4c3d9006b28",
+    "src/scenarios.py": "9a04d5096845c78d77c17f8e16411a357cf8a932a616622bf34337dfab941695",
+    "src/scorer.py": "b093b61f80bb63afc491167aeac91ef3bc3569866715696235a562598abaf98f",
+    "src/simulator.py": "5722ae4deba3489ee039ed058291f3bce4a2c9625a3442f0139d062b4df2e354",
+    "src/split_sequence.py": "3b29c6bff4e19d271984c41b0e9effa21d9c8e5e53004ec2f7957e048baae3d1",
+    "src/validate.py": "931f5df2faa75533a7e2263ee7b3aa11b026c7bc0ebc74d8513ef542b684e738",
+    "src/validate_diagnostics.py": "60ef4349efee0614204f3834d7895d89d83e79b8954cbbb107f0ffbe755670be",
+    "src/validate_failures.py": "973217fc905b99041750e69f78dd2d3661f8bf5007ec2f4c3622caba1cbc92a2",
+    "tests/test_diagnostics.py": "385d9138a7d7321035a6f7f22dd6339722d1c62d9a6b8fe55c95867ba619ce5e",
+    "tests/test_failures.py": "c19454f2e4d7c78db096ba3ce0ccca6e217ed9db87a07bb8f5fd183c6c101619",
+    "data/biochemistry_ordering_tasks.json": "5e4e45591762fb09958dbb80f54441560774961e2818fb577bddc8f5ea26ce07",
+    "data/biochemistry_tasks.json": "913a994da8775d17dd9134fd36b599aacec1354f2d3ab4d42c769a1cfce7d60f",
+    "data/failures_tasks.json": "f98b04eb84ad69f56f1990802bfaed6568b85a1dc31a853badf69d66a5bb5e4c",
+    "data/mixing_tasks.json": "57412a6e1241d774e92f0c16362797b9b42910d38b6ff00f03af7a15741c727b",
+    "data/ordering_catalogue.json": "eae848fed68bca3334e1c2df9dba821e73f8f97ed455457d1296c85d9410bae0",
+    "data/ordering_tasks.json": "61d0e3869f3e2f34625ffb7acfdf9e2911e3616c4bcd787b022c869ada20f85c",
+    "data/biochemistry/synthetic_gibson.fasta": "89ed69fe4c8b43d58cec356163ab120ad35a048c4bfd16a3d67ba36c2569f6a4",
+    "docs/failure_modes.md": "16a3eade786437d6e8eee657b2fde2da0ad787832caf737f39b671d748c2ee91",
+    "README.md": "81d9ce9d8af97e0f87fb8a5a74dbf29aeed24bba38ea77cd06bdc70a3dac4c6c"
+  }
+}

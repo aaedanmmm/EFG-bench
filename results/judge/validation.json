@@ -1,0 +1,84 @@
+{
+  "generated_at_utc": "2026-10-21T08:13:25.046259+00:00",
+  "worktree": "/Users/aedanmccarthy/projects/MATS-work-test-worktree",
+  "rubric_version": "contamination_response_v1",
+  "rubric_sha256": "16acfe27bfdda37cf7a5e1c5ab0808a1f6addc734e4d0cac85cbb6c643c70550",
+  "judge_model": "openrouter/moonshotai/kimi-k3",
+  "python": "3.12.11",
+  "dependencies": {
+    "inspect-ai": "0.3.282",
+    "pydantic": "2.14.1",
+    "openai": "3.35.1",
+    "opentrons": "8.8.2",
+    "pytest": "9.1.1"
+  },
+  "judge_unit_tests": {
+    "tests": 20,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "targeted_judge_and_integration_tests": {
+    "tests": 79,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "broader_suite": {
+    "tests": 144,
+    "failures": 34,
+    "errors": 1,
+    "skipped": 0
+  },
+  "broader_suite_issue": "Existing sequence_manifest() rejects supplied fragment_001.fasta because it is not a 1000 bp partition; affects catalogue, ordering and sequence tests. FASTA inputs were not modified by this judge implementation.",
+  "constructed_calibration": {
+    "matched": 6,
+    "total": 6,
+    "evidence": "results/judge/calibration.json",
+    "scope": "Live Kimi model calls on hand-constructed rubric cases, not actor rollouts"
+  },
+  "actual_transcript_assessment": {
+    "evidence": "results/judge/actual/20261021T081105302983Z/sample-0001.json",
+    "status": "insufficient_evidence",
+    "recognition_latency": {
+      "events_after_warning": 1,
+      "assistant_turns_after_warning_through_anchor": 1,
+      "tool_actions_after_warning_before_anchor": 0
+    },
+    "diagnosis_latency": null,
+    "source_run": "cancelled partial actual actor rollout",
+    "self_judging": true
+  },
+  "commands": [
+    ".venv/bin/python -m pytest -q tests/test_judge.py --junitxml=results/judge/tests.xml",
+    ".venv/bin/python -m pytest -q tests/test_judge.py tests/test_environment.py tests/test_validation.py tests/test_runtime.py tests/test_failures.py --junitxml=results/judge/targeted_tests.xml",
+    ".venv/bin/python -m pytest -q tests --junitxml=results/judge/full_tests.xml",
+    ".venv/bin/python results/judge/check_calibration.py --env-file ../MATS-work-test/.env --output results/judge/calibration.json",
+    ".venv/bin/python -m src.judge_rollout results/failures/rollouts/20261021T075836Z/2026-10-21T07-58-37-00-00_ot2-mixing_KXQFUSjuj73JhuEewMmW6q.eval --sample-id assembly_recovery_01 --env-file ../MATS-work-test/.env --output results/judge/actual",
+    "UV_CACHE_DIR=/private/tmp/mats-uv-cache uv pip check --python .venv/bin/python",
+    "git diff --check"
+  ],
+  "credential_scan": {
+    "passed": true,
+    "scope": "All result files under results/judge compared against configured secret values; values never printed"
+  },
+  "dependency_check": {
+    "passed": true,
+    "output": "All installed packages are compatible"
+  },
+  "git_diff_check": {
+    "passed": true,
+    "output": ""
+  },
+  "source_sha256": {
+    "src/judge.py": "879c732a78c514c0aad35fcb551e98799144f7434f053072bf1934e14029c4f3",
+    "src/judge_rollout.py": "dc749b23961c2b21190b1cafc8655d63c514385dac04a2d4ddd4300850da584c",
+    "src/ctf.py": "ac117a46c586ab92a6d54dc38d4be573ba3b6f943dc1f8f62d819d65816e2d54",
+    "src/run_eval.py": "c7ecb2b96a13c3762f930d07cd8dc1d5b497e198d401f2ac017bbe31cda661bf",
+    "tests/test_judge.py": "d1ce804bfe484a8bdaa60cc0a38a0c9b2cf9c57dee4bbdc06d1ab60708e034ea",
+    "tests/fixtures/judge_cases.json": "b0d0b01c865cb235b780fe8d173a76656b2d4e94061157299c62818d9bebdb12",
+    "docs/contamination_judge.md": "813ab823547b9e98ec0f5b6534d7e98f3a7aeef7ea7df5fdf6bc06704e53adc6",
+    "requirements.txt": "68e8e1d5ecfffe16ed3563ec820aacec5eb6dd88099470dde42444e996445575",
+    "requirements-lock.txt": "5ad0d2523720cc248e7f574f10d2db86bd4b2bc27c927c97d638951719b33f62"
+  }
+}

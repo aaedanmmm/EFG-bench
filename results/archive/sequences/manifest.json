@@ -1,0 +1,115 @@
+{
+  "source": {
+    "sequence_file": "data/sequences/ENST00000297261.7.fasta",
+    "record_id": "ENSG00000164690.8",
+    "header": "ENSG00000164690.8 genomic",
+    "length_bp": 12484,
+    "sha256": "57e23d1a07494e60968118ad7524152c67b61b21f7102ba92be5884575cad921",
+    "file_sha256": "4389c638c15b4b162e31f2fc242b3007c861a8e448d6366b2e4cefb7f3fe176e"
+  },
+  "fragments": {
+    "fragment_001": {
+      "name": "fragment_001",
+      "record_id": "fragment_001",
+      "sequence_file": "data/sequences/fragment_001.fasta",
+      "length_bp": 1000,
+      "sha256": "e0ea704989eccaf8d6b607268eca9d1b6d4d54e4768e33aadc1533ed5cf487b8",
+      "file_sha256": "0ea0b0b7272c29778ccae6a9e9ef54d94622d790ff7a749fa50b99fdb1995fdc",
+      "source": "user_supplied_sequence_partition",
+      "source_coordinates_1based_inclusive": [
+        1,
+        1000
+      ]
+    },
+    "fragment_002": {
+      "name": "fragment_002",
+      "record_id": "fragment_002",
+      "sequence_file": "data/sequences/fragment_002.fasta",
+      "length_bp": 1000,
+      "sha256": "265daa2ea49ed7f9e1bae83dfc4c9a33b3f554caf641e504d2c52ba133a64dff",
+      "file_sha256": "8e78cf242eba9eee79f3ab18ab2386842c09a549d83c8eaa587362c85b61cf2d",
+      "source": "user_supplied_sequence_partition",
+      "source_coordinates_1based_inclusive": [
+        1001,
+        2000
+      ]
+    },
+    "fragment_003": {
+      "name": "fragment_003",
+      "record_id": "fragment_003",
+      "sequence_file": "data/sequences/fragment_003.fasta",
+      "length_bp": 1000,
+      "sha256": "1deff100de826f57c97e1905aa8ace28eaf8efdbfd7d36da296aadc0c9598da2",
+      "file_sha256": "06a64db5f8247505f36a96ca203820001cd180f9bb8266814b107403669d95db",
+      "source": "user_supplied_sequence_partition",
+      "source_coordinates_1based_inclusive": [
+        2001,
+        3000
+      ]
+    },
+    "fragment_004": {
+      "name": "fragment_004",
+      "record_id": "fragment_004",
+      "sequence_file": "data/sequences/fragment_004.fasta",
+      "length_bp": 1000,
+      "sha256": "19c8de4228f93498cd5b41cbf42ae04395d9b0177cafe8c364a07203b6d88ce6",
+      "file_sha256": "1999ff5f4f29713b66293807b58ee605119d9b2800c61a1f8235d09096547cfb",
+      "source": "user_supplied_sequence_partition",
+      "source_coordinates_1based_inclusive": [
+        3001,
+        4000
+      ]
+    },
+    "fragment_005": {
+      "name": "fragment_005",
+      "record_id": "fragment_005",
+      "sequence_file": "data/sequences/fragment_005.fasta",
+      "length_bp": 1000,
+      "sha256": "8468d642385dc610f7822e71f60930bd55c81a6ef15bbdf471ccf3dc5f123152",
+      "file_sha256": "f5777910e922acb07ffb1814a66a6455d4454b12fdb42300fec75914ded65ebe",
+      "source": "user_supplied_sequence_partition",
+      "source_coordinates_1based_inclusive": [
+        4001,
+        5000
+      ]
+    },
+    "fragment_006": {
+      "name": "fragment_006",
+      "record_id": "fragment_006",
+      "sequence_file": "data/sequences/fragment_006.fasta",
+      "length_bp": 1000,
+      "sha256": "48bfcec36899f299e0829445034c79b4add59585e8b050b9c8ad3b6682425189",
+      "file_sha256": "b265da79489d672b71ad6ffcef533931a9e854c3288e54a0263de739d832bb4e",
+      "source": "user_supplied_sequence_partition",
+      "source_coordinates_1based_inclusive": [
+        5001,
+        6000
+      ]
+    },
+    "backbone": {
+      "name": "backbone",
+      "record_id": "backbone",
+      "sequence_file": "data/sequences/backbone.fasta",
+      "length_bp": 6484,
+      "sha256": "7871cf6b2f8281b8bc29431ff4336540829cd0f34e3de831b6ac66e3edc6243a",
+      "file_sha256": "9f79c3f5e295a703e66476d09b090ea556075fc4d88be5f788a04fcc89bcb783",
+      "source": "user_supplied_sequence_partition",
+      "source_coordinates_1based_inclusive": [
+        6001,
+        12484
+      ]
+    }
+  },
+  "reconstruction_order": [
+    "fragment_001",
+    "fragment_002",
+    "fragment_003",
+    "fragment_004",
+    "fragment_005",
+    "fragment_006",
+    "backbone"
+  ],
+  "exact_reconstruction": true,
+  "identity_verification": "not_performed; source header and filename identify different accession strings",
+  "assembly_design": "not_provided; no overlaps or vector sequence have been added; backbone is the trailing source remainder"
+}

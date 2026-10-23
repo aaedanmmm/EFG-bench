@@ -1,0 +1,42 @@
+{
+  "date_utc": "2026-10-21T10:51:12.139048+00:00",
+  "kind": "Local layout and partition-generator validation; no new model generation",
+  "model": null,
+  "python": "3.12.11",
+  "historical_files_archived": 13,
+  "original_reports_unchanged": true,
+  "raw_baseline_preserved": true,
+  "raw_input_hash_matches": {
+    "data/sequences/fragment_001.fasta": true,
+    "data/sequences/fragment_002.fasta": true,
+    "data/sequences/fragment_003.fasta": true,
+    "data/sequences/fragment_004.fasta": true,
+    "data/sequences/fragment_005.fasta": true,
+    "data/sequences/fragment_006.fasta": true,
+    "data/sequences/backbone.fasta": true,
+    "data/sequences/ENST00000297261.7.fasta": true
+  },
+  "partition_generator": {
+    "command": [
+      "/Users/aedanmccarthy/projects/MATS-work-test-worktree/.venv/bin/python",
+      "/Users/aedanmccarthy/projects/MATS-work-test-worktree/src/split_sequence.py"
+    ],
+    "cwd": "temporary directory containing copies of data/sequences only",
+    "exit_code": 0,
+    "outcome": "passed",
+    "new_report_path": "results/supplied_sequence_assembly/partition_validation.json",
+    "inputs_unchanged": true,
+    "baseline_not_overwritten": true
+  },
+  "root_files": [
+    "README.md"
+  ],
+  "missing_local_markdown_links": [],
+  "helper_syntax": "passed",
+  "archived_helper_cli_checks": [
+    ".venv/bin/python results/archive/legacy_root_files/revalidate.py --help",
+    ".venv/bin/python results/archive/legacy_root_files/check_native.py --help"
+  ],
+  "git_diff_check": "passed",
+  "passed": true
+}

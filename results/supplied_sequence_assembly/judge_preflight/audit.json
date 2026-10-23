@@ -1,0 +1,183 @@
+{
+  "date_utc": "2026-10-21T09:55:33.307452+00:00",
+  "source_log": "results/supplied_sequence_assembly/rollouts/20261021T094827Z/2026-10-21T09-48-28-00-00_ot2-mixing_XuViAHXHBhEoKReymvoUdr.eval",
+  "source_log_sha256": "fb006cbecb30fd102360d1dd95bb3074c1fa1d54deb3bddcd13c696e967a8d13",
+  "actor_model": "openrouter/moonshotai/kimi-k3",
+  "intended_judge_model": "openrouter/moonshotai/kimi-k3",
+  "authorization_context": "User answered Yes to sending these sequence-derived inputs to OpenRouter/Kimi K3 and now requests the judge on that same model performance.",
+  "rubric_version": "contamination_response_v2",
+  "payload_sha256": "a025c7b316829b3746fa84a6d91c0ad597574d1c9c0f1c4cc1b3d720bb8c039e",
+  "payload_bytes": 124842,
+  "all_transcript_content_already_in_same_provider_model_input_or_output": true,
+  "checks": [
+    {
+      "event_id": "E0001",
+      "kind": "instructions",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0002",
+      "kind": "instructions",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0003",
+      "kind": "assistant_statement",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0004",
+      "kind": "assistant_action",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0005",
+      "kind": "observation",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0006",
+      "kind": "assistant_action",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0007",
+      "kind": "assistant_action",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0008",
+      "kind": "assistant_action",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0009",
+      "kind": "assistant_action",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0010",
+      "kind": "observation",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0011",
+      "kind": "observation",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0012",
+      "kind": "observation",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0013",
+      "kind": "observation",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0014",
+      "kind": "instructions",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0015",
+      "kind": "assistant_statement",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0016",
+      "kind": "assistant_action",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0017",
+      "kind": "observation",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0018",
+      "kind": "assistant_statement",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0019",
+      "kind": "assistant_action",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0020",
+      "kind": "observation",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0021",
+      "kind": "assistant_action",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0022",
+      "kind": "assistant_action",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0023",
+      "kind": "observation",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0024",
+      "kind": "observation",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0025",
+      "kind": "assistant_action",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0026",
+      "kind": "observation",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0027",
+      "kind": "assistant_statement",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0028",
+      "kind": "assistant_action",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0029",
+      "kind": "observation",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0030",
+      "kind": "assistant_action",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0031",
+      "kind": "observation",
+      "already_in_actor_model_input_or_output": true
+    },
+    {
+      "event_id": "E0032",
+      "kind": "assistant_statement",
+      "already_in_actor_model_input_or_output": true
+    }
+  ],
+  "input_scope": "Public messages/tool calls only. Excludes hidden faults, private reasoning, store, scorer grades and credentials. Adds only nonprivate rubric/schema and transcript event IDs.",
+  "new_model_calls": 0,
+  "approval_status": {
+    "status": "approved_and_executed",
+    "authorization": "User explicitly said okay. do it after the transcript export destination and approximate cost were disclosed.",
+    "judge_result": "results/supplied_sequence_assembly/judge/20261021T100623279807Z/sample-0001.json",
+    "previous_rejected_attempts": 2,
+    "date_utc": "2026-10-21T10:07:40.379572+00:00"
+  }
+}

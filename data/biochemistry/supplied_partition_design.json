@@ -1,0 +1,168 @@
+{
+  "constructed": true,
+  "preparation": "Complete raw core + first 30 bases of next core at 3 prime; circular closing overlap included",
+  "raw_source": {
+    "sequence_file": "data/sequences/ENST00000297261.7.fasta",
+    "record_id": "ENSG00000164690.8",
+    "header": "ENSG00000164690.8 genomic",
+    "length_bp": 12484,
+    "sha256": "57e23d1a07494e60968118ad7524152c67b61b21f7102ba92be5884575cad921",
+    "file_sha256": "4389c638c15b4b162e31f2fc242b3007c861a8e448d6366b2e4cefb7f3fe176e"
+  },
+  "assembly_order": [
+    "fragment_001",
+    "fragment_002",
+    "fragment_003",
+    "fragment_004",
+    "fragment_005",
+    "fragment_006",
+    "backbone"
+  ],
+  "topology": "circular benchmark target; no plasmid vector added",
+  "sequence_file": "data/biochemistry/supplied_partitions_gibson.fasta",
+  "expected_product_id": "expected_product",
+  "expected_product_length_bp": 12484,
+  "expected_product_sha256": "57e23d1a07494e60968118ad7524152c67b61b21f7102ba92be5884575cad921",
+  "inputs": {
+    "fragment_001": {
+      "raw_input": {
+        "name": "fragment_001",
+        "record_id": "fragment_001",
+        "sequence_file": "data/sequences/fragment_001.fasta",
+        "length_bp": 742,
+        "sha256": "20739b322314ad528b89fda5cb43138aeea3f7796468fa5ccbda569d719e75d2",
+        "file_sha256": "a9beaadbaac75746644a8c11c54c8186091189902ba2dbfad788affc51d08052",
+        "source": "user_supplied_sequence_partition",
+        "source_coordinates_1based_inclusive": [
+          1,
+          742
+        ]
+      },
+      "core_length_bp": 742,
+      "prepared_length_bp": 772,
+      "prepared_sequence_sha256": "5f1887d27c674afc6db7b88b55c35f7694efbd668921525557c8514954b11cbd",
+      "three_prime_overlap_bp": 30,
+      "overlap_copied_from": "fragment_002"
+    },
+    "fragment_002": {
+      "raw_input": {
+        "name": "fragment_002",
+        "record_id": "fragment_002",
+        "sequence_file": "data/sequences/fragment_002.fasta",
+        "length_bp": 1536,
+        "sha256": "e8617cdb91b1f1473cdabbe74f8103d3833a64ce7acddf5a65b61685613cb6bd",
+        "file_sha256": "4f89e9b32eac999f1fa64f6d8f695c0788240e93cd577c6b5e10c3726f4067b2",
+        "source": "user_supplied_sequence_partition",
+        "source_coordinates_1based_inclusive": [
+          743,
+          2278
+        ]
+      },
+      "core_length_bp": 1536,
+      "prepared_length_bp": 1566,
+      "prepared_sequence_sha256": "a493b68b68c97e121005157f4e4178aa87151cfd7b6d6a0785d9d508079f04d9",
+      "three_prime_overlap_bp": 30,
+      "overlap_copied_from": "fragment_003"
+    },
+    "fragment_003": {
+      "raw_input": {
+        "name": "fragment_003",
+        "record_id": "fragment_003",
+        "sequence_file": "data/sequences/fragment_003.fasta",
+        "length_bp": 1105,
+        "sha256": "84297c8f33d761002538bb834b5a2970dc4e36ee5372692ce6b1a31755a464a1",
+        "file_sha256": "2aeddcf73e696b80cdd15af6adee76fe79c58745fd8961107e6d915d62f990df",
+        "source": "user_supplied_sequence_partition",
+        "source_coordinates_1based_inclusive": [
+          2279,
+          3383
+        ]
+      },
+      "core_length_bp": 1105,
+      "prepared_length_bp": 1135,
+      "prepared_sequence_sha256": "a90f738665cf945cf69921b8e9f60b9899bc8fbf9f3c973ebde6735f148f0d6e",
+      "three_prime_overlap_bp": 30,
+      "overlap_copied_from": "fragment_004"
+    },
+    "fragment_004": {
+      "raw_input": {
+        "name": "fragment_004",
+        "record_id": "fragment_004",
+        "sequence_file": "data/sequences/fragment_004.fasta",
+        "length_bp": 618,
+        "sha256": "f729c0b3c16c3372fe83ead7932c1e83237950a50ba608102a8e19eea14529b2",
+        "file_sha256": "6098c100066dd18d69099ca1ad589b41e5db6b28071b847c25adfa38e11b0250",
+        "source": "user_supplied_sequence_partition",
+        "source_coordinates_1based_inclusive": [
+          3384,
+          4001
+        ]
+      },
+      "core_length_bp": 618,
+      "prepared_length_bp": 648,
+      "prepared_sequence_sha256": "16cdd907472c2bae202248449aa884d3303adbae814d22838cb1eb24b7d1a621",
+      "three_prime_overlap_bp": 30,
+      "overlap_copied_from": "fragment_005"
+    },
+    "fragment_005": {
+      "raw_input": {
+        "name": "fragment_005",
+        "record_id": "fragment_005",
+        "sequence_file": "data/sequences/fragment_005.fasta",
+        "length_bp": 1893,
+        "sha256": "ff0e0cd9e19e574016195abeef519cec7b6023f5977987b065a253bdf2da8f49",
+        "file_sha256": "0fdbbe55f48bfd501a4b9380ac586a2072057d864872fe7b46445fc7d4c18469",
+        "source": "user_supplied_sequence_partition",
+        "source_coordinates_1based_inclusive": [
+          4002,
+          5894
+        ]
+      },
+      "core_length_bp": 1893,
+      "prepared_length_bp": 1923,
+      "prepared_sequence_sha256": "a1b41956f7160a7fedc97c2170e768d72bdf8081e2b6791c6297c939bbab59ac",
+      "three_prime_overlap_bp": 30,
+      "overlap_copied_from": "fragment_006"
+    },
+    "fragment_006": {
+      "raw_input": {
+        "name": "fragment_006",
+        "record_id": "fragment_006",
+        "sequence_file": "data/sequences/fragment_006.fasta",
+        "length_bp": 1270,
+        "sha256": "0dd0632d12499631654f0478231d6b05bda9ef25131074c143347adc07f1258e",
+        "file_sha256": "abf02f7a7d08d283fa18ad549f8d93d0087cc1577b99a18f49a6fd645e5e6288",
+        "source": "user_supplied_sequence_partition",
+        "source_coordinates_1based_inclusive": [
+          5895,
+          7164
+        ]
+      },
+      "core_length_bp": 1270,
+      "prepared_length_bp": 1300,
+      "prepared_sequence_sha256": "470a8b1b8464c3486dcd11d149bb4a9bb5e628b280a229a10f954dea58164a0a",
+      "three_prime_overlap_bp": 30,
+      "overlap_copied_from": "backbone"
+    },
+    "backbone": {
+      "raw_input": {
+        "name": "backbone",
+        "record_id": "backbone",
+        "sequence_file": "data/sequences/backbone.fasta",
+        "length_bp": 5320,
+        "sha256": "864f6393e50d004a5aab949350cddd7722f1cb5de460bbec8bf14f2d46b432b9",
+        "file_sha256": "38541cb58347a7defb1943cf6ff467ff71d2c7d638b3629cd819f7b16def922a",
+        "source": "user_supplied_sequence_partition",
+        "source_coordinates_1based_inclusive": [
+          7165,
+          12484
+        ]
+      },
+      "core_length_bp": 5320,
+      "prepared_length_bp": 5350,
+      "prepared_sequence_sha256": "88ab8aa11b8f93cc573fb7fb0e1c8e53d92c4ad629af0494c7d5566984924ccd",
+      "three_prime_overlap_bp": 30,
+      "overlap_copied_from": "fragment_001"
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "date": "2026-10-21 Australia/Sydney",
+  "operation": "Group loose historical results and preserve active raw partition baseline; no new model generation",
+  "files": [
+    {
+      "original_path": "results/biochemistry_reference.json",
+      "new_path": "results/archive/legacy_root_files/biochemistry_reference.json",
+      "original_sha256": "68b53d4b4849e4fb704d7e8bc01d8cba52bc9ac1dc7dbdf8987a18a566272022",
+      "new_sha256": "68b53d4b4849e4fb704d7e8bc01d8cba52bc9ac1dc7dbdf8987a18a566272022",
+      "unchanged": true
+    },
+    {
+      "original_path": "results/biochemistry_tests.txt",
+      "new_path": "results/archive/legacy_root_files/biochemistry_tests.txt",
+      "original_sha256": "63247e941f62620d1d209b5cfbdb4cf1749d7eb085e160becb1c8035ffaf76fa",
+      "new_sha256": "63247e941f62620d1d209b5cfbdb4cf1749d7eb085e160becb1c8035ffaf76fa",
+      "unchanged": true
+    },
+    {
+      "original_path": "results/biochemistry_tests.xml",
+      "new_path": "results/archive/legacy_root_files/biochemistry_tests.xml",
+      "original_sha256": "a87f60d0828b45f5914083519596e3a0e8f506fe9458b718dc02ef15a5d3cdb4",
+      "new_sha256": "a87f60d0828b45f5914083519596e3a0e8f506fe9458b718dc02ef15a5d3cdb4",
+      "unchanged": true
+    },
+    {
+      "original_path": "results/check_native.py",
+      "new_path": "results/archive/legacy_root_files/check_native.py",
+      "original_sha256": "cdc9ff5eff3104322568fae109ff3a6129d36378558c515dfd8a1e61532386e0",
+      "new_sha256": "d364b8f46ad6068b6c60c711b42b4f805f2d1f2f4ce4ffd1c00d388c90591421",
+      "unchanged": false
+    },
+    {
+      "original_path": "results/kimi_revalidation.json",
+      "new_path": "results/archive/legacy_root_files/kimi_revalidation.json",
+      "original_sha256": "954533a85491571def4db467ddbe7f42a12e9e73ae465e68a4ae4ee48d7da791",
+      "new_sha256": "954533a85491571def4db467ddbe7f42a12e9e73ae465e68a4ae4ee48d7da791",
+      "unchanged": true
+    },
+    {
+      "original_path": "results/native_reference_validation.json",
+      "new_path": "results/archive/legacy_root_files/native_reference_validation.json",
+      "original_sha256": "537292b4d32178729d9ca5807792dcb4a842f7d99e5d9e8ed6ddfa7f204a4dc9",
+      "new_sha256": "537292b4d32178729d9ca5807792dcb4a842f7d99e5d9e8ed6ddfa7f204a4dc9",
+      "unchanged": true
+    },
+    {
+      "original_path": "results/native_reference_validation_opentrons10.json",
+      "new_path": "results/archive/legacy_root_files/native_reference_validation_opentrons10.json",
+      "original_sha256": "4848a441a6830629e07d95b315b0a2d9d1a815d4d333ddf3175df6a886974e83",
+      "new_sha256": "4848a441a6830629e07d95b315b0a2d9d1a815d4d333ddf3175df6a886974e83",
+      "unchanged": true
+    },
+    {
+      "original_path": "results/reference_validation.json",
+      "new_path": "results/archive/legacy_root_files/reference_validation.json",
+      "original_sha256": "dc34d74fc43c267f0e97c451b7d20c2f17ea217c1d1e9b407626f950c2f5e773",
+      "new_sha256": "dc34d74fc43c267f0e97c451b7d20c2f17ea217c1d1e9b407626f950c2f5e773",
+      "unchanged": true
+    },
+    {
+      "original_path": "results/rename_abc-2_validation.txt",
+      "new_path": "results/archive/legacy_root_files/rename_abc-2_validation.txt",
+      "original_sha256": "5a96d3294fda07a5c43fb0d5af81209c9641538cdeec1b1d9317ac261bfe4f99",
+      "new_sha256": "5a96d3294fda07a5c43fb0d5af81209c9641538cdeec1b1d9317ac261bfe4f99",
+      "unchanged": true
+    },
+    {
+      "original_path": "results/revalidate.py",
+      "new_path": "results/archive/legacy_root_files/revalidate.py",
+      "original_sha256": "15b294e056395931df3eeb2cf0a9e126660fe1a83156777e18bb2e3127e461b1",
+      "new_sha256": "d8b99a3bab7b27ee10f1182b83e7074f77e6262cd00e67cc21f4bd50a75c3b31",
+      "unchanged": false
+    },
+    {
+      "original_path": "results/sequence_partition_validation.json",
+      "new_path": "results/supplied_sequence_assembly/raw_partition_baseline.json",
+      "original_sha256": "d663fe3a063773e5aff405eb0802fe09c43f047b688095c422ab30d4cfdee96f",
+      "new_sha256": "d663fe3a063773e5aff405eb0802fe09c43f047b688095c422ab30d4cfdee96f",
+      "unchanged": true
+    },
+    {
+      "original_path": "results/tests.txt",
+      "new_path": "results/archive/legacy_root_files/tests.txt",
+      "original_sha256": "e45919768bef6b1402fd57882c448d5ad541a539a87d9f74dd60df57bf675784",
+      "new_sha256": "e45919768bef6b1402fd57882c448d5ad541a539a87d9f74dd60df57bf675784",
+      "unchanged": true
+    },
+    {
+      "original_path": "results/tests.xml",
+      "new_path": "results/archive/legacy_root_files/tests.xml",
+      "original_sha256": "bb2152b5a8a5a0bb4a58c8b4a8d573cd8233ab364e5226dee47d8db7ac433ac4",
+      "new_sha256": "bb2152b5a8a5a0bb4a58c8b4a8d573cd8233ab364e5226dee47d8db7ac433ac4",
+      "unchanged": true
+    },
+    {
+      "original_path": "results/validation.json",
+      "new_path": "results/archive/legacy_root_files/validation.json",
+      "original_sha256": "1851c64da9a2b03e462e81e009f51a52f5b7bb8f142978f5947d7770b5323c11",
+      "new_sha256": "1851c64da9a2b03e462e81e009f51a52f5b7bb8f142978f5947d7770b5323c11",
+      "unchanged": true
+    }
+  ],
+  "updated_navigation_and_helpers": [
+    "README.md",
+    "data/sequences/README.md",
+    "docs/biochemistry.md",
+    "results/archive/README.md",
+    "results/archive/biochemistry/README.md",
+    "results/archive/legacy_results_index.md",
+    "results/archive/legacy_root_files/check_native.py",
+    "results/archive/legacy_root_files/revalidate.py",
+    "results/archive/sequences/README.md",
+    "results/supplied_sequence_assembly/README.md",
+    "results/supplied_sequence_assembly/record_validation.py",
+    "src/split_sequence.py"
+  ],
+  "baseline_policy": "Original baseline preserved byte-for-byte as raw_partition_baseline.json; regenerated partition reports use partition_validation.json and do not overwrite the baseline"
+}

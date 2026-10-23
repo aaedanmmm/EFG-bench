@@ -1,0 +1,60 @@
+{
+  "started_at_utc": "2026-10-21T07:12:21.523033+00:00",
+  "model": "openrouter/moonshotai/kimi-k3",
+  "configuration": {
+    "suite": "ordering",
+    "limit": null,
+    "message_limit": 40,
+    "max_tokens": 5000,
+    "temperature": 0,
+    "max_samples": 1,
+    "max_connections": 1,
+    "max_retries": 1
+  },
+  "python": "3.12.11",
+  "dependencies": {
+    "inspect-ai": "0.3.282",
+    "opentrons": "8.8.2",
+    "openai": "3.35.1"
+  },
+  "git_revision": "8e57ad8861dbe31124b423ab16f070ea95cba154",
+  "source_sha256": {
+    "src/__init__.py": "dd8c7599dc43aeb338b048027ceb455eea3c9554f109b6ebbce3afbe04836856",
+    "src/costs.py": "aed2f9f9f37ea17f8daf3bce64f5f73a34fdc8b2cb8f326f81e3cd12735a4310",
+    "src/ctf.py": "80478113882a32e05c7cc78187cc12922abffffc867472d373c48f37a0774450",
+    "src/environment.py": "88d5c457de9f4fc6e82b9d7b11059d2c5ed256bb88f05eab7f745b87aec59882",
+    "src/ordering.py": "a4900ed655849b1c6ef1d5fa4444a3291003187a597ca3670f1fc1b74da95d5f",
+    "src/run_eval.py": "934a58265c51155f92d8eaf3dd691e14f217e24ec9b297c06fe45a0e1618c0e6",
+    "src/runner.py": "b6e3675cd975cfda97d588a398f0fbb9a42828599dceb40db3623613fc3e22d8",
+    "src/runtime.py": "a1193071ad81fb2ea88a86bc394f54fa98aca98ca8151dad823ef4c3d9006b28",
+    "src/scenarios.py": "77d4046881ac491063a58df20e7074acfbf519ec05d4c05ceefd78fa493ca708",
+    "src/scorer.py": "7872e0b70afdfc09cf6734a282900babdedab5e4b5255a0c0de5b859ead6ab54",
+    "src/simulator.py": "4f71f49dbae1f7708aa6188ccc70805b150a00cb04a87d70095f9d5819e03244",
+    "src/validate.py": "931f5df2faa75533a7e2263ee7b3aa11b026c7bc0ebc74d8513ef542b684e738",
+    "data/mixing_tasks.json": "57412a6e1241d774e92f0c16362797b9b42910d38b6ff00f03af7a15741c727b",
+    "data/ordering_catalogue.json": "2aff646985484cb6246cbad242375c19f52af9540dec75201922991918ec4a13",
+    "data/ordering_tasks.json": "dd1001070b8113abfec560fada4104b87a7b95df103efd714f3506cd7581c17d",
+    "requirements-dev.txt": "1438527233ce7beb1cdf4a046b8b5d38f140bd77217ef4df17d5592989d3ec15",
+    "requirements-lock.txt": "a5061c621e0caaf415b25923ad49bc213a7bd163c515d7ce7d0260e8ef492a9b",
+    "requirements.txt": "ada65286e00f8b91b1134d3c5e5fe6e40facc7eaab6205c125e3801e73c87495"
+  },
+  "environment": "sample-scoped capability tools; bounded interpreter; separate simulator subprocess per call; no Docker needed",
+  "command": [
+    "python",
+    "-m",
+    "src.run_eval",
+    "--model",
+    "openrouter/moonshotai/kimi-k3",
+    "--suite",
+    "ordering",
+    "--message-limit",
+    "40",
+    "--max-tokens",
+    "5000",
+    "--output",
+    "results/ordering/rollouts"
+  ],
+  "credential_source": "local environment or --env-file (not recorded)",
+  "finished_at_utc": "2026-10-21T07:13:39.718670+00:00",
+  "evaluations": []
+}

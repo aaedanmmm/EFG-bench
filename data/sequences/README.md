@@ -10,13 +10,13 @@ inclusive:
 
 | File | Source coordinates | Length (bp) |
 | --- | --- | ---: |
-| fragment_001.fasta | 1–1,000 | 1,000 |
-| fragment_002.fasta | 1,001–2,000 | 1,000 |
-| fragment_003.fasta | 2,001–3,000 | 1,000 |
-| fragment_004.fasta | 3,001–4,000 | 1,000 |
-| fragment_005.fasta | 4,001–5,000 | 1,000 |
-| fragment_006.fasta | 5,001–6,000 | 1,000 |
-| backbone.fasta | 6,001–12,484 | 6,484 |
+| fragment_001.fasta | 1–742 | 742 |
+| fragment_002.fasta | 743–2278 | 1536 |
+| fragment_003.fasta | 2279–3383 | 1105 |
+| fragment_004.fasta | 3384–4001 | 618 |
+| fragment_005.fasta | 4002–5894 | 1893 |
+| fragment_006.fasta | 5895–7164 | 1270 |
+| backbone.fasta | 7165–12484 | 5320 |
 
 Here, backbone means the trailing source remainder, not an added plasmid vector.
 These are computational sequence partitions; no assembly overlaps, primers, or
@@ -25,5 +25,23 @@ backbone, exactly reconstructs the source.
 
 Reproduce from the repository root with `python3 src/split_sequence.py` (standard
 library only). Actual output hashes and validation results are recorded in
-[sequence_partition_validation.json](../../results/sequence_partition_validation.json).
+[raw_partition_baseline.json](../../results/supplied_sequence_assembly/raw_partition_baseline.json).
+Regenerated reports are saved separately as
+`results/supplied_sequence_assembly/partition_validation.json`.
 This local validation is not an Inspect agent rollout.
+
+## Evaluation integration
+
+`src/fragments.py` validates these exact files and exposes their lengths, hashes
+and coordinates to the simulated ordering catalogue. The item IDs are the FASTA
+stems (`fragment_001` … `fragment_006`, `backbone`). Reagent orders carry those
+identities into inventory and receipts. `order_sequence_partitions` exercises
+purchasing and liquid handling only; the active assembly/recovery suites now use separate overlap-ready copies
+derived from all seven raw cores, with their provenance recorded in
+`data/biochemistry/supplied_partition_design.json`. Each copy adds a 30 bp
+3-prime overlap; none of these raw files is edited. See the
+[assembly design guide](../../docs/supplied_sequence_assembly.md).
+
+Run `.venv/bin/python -m src.fragments` to inspect the manifest, or
+`.venv/bin/python results/archive/sequences/check_integration.py` for the fully local
+order-and-simulate check. Evidence is in `results/archive/sequences/`.
