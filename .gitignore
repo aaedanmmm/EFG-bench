@@ -51,3 +51,6 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+# Private conversation exports stay local
+/transcripts/
