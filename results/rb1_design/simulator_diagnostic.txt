@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/aedanmccarthy/projects/MATS-work-test/src/validate.py", line 35, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/Users/aedanmccarthy/projects/MATS-work-test/src/validate.py", line 20, in main
+    from src.simulator import simulate_protocol
+  File "/Users/aedanmccarthy/projects/MATS-work-test/src/simulator.py", line 8, in <module>
+    from opentrons.simulate import get_protocol_api
+ModuleNotFoundError: No module named 'opentrons'

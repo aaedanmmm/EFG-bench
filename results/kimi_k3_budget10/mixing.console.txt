@@ -1,0 +1,27 @@
+[11/10/26 16:38:03] WARNING  sample=serial_dilution                  run.py:2555
+                             Sample error (id: serial_dilution,                 
+                             epoch: 1): RetryError(<Future at                   
+                             0x117ef1a90 state=finished raised                  
+                             RateLimitError>))                                  
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ot2_mixing (3 samples): openrouter/moonshotai/kimi-k3                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+max_retries: 1, max_connections: 1, max_tokens: 5000, temperature: 0.0,         
+fail_on_error: False, max_samples: 1, log_model_api: True, message_limit: None, 
+suite: mixing, judge_model: None, judge_max_tokens: 8000, observation_mode:     
+deterministic, observation_seed: 0, dataset: (samples)                          
+                                                                                
+total time:                    0:02:59                                          
+openrouter/moonshotai/kimi-k3  55,371 tokens [I: 8,375, CW: 0, CR: 38,400, O:   
+                             8,596, R: 6,510]                                   
+                                                                                
+ot2_mixture                                                                     
+accuracy     1.000                                                              
+stderr       0.000                                                              
+                                                                                
+WARNING: 1 of 3 executed samples (33%) had errors and were not scored.          
+                                                                                
+Log:                                                                            
+results/kimi_k3_budget10/mixing/20261110T053503Z/2026-11-10T05-35-04-00-00_ot2-m
+ixing_ThmKWrthnZmRRZKPiZHHe7.eval                                               
+                                                                                Run record and artifacts: /Users/aedanmccarthy/projects/MATS-work-test/results/kimi_k3_budget10/mixing/20261110T053503Z

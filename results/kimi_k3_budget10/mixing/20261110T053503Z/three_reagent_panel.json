@@ -1,0 +1,360 @@
+{
+  "sample_id": "three_reagent_panel",
+  "epoch": 1,
+  "scores": {
+    "ot2_mixture": {
+      "value": "C",
+      "answer": null,
+      "explanation": "All virtual-robot and liquid-accounting checks passed; no biochemical model configured",
+      "reason": null,
+      "metadata": {
+        "passed": true,
+        "liquid_handling_passed": true,
+        "well_revisions": {
+          "1:A3": 3,
+          "3:A1": 3,
+          "1:A1": 3,
+          "1:A2": 3,
+          "3:A2": 3,
+          "3:A3": 3
+        },
+        "scenario_id": "three_reagent_panel",
+        "engine": "opentrons virtual hardware + bounded Python interpreter + ideal liquid ledger",
+        "errors": [],
+        "tips_used": 9,
+        "tip_budget": 12,
+        "final_wells": {
+          "1:A1": {
+            "reagent_A": 138.0
+          },
+          "1:A2": {
+            "reagent_B": 132.0
+          },
+          "1:A3": {
+            "water": 220.0
+          },
+          "3:A1": {
+            "water": 15.0,
+            "reagent_A": 2.0,
+            "reagent_B": 3.0
+          },
+          "3:A2": {
+            "water": 10.0,
+            "reagent_A": 4.0,
+            "reagent_B": 6.0
+          },
+          "3:A3": {
+            "water": 5.0,
+            "reagent_A": 6.0,
+            "reagent_B": 9.0
+          }
+        },
+        "discarded_components_ul": {
+          "water": 0.0,
+          "reagent_A": 0.0,
+          "reagent_B": 0.0
+        },
+        "events": [
+          {
+            "action": "load_labware",
+            "slot": "1",
+            "load_name": "opentrons_24_tuberack_nest_1.5ml_snapcap"
+          },
+          {
+            "action": "load_labware",
+            "slot": "2",
+            "load_name": "opentrons_96_tiprack_20ul"
+          },
+          {
+            "action": "load_labware",
+            "slot": "3",
+            "load_name": "nest_96_wellplate_200ul_flat"
+          },
+          {
+            "action": "load_instrument",
+            "name": "p20_single_gen2",
+            "mount": "left"
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:A1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A3",
+            "volume_ul": 15.0
+          },
+          {
+            "action": "dispense",
+            "well": "3:A1",
+            "volume_ul": 15.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "water": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:B1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A1",
+            "volume_ul": 2.0
+          },
+          {
+            "action": "dispense",
+            "well": "3:A1",
+            "volume_ul": 2.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "reagent_A": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:C1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A2",
+            "volume_ul": 3.0
+          },
+          {
+            "action": "dispense",
+            "well": "3:A1",
+            "volume_ul": 3.0
+          },
+          {
+            "action": "mix",
+            "well": "3:A1",
+            "repetitions": 3,
+            "volume_ul": 10.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "reagent_B": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:D1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A3",
+            "volume_ul": 10.0
+          },
+          {
+            "action": "dispense",
+            "well": "3:A2",
+            "volume_ul": 10.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "water": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:E1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A1",
+            "volume_ul": 4.0
+          },
+          {
+            "action": "dispense",
+            "well": "3:A2",
+            "volume_ul": 4.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "reagent_A": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:F1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A2",
+            "volume_ul": 6.0
+          },
+          {
+            "action": "dispense",
+            "well": "3:A2",
+            "volume_ul": 6.0
+          },
+          {
+            "action": "mix",
+            "well": "3:A2",
+            "repetitions": 3,
+            "volume_ul": 10.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "reagent_B": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:G1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A3",
+            "volume_ul": 5.0
+          },
+          {
+            "action": "dispense",
+            "well": "3:A3",
+            "volume_ul": 5.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "water": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:H1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A1",
+            "volume_ul": 6.0
+          },
+          {
+            "action": "dispense",
+            "well": "3:A3",
+            "volume_ul": 6.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "reagent_A": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:A2"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A2",
+            "volume_ul": 9.0
+          },
+          {
+            "action": "dispense",
+            "well": "3:A3",
+            "volume_ul": 9.0
+          },
+          {
+            "action": "mix",
+            "well": "3:A3",
+            "repetitions": 3,
+            "volume_ul": 10.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "reagent_B": 0.0
+            }
+          }
+        ],
+        "opentrons_commands": [
+          "Picking up tip from A1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 15.0 uL from A3 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 15.0 uL into A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from B1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 2.0 uL from A1 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 2.0 uL into A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from C1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 3.0 uL from A2 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 3.0 uL into A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Mixing 3 times with a volume of 10.0 ul",
+          "Aspirating 10.0 uL from A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Aspirating 10.0 uL from A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Aspirating 10.0 uL from A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A1 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from D1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 10.0 uL from A3 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A2 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from E1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 4.0 uL from A1 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 4.0 uL into A2 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from F1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 6.0 uL from A2 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 6.0 uL into A2 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Mixing 3 times with a volume of 10.0 ul",
+          "Aspirating 10.0 uL from A2 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A2 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Aspirating 10.0 uL from A2 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A2 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Aspirating 10.0 uL from A2 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A2 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from G1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 5.0 uL from A3 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 5.0 uL into A3 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from H1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 6.0 uL from A1 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 6.0 uL into A3 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from A2 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 9.0 uL from A2 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 9.0 uL into A3 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Mixing 3 times with a volume of 10.0 ul",
+          "Aspirating 10.0 uL from A3 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A3 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Aspirating 10.0 uL from A3 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A3 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Aspirating 10.0 uL from A3 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A3 of NEST 96 Well Plate 200 \u00b5L Flat on slot 3 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Three-reagent panel complete: 9 tips used."
+        ],
+        "biochemistry": {
+          "applicable": false,
+          "model": "gibson_v1",
+          "passed": null,
+          "status": "not_applicable",
+          "experimental_status": "not_measured",
+          "interpretation": "Passing means the declared in-silico acceptance criteria hold. No yield, colonies, enzyme activity or biological function has been measured.",
+          "checks": [],
+          "reactions": []
+        },
+        "sdk_diagnostics": "",
+        "score_breakdown": {
+          "overall": 1,
+          "liquid_handling": 1,
+          "biochemistry": null
+        },
+        "protocol_source": "metadata = {'apiLevel': '2.19'}\n\n\ndef run(protocol):\n    tuberack = protocol.load_labware(\n        'opentrons_24_tuberack_nest_1.5ml_snapcap', '1')\n    tiprack = protocol.load_labware('opentrons_96_tiprack_20ul', '2')\n    plate = protocol.load_labware('nest_96_wellplate_200ul_flat', '3')\n\n    pipette = protocol.load_instrument(\n        'p20_single_gen2', 'left', tip_racks=[tiprack])\n\n    reagent_a = tuberack['A1']\n    reagent_b = tuberack['A2']\n    water = tuberack['A3']\n\n    target_wells = ['A1', 'A2', 'A3']\n    water_vols = [15.0, 10.0, 5.0]\n    reagent_a_vols = [2.0, 4.0, 6.0]\n    reagent_b_vols = [3.0, 6.0, 9.0]\n\n    for i in range(3):\n        dest = plate[target_wells[i]]\n        # Fresh tip for every transfer: no stock or well cross-contamination.\n        pipette.transfer(water_vols[i], water, dest, new_tip='always')\n        pipette.transfer(reagent_a_vols[i], reagent_a, dest,\n                         new_tip='always')\n        # Final liquid addition to this well mixes it afterwards.\n        pipette.transfer(reagent_b_vols[i], reagent_b, dest,\n                         new_tip='always', mix_after=(3, 10))\n\n    protocol.comment('Three-reagent panel complete: 9 tips used.')\n",
+        "simulation_count": 1,
+        "tip_efficiency": 0.3076923076923077
+      },
+      "history": []
+    }
+  }
+}

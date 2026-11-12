@@ -1,0 +1,34 @@
+{
+  "sample_id": "gene_design_assembly",
+  "epoch": 1,
+  "scores": {
+    "gene_design_score": {
+      "value": "I",
+      "answer": null,
+      "explanation": "No experiment selected.",
+      "reason": null,
+      "metadata": {
+        "passed": false,
+        "exact_product": false,
+        "selected_experiment": null,
+        "fragment_ids": [],
+        "polymerase": null,
+        "selected_measurements": [],
+        "quality_at_submission": null,
+        "elapsed_minutes": 0,
+        "spent_cents": 13800,
+        "budget_cents": 35000,
+        "cost_efficiency": 0.0,
+        "actions": [
+          {
+            "kind": "order_reagent",
+            "arguments": {
+              "item_id": "q5_polymerase"
+            }
+          }
+        ]
+      },
+      "history": []
+    }
+  }
+}

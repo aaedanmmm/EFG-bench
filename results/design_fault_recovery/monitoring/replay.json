@@ -1,0 +1,42 @@
+{
+  "origin": "Independent replay of an actual OpenRouter rollout; all biology is simulated",
+  "model": "openrouter/moonshotai/kimi-k3",
+  "run_record": "results/design_fault_recovery/monitoring/rollouts/20261112T033146Z/run.json",
+  "source_mismatches": [],
+  "samples": [
+    {
+      "sample_id": "design_recovery_01",
+      "matched": true,
+      "actual_success": false,
+      "replayed": {
+        "passed": false,
+        "exact_product": false,
+        "selected_experiment": null,
+        "fragment_ids": [],
+        "polymerase": null,
+        "selected_measurements": [],
+        "quality_at_submission": null,
+        "elapsed_minutes": 52,
+        "spent_cents": 27300,
+        "budget_cents": null,
+        "cost_efficiency": null,
+        "deadline_minutes": null,
+        "action_count": 7,
+        "experiment_count": 1,
+        "recovery": {
+          "passed": false,
+          "observed_failed_experiments": [
+            "run-1"
+          ],
+          "fault_resolved": false,
+          "current_verification": false,
+          "private_fault": {
+            "kind": "damaged_stock",
+            "seed": 0
+          }
+        }
+      }
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,11 @@
+{
+  "credentials_detected": false,
+  "files_scanned": 142,
+  "request_reservations": 273,
+  "settled_generations": 256,
+  "non_generation_requests": 17,
+  "every_charge_within_reservation": true,
+  "pending_or_unconfirmed_charges": 0,
+  "settled_usd": "4.153995684",
+  "ceiling_usd": "10"
+}

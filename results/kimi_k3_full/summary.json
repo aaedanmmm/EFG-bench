@@ -1,0 +1,897 @@
+{
+  "model": "openrouter/moonshotai/kimi-k3",
+  "wall_clock_seconds": null,
+  "cost_method": "OpenRouter generation total_cost or the recorded response usage.cost when generation billing is unavailable.",
+  "correct": 12,
+  "scored_samples": 14,
+  "reported_cost_usd": "3.090971444",
+  "generations": 133,
+  "generations_with_reported_cost": 133,
+  "usage": {
+    "input_tokens": 629075,
+    "input_tokens_cache_read": 2857664,
+    "input_tokens_cache_write": 0,
+    "output_tokens": 145488,
+    "reasoning_tokens": 114961,
+    "total_tokens": 3632227
+  },
+  "median_provider_latency_ms": 1124,
+  "sample_seconds": 2245.489,
+  "suites": {
+    "mixing": {
+      "log": "mixing/20261110T051937Z/2026-11-10T05-19-38-00-00_ot2-mixing_JX2weqfXTexcyJxADEpfvH.eval",
+      "status": "success",
+      "configured_samples": 3,
+      "completed_samples": 3,
+      "correct": 3,
+      "scored_samples": 3,
+      "reported_cost_usd": "0.281343168",
+      "generations": 14,
+      "generations_with_reported_cost": 14,
+      "usage": {
+        "input_tokens": 28666,
+        "input_tokens_cache_read": 57344,
+        "input_tokens_cache_write": 0,
+        "output_tokens": 19252,
+        "reasoning_tokens": 15251,
+        "total_tokens": 105262
+      },
+      "median_provider_latency_ms": 926.5,
+      "sample_seconds": 230.12,
+      "started_at": "2026-11-10T05:19:38+00:00",
+      "completed_at": "2026-11-10T05:23:28+00:00",
+      "observation_summary": null,
+      "samples": [
+        {
+          "id": "serial_dilution",
+          "correct": true,
+          "score_explanation": "All virtual-robot and liquid-accounting checks passed; no biochemical model configured",
+          "seconds": 55.376,
+          "simulated_spend_cents": null,
+          "actual_simulated_success": null,
+          "brier_score": null,
+          "provider_latencies_ms": [
+            513,
+            707,
+            475,
+            452,
+            754
+          ],
+          "limit": null,
+          "error": null,
+          "usage": {
+            "input_tokens": 6644,
+            "output_tokens": 6486,
+            "total_tokens": 38730,
+            "input_tokens_cache_write": 0,
+            "input_tokens_cache_read": 25600,
+            "reasoning_tokens": 5261,
+            "total_cost": null
+          },
+          "generation_ids": [
+            "gen-1794288153-Kvy4Tq863B2v52PWcpUq",
+            "gen-1794288154-nqiuCfB2iizIvLFnr7b2",
+            "gen-1794288193-21jVDAI6mDeuwloxWJo2",
+            "gen-1794288199-rAtZJrgAk4EE1Udln1WY",
+            "gen-1794288201-KwSWt2cNPcmVbafttUtk"
+          ],
+          "generations": 5,
+          "generations_with_reported_cost": 5,
+          "reported_cost_usd": "0.12780180",
+          "providers": [
+            "InferenceNet"
+          ]
+        },
+        {
+          "id": "three_reagent_panel",
+          "correct": true,
+          "score_explanation": "All virtual-robot and liquid-accounting checks passed; no biochemical model configured",
+          "seconds": 129.0,
+          "simulated_spend_cents": null,
+          "actual_simulated_success": null,
+          "brier_score": null,
+          "provider_latencies_ms": [
+            5424,
+            1527,
+            1367,
+            1190,
+            1143
+          ],
+          "limit": null,
+          "error": null,
+          "usage": {
+            "input_tokens": 14610,
+            "output_tokens": 8570,
+            "total_tokens": 44172,
+            "input_tokens_cache_write": 0,
+            "input_tokens_cache_read": 20992,
+            "reasoning_tokens": 7036,
+            "total_cost": null
+          },
+          "generation_ids": [
+            "gen-1794288024-N5sP6wxWWXsoRVSgsz5o",
+            "gen-1794288031-CC4FUnxjrQOKb8fb4uW0",
+            "gen-1794288105-ntisNmpwHpVp5QIY8mja",
+            "gen-1794288141-xw25GiKaGoO33AQNax3T",
+            "gen-1794288144-zpTMsofdSvJMh0jNby3m"
+          ],
+          "generations": 5,
+          "generations_with_reported_cost": 5,
+          "reported_cost_usd": "0.111068455",
+          "providers": [
+            "Decart",
+            "Sail Research"
+          ]
+        },
+        {
+          "id": "two_reagent_mix",
+          "correct": true,
+          "score_explanation": "All virtual-robot and liquid-accounting checks passed; no biochemical model configured",
+          "seconds": 45.744,
+          "simulated_spend_cents": null,
+          "actual_simulated_success": null,
+          "brier_score": null,
+          "provider_latencies_ms": [
+            1414,
+            1040,
+            813,
+            468
+          ],
+          "limit": null,
+          "error": null,
+          "usage": {
+            "input_tokens": 7412,
+            "output_tokens": 4196,
+            "total_tokens": 22360,
+            "input_tokens_cache_write": 0,
+            "input_tokens_cache_read": 10752,
+            "reasoning_tokens": 2954,
+            "total_cost": null
+          },
+          "generation_ids": [
+            "gen-1794287979-ELL827V3c0hjt0xYVFIA",
+            "gen-1794287981-wU0lkmWtyMC9dy65s86L",
+            "gen-1794288017-PAUztjN1q0gOrivmB3Q0",
+            "gen-1794288020-Kh2kXiF66Hkkca8Z8bmR"
+          ],
+          "generations": 4,
+          "generations_with_reported_cost": 4,
+          "reported_cost_usd": "0.042472913",
+          "providers": [
+            "Relace"
+          ]
+        }
+      ]
+    },
+    "ordering": {
+      "log": "ordering/20261110T051937Z/2026-11-10T05-19-38-00-00_ot2-mixing_4XcDrqXuvc9Z6PzxsJ3j9x.eval",
+      "status": "success",
+      "configured_samples": 2,
+      "completed_samples": 2,
+      "correct": 2,
+      "scored_samples": 2,
+      "reported_cost_usd": "0.188959594",
+      "generations": 12,
+      "generations_with_reported_cost": 12,
+      "usage": {
+        "input_tokens": 52983,
+        "input_tokens_cache_read": 62976,
+        "input_tokens_cache_write": 0,
+        "output_tokens": 9925,
+        "reasoning_tokens": 7222,
+        "total_tokens": 125884
+      },
+      "median_provider_latency_ms": 1018.0,
+      "sample_seconds": 114.758,
+      "started_at": "2026-11-10T05:19:38+00:00",
+      "completed_at": "2026-11-10T05:21:33+00:00",
+      "observation_summary": null,
+      "samples": [
+        {
+          "id": "order_sequence_partitions",
+          "correct": true,
+          "score_explanation": "All virtual-robot and liquid-accounting checks passed; no biochemical model configured",
+          "seconds": 55.433,
+          "simulated_spend_cents": 107250,
+          "actual_simulated_success": null,
+          "brier_score": null,
+          "provider_latencies_ms": [
+            2131,
+            1270,
+            1765,
+            1273,
+            1865,
+            1615
+          ],
+          "limit": null,
+          "error": null,
+          "usage": {
+            "input_tokens": 35204,
+            "output_tokens": 3398,
+            "total_tokens": 78026,
+            "input_tokens_cache_write": 0,
+            "input_tokens_cache_read": 39424,
+            "reasoning_tokens": 2053,
+            "total_cost": null
+          },
+          "generation_ids": [
+            "gen-1794288038-E5fN7GSfEOLbVWwl5Ail",
+            "gen-1794288041-cSZVPeq1rBQjL7onEHKB",
+            "gen-1794288053-220eOhUherTHPZSehiOn",
+            "gen-1794288064-18k4tScyVGrInVTW22u5",
+            "gen-1794288081-Bc1XGvqKy3I7Eblvkaz5",
+            "gen-1794288085-KGfcjcpxtUrNRkyQ5fWG"
+          ],
+          "generations": 6,
+          "generations_with_reported_cost": 6,
+          "reported_cost_usd": "0.082301668",
+          "providers": [
+            "Decart",
+            "Sail Research"
+          ]
+        },
+        {
+          "id": "order_supplies",
+          "correct": true,
+          "score_explanation": "All virtual-robot and liquid-accounting checks passed; no biochemical model configured",
+          "seconds": 59.325,
+          "simulated_spend_cents": 3750,
+          "actual_simulated_success": null,
+          "brier_score": null,
+          "provider_latencies_ms": [
+            650,
+            599,
+            725,
+            766,
+            554,
+            529
+          ],
+          "limit": null,
+          "error": null,
+          "usage": {
+            "input_tokens": 17779,
+            "output_tokens": 6527,
+            "total_tokens": 47858,
+            "input_tokens_cache_write": 0,
+            "input_tokens_cache_read": 23552,
+            "reasoning_tokens": 5169,
+            "total_cost": null
+          },
+          "generation_ids": [
+            "gen-1794287979-CvUtOkCyuod4E0VYQUSJ",
+            "gen-1794287980-g62QdF0zLPknlySKbpsY",
+            "gen-1794287983-DU0ZTAtT6yC8ZJNKzWwA",
+            "gen-1794288024-p0O9SpQfgmVMXhbJ4alN",
+            "gen-1794288029-46ZCti6zEWxdoBUYSRIm",
+            "gen-1794288032-uu88cb9H3tBODXEf7gmM"
+          ],
+          "generations": 6,
+          "generations_with_reported_cost": 6,
+          "reported_cost_usd": "0.106657926",
+          "providers": [
+            "InferenceNet"
+          ]
+        }
+      ]
+    },
+    "biochemistry": {
+      "log": "biochemistry/20261110T051937Z/2026-11-10T05-19-38-00-00_ot2-mixing_AowdYqe8EHGKVnhm3pY6QB.eval",
+      "status": "success",
+      "configured_samples": 1,
+      "completed_samples": 1,
+      "correct": 1,
+      "scored_samples": 1,
+      "reported_cost_usd": "0.25773120",
+      "generations": 5,
+      "generations_with_reported_cost": 5,
+      "usage": {
+        "input_tokens": 59594,
+        "input_tokens_cache_read": 46080,
+        "input_tokens_cache_write": 0,
+        "output_tokens": 5246,
+        "reasoning_tokens": 4032,
+        "total_tokens": 110920
+      },
+      "median_provider_latency_ms": 1641,
+      "sample_seconds": 110.128,
+      "started_at": "2026-11-10T05:19:38+00:00",
+      "completed_at": "2026-11-10T05:21:29+00:00",
+      "observation_summary": null,
+      "samples": [
+        {
+          "id": "sequence_assembly",
+          "correct": true,
+          "score_explanation": "Liquid handling and all biochemical acceptance gates passed (in silico; experimental outcome unmeasured)",
+          "seconds": 110.128,
+          "simulated_spend_cents": 0,
+          "actual_simulated_success": null,
+          "brier_score": null,
+          "provider_latencies_ms": [
+            1414,
+            1641,
+            1510,
+            2164,
+            3007
+          ],
+          "limit": null,
+          "error": null,
+          "usage": {
+            "input_tokens": 59594,
+            "output_tokens": 5246,
+            "total_tokens": 110920,
+            "input_tokens_cache_write": 0,
+            "input_tokens_cache_read": 46080,
+            "reasoning_tokens": 4032,
+            "total_cost": null
+          },
+          "generation_ids": [
+            "gen-1794287979-oDGIQfRO9Amm7o135HF1",
+            "gen-1794287985-Ip3NcfNHRltiBZr7h1hs",
+            "gen-1794288023-cXCZUqpC0Siq0D1K2eGX",
+            "gen-1794288064-Za0Z1adeUtIO6jVYbmur",
+            "gen-1794288068-F1kCbEKC1Ij9D4ZnwfZJ"
+          ],
+          "generations": 5,
+          "generations_with_reported_cost": 5,
+          "reported_cost_usd": "0.25773120",
+          "providers": [
+            "DeepInfra"
+          ]
+        }
+      ]
+    },
+    "biochemistry_ordering": {
+      "log": "biochemistry_ordering/20261110T051937Z/2026-11-10T05-19-38-00-00_ot2-mixing_6gTV3QNgbCNnS7kYqa5WrK.eval",
+      "status": "success",
+      "configured_samples": 1,
+      "completed_samples": 1,
+      "correct": 1,
+      "scored_samples": 1,
+      "reported_cost_usd": "0.105381294",
+      "generations": 7,
+      "generations_with_reported_cost": 7,
+      "usage": {
+        "input_tokens": 44187,
+        "input_tokens_cache_read": 151040,
+        "input_tokens_cache_write": 0,
+        "output_tokens": 7510,
+        "reasoning_tokens": 4681,
+        "total_tokens": 202737
+      },
+      "median_provider_latency_ms": 1333,
+      "sample_seconds": 109.177,
+      "started_at": "2026-11-10T05:19:38+00:00",
+      "completed_at": "2026-11-10T05:21:28+00:00",
+      "observation_summary": null,
+      "samples": [
+        {
+          "id": "sequence_assembly_order_supplies",
+          "correct": true,
+          "score_explanation": "Liquid handling and all biochemical acceptance gates passed (in silico; experimental outcome unmeasured)",
+          "seconds": 109.177,
+          "simulated_spend_cents": 126650,
+          "actual_simulated_success": null,
+          "brier_score": null,
+          "provider_latencies_ms": [
+            1411,
+            1081,
+            1420,
+            1477,
+            1333,
+            472,
+            612
+          ],
+          "limit": null,
+          "error": null,
+          "usage": {
+            "input_tokens": 44187,
+            "output_tokens": 7510,
+            "total_tokens": 202737,
+            "input_tokens_cache_write": 0,
+            "input_tokens_cache_read": 151040,
+            "reasoning_tokens": 4681,
+            "total_cost": null
+          },
+          "generation_ids": [
+            "gen-1794287980-kOcdAOdG1o7d74i9vLwB",
+            "gen-1794287982-XqRSVLukETzmE3DBmNja",
+            "gen-1794287989-jNqXWkIR2ZPhmNVIXXKE",
+            "gen-1794288025-MjMuCzxzzX2PBauTJFvr",
+            "gen-1794288073-zJ8JiuxRAahn6Hkx8xD5",
+            "gen-1794288079-p1q2qFvuJwqh9FMxiU3p",
+            "gen-1794288081-I0F06zqRP4g0VYNbAXMV"
+          ],
+          "generations": 7,
+          "generations_with_reported_cost": 7,
+          "reported_cost_usd": "0.105381294",
+          "providers": [
+            "Relace"
+          ]
+        }
+      ]
+    },
+    "failures": {
+      "log": "failures/20261110T051937Z/2026-11-10T05-19-38-00-00_ot2-mixing_hzg6knCKww3a9VJamJfuU6.eval",
+      "status": "success",
+      "configured_samples": 5,
+      "completed_samples": 5,
+      "correct": 5,
+      "scored_samples": 5,
+      "reported_cost_usd": "1.119460078",
+      "generations": 56,
+      "generations_with_reported_cost": 56,
+      "usage": {
+        "input_tokens": 259914,
+        "input_tokens_cache_read": 1630912,
+        "input_tokens_cache_write": 0,
+        "output_tokens": 54214,
+        "reasoning_tokens": 40747,
+        "total_tokens": 1945040
+      },
+      "median_provider_latency_ms": 1115.0,
+      "sample_seconds": 643.74,
+      "started_at": "2026-11-10T05:19:38+00:00",
+      "completed_at": "2026-11-10T05:30:22+00:00",
+      "observation_summary": null,
+      "samples": [
+        {
+          "id": "sequence_recovery_01",
+          "correct": true,
+          "score_explanation": "Liquid handling and all biochemical acceptance gates passed (in silico; experimental outcome unmeasured)",
+          "seconds": 78.526,
+          "simulated_spend_cents": 29400,
+          "actual_simulated_success": null,
+          "brier_score": null,
+          "provider_latencies_ms": [
+            956,
+            769,
+            994,
+            870,
+            2253,
+            660,
+            767,
+            777,
+            907,
+            802
+          ],
+          "limit": null,
+          "error": null,
+          "usage": {
+            "input_tokens": 38937,
+            "output_tokens": 7984,
+            "total_tokens": 270665,
+            "input_tokens_cache_write": 0,
+            "input_tokens_cache_read": 223744,
+            "reasoning_tokens": 6175,
+            "total_cost": null
+          },
+          "generation_ids": [
+            "gen-1794287979-y4WVFXKKNvsCj0WBpLSC",
+            "gen-1794287980-Ott1AqWu30a9sb9ZfqSS",
+            "gen-1794287985-CdwG57sIEYj0KRkWpFqA",
+            "gen-1794288023-fy2CizyoUG31B1eTI0XD",
+            "gen-1794288026-6Boo8UZOhFTsyAe8HlGP",
+            "gen-1794288031-7F6tNlokHK8OKkym6JqA",
+            "gen-1794288035-Svt0gD2dEp5HFgTgy8fw",
+            "gen-1794288041-pTVZYASU2rgGvIG3KW6n",
+            "gen-1794288044-9ZG0HecU1qLJolExftMh",
+            "gen-1794288047-zgr0z6oBTHw4OnqSexqB"
+          ],
+          "generations": 10,
+          "generations_with_reported_cost": 10,
+          "reported_cost_usd": "0.23171301",
+          "providers": [
+            "InferenceNet"
+          ]
+        },
+        {
+          "id": "sequence_recovery_02",
+          "correct": true,
+          "score_explanation": "Liquid handling and all biochemical acceptance gates passed (in silico; experimental outcome unmeasured)",
+          "seconds": 100.238,
+          "simulated_spend_cents": 51000,
+          "actual_simulated_success": null,
+          "brier_score": null,
+          "provider_latencies_ms": [
+            988,
+            652,
+            988,
+            1197,
+            1504,
+            730,
+            1208,
+            506,
+            706,
+            647,
+            764,
+            486
+          ],
+          "limit": null,
+          "error": null,
+          "usage": {
+            "input_tokens": 64141,
+            "output_tokens": 11781,
+            "total_tokens": 425298,
+            "input_tokens_cache_write": 0,
+            "input_tokens_cache_read": 349376,
+            "reasoning_tokens": 8865,
+            "total_cost": null
+          },
+          "generation_ids": [
+            "gen-1794288057-O2Ua9bKeSMMcFBBc8hXY",
+            "gen-1794288059-7cKfLBTm1j1IvxlB1CAI",
+            "gen-1794288071-OB1arhoy5lJ95BN6emYs",
+            "gen-1794288102-a48CNVGoDH53XXClSith",
+            "gen-1794288105-Oo3H5mXJJ8DM6VwzCmdW",
+            "gen-1794288118-aVzDJ5YvBrZdqyDNvOjX",
+            "gen-1794288120-Tq7AyOi3McuNoUlTksCG",
+            "gen-1794288125-k2pTHg4BjiqqhSnBmanP",
+            "gen-1794288142-1ptldRzfiSunbS7oZ8PO",
+            "gen-1794288144-5P0LaerwsANywJ0B6fX4",
+            "gen-1794288147-Y0oqKXlaziA4w7Mwpx8A",
+            "gen-1794288149-TCm7wWxBv8ulJ65W4K70"
+          ],
+          "generations": 12,
+          "generations_with_reported_cost": 12,
+          "reported_cost_usd": "0.176219396",
+          "providers": [
+            "Wafer"
+          ]
+        },
+        {
+          "id": "sequence_recovery_03",
+          "correct": true,
+          "score_explanation": "Liquid handling and all biochemical acceptance gates passed (in silico; experimental outcome unmeasured)",
+          "seconds": 149.509,
+          "simulated_spend_cents": 51000,
+          "actual_simulated_success": null,
+          "brier_score": null,
+          "provider_latencies_ms": [
+            1406,
+            1336,
+            2798,
+            1397,
+            1930,
+            763,
+            3280,
+            1523,
+            1147,
+            1124,
+            1434,
+            1086
+          ],
+          "limit": null,
+          "error": null,
+          "usage": {
+            "input_tokens": 45945,
+            "output_tokens": 13235,
+            "total_tokens": 416044,
+            "input_tokens_cache_write": 0,
+            "input_tokens_cache_read": 356864,
+            "reasoning_tokens": 10593,
+            "total_cost": null
+          },
+          "generation_ids": [
+            "gen-1794288157-0YLrOk4GUiJChbTHvugW",
+            "gen-1794288159-KJL9Y6tY9m2u06qsmfzj",
+            "gen-1794288173-etWqjWfWYSmYAxPncJhW",
+            "gen-1794288216-I0N6Ph5zdF3RQ5e9cLcS",
+            "gen-1794288220-4TDfI9kVIWTjEUKzgvop",
+            "gen-1794288226-UgzW4STA9GNNMLy81xUB",
+            "gen-1794288282-elGpRRdlupV4nGGVoNTs",
+            "gen-1794288287-VMl1eiwnKssGgQUh15fY",
+            "gen-1794288291-HEPtgEHMCV7P3Hnh6IsV",
+            "gen-1794288294-nSTOeY8jcBnSDpFO6hwC",
+            "gen-1794288297-Uo0ZdV6kvpj9Zd7s0QbU",
+            "gen-1794288300-IFDoB7SlwyvE9bAfyU4z"
+          ],
+          "generations": 12,
+          "generations_with_reported_cost": 12,
+          "reported_cost_usd": "0.241517535",
+          "providers": [
+            "Sail Research"
+          ]
+        },
+        {
+          "id": "sequence_recovery_04",
+          "correct": true,
+          "score_explanation": "Liquid handling and all biochemical acceptance gates passed (in silico; experimental outcome unmeasured)",
+          "seconds": 89.525,
+          "simulated_spend_cents": 16000,
+          "actual_simulated_success": null,
+          "brier_score": null,
+          "provider_latencies_ms": [
+            1236,
+            1150,
+            1294,
+            1369,
+            1268,
+            596,
+            605,
+            1001,
+            1124,
+            719
+          ],
+          "limit": null,
+          "error": null,
+          "usage": {
+            "input_tokens": 46119,
+            "output_tokens": 9188,
+            "total_tokens": 351755,
+            "input_tokens_cache_write": 0,
+            "input_tokens_cache_read": 296448,
+            "reasoning_tokens": 6709,
+            "total_cost": null
+          },
+          "generation_ids": [
+            "gen-1794288307-D3BxEi86JLl7BABeGg5K",
+            "gen-1794288309-CMaHEXIU3foxTSC8NVZg",
+            "gen-1794288329-vpSCwoSnVxRg17K1imsp",
+            "gen-1794288361-AqdAWEe2ybmjGbl3wqK7",
+            "gen-1794288364-W9jwsC2VFNAgRYtf4gCz",
+            "gen-1794288369-ZQKGtLH86nHJYqYfLbdu",
+            "gen-1794288373-qlruOdQEDqlvzFzfSBeB",
+            "gen-1794288377-05xCBPbFmKduutqL8lVc",
+            "gen-1794288381-yqg6QqFtMoIo9QBtLMeL",
+            "gen-1794288385-sRcmeeOif515JWtz7slK"
+          ],
+          "generations": 10,
+          "generations_with_reported_cost": 10,
+          "reported_cost_usd": "0.147577637",
+          "providers": [
+            "Relace"
+          ]
+        },
+        {
+          "id": "sequence_recovery_05",
+          "correct": true,
+          "score_explanation": "Liquid handling and all biochemical acceptance gates passed (in silico; experimental outcome unmeasured)",
+          "seconds": 225.942,
+          "simulated_spend_cents": 16000,
+          "actual_simulated_success": null,
+          "brier_score": null,
+          "provider_latencies_ms": [
+            1349,
+            1812,
+            1749,
+            1568,
+            1331,
+            1016,
+            1173,
+            1024,
+            1113,
+            993,
+            1117,
+            1255
+          ],
+          "limit": null,
+          "error": null,
+          "usage": {
+            "input_tokens": 64772,
+            "output_tokens": 12026,
+            "total_tokens": 481278,
+            "input_tokens_cache_write": 0,
+            "input_tokens_cache_read": 404480,
+            "reasoning_tokens": 8405,
+            "total_cost": null
+          },
+          "generation_ids": [
+            "gen-1794288396-50dwR8XTDJtPdetOwvcr",
+            "gen-1794288399-GtGfI48vv3yZEY5suV2e",
+            "gen-1794288464-KUbJTzGLdvvDDJPORM6C",
+            "gen-1794288562-5BZr9LpQXdXjjFTpbqDj",
+            "gen-1794288565-ZIdxTyGUF4UN1K85XHSx",
+            "gen-1794288584-xOtBJqtZQTHUK73xK4Rh",
+            "gen-1794288587-TJiTZD5YBrAoUjXiDHdA",
+            "gen-1794288595-1YlUiwEmZdDRb8vLAdIT",
+            "gen-1794288600-PNsTSrqi8nV07D0s7Thh",
+            "gen-1794288604-cw7JtUQ0MDTCMCTOn1ye",
+            "gen-1794288608-Mt5grrTSjbxl0FbxPRTS",
+            "gen-1794288611-UcczRg5ZirEOgpqv46Gr"
+          ],
+          "generations": 12,
+          "generations_with_reported_cost": 12,
+          "reported_cost_usd": "0.32243250",
+          "providers": [
+            "Decart"
+          ]
+        }
+      ]
+    },
+    "failures_ambiguous": {
+      "log": "failures_ambiguous/20261110T051919Z/2026-11-10T05-19-19-00-00_ot2-mixing_Dy7rHvkD9mRfJsyd8Ly7ay.eval",
+      "status": "started",
+      "configured_samples": 6,
+      "completed_samples": 1,
+      "correct": 0,
+      "scored_samples": 1,
+      "reported_cost_usd": "0.52222593",
+      "generations": 17,
+      "generations_with_reported_cost": 17,
+      "usage": {
+        "input_tokens": 113083,
+        "input_tokens_cache_read": 620544,
+        "input_tokens_cache_write": 0,
+        "output_tokens": 26027,
+        "reasoning_tokens": 23094,
+        "total_tokens": 759654
+      },
+      "median_provider_latency_ms": 1978,
+      "sample_seconds": 588.78,
+      "started_at": "",
+      "completed_at": "",
+      "observation_summary": null,
+      "samples": [
+        {
+          "id": "ambiguous_recovery_01",
+          "correct": false,
+          "score_explanation": "Reaction outcome failed; obtain diagnostic observations with the laboratory service tools; Ambiguous mode requires a paid measurement of the current experiment and a privately successful outcome",
+          "seconds": 588.78,
+          "simulated_spend_cents": 63400,
+          "actual_simulated_success": false,
+          "brier_score": 0.9025,
+          "provider_latencies_ms": [
+            1611,
+            1886,
+            1076,
+            1309,
+            5088,
+            9496,
+            12405,
+            2906,
+            3168,
+            3598,
+            2442,
+            1468,
+            1978,
+            1326,
+            1333,
+            2519,
+            1465
+          ],
+          "limit": null,
+          "error": null,
+          "usage": {
+            "input_tokens": 113083,
+            "output_tokens": 26027,
+            "total_tokens": 759654,
+            "input_tokens_cache_write": 0,
+            "input_tokens_cache_read": 620544,
+            "reasoning_tokens": 23094,
+            "total_cost": null
+          },
+          "generation_ids": [
+            "gen-1794287960-XCEixikj9CG988wEQLSy",
+            "gen-1794287964-nwARCuxYK6kJ4UwICj0h",
+            "gen-1794288037-zuMpo9ci8wbLNdodFXqB",
+            "gen-1794288045-UNx43Ei0i3h5pTMH0dTp",
+            "gen-1794288114-PJBvy5q4ZMYBD37RV6Ko",
+            "gen-1794288129-lwKqRE2Q9KJ2HtDXSy1K",
+            "gen-1794288141-DD7XMWPKBzIvtPW7rzy6",
+            "gen-1794288186-3ONOVJXzNwUyzEFIxyNr",
+            "gen-1794288307-qsljz0MZ1hrlkD4ZXiWV",
+            "gen-1794288347-MzLnHUWJzFuCgyNk7rmv",
+            "gen-1794288366-UeyPjHwRf0PR70SGN1gd",
+            "gen-1794288371-dh6mWtLkvwEzXJy001Qq",
+            "gen-1794288489-j3tKKfJQhspusfYMIRs0",
+            "gen-1794288495-5oPNzpq06BMtEycYBDcO",
+            "gen-1794288500-uX696SCydJl1uZrFEqfs",
+            "gen-1794288504-H1MWv32zzDOvK3pltHWZ",
+            "gen-1794288537-fIiXWdyxqiH8UGE2Vg0q"
+          ],
+          "generations": 17,
+          "generations_with_reported_cost": 17,
+          "reported_cost_usd": "0.52222593",
+          "providers": [
+            "Decart",
+            "InferenceNet"
+          ]
+        }
+      ]
+    },
+    "gene_design": {
+      "log": "gene_design/20261110T051937Z/2026-11-10T05-19-38-00-00_gene-design_YsaEwFTpiLSfxkH9pbePmG.eval",
+      "status": "success",
+      "configured_samples": 1,
+      "completed_samples": 1,
+      "correct": 0,
+      "scored_samples": 1,
+      "reported_cost_usd": "0.61587018",
+      "generations": 22,
+      "generations_with_reported_cost": 22,
+      "usage": {
+        "input_tokens": 70648,
+        "input_tokens_cache_read": 288768,
+        "input_tokens_cache_write": 0,
+        "output_tokens": 23314,
+        "reasoning_tokens": 19934,
+        "total_tokens": 382730
+      },
+      "median_provider_latency_ms": 883.5,
+      "sample_seconds": 448.786,
+      "started_at": "2026-11-10T05:19:38+00:00",
+      "completed_at": "2026-11-10T05:27:07+00:00",
+      "observation_summary": null,
+      "samples": [
+        {
+          "id": "gene_design_assembly",
+          "correct": false,
+          "score_explanation": "No experiment selected.",
+          "seconds": 448.786,
+          "simulated_spend_cents": 13800,
+          "actual_simulated_success": null,
+          "brier_score": null,
+          "provider_latencies_ms": [
+            1353,
+            920,
+            966,
+            671,
+            1094,
+            634,
+            1107,
+            631,
+            931,
+            2459,
+            770,
+            1317,
+            765,
+            704,
+            696,
+            856,
+            1549,
+            869,
+            743,
+            771,
+            898,
+            1016
+          ],
+          "limit": {
+            "type": "message",
+            "limit": 60.0,
+            "reason": "Message limit exceeded. count: 61; limit: 60"
+          },
+          "error": null,
+          "usage": {
+            "input_tokens": 70648,
+            "output_tokens": 23314,
+            "total_tokens": 382730,
+            "input_tokens_cache_write": 0,
+            "input_tokens_cache_read": 288768,
+            "reasoning_tokens": 19934,
+            "total_cost": null
+          },
+          "generation_ids": [
+            "gen-1794287979-X6qRR5Uzi2qq7ZNsZJfO",
+            "gen-1794288001-Ftx7J2rTx9icMJl6LTgq",
+            "gen-1794288105-JemTpYtm9fO2aFJsgopu",
+            "gen-1794288110-TFGOhSTygSRiGvWTIhtF",
+            "gen-1794288121-SQSs0JwtRy1n7O94Q9Hk",
+            "gen-1794288125-tOTrrgfl3nMvtcCrRgra",
+            "gen-1794288132-g2w8RBfEwqTSk5mJ0ZTO",
+            "gen-1794288136-ernSK5Hd35XIRI9fwozo",
+            "gen-1794288140-S8Y4U5u27xv6e8zoTUaC",
+            "gen-1794288149-9YMifDNymXfQ1awMj1hN",
+            "gen-1794288155-jHOtPQUURzhncUswKE05",
+            "gen-1794288235-U1GDyDSe5mbNzwNFVEaf",
+            "gen-1794288239-uT4ECDj0ezuAlB3PnBog",
+            "gen-1794288247-S5PJoZik27zAah7TXIyk",
+            "gen-1794288251-HsYKTJr6F9oG8yDZNfa4",
+            "gen-1794288332-ydtcp56BZMg4vFq5jyih",
+            "gen-1794288363-f7oAm2eJBSu911xQ1FWW",
+            "gen-1794288370-LhWjUPDCLQt7pcJxnR3I",
+            "gen-1794288387-102bgymTSbvqUfGckv9K",
+            "gen-1794288407-opNd69CUAmxVxAuMPfkI",
+            "gen-1794288413-QbqWX7eOZKAYKnh5UsCM",
+            "gen-1794288422-6Aju05GUGBV5wpo5rULw"
+          ],
+          "generations": 22,
+          "generations_with_reported_cost": 22,
+          "reported_cost_usd": "0.61587018",
+          "providers": [
+            "DeepInfra"
+          ]
+        }
+      ]
+    }
+  }
+}

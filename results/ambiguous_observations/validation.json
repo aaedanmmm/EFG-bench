@@ -1,0 +1,98 @@
+{
+  "date_utc": "2026-11-09T02:01:54.967123+00:00",
+  "python": "3.12.1",
+  "audit_command": "python results/ambiguous_observations/audit.py",
+  "validation_commands": [
+    "python -m pytest -q tests --junitxml=results/ambiguous_observations/tests.xml",
+    "python -m pytest -q tests/test_observations.py tests/test_failures.py --junitxml=results/ambiguous_observations/final_focused_tests.xml",
+    "python -m pytest -q tests/test_observations.py::test_receipts_replay_idempotency_and_no_private_hashes --junitxml=results/ambiguous_observations/replay_test.xml",
+    "python -m src.validate_observations --output results/ambiguous_observations/controls.json",
+    "python -m src.replay_failures results/ambiguous_observations/rollouts/20261109T014352Z/2026-11-09T01-43-53-00-00_ot2-mixing_hgwZVYGJ898euPDQjk5wee.eval --output results/ambiguous_observations/replay.json"
+  ],
+  "tests": {
+    "tests.xml": {
+      "tests": 243,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "focused_tests.xml": {
+      "tests": 20,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "final_focused_tests.xml": {
+      "tests": 46,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "replay_test.xml": {
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "constructed_controls_passed": true,
+  "actual_rollout_model": "openrouter/moonshotai/kimi-k3",
+  "actual_rollout_summary": {
+    "samples": 1,
+    "actual_successes": 0,
+    "completed_tasks": 0,
+    "assessed_samples": 1,
+    "mean_brier_score": 0.0576,
+    "note": "Brier score is lower-is-better and conditional on assessment coverage. Constructed observation probabilities are not wet-lab validation."
+  },
+  "actual_rollout_replay_passed": true,
+  "run_start_snapshot_mismatches": [],
+  "source_changes_since_run_start": [
+    "src/failures.py",
+    "src/replay_failures.py"
+  ],
+  "source_change_explanation": "Final latest-experiment verification tightening and expanded observation replay; recorded actor already measured its latest experiment and final replay matches.",
+  "credential_scan": {
+    "available_credential_values_checked": true,
+    "files_scanned_including_decoded_eval_logs": 112,
+    "matching_files": []
+  },
+  "current_source_sha256": {
+    "src/__init__.py": "dd8c7599dc43aeb338b048027ceb455eea3c9554f109b6ebbce3afbe04836856",
+    "src/abc-2.py": "e9465e8de5573f05659858e29b72c7d10b3f373dfb788b7ddf08be6f899ee4f1",
+    "src/biochemistry.py": "aabec034123477ab302e4151bda167764b1b4133cd21dd31555b491bd59cd04d",
+    "src/costs.py": "22d84401bba853779252904357fc363edbd2cb765aab2646d4049547ff1d4542",
+    "src/design_assembly.py": "fd9b3edbeb6d01f7e3ca77fa77c8115e78c0ab0314159ae0baa299134e4f5cf2",
+    "src/design_experiments.py": "f0af2841ebbe69b287d30fe4cf0ac07de260cdb5be9fdac5e733c11b16606405",
+    "src/design_lab.py": "ceb695cb0f1176b91f2324527b527cbb344b142434b466965bc9d7e338c3943a",
+    "src/design_ordering.py": "7509611b0561ab32170db6e8bcbd02304834d04921a1dbc4f1df7db7b57638d3",
+    "src/design_task.py": "03dc76dcafed6cd6666287b4ba8e3928f1f73d0cb44022e77682c02bb7c78320",
+    "src/environment.py": "d80b6e9ca57499043811899f65f18310f3ce6ccaec508b46baa4bd62ece3c990",
+    "src/failures.py": "9f5ed0e2ebb521b548016b4b690ed8ebd84b83a09e973ba379fea164e08f2cb9",
+    "src/fragments.py": "382beae77a940b69b63b8cdd16352687e00319f34f3730994272983f043da0a8",
+    "src/judge.py": "ae58b47fa6354edae8676b0397a8e1e4d5c18cce4884189df45b38a881679cfe",
+    "src/judge_rollout.py": "26417a9023369b7d321afc980208f10b8ccde908c274eab3ab44d38a07829b91",
+    "src/model_policy.py": "81b8af456ae90e426ab41e7cae6cc742e8ca84a97d0b025b4ab8f2ac80fbf43e",
+    "src/observations.py": "16ba56a13d5b4a7653274881e564c29bac9a667c903874c5f0e0ebb434097475",
+    "src/ordering.py": "d26e1d504d9ace698d47b522ac450d375e911a695f70ea1a2c020a4bd8e53532",
+    "src/replay_failures.py": "4e01843bc0e85db04754179c69457eb797f0967c30636f12ebe5c736fb870061",
+    "src/review.py": "004a9cb438bb82faa307cb4548d561d8b438dc1eb5adefec92de9a727f702bfe",
+    "src/run_eval.py": "8c6cd6459c666379a5304a57f34b622d338c372fb7e0c11c8e2b5b55a35c65c6",
+    "src/runner.py": "b6e3675cd975cfda97d588a398f0fbb9a42828599dceb40db3623613fc3e22d8",
+    "src/runtime.py": "a1193071ad81fb2ea88a86bc394f54fa98aca98ca8151dad823ef4c3d9006b28",
+    "src/scenarios.py": "067f564c843c92e3a2dd726b74b0c84c0a464351ce8aae57ad3e4c774f2af4dc",
+    "src/scorer.py": "0684fe33d2cd345b06ba1ad6160e3c7f533f9844a8e66d6b4a2f915ed2d26e9d",
+    "src/sequence_assembly.py": "027a15c6637dc95d7117c794efab071020402c190bba76a641a26086a61db4fe",
+    "src/simulator.py": "5722ae4deba3489ee039ed058291f3bce4a2c9625a3442f0139d062b4df2e354",
+    "src/split_sequence.py": "f64fbc6ddbaa7448cb2ef33c821a0fc53da3901f036f4bb94dde7aa00e5bce42",
+    "src/validate.py": "931f5df2faa75533a7e2263ee7b3aa11b026c7bc0ebc74d8513ef542b684e738",
+    "src/validate_diagnostics.py": "2b86572df1c5769a2faa9ddfbfc6238a9f3b80543373a8187631029dc5852bde",
+    "src/validate_failures.py": "dcc74ebd12f8a495af532bb777158ea59f42e7beb19b9aa588f71b12ee9af265",
+    "src/validate_observations.py": "a851fe79d7a5968f788e0aca9af54b379b94a1a82da1e15fc5acfd8773cf20a1",
+    "tests/test_observations.py": "ab783ddf694bbdcc43796f441f9456c39c35aa01086583714f43e6984fa9a5ca",
+    "requirements-dev.txt": "1438527233ce7beb1cdf4a046b8b5d38f140bd77217ef4df17d5592989d3ec15",
+    "requirements-lock.txt": "5ad0d2523720cc248e7f574f10d2db86bd4b2bc27c927c97d638951719b33f62",
+    "requirements.txt": "ec352d967ce346a9ab3e1bd3b7f3de891ea7e085a2b6bbc672868cc6b5a14fa9"
+  },
+  "passed": true
+}

@@ -1,0 +1,22 @@
+{
+  "constructed_controls": "10/10 across seeds 0 and 41; 15/15 fault workflows exercised in tests across three seeds",
+  "actual_rollout": "one successful OpenRouter Kimi K3 damaged-stock recovery; other faults have scripted controls only",
+  "source_snapshot_mismatches": [],
+  "credential_scan": {
+    "checked_existing_credential_values": false,
+    "leaks": []
+  },
+  "new_dependencies": false,
+  "commands": [
+    "python -m pytest -q tests --junitxml=results/design_fault_recovery/tests.xml",
+    "python -m src.validate_design_recovery --seed 0 --output results/design_fault_recovery/controls_seed0.json",
+    "python -m src.validate_design_recovery --seed 41 --output results/design_fault_recovery/controls_seed41.json",
+    "python -m src.replay_design_recovery results/design_fault_recovery/rollouts/20261112T012616Z/run.json --output results/design_fault_recovery/replay.json"
+  ],
+  "regression_tests": {
+    "passed": 265,
+    "failed": 0,
+    "seconds": 148.97,
+    "junit": "results/design_fault_recovery/tests.xml"
+  }
+}

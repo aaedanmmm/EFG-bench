@@ -1,7 +1,9 @@
 """Grade the artifact by fresh execution, never by the agent's claimed success."""
+import hashlib
 from inspect_ai.scorer import CORRECT, INCORRECT, Score, accuracy, scorer, stderr
 from src.runner import validate_code
 from src.ordering import OrderError, account_summary, replay_orders
+from src import observations
 
 
 @scorer(metrics=[accuracy(), stderr()])
@@ -25,6 +27,15 @@ def ot2_mixture():
             report = await validate_code(code, scenario["id"], inventory=inventory)
         else:
             report = await validate_code(code, scenario["id"])
+        if observations.enabled(scenario):
+            from src.failures import fingerprint
+            report["actual_success"] = report["passed"]
+            report["observation_model"] = observations.VERSION
+            report["calibration"] = observations.assess_calibration(
+                state.store.get("assessments", []), state.store.get("experiments", []),
+                state.store.get("lab_actions", []), hashlib.sha256(code.encode()).hexdigest(),
+                fingerprint(inventory), report["actual_success"],
+            )
         if scenario.get("failure_modes"):
             from src.failures import recovery_evidence
             try:
@@ -34,8 +45,14 @@ def ot2_mixture():
             report["recovery"] = recovery
             if not recovery["passed"]:
                 report["passed"] = False
-                report["errors"].append("Recovery requires observing a failed reaction gel and verifying the current repaired protocol/inventory with a fresh reaction gel")
+                report["errors"].append(
+                    "Ambiguous mode requires a paid measurement of the current experiment and a privately successful outcome"
+                    if observations.enabled(scenario) else
+                    "Recovery requires observing a failed reaction gel and verifying the current repaired protocol/inventory with a fresh reaction gel")
             report["lab_actions"] = state.store.get("lab_actions", [])
+        if observations.enabled(scenario) and not report["calibration"]["assessed"]:
+            report["passed"] = False
+            report["errors"].append("Record a final assessment after the latest experiment, measurement, or inventory change")
         if account is not None:
             report["ordering"] = account_summary(account)
             report["cost_efficiency"] = (1 - account["spent_cents"] / account["budget_cents"]) if report["passed"] else 0.0

@@ -1,0 +1,17 @@
+╭──────────────────────────────────────────────────────────────────────────────╮
+│design_fault_recovery (1 sample): openrouter/moonshotai/kimi-k3               │
+╰──────────────────────────────────────────────────────────────────────────────╯
+max_retries: 1, max_connections: 1, max_tokens: 3000, temperature: 0.0,         
+message_limit: 90, max_samples: 1, seed: 0, dataset: (samples)                  
+                                                                                
+total time:                    0:01:43                                          
+openrouter/moonshotai/kimi-k3  211,000 tokens [I: 17,175, CW: 0, CR: 183,033, O:
+                             10,792, R: 8,619]                                  
+                                                                                
+gene_design_score                                                               
+accuracy           1.000                                                        
+                                                                                
+Log:                                                                            
+results/design_fault_recovery/rollouts/20261112T012616Z/2026-11-12T01-26-16-00-0
+0_design-fault-recovery_GRnJWeGeFLnYdBNAhhtu62.eval                             
+                                                                                Run record and artifacts: /Users/aedanmccarthy/projects/MATS-work-test/results/design_fault_recovery/rollouts/20261112T012616Z

@@ -45,3 +45,13 @@ derived from all seven raw cores, with their provenance recorded in
 Run `.venv/bin/python -m src.fragments` to inspect the manifest, or
 `.venv/bin/python results/archive/sequences/check_integration.py` for the fully local
 order-and-simulate check. Evidence is in `results/archive/sequences/`.
+
+## RB1 gene-design reference
+
+`rb1_cdna.fasta` is human RB1 transcript ENST00000267163.6 (GRCh38),
+4,768 bp of spliced cDNA including UTRs, retrieved from Ensembl on 2026-11-12.
+`rb1_exons.json` records all 27 exon sequences, genomic coordinates (1-based,
+inclusive), transcript coordinates, and source URLs. The exon sequences
+concatenate exactly to the cDNA. Raw responses and exon length evidence are
+in `results/rb1_design/`. `design_target.fasta` is the former constructed
+noncoding target, retained for historical controls.

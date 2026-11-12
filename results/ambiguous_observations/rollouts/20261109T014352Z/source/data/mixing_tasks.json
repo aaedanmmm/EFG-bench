@@ -1,0 +1,46 @@
+[
+  {
+    "id": "two_reagent_mix",
+    "description": "Prepare two identical 20 uL mixtures of inert reagent A and water.",
+    "constructed": true,
+    "api_level": "2.19",
+    "labware": {"1": "opentrons_24_tuberack_nest_1.5ml_snapcap", "2": "opentrons_96_tiprack_20ul", "3": "nest_96_wellplate_200ul_flat"},
+    "pipette": {"name": "p20_single_gen2", "mount": "left", "tip_slots": ["2"]},
+    "sources": {"1:A1": {"components": {"reagent_A": 100.0}, "dead_volume_ul": 10}, "1:A2": {"components": {"water": 200.0}, "dead_volume_ul": 10}},
+    "targets": {"3:A1": {"reagent_A": 5.0, "water": 15.0}, "3:A2": {"reagent_A": 5.0, "water": 15.0}},
+    "mix": {"repetitions": 3, "volume_ul": 10},
+    "tolerance_ul": 0.01,
+    "tip_budget": 6,
+    "max_simulations": 5
+  },
+  {
+    "id": "three_reagent_panel",
+    "description": "Prepare three distinct inert mixtures, with no cross-contamination of stocks.",
+    "constructed": true,
+    "api_level": "2.19",
+    "labware": {"1": "opentrons_24_tuberack_nest_1.5ml_snapcap", "2": "opentrons_96_tiprack_20ul", "3": "nest_96_wellplate_200ul_flat"},
+    "pipette": {"name": "p20_single_gen2", "mount": "left", "tip_slots": ["2"]},
+    "sources": {"1:A1": {"components": {"reagent_A": 150.0}, "dead_volume_ul": 10}, "1:A2": {"components": {"reagent_B": 150.0}, "dead_volume_ul": 10}, "1:A3": {"components": {"water": 250.0}, "dead_volume_ul": 10}},
+    "targets": {"3:A1": {"reagent_A": 2.0, "reagent_B": 3.0, "water": 15.0}, "3:A2": {"reagent_A": 4.0, "reagent_B": 6.0, "water": 10.0}, "3:A3": {"reagent_A": 6.0, "reagent_B": 9.0, "water": 5.0}},
+    "mix": {"repetitions": 3, "volume_ul": 10},
+    "tolerance_ul": 0.01,
+    "tip_budget": 12,
+    "max_simulations": 5
+  },
+  {
+    "id": "serial_dilution",
+    "description": "Make three 20 uL two-fold serial dilutions. Start with 40 uL in A1 (20 stock + 20 water), transfer 20 from A1 to 20 water in A2, then 20 from A2 to 20 water in A3, and discard 20 from A3 to waste A12. Mix each dilution before taking an aliquot; remix the final wells after all transfers.",
+    "constructed": true,
+    "api_level": "2.19",
+    "labware": {"1": "opentrons_24_tuberack_nest_1.5ml_snapcap", "2": "opentrons_96_tiprack_20ul", "3": "nest_96_wellplate_200ul_flat"},
+    "pipette": {"name": "p20_single_gen2", "mount": "left", "tip_slots": ["2"]},
+    "sources": {"1:A1": {"components": {"reagent_A": 150.0}, "dead_volume_ul": 10}, "1:A2": {"components": {"water": 250.0}, "dead_volume_ul": 10}},
+    "targets": {"3:A1": {"reagent_A": 10.0, "water": 10.0}, "3:A2": {"reagent_A": 5.0, "water": 15.0}, "3:A3": {"reagent_A": 2.5, "water": 17.5}},
+    "waste_wells": ["3:A12"],
+    "require_mix_before_sampling": true,
+    "mix": {"repetitions": 3, "volume_ul": 10},
+    "tolerance_ul": 0.01,
+    "tip_budget": 12,
+    "max_simulations": 5
+  }
+]

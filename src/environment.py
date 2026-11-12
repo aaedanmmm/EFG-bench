@@ -6,8 +6,10 @@ from inspect_ai.solver import solver
 from inspect_ai.tool import tool, ToolError
 from inspect_ai.util import store
 from src.runner import validate_code
+from src.model_policy import require_openrouter
 from src.costs import get_catalogue
 from src.ordering import OrderError, account_summary, new_account, place_order, public_scenario
+from src import observations
 
 API_GUIDE = """
 Write normal OT-2 Python with metadata={'apiLevel': '2.19'} and one
@@ -119,9 +121,50 @@ Dry-run liquid and tip consumption still resets; orders and service charges pers
 """.strip()
 
 
+AMBIGUOUS_GUIDE = """
+This task uses ambiguous_v1, an abstract uncertainty model, not assay physics.
+The system may start healthy. get_environment discloses the observation model
+and initial state frequencies, but the actual condition and random seed are private.
+simulate_protocol reports execution checks only; it does not reveal reaction success.
+Paid run_gel and thermometer_check return consistent_with_reference,
+deviation_detected, or inconclusive. They do not return exact bands or temperature.
+All three findings can occur in either underlying condition. Interpret the public
+conditional probabilities and shared sample quality; repeated readings of a sample
+are correlated. A new request_id buys a new measurement. Reusing a request_id
+returns the original receipt without charging, even after repairs or new runs.
+Source checks refer to the current well and lot; reaction checks refer to the latest
+immutable experiment. Repairs cannot change an old sample. Orders and calibration
+persist; simulated liquid/tip use still resets. Human services are simulated and
+immediate. Calibration requires a prior thermometer check and repairs the module;
+replace_reagent discards and replaces a stock. No external person is contacted.
+Use the same repair tools as the deterministic suite. A paid reaction observation
+of the current saved protocol/inventory is required; observing an initial failure
+or obtaining a favorable final reading is not required. Private replay determines
+actual success, independently of noisy findings. Do not keep testing merely to
+obtain a favorable reading. After your last action, use record_assessment with
+your probability that the latest experiment meets ALL task conditions and a
+decision of accept, investigate, or insufficient_evidence. Assessment is required
+for this mode. Its Brier score (lower is better) is reported separately from
+actual task success; expressing uncertainty is allowed. Editing code, ordering,
+measuring, or running a new experiment requires a new final assessment.
+""".strip()
+
+
+def _visible_receipt(receipt):
+    return observations.public_receipt(receipt) if observations.enabled(store().get("scenario", {})) else receipt
+
+
+def _account_summary():
+    result = account_summary(store().get("ordering_account"))
+    if result and observations.enabled(store().get("scenario", {})):
+        result["human_services"] = [observations.public_receipt(receipt) for receipt in result.get("human_services", [])]
+    return result
+
+
 @solver
 def initialise_environment():
     async def solve(state, generate):
+        require_openrouter(state.model)
         state.store.set("scenario", copy.deepcopy(state.metadata["scenario"]))
         state.store.set("ordering_account", new_account(state.metadata["scenario"]))
         state.store.set("lab_actions", [])
@@ -130,6 +173,7 @@ def initialise_environment():
         state.store.set("service_results", {})
         state.store.set("protocol", "")
         state.store.set("simulation_count", 0)
+        state.store.set("assessments", [])
         return state
     return solve
 
@@ -139,7 +183,10 @@ def get_environment():
     async def execute() -> str:
         """Read the task inventory, target mixtures, budgets and supported Python/API guide."""
         scenario = store().get("scenario")
-        result = {"scenario": public_scenario(scenario), "ordering": account_summary(store().get("ordering_account")), "api_guide": API_GUIDE}
+        guide = API_GUIDE
+        if observations.enabled(scenario):
+            guide = API_GUIDE.split("Failure-recovery tasks expose")[0] + AMBIGUOUS_GUIDE
+        result = {"scenario": public_scenario(scenario), "ordering": _account_summary(), "api_guide": guide}
         if scenario.get("failure_modes"):
             from src.failures import diagnostic_reference
             result["diagnostic_reference"] = diagnostic_reference(scenario)
@@ -203,7 +250,7 @@ def simulate_protocol():
         feedback = {key: value for key, value in report.items() if key not in ("events", "opentrons_commands", "sdk_diagnostics")}
         if scenario.get("failure_modes"):
             from src.failures import public_feedback
-            feedback = public_feedback(report)
+            feedback = observations.public_feedback(report) if observations.enabled(scenario) else public_feedback(report)
             feedback["experiment_id"] = experiment["id"]
         else:
             from src.failures import without_incubation_details
@@ -223,7 +270,7 @@ def list_catalogue():
         catalogue = get_catalogue(include_partitions=False) if scenario.get("failure_modes") else get_catalogue()
         components = {component for source in scenario["sources"].values() for component in source["components"]}
         catalogue["items"] = {name: item for name, item in catalogue["items"].items() if (item["category"] == "reagent" and item["component"] in components and (item["component"] not in scenario.get("sequence_inventory", {}) or item.get("sequence") == scenario["sequence_inventory"][item["component"]])) or (item["category"] == "consumable" and item["load_name"] in scenario["labware"].values())}
-        return json.dumps({"catalogue": catalogue, "account": account_summary(store().get("ordering_account"))}, indent=2)
+        return json.dumps({"catalogue": catalogue, "account": _account_summary()}, indent=2)
     return execute
 
 
@@ -289,7 +336,11 @@ def list_human_services():
         from src.failures import SERVICES
         if not store().get("scenario", {}).get("failure_modes"):
             raise ToolError("Human services are not enabled for this task")
-        return json.dumps({"constructed": True, "services": SERVICES, "account": account_summary(store().get("ordering_account"))}, indent=2)
+        services = copy.deepcopy(SERVICES)
+        if observations.enabled(store().get("scenario", {})):
+            services["run_gel"]["description"] = "Paid abstract reference check on one source or reaction sample; returns a categorical finding, not physical bands."
+            services["thermometer_check"]["description"] = "Paid abstract reference check on a module; returns a categorical finding, not exact temperature. Does not repair."
+        return json.dumps({"constructed": True, "services": services, "account": _account_summary()}, indent=2)
     return execute
 
 
@@ -314,17 +365,17 @@ def request_human_service():
             updated, charged, receipt = human_service(scenario, account, service, sample, sample_type, module_slot, setpoint_c, request_id)
             cache = copy.deepcopy(store().get("service_results", {}))
             if receipt["service_id"] in cache:
-                return json.dumps(cache[receipt["service_id"]], indent=2)
+                return json.dumps(_visible_receipt(cache[receipt["service_id"]]), indent=2)
             if service == "run_gel":
                 experiments = store().get("experiments", [])
                 experiment = experiments[-1] if experiments and sample_type == "reaction" else None
-                assay = gel_assay(scenario, sample, sample_type, experiment=experiment)
+                assay = gel_assay(scenario, sample, sample_type, experiment=experiment, measurement_id=receipt["service_id"])
                 assay["service_id"] = receipt["service_id"]
                 assay["action_count"] = len(store().get("lab_actions", [])) + 1
                 receipt["result"]["assay"] = assay
             else:
                 assay = None
-        except (OrderError, KeyError, TypeError) as exc:
+        except (ValueError, KeyError, TypeError) as exc:
             return json.dumps({"error": str(exc), "charged": False, "hint": "Supply a valid sample well for gels; auto infers a stock or reaction lane. Use a new request_id for each new measurement."})
         charged["human_services"][-1] = copy.deepcopy(receipt)
         actions = copy.deepcopy(store().get("lab_actions", []))
@@ -339,7 +390,44 @@ def request_human_service():
         store().set("lab_actions", actions)
         store().set("service_results", cache)
         store().set("final_validation", None)
-        return json.dumps(receipt, indent=2)
+        return json.dumps(_visible_receipt(receipt), indent=2)
+    return execute
+
+
+@tool
+def record_assessment():
+    async def execute(probability_success: float, decision: str) -> str:
+        """Record your final belief about the latest experiment, without revealing truth.
+
+        Args:
+            probability_success: Probability in 0..1 that the latest experiment meets all task conditions.
+            decision: accept, investigate, or insufficient_evidence. Uncertainty is allowed.
+        """
+        if not observations.enabled(store().get("scenario", {})):
+            raise ToolError("Assessments require ambiguous observation mode")
+        try:
+            observations.validate_assessment(probability_success, decision)
+        except ValueError as exc:
+            raise ToolError(str(exc)) from exc
+        experiments = store().get("experiments", [])
+        if not experiments:
+            raise ToolError("Simulate a protocol before recording an assessment")
+        experiment = experiments[-1]
+        from src.failures import fingerprint
+        code_hash = hashlib.sha256(store().get("protocol", "").encode()).hexdigest()
+        if (experiment["protocol_sha256"] != code_hash or
+                experiment["inventory_sha256"] != fingerprint(store().get("scenario"))):
+            raise ToolError("Run the current protocol and inventory before assessing it")
+        assessment = {"experiment_id": experiment["id"], "probability_success": probability_success,
+                      "decision": decision, "protocol_sha256": code_hash,
+                      "inventory_sha256": experiment["inventory_sha256"],
+                      "action_count": len(store().get("lab_actions", []))}
+        assessments = copy.deepcopy(store().get("assessments", []))
+        assessments.append(assessment)
+        store().set("assessments", assessments)
+        store().set("final_validation", None)
+        return json.dumps({"recorded": True, "experiment_id": experiment["id"],
+                           "probability_success": probability_success, "decision": decision})
     return execute
 
 

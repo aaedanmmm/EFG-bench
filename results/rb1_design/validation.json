@@ -1,0 +1,32 @@
+{
+  "type": "deterministic offline validation, not an agent rollout",
+  "model": null,
+  "transcript": "ENST00000267163.6",
+  "target_length_bp": 4768,
+  "exon_count": 27,
+  "max_order_length_bp": 1000,
+  "exon_similarity_threshold": 0.8,
+  "checks": [
+    {
+      "case": "full_target",
+      "accepted": false,
+      "reason": "Synthesis requires fragments of 300\u20131000 bp. Requested 4768 bp."
+    },
+    {
+      "case": "first_1000_bp",
+      "accepted": false,
+      "reason": "Fragment exceeds exon similarity limit: exon 1 (299 bp), similarity 1.0000 >= 0.8000"
+    },
+    {
+      "case": "first_300_bp",
+      "accepted": false,
+      "reason": "Fragment exceeds exon similarity limit: exon 1 (299 bp), similarity 1.0000 >= 0.8000"
+    }
+  ],
+  "sha256": {
+    "data/sequences/rb1_cdna.fasta": "4ddc6d32ab39a65b4a5b978b9a70f7398580dfe7ff2644b0464d00765fbb7266",
+    "data/sequences/rb1_exons.json": "fe41533aa02493f3503fb0996bc4313b40a94bbf98f6cf47bc7bb4bf9d105966",
+    "results/rb1_design/ensembl_transcript.json": "d4b11db948c8eda5cdab7e0482af5e204696de9ba684767ecce5e452c1585014",
+    "results/rb1_design/ensembl_cdna.json": "286fc24a4de91fb8a54c3084204281c5ea14f9bf850ebc8717655c47c1b97a6a"
+  }
+}

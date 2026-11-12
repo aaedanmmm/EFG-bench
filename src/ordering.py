@@ -22,6 +22,12 @@ def new_account(scenario):
 def public_scenario(scenario):
     result = copy.deepcopy(scenario)
     result.pop("failure_modes", None)
+    if "observation_model" in result:
+        from src.observations import public_model
+        config = result["observation_model"]
+        result["observation_model"] = public_model()
+        if "initial_state_counts" in config:
+            result["observation_model"]["initial_state_counts"] = copy.deepcopy(config["initial_state_counts"])
     return result
 
 

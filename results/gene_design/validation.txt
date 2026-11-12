@@ -1,0 +1,15 @@
+Validation: repository test suite, including constructed gene-design controls.
+Command: INSPECT_TRACE_FILE=/tmp/mats-design-pytest.log python -m pytest -q
+Python: 3.12.11; dependencies installed from requirements-lock.txt.
+
+........................................................................ [ 32%]
+........................................................................ [ 64%]
+........................................................................ [ 97%]
+......                                                                   [100%]
+222 passed in 106.52s (0:01:46)
+
+Final focused rerun after custom scenario ID validation.
+
+Command: python -m pytest -q tests/test_design_*.py
+.................................                                        [100%]
+33 passed in 0.73s

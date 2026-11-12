@@ -1,0 +1,20 @@
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ot2_mixing (2 samples): openrouter/moonshotai/kimi-k3                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+max_retries: 1, max_connections: 1, max_tokens: 5000, temperature: 0.0,         
+fail_on_error: False, max_samples: 1, log_model_api: True, message_limit: None, 
+suite: ordering, judge_model: None, judge_max_tokens: 8000, observation_mode:   
+deterministic, observation_seed: 0, dataset: (samples)                          
+                                                                                
+total time:                    0:02:26                                          
+openrouter/moonshotai/kimi-k3  145,186 tokens [I: 27,807, CW: 0, CR: 104,448, O:
+                             12,931, R: 9,235]                                  
+                                                                                
+ot2_mixture                                                                     
+accuracy     1.000                                                              
+stderr       0.000                                                              
+                                                                                
+Log:                                                                            
+results/kimi_k3_budget10/ordering/20261110T053504Z/2026-11-10T05-35-04-00-00_ot2
+-mixing_9cdELrDTPEjedYNehEVwoy.eval                                             
+                                                                                Run record and artifacts: /Users/aedanmccarthy/projects/MATS-work-test/results/kimi_k3_budget10/ordering/20261110T053504Z

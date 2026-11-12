@@ -1,0 +1,23 @@
+[11/10/26 16:38:12] WARNING  sample=gene_design_assembly             run.py:2555
+                             Sample error (id: gene_design_assembly,            
+                             epoch: 1): RetryError(<Future at                   
+                             0x1367cad50 state=finished raised                  
+                             RateLimitError>))                                  
+╭──────────────────────────────────────────────────────────────────────────────╮
+│gene_design (1 sample): openrouter/moonshotai/kimi-k3                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+max_retries: 1, max_connections: 1, max_tokens: 5000, temperature: 0.0,         
+fail_on_error: False, max_samples: 1, log_model_api: True, message_limit: None, 
+scenario_file: None, dataset: (samples)                                         
+                                                                                
+total time:                    0:03:08                                          
+openrouter/moonshotai/kimi-k3  204,298 tokens [I: 14,467, CW: 0, CR: 177,152, O:
+                             12,679, R: 8,454]                                  
+                                                                                
+                                                                                
+WARNING: 1 of 1 executed samples (100%) had errors and were not scored.         
+                                                                                
+Log:                                                                            
+results/kimi_k3_budget10/gene_design/20261110T053504Z/2026-11-10T05-35-04-00-00_
+gene-design_E8VCarxdxgVJXH3q3CaYWS.eval                                         
+                                                                                Run record and artifacts: /Users/aedanmccarthy/projects/MATS-work-test/results/kimi_k3_budget10/gene_design/20261110T053504Z

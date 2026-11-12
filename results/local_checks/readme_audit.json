@@ -1,0 +1,133 @@
+{
+  "checked_at_utc": "2026-11-09T02:06:57.657805+00:00",
+  "scope": "Root README and results index documentation audit; no code changes or new model runs",
+  "checks": [
+    {
+      "document": "README.md",
+      "target": "docs/supplied_sequence_assembly.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/gene_design.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/failure_modes.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/ambiguous_observations.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "results/supplied_sequence_assembly/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "results/ambiguous_observations/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "results/gene_design/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "results/ambiguous_observations/tests.txt",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "results/README.md",
+      "exists": true
+    },
+    {
+      "document": "results/README.md",
+      "target": "archive/README.md",
+      "exists": true
+    },
+    {
+      "document": "results/README.md",
+      "target": "ambiguous_observations/README.md",
+      "exists": true
+    },
+    {
+      "document": "results/README.md",
+      "target": "gene_design/README.md",
+      "exists": true
+    },
+    {
+      "document": "results/README.md",
+      "target": "supplied_sequence_assembly/README.md",
+      "exists": true
+    },
+    {
+      "document": "results/README.md",
+      "target": "feedback_privacy/README.md",
+      "exists": true
+    },
+    {
+      "document": "results/README.md",
+      "target": "judge/README.md",
+      "exists": true
+    },
+    {
+      "document": "results/README.md",
+      "target": "archive/legacy_results_index.md",
+      "exists": true
+    },
+    {
+      "document": "results/README.md",
+      "target": "archive/README.md",
+      "exists": true
+    },
+    {
+      "document": "results/README.md",
+      "target": "archive/relocation_manifest.json",
+      "exists": true
+    },
+    {
+      "document": "results/README.md",
+      "target": "archive/legacy_root_files/README.md",
+      "exists": true
+    },
+    {
+      "document": "results/README.md",
+      "target": "supplied_sequence_assembly/raw_partition_baseline.json",
+      "exists": true
+    },
+    {
+      "document": "results/README.md",
+      "target": "ambiguous_observations/tests.txt",
+      "exists": true
+    }
+  ],
+  "all_local_links_exist": true,
+  "source_sha256": {
+    "README.md": "60dfd6e102134cab8ec40de0b5b8c529bf475faa7e2a4164a4683a18c4e00235",
+    "results/README.md": "a49719456770864f4863e11025ddbfd41040097063c18658fed58273765ab8dc"
+  },
+  "evidence_reviewed": [
+    "src/abc-2.py",
+    "src/scorer.py",
+    "src/run_eval.py",
+    "docs/supplied_sequence_assembly.md",
+    "results/supplied_sequence_assembly/README.md",
+    "results/gene_design/README.md",
+    "results/ambiguous_observations/README.md",
+    "results/ambiguous_observations/tests.txt"
+  ],
+  "corrections": [
+    "Seven pieces, 12484 bp; separate 1382 bp gene-design target",
+    "Synthetic diagnostic conventions and optional judge scope",
+    "Budget constraint versus headline accuracy",
+    "Recorded successful and unsuccessful model runs, without saturation claims",
+    "New ambiguous mode and current 243-test evidence"
+  ]
+}

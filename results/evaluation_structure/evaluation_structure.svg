@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1380" viewBox="0 0 1600 1380" role="img" aria-labelledby="title desc">
+<title id="title">Gibson-budget-bench evaluation structure</title>
+<desc id="desc">Overview of the Inspect AI suites, followed by the recovery interaction loop, hidden simulator state, observation modes, and independent scoring. All biological outcomes are constructed simulations.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#52657b"/></marker></defs>
+<style>text{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#162b42}.title{font-size:36px;font-weight:750}.sub{font-size:19px;fill:#53667a}.section{font-size:14px;letter-spacing:2px;font-weight:750;fill:#53667a}.head{font-size:22px;font-weight:700}.body{font-size:18px}.small{font-size:16px;fill:#53667a}.tag{font-size:14px;font-weight:700;letter-spacing:1px}.line{fill:none;stroke:#52657b;stroke-width:2.5;marker-end:url(#arrow)}</style>
+<rect width="1600" height="1380" fill="#f5f7fb"/>
+
+<text x="60" y="66" class="title">How the evaluation works</text>
+<text x="60" y="100" class="sub">Gibson-budget-bench · Inspect AI harness · model accessed through OpenRouter</text>
+<text x="60" y="145" class="section">01  SELECT A TASK FAMILY</text>
+<rect x="60" y="165" width="335" height="110" rx="16" fill="#ffffff" stroke="#d8e0eb" stroke-width="1.5"/>
+<text x="80" y="198" class="head">Mixing + ordering</text>
+<text x="80" y="226" class="small">Prepare mixtures; obtain supplies</text>
+<text x="80" y="250" class="small">Liquid handling, tips and budget</text>
+<rect x="410" y="165" width="335" height="110" rx="16" fill="#ffffff" stroke="#d8e0eb" stroke-width="1.5"/>
+<text x="430" y="198" class="head">Supplied-stock assembly</text>
+<text x="430" y="226" class="small">Seven prepared DNA pieces</text>
+<text x="430" y="250" class="small">Assembly with / without ordering</text>
+<rect x="760" y="165" width="405" height="110" rx="16" fill="#eaf5f3" stroke="#5b9c90" stroke-width="1.5"/>
+<text x="780" y="198" class="head">Fault recovery</text>
+<text x="780" y="226" class="small">Five faults; optional noisy evidence</text>
+<text x="780" y="250" class="small">Ambiguous mode adds a healthy case</text>
+<rect x="1180" y="165" width="360" height="110" rx="16" fill="#ffffff" stroke="#d8e0eb" stroke-width="1.5"/>
+<text x="1200" y="198" class="head">Gene design</text>
+<text x="1200" y="226" class="small">Choose fragments; order stocks</text>
+<text x="1200" y="250" class="small">Separate clock and yield model</text>
+<text x="60" y="320" class="section">02  RECOVERY TASK: MODEL–ENVIRONMENT INTERACTION</text>
+<text x="60" y="348" class="small">Detailed flow below focuses on the recovery suites discussed in this chat.</text>
+<rect x="60" y="375" width="465" height="150" rx="16" fill="#edf4ff" stroke="#b6ccec" stroke-width="1.5"/>
+<text x="82" y="407" class="head">Public task + tool documentation</text>
+<text x="82" y="439" class="body">Target, inventory, protocol requirements</text>
+<text x="82" y="466" class="body">Prices, $700 budget and simulation limit</text>
+<text x="82" y="493" class="body">Ambiguous mode: reliability table + state counts</text>
+<rect x="60" y="570" width="465" height="180" rx="16" fill="#edf4ff" stroke="#b6ccec" stroke-width="1.5"/>
+<text x="82" y="603" class="head">Model / agent</text>
+<text x="82" y="636" class="body">Inspect evidence → choose next action</text>
+<text x="82" y="663" class="body">Write or revise the OT-2 protocol</text>
+<text x="82" y="690" class="body">Form hypotheses; decide what to test or repair</text>
+<text x="82" y="717" class="body">Finish with saved protocol + assessment*</text>
+<path d="M292 525 V570" class="line"/>
+<rect x="595" y="375" width="430" height="375" rx="16" fill="#ffffff" stroke="#d8e0eb" stroke-width="1.5"/>
+<text x="617" y="407" class="head">Tools and persistent task state</text>
+<text x="617" y="446" class="tag" style="fill:#3b6b9c">READ</text>
+<text x="617" y="473" class="body">Environment, catalogue, inventory, receipts</text>
+<text x="617" y="512" class="tag" style="fill:#3b6b9c">BUILD + RUN</text>
+<text x="617" y="539" class="body">Save protocol → simulate OT-2 execution</text>
+<text x="617" y="566" class="body">Each run creates an immutable experiment</text>
+<text x="617" y="605" class="tag" style="fill:#3b6b9c">INVESTIGATE + REPAIR</text>
+<text x="617" y="632" class="body">Paid DNA / reaction assays; module checks</text>
+<text x="617" y="659" class="body">Replace stock lots; calibrate equipment</text>
+<text x="617" y="686" class="body">Fees and repairs persist between runs</text>
+<path d="M525 622 H595" class="line"/>
+<text x="539" y="608" class="small">act</text>
+<rect x="1095" y="375" width="445" height="375" rx="16" fill="#fff4e8" stroke="#e6bc8e" stroke-width="1.5"/>
+<text x="1117" y="407" class="head">Hidden simulator / trusted state</text>
+<text x="1117" y="444" class="body">Initial condition:</text>
+<text x="1117" y="471" class="body">Healthy · inactive enzyme · damaged DNA</text>
+<text x="1117" y="498" class="body">Absent DNA · block too hot / too cold</text>
+<path d="M1117 515 H1518" stroke="#e6bc8e"/>
+<text x="1117" y="549" class="body">Opentrons SDK + liquid accounting</text>
+<text x="1117" y="576" class="body">Constructed biochemical acceptance gates</text>
+<text x="1117" y="603" class="body">Persistent faults and deterministic repairs</text>
+<text x="1117" y="630" class="body">Private observation seed + sample quality</text>
+<text x="1117" y="710" class="small">True condition is not shown to the model.</text>
+<path d="M1025 510 H1095" class="line"/>
+<rect x="595" y="800" width="945" height="180" rx="16" fill="#eaf5f3" stroke="#9cc9bd" stroke-width="1.5"/>
+<text x="617" y="833" class="head">Observation layer → agent-visible feedback</text>
+<text x="617" y="868" class="body">Deterministic mode</text>
+<text x="617" y="896" class="small">Constructed gel bands and exact temperatures</text>
+<text x="617" y="921" class="small">Execution checks + redacted outcome feedback</text>
+<path d="M1060 852 V958" stroke="#9cc9bd"/>
+<text x="1082" y="868" class="body">Ambiguous mode</text>
+<text x="1082" y="896" class="small">Consistent / deviation / inconclusive</text>
+<text x="1082" y="921" class="small">Execution feedback; outcome withheld</text>
+<text x="1082" y="946" class="small">Repeated readings share sample quality</text>
+<path d="M1318 750 V800" class="line"/>
+<path d="M595 890 H292 V750" class="line"/>
+<text x="318" y="870" class="small">observe → update beliefs → act again</text>
+<text x="60" y="952" class="small">A repair changes future runs;</text>
+<text x="60" y="977" class="small">it cannot fix an old reaction.</text>
+<text x="60" y="1030" class="section">03  SUBMIT → INDEPENDENT VALIDATION</text>
+<rect x="60" y="1055" width="465" height="185" rx="16" fill="#ffffff" stroke="#d8e0eb" stroke-width="1.5"/>
+<text x="82" y="1088" class="head">Reconstruct and re-execute</text>
+<text x="82" y="1122" class="body">Replay accepted purchases and services</text>
+<text x="82" y="1149" class="body">Independently execute saved protocol</text>
+<text x="82" y="1176" class="body">Check paid observations against snapshots</text>
+<text x="82" y="1203" class="body">Preserve logs and evidence in results/</text>
+<path d="M810 980 V1010 H292 V1055" class="line" stroke-dasharray="7 6"/>
+<text x="828" y="1008" class="small">submission + trusted action history</text>
+<rect x="595" y="1055" width="570" height="185" rx="16" fill="#ffffff" stroke="#d8e0eb" stroke-width="1.5"/>
+<text x="617" y="1088" class="head">Binary task correctness</text>
+<text x="617" y="1122" class="body">Common: execution + applicable biochemical gates</text>
+<text x="617" y="1149" class="body">Deterministic: observed failure → repair → passing check</text>
+<text x="617" y="1176" class="body">Ambiguous: true success + current paid observation</text>
+<text x="617" y="1203" class="body">                       + current confidence assessment*</text>
+<path d="M525 1147 H595" class="line"/>
+<rect x="1200" y="1055" width="340" height="185" rx="16" fill="#ffffff" stroke="#d8e0eb" stroke-width="1.5"/>
+<text x="1222" y="1088" class="head">Separate diagnostics</text>
+<text x="1222" y="1122" class="small">Cost and tip efficiency</text>
+<text x="1222" y="1149" class="small">Ambiguous: confidence Brier score</text>
+<text x="1222" y="1176" class="small">Decision recorded; not optimized</text>
+<text x="1222" y="1203" class="small">Optional judge: deterministic only</text>
+<path d="M1165 1147 H1200" class="line"/>
+<text x="60" y="1286" class="small">* Ambiguous mode only: report P(latest experiment succeeds) and a decision after the final measurement.</text>
+<text x="60" y="1314" class="small">A favorable final reading is not required. The hidden simulated outcome determines actual success.</text>
+<text x="60" y="1350" class="tag" style="fill:#80562f">SCOPE: Constructed in-silico biology and observation noise; no physical robot, purchase or human service.</text>
+</svg>

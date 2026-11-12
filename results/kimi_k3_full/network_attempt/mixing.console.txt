@@ -1,0 +1,98 @@
+[11/10/26 16:18:37] WARNING  Control server failed to start (eval server.py:1862
+                             will run without control surface):                 
+                             [Errno 1] Operation not permitted                  
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ot2_mixing (3 samples): openrouter/moonshotai/kimi-k3                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /private/tmp/mats-observation-env/lib/python3.12/site-packages/inspect_ai/_… │
+│ in task_run                                                                  │
+│                                                                              │
+│ /private/tmp/mats-observation-env/lib/python3.12/site-packages/inspect_ai/_… │
+│ in run                                                                       │
+│                                                                              │
+│ /private/tmp/mats-observation-env/lib/python3.12/site-packages/anyio/_core/… │
+│ in _run_coro                                                                 │
+│                                                                              │
+│   324 │   │                                                                  │
+│   325 │   │   with self._cancel_scope:                                       │
+│   326 │   │   │   try:                                                       │
+│ ❱ 327 │   │   │   │   retval = await self._coro                              │
+│   328 │   │   │   except BaseException as exc:                               │
+│   329 │   │   │   │   self._exception = exc                                  │
+│   330 │   │   │   │   raise                                                  │
+│                                                                              │
+│ /private/tmp/mats-observation-env/lib/python3.12/site-packages/inspect_ai/_… │
+│ in run_one                                                                   │
+│                                                                              │
+│ /private/tmp/mats-observation-env/lib/python3.12/site-packages/inspect_ai/_… │
+│ in run_sample                                                                │
+│                                                                              │
+│ /private/tmp/mats-observation-env/lib/python3.12/site-packages/inspect_ai/_… │
+│ in task_run_sample                                                           │
+│                                                                              │
+│ /private/tmp/mats-observation-env/lib/python3.12/site-packages/inspect_ai/_… │
+│ in _task_run_sample_attempt                                                  │
+│                                                                              │
+│ /private/tmp/mats-observation-env/lib/python3.12/site-packages/inspect_ai/_… │
+│ in _task_run_sample_attempt                                                  │
+│                                                                              │
+│ /private/tmp/mats-observation-env/lib/python3.12/site-packages/anyio/_core/… │
+│ in _run_coro                                                                 │
+│                                                                              │
+│   324 │   │                                                                  │
+│   325 │   │   with self._cancel_scope:                                       │
+│   326 │   │   │   try:                                                       │
+│ ❱ 327 │   │   │   │   retval = await self._coro                              │
+│   328 │   │   │   except BaseException as exc:                               │
+│   329 │   │   │   │   self._exception = exc                                  │
+│   330 │   │   │   │   raise                                                  │
+│                                                                              │
+│ /private/tmp/mats-observation-env/lib/python3.12/site-packages/inspect_ai/_… │
+│ in run                                                                       │
+│                                                                              │
+│ /private/tmp/mats-observation-env/lib/python3.12/site-packages/inspect_ai/s… │
+│ in __call__                                                                  │
+│                                                                              │
+│ /private/tmp/mats-observation-env/lib/python3.12/site-packages/inspect_ai/a… │
+│ in solve                                                                     │
+│                                                                              │
+│ /private/tmp/mats-observation-env/lib/python3.12/site-packages/inspect_ai/a… │
+│ in execute                                                                   │
+│                                                                              │
+│ /private/tmp/mats-observation-env/lib/python3.12/site-packages/inspect_ai/a… │
+│ in _agent_generate                                                           │
+│                                                                              │
+│ /private/tmp/mats-observation-env/lib/python3.12/site-packages/inspect_ai/a… │
+│ in generate                                                                  │
+│                                                                              │
+│ /private/tmp/mats-observation-env/lib/python3.12/site-packages/inspect_ai/m… │
+│ in generate                                                                  │
+│                                                                              │
+│ /private/tmp/mats-observation-env/lib/python3.12/site-packages/inspect_ai/m… │
+│ in _generate                                                                 │
+│                                                                              │
+│ /private/tmp/mats-observation-env/lib/python3.12/site-packages/tenacity/asy… │
+│ in async_wrapped                                                             │
+│                                                                              │
+│ /private/tmp/mats-observation-env/lib/python3.12/site-packages/tenacity/asy… │
+│ in __call__                                                                  │
+│                                                                              │
+│ /private/tmp/mats-observation-env/lib/python3.12/site-packages/tenacity/asy… │
+│ in iter                                                                      │
+│                                                                              │
+│ /private/tmp/mats-observation-env/lib/python3.12/site-packages/tenacity/_ut… │
+│ in inner                                                                     │
+│                                                                              │
+│ /private/tmp/mats-observation-env/lib/python3.12/site-packages/tenacity/__i… │
+│ in exc_check                                                                 │
+╰──────────────────────────────────────────────────────────────────────────────╯
+RetryError: RetryError[<Future at 0x11bcd78f0 state=finished raised             
+APIConnectionError>]                                                            
+                                                                                
+Task interrupted (no samples completed before interruption)                     
+                                                                                
+Log:                                                                            
+results/kimi_k3_full/mixing/20261110T051836Z/2026-11-10T05-18-37-00-00_ot2-mixin
+g_7JgiZRXYg7Pnp4wUwm3XvC.eval                                                   
+                                                                                Run record and artifacts: /Users/aedanmccarthy/projects/MATS-work-test/results/kimi_k3_full/mixing/20261110T051836Z

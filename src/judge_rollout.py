@@ -11,6 +11,7 @@ import sys
 from inspect_ai.log import read_eval_log
 from src.judge import Assessment, DEFAULT_JUDGE_MODEL, RUBRIC, RUBRIC_VERSION, assess_timeline, build_timeline
 from src.scenarios import ROOT
+from src.model_policy import require_openrouter
 
 
 async def main():
@@ -22,6 +23,10 @@ async def main():
     parser.add_argument("--max-tokens", type=int, default=8000)
     parser.add_argument("--output", type=Path, default=Path("results/judge"))
     args = parser.parse_args()
+    try:
+        require_openrouter(args.model)
+    except ValueError as exc:
+        parser.error(str(exc))
     if args.env_file:
         from dotenv import load_dotenv
         load_dotenv(args.env_file, override=False)

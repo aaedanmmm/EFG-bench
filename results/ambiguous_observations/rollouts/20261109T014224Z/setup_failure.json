@@ -1,0 +1,5 @@
+{
+  "status": "setup_failure",
+  "actual_rollout": false,
+  "reason": "Inspect could not open its default trace file; evaluation did not start."
+}

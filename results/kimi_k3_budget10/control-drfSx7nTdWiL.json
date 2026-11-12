@@ -1,0 +1,93 @@
+{
+  "target": {
+    "scope": "task",
+    "task_id": "drfSx7nTdWiL4GLMEFoPsw",
+    "task": "ot2_mixing"
+  },
+  "knobs": {
+    "max_samples": {
+      "scope": "task",
+      "limit": 1,
+      "in_use": 1,
+      "adjustable": true
+    },
+    "max_tasks": {
+      "scope": "process",
+      "limit": 1,
+      "launch": 1,
+      "override": null,
+      "in_flight": 1,
+      "pending": 0,
+      "adjustable": true
+    },
+    "max_sandboxes": {
+      "scope": "process",
+      "providers": []
+    },
+    "max_subprocesses": {
+      "scope": "process"
+    },
+    "max_connections": {
+      "scope": "process",
+      "adaptive": []
+    },
+    "timeout": {
+      "scope": "process",
+      "override": null
+    },
+    "attempt_timeout": {
+      "scope": "process",
+      "override": null
+    },
+    "stream_idle_timeout": {
+      "scope": "process",
+      "override": null
+    },
+    "max_retries": {
+      "scope": "process",
+      "override": 6
+    },
+    "time_limit": {
+      "scope": "task",
+      "override": null
+    },
+    "token_limit": {
+      "scope": "task",
+      "override": null
+    },
+    "message_limit": {
+      "scope": "task",
+      "override": null
+    },
+    "concurrency": {
+      "scope": "process",
+      "keys": [
+        {
+          "name": "openrouter/moonshotai/kimi-k3",
+          "limit": 1,
+          "in_use": 1,
+          "adjustable": true
+        }
+      ]
+    },
+    "log_buffer": {
+      "scope": "task",
+      "value": 2,
+      "pending": 0
+    },
+    "log_shared": {
+      "scope": "task",
+      "value": null
+    }
+  },
+  "warnings": [],
+  "notes": [],
+  "applied": true,
+  "dry_run": false,
+  "persisted": {
+    "max_retries": true
+  },
+  "requested": {
+    "max_retries": 6
+  }
+}

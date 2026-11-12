@@ -1,0 +1,22 @@
+{
+  "origin": "Independent replay of accepted actions from the completed actual Inspect rollout",
+  "log": "2026-11-06T23-18-32-00-00_gene-design_gdp4cx2qhpQpas8buqvGDM.eval",
+  "log_sha256": "c7de51d17c1d388f7094b28bca5dc0f5981d91f432bf0b57ddd966aa43e90954",
+  "logged_source_hashes_match_workspace": true,
+  "recorded_score": "I",
+  "replay_matches_recorded_score_metadata": true,
+  "successful_dna_purchases_in_tool_trace": 1,
+  "replayed": {
+    "passed": false,
+    "exact_product": false,
+    "selected_experiment": null,
+    "fragment_ids": [],
+    "polymerase": null,
+    "selected_measurements": [],
+    "quality_at_submission": null,
+    "elapsed_minutes": 0,
+    "spent_cents": 4935,
+    "budget_cents": 35000,
+    "cost_efficiency": 0.0
+  }
+}

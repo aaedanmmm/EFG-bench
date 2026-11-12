@@ -1,0 +1,19 @@
+╭──────────────────────────────────────────────────────────────────────────────╮
+│gene_design (1 sample): openrouter/moonshotai/kimi-k3                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+max_retries: 6, max_connections: 1, max_tokens: 5000, temperature: 0.0,         
+sample_id: gene_design_assembly, fail_on_error: False, max_samples: 1,          
+log_model_api: True, message_limit: None, scenario_file: None, dataset:         
+(samples)                                                                       
+                                                                                
+total time:                    0:09:51                                          
+openrouter/moonshotai/kimi-k3  384,707 tokens [I: 21,808, CW: 0, CR: 342,016, O:
+                             20,883, R: 14,343]                                 
+                                                                                
+gene_design_score                                                               
+accuracy           1.000                                                        
+                                                                                
+Log:                                                                            
+results/kimi_k3_budget10/gene_design/20261110T054042Z/2026-11-10T05-40-43-00-00_
+gene-design_hujbpdymki8KuRWqePXYVw.eval                                         
+                                                                                Run record and artifacts: /Users/aedanmccarthy/projects/MATS-work-test/results/kimi_k3_budget10/gene_design/20261110T054042Z

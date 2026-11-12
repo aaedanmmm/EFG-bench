@@ -1,0 +1,3160 @@
+{
+  "constructed": true,
+  "origin": "Constructed controls and scripted probability baselines; not an agent rollout or measured biology",
+  "date_utc": "2026-11-09T01:48:42.609934+00:00",
+  "python": "3.12.1",
+  "command": [
+    "python",
+    "-m",
+    "src.validate_observations",
+    "--output",
+    "results/ambiguous_observations/controls.json"
+  ],
+  "model": null,
+  "observation_model": {
+    "version": "ambiguous_v1",
+    "constructed": true,
+    "evidence_level": "abstract probability model; not calibrated to biological measurements",
+    "findings": [
+      "consistent_with_reference",
+      "deviation_detected",
+      "inconclusive"
+    ],
+    "limited_quality_probability": 0.2,
+    "conditional_probabilities": {
+      "clear_reference_match": {
+        "consistent_with_reference": 0.85,
+        "deviation_detected": 0.1,
+        "inconclusive": 0.05
+      },
+      "clear_reference_deviation": {
+        "consistent_with_reference": 0.15,
+        "deviation_detected": 0.8,
+        "inconclusive": 0.05
+      },
+      "limited_quality_either_condition": {
+        "consistent_with_reference": 0.25,
+        "deviation_detected": 0.25,
+        "inconclusive": 0.5
+      }
+    },
+    "marginal_probabilities": {
+      "reference_match": {
+        "consistent_with_reference": 0.73,
+        "deviation_detected": 0.13,
+        "inconclusive": 0.14
+      },
+      "reference_deviation": {
+        "consistent_with_reference": 0.17,
+        "deviation_detected": 0.69,
+        "inconclusive": 0.14
+      }
+    },
+    "repeat_rule": "Quality is fixed for a sample. New paid measurements have fresh error conditional on that quality; they are not marginally independent. Reopening a receipt gives the original result.",
+    "sample_rule": "A reaction is one immutable experiment; a source is one well and delivered lot; a thermometer shares one module-session quality across checks and calibrations.",
+    "interpretation": "run_gel and thermometer_check return categorical findings, not physical band sizes or exact temperatures. All findings can occur in either condition."
+  },
+  "source_sha256": {
+    "src/__init__.py": "dd8c7599dc43aeb338b048027ceb455eea3c9554f109b6ebbce3afbe04836856",
+    "src/abc-2.py": "e9465e8de5573f05659858e29b72c7d10b3f373dfb788b7ddf08be6f899ee4f1",
+    "src/biochemistry.py": "aabec034123477ab302e4151bda167764b1b4133cd21dd31555b491bd59cd04d",
+    "src/costs.py": "22d84401bba853779252904357fc363edbd2cb765aab2646d4049547ff1d4542",
+    "src/design_assembly.py": "fd9b3edbeb6d01f7e3ca77fa77c8115e78c0ab0314159ae0baa299134e4f5cf2",
+    "src/design_experiments.py": "f0af2841ebbe69b287d30fe4cf0ac07de260cdb5be9fdac5e733c11b16606405",
+    "src/design_lab.py": "ceb695cb0f1176b91f2324527b527cbb344b142434b466965bc9d7e338c3943a",
+    "src/design_ordering.py": "7509611b0561ab32170db6e8bcbd02304834d04921a1dbc4f1df7db7b57638d3",
+    "src/design_task.py": "03dc76dcafed6cd6666287b4ba8e3928f1f73d0cb44022e77682c02bb7c78320",
+    "src/environment.py": "d80b6e9ca57499043811899f65f18310f3ce6ccaec508b46baa4bd62ece3c990",
+    "src/failures.py": "9f5ed0e2ebb521b548016b4b690ed8ebd84b83a09e973ba379fea164e08f2cb9",
+    "src/fragments.py": "382beae77a940b69b63b8cdd16352687e00319f34f3730994272983f043da0a8",
+    "src/judge.py": "ae58b47fa6354edae8676b0397a8e1e4d5c18cce4884189df45b38a881679cfe",
+    "src/judge_rollout.py": "26417a9023369b7d321afc980208f10b8ccde908c274eab3ab44d38a07829b91",
+    "src/model_policy.py": "81b8af456ae90e426ab41e7cae6cc742e8ca84a97d0b025b4ab8f2ac80fbf43e",
+    "src/observations.py": "16ba56a13d5b4a7653274881e564c29bac9a667c903874c5f0e0ebb434097475",
+    "src/ordering.py": "d26e1d504d9ace698d47b522ac450d375e911a695f70ea1a2c020a4bd8e53532",
+    "src/replay_failures.py": "4e01843bc0e85db04754179c69457eb797f0967c30636f12ebe5c736fb870061",
+    "src/review.py": "004a9cb438bb82faa307cb4548d561d8b438dc1eb5adefec92de9a727f702bfe",
+    "src/run_eval.py": "8c6cd6459c666379a5304a57f34b622d338c372fb7e0c11c8e2b5b55a35c65c6",
+    "src/runner.py": "b6e3675cd975cfda97d588a398f0fbb9a42828599dceb40db3623613fc3e22d8",
+    "src/runtime.py": "a1193071ad81fb2ea88a86bc394f54fa98aca98ca8151dad823ef4c3d9006b28",
+    "src/scenarios.py": "067f564c843c92e3a2dd726b74b0c84c0a464351ce8aae57ad3e4c774f2af4dc",
+    "src/scorer.py": "0684fe33d2cd345b06ba1ad6160e3c7f533f9844a8e66d6b4a2f915ed2d26e9d",
+    "src/sequence_assembly.py": "027a15c6637dc95d7117c794efab071020402c190bba76a641a26086a61db4fe",
+    "src/simulator.py": "5722ae4deba3489ee039ed058291f3bce4a2c9625a3442f0139d062b4df2e354",
+    "src/split_sequence.py": "f64fbc6ddbaa7448cb2ef33c821a0fc53da3901f036f4bb94dde7aa00e5bce42",
+    "src/validate.py": "931f5df2faa75533a7e2263ee7b3aa11b026c7bc0ebc74d8513ef542b684e738",
+    "src/validate_diagnostics.py": "2b86572df1c5769a2faa9ddfbfc6238a9f3b80543373a8187631029dc5852bde",
+    "src/validate_failures.py": "dcc74ebd12f8a495af532bb777158ea59f42e7beb19b9aa588f71b12ee9af265",
+    "src/validate_observations.py": "a851fe79d7a5968f788e0aca9af54b379b94a1a82da1e15fc5acfd8773cf20a1",
+    "data/biochemistry_ordering_tasks.json": "da38dedb56cf8ce36d5c6f0863b1a85c192ec6072665083ddfd5b6e2e725d13f",
+    "data/biochemistry_tasks.json": "3bd28237f10ddafcac06ce2dcc657feab82e0cb4e2c4e68caadc7aef91828eae",
+    "data/design_ordering_catalogue.json": "e8d349d42d0fb10a13cadb603cd7a4d7f2e18235eae387041db076c6caca0657",
+    "data/failures_tasks.json": "c1f5d620f55790e6b5cdfb5ac306b4aede67f925599a7b1ce937155d852ee3ae",
+    "data/legacy_synthetic_tasks.json": "f75fd545691240e15a0f015414a62ada7d241a3f90fc35ed42ad855abdbf191c",
+    "data/mixing_tasks.json": "57412a6e1241d774e92f0c16362797b9b42910d38b6ff00f03af7a15741c727b",
+    "data/ordering_catalogue.json": "eae848fed68bca3334e1c2df9dba821e73f8f97ed455457d1296c85d9410bae0",
+    "data/ordering_tasks.json": "61d0e3869f3e2f34625ffb7acfdf9e2911e3616c4bcd787b022c869ada20f85c",
+    "examples/supplied_sequence_assembly.py": "f33fab355b2838c7a77ffe677b2335cd2a91753905fefcbb68fd864c4d340b30",
+    "tests/test_observations.py": "ab783ddf694bbdcc43796f441f9456c39c35aa01086583714f43e6984fa9a5ca"
+  },
+  "distribution_controls": {
+    "constructed": true,
+    "samples_per_condition": 4000,
+    "seeds": [
+      0,
+      3999
+    ],
+    "observed_frequencies": {
+      "reference_match": {
+        "consistent_with_reference": 0.72275,
+        "deviation_detected": 0.13125,
+        "inconclusive": 0.146
+      },
+      "reference_deviation": {
+        "consistent_with_reference": 0.1715,
+        "deviation_detected": 0.6825,
+        "inconclusive": 0.146
+      }
+    },
+    "expected_frequencies": {
+      "reference_match": {
+        "consistent_with_reference": 0.73,
+        "deviation_detected": 0.13,
+        "inconclusive": 0.14
+      },
+      "reference_deviation": {
+        "consistent_with_reference": 0.17,
+        "deviation_detected": 0.69,
+        "inconclusive": 0.14
+      }
+    },
+    "same_sample_normal_pair_frequency": 0.57975,
+    "expected_correlated_pair_frequency": 0.5905,
+    "independent_quality_redraw_counterfactual": 0.5329,
+    "baseline_brier": {
+      "prior_only": 0.13894444444444515,
+      "one_measurement": 0.10481131953802303,
+      "two_correlated_measurements": 0.07275883728896375
+    },
+    "baseline_scope": "Scripted exact posterior for a binary reference condition; not an autonomous agent, optimal repair policy, or empirical assay validation",
+    "passed": true
+  },
+  "outcome_controls": [
+    {
+      "constructed": true,
+      "private_seed": 3,
+      "desired_finding": "consistent_with_reference",
+      "actual_success": false,
+      "assay": {
+        "assay": "abstract_reference_check_v1",
+        "sample": "4:A1",
+        "sample_type": "reaction",
+        "experiment_id": "constructed-0001",
+        "protocol_sha256": "f33fab355b2838c7a77ffe677b2335cd2a91753905fefcbb68fd864c4d340b30",
+        "inventory_sha256": "9676ca6142ab0cfa5ff368fd461f4a1c20d59583e977d8ce883e6bfa17cd48a0",
+        "constructed": true,
+        "observation_model": "ambiguous_v1",
+        "measurement_id": "human-0001",
+        "finding": "consistent_with_reference",
+        "observation": "The measured pattern is consistent with the reference; this does not establish success.",
+        "service_id": "human-0001",
+        "action_count": 1
+      },
+      "recovery": {
+        "passed": false,
+        "failed_reaction_observed": false,
+        "current_success_verified": false,
+        "assays": [
+          {
+            "assay": "abstract_reference_check_v1",
+            "sample": "4:A1",
+            "sample_type": "reaction",
+            "experiment_id": "constructed-0001",
+            "protocol_sha256": "f33fab355b2838c7a77ffe677b2335cd2a91753905fefcbb68fd864c4d340b30",
+            "inventory_sha256": "9676ca6142ab0cfa5ff368fd461f4a1c20d59583e977d8ce883e6bfa17cd48a0",
+            "constructed": true,
+            "observation_model": "ambiguous_v1",
+            "measurement_id": "human-0001",
+            "finding": "consistent_with_reference",
+            "observation": "The measured pattern is consistent with the reference; this does not establish success.",
+            "service_id": "human-0001",
+            "action_count": 1
+          }
+        ],
+        "current_measurement_recorded": true,
+        "verification_basis": "Private replay outcome plus a paid current measurement; a reassuring reading is neither necessary nor sufficient"
+      },
+      "actions": [
+        {
+          "kind": "human_service",
+          "request": {
+            "service": "run_gel",
+            "sample": "4:A1",
+            "sample_type": "reaction",
+            "module_slot": "4",
+            "setpoint_c": 50,
+            "request_id": ""
+          }
+        }
+      ],
+      "spent_cents": 4000,
+      "execution": {
+        "passed": false,
+        "liquid_handling_passed": true,
+        "well_revisions": {
+          "1:B3": 1,
+          "4:A1": 9,
+          "1:B2": 1,
+          "1:A1": 1,
+          "1:A2": 1,
+          "1:A3": 1,
+          "1:A4": 1,
+          "1:A5": 1,
+          "1:A6": 1,
+          "1:B1": 1
+        },
+        "scenario_id": "sequence_recovery_01",
+        "engine": "opentrons virtual hardware + bounded Python interpreter + ideal liquid ledger",
+        "errors": [
+          "Reaction outcome failed; obtain diagnostic observations with the laboratory service tools"
+        ],
+        "tips_used": 9,
+        "tip_budget": 12,
+        "final_wells": {
+          "1:A1": {
+            "fragment_001": 99.0
+          },
+          "1:A2": {
+            "fragment_002": 99.0
+          },
+          "1:A3": {
+            "fragment_003": 99.0
+          },
+          "1:A4": {
+            "fragment_004": 99.0
+          },
+          "1:A5": {
+            "fragment_005": 99.0
+          },
+          "1:A6": {
+            "fragment_006": 99.0
+          },
+          "1:B1": {
+            "backbone": 99.0
+          },
+          "1:B2": {
+            "gibson_master_mix": 90.0
+          },
+          "1:B3": {
+            "water": 97.0
+          },
+          "4:A1": {
+            "water": 3.0,
+            "gibson_master_mix": 10.0,
+            "fragment_001": 1.0,
+            "fragment_002": 1.0,
+            "fragment_003": 1.0,
+            "fragment_004": 1.0,
+            "fragment_005": 1.0,
+            "fragment_006": 1.0,
+            "backbone": 1.0
+          }
+        },
+        "discarded_components_ul": {
+          "water": 0.0,
+          "gibson_master_mix": 0.0,
+          "fragment_001": 0.0,
+          "fragment_002": 0.0,
+          "fragment_003": 0.0,
+          "fragment_004": 0.0,
+          "fragment_005": 0.0,
+          "fragment_006": 0.0,
+          "backbone": 0.0
+        },
+        "events": [
+          {
+            "action": "load_labware",
+            "slot": "1",
+            "load_name": "opentrons_24_tuberack_nest_1.5ml_snapcap"
+          },
+          {
+            "action": "load_labware",
+            "slot": "2",
+            "load_name": "opentrons_96_tiprack_20ul"
+          },
+          {
+            "action": "load_module",
+            "slot": "4",
+            "model": "temperature module gen2"
+          },
+          {
+            "action": "load_module_labware",
+            "slot": "4",
+            "load_name": "opentrons_96_aluminumblock_biorad_wellplate_200ul"
+          },
+          {
+            "action": "load_instrument",
+            "name": "p20_single_gen2",
+            "mount": "left"
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:A1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:B3",
+            "volume_ul": 3.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 3.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "water": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:B1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:B2",
+            "volume_ul": 10.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 10.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "gibson_master_mix": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:C1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "fragment_001": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:D1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A2",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "fragment_002": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:E1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A3",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "fragment_003": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:F1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A4",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "fragment_004": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:G1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A5",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "fragment_005": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:H1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A6",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "fragment_006": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:A2"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:B1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "mix",
+            "well": "4:A1",
+            "repetitions": 3,
+            "volume_ul": 10.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "backbone": 0.0
+            }
+          },
+          {
+            "action": "set_temperature",
+            "slot": "4",
+            "temperature_c": 50.0
+          },
+          {
+            "action": "incubate",
+            "well": "4:A1",
+            "temperature_c": 50.0,
+            "setpoint_c": 50.0,
+            "seconds": 3600.0,
+            "components_ul": {
+              "water": 3.0,
+              "gibson_master_mix": 10.0,
+              "fragment_001": 1.0,
+              "fragment_002": 1.0,
+              "fragment_003": 1.0,
+              "fragment_004": 1.0,
+              "fragment_005": 1.0,
+              "fragment_006": 1.0,
+              "backbone": 1.0
+            },
+            "mixed": true,
+            "revision": 9
+          },
+          {
+            "action": "delay",
+            "seconds": 3600.0
+          },
+          {
+            "action": "deactivate_temperature",
+            "slot": "4"
+          }
+        ],
+        "opentrons_commands": [
+          "Picking up tip from A1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 3.0 uL from B3 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 3.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from B1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 10.0 uL from B2 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from C1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 1.0 uL from A1 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 1.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from D1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 1.0 uL from A2 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 1.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from E1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 1.0 uL from A3 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 1.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from F1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 1.0 uL from A4 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 1.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from G1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 1.0 uL from A5 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 1.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from H1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 1.0 uL from A6 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 1.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from A2 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 1.0 uL from B1 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 1.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Mixing 3 times with a volume of 10.0 ul",
+          "Aspirating 10.0 uL from A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Aspirating 10.0 uL from A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Aspirating 10.0 uL from A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Setting Temperature Module temperature to 50.0 \u00b0C (rounded off to nearest integer)",
+          "Delaying for 60 minutes and 0.0 seconds",
+          "Deactivating Temperature Module"
+        ],
+        "biochemistry": {
+          "applicable": true,
+          "model": "gibson_v1",
+          "passed": false,
+          "status": "in_silico_conditions_failed",
+          "experimental_status": "not_measured",
+          "interpretation": "Passing means the declared in-silico acceptance criteria hold. No yield, colonies, enzyme activity or biological function has been measured.",
+          "checks": [
+            {
+              "id": "input.linear_purified_dsdna",
+              "passed": true,
+              "observed": {
+                "fragment_001": {
+                  "linear": true,
+                  "purified": true
+                },
+                "fragment_002": {
+                  "linear": true,
+                  "purified": true
+                },
+                "fragment_003": {
+                  "linear": true,
+                  "purified": true
+                },
+                "fragment_004": {
+                  "linear": true,
+                  "purified": true
+                },
+                "fragment_005": {
+                  "linear": true,
+                  "purified": true
+                },
+                "fragment_006": {
+                  "linear": true,
+                  "purified": true
+                },
+                "backbone": {
+                  "linear": true,
+                  "purified": true
+                }
+              },
+              "expected": "All specified DNA inputs are purified linear dsDNA",
+              "basis": "supplied metadata; not a purity assay"
+            },
+            {
+              "id": "junction.fragment_001->fragment_002.homology",
+              "passed": true,
+              "observed": 30,
+              "expected": "Exact terminal overlap of 20..40 bp",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "junction.fragment_001.specificity",
+              "passed": true,
+              "observed": [
+                "fragment_002+"
+              ],
+              "expected": [
+                "fragment_002+"
+              ],
+              "basis": "conservative terminal-overlap uniqueness rule; includes self-joining and reverse orientations"
+            },
+            {
+              "id": "junction.fragment_002->fragment_003.homology",
+              "passed": true,
+              "observed": 30,
+              "expected": "Exact terminal overlap of 20..40 bp",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "junction.fragment_002.specificity",
+              "passed": true,
+              "observed": [
+                "fragment_003+"
+              ],
+              "expected": [
+                "fragment_003+"
+              ],
+              "basis": "conservative terminal-overlap uniqueness rule; includes self-joining and reverse orientations"
+            },
+            {
+              "id": "junction.fragment_003->fragment_004.homology",
+              "passed": true,
+              "observed": 30,
+              "expected": "Exact terminal overlap of 20..40 bp",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "junction.fragment_003.specificity",
+              "passed": true,
+              "observed": [
+                "fragment_004+"
+              ],
+              "expected": [
+                "fragment_004+"
+              ],
+              "basis": "conservative terminal-overlap uniqueness rule; includes self-joining and reverse orientations"
+            },
+            {
+              "id": "junction.fragment_004->fragment_005.homology",
+              "passed": true,
+              "observed": 30,
+              "expected": "Exact terminal overlap of 20..40 bp",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "junction.fragment_004.specificity",
+              "passed": true,
+              "observed": [
+                "fragment_005+"
+              ],
+              "expected": [
+                "fragment_005+"
+              ],
+              "basis": "conservative terminal-overlap uniqueness rule; includes self-joining and reverse orientations"
+            },
+            {
+              "id": "junction.fragment_005->fragment_006.homology",
+              "passed": true,
+              "observed": 30,
+              "expected": "Exact terminal overlap of 20..40 bp",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "junction.fragment_005.specificity",
+              "passed": true,
+              "observed": [
+                "fragment_006+"
+              ],
+              "expected": [
+                "fragment_006+"
+              ],
+              "basis": "conservative terminal-overlap uniqueness rule; includes self-joining and reverse orientations"
+            },
+            {
+              "id": "junction.fragment_006->backbone.homology",
+              "passed": true,
+              "observed": 30,
+              "expected": "Exact terminal overlap of 20..40 bp",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "junction.fragment_006.specificity",
+              "passed": true,
+              "observed": [
+                "backbone+"
+              ],
+              "expected": [
+                "backbone+"
+              ],
+              "basis": "conservative terminal-overlap uniqueness rule; includes self-joining and reverse orientations"
+            },
+            {
+              "id": "junction.backbone->fragment_001.homology",
+              "passed": true,
+              "observed": 30,
+              "expected": "Exact terminal overlap of 20..40 bp",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "junction.backbone.specificity",
+              "passed": true,
+              "observed": [
+                "fragment_001+"
+              ],
+              "expected": [
+                "fragment_001+"
+              ],
+              "basis": "conservative terminal-overlap uniqueness rule; includes self-joining and reverse orientations"
+            },
+            {
+              "id": "product.sequence_identity",
+              "passed": true,
+              "observed": {
+                "length_bp": 12484,
+                "sha256": "57e23d1a07494e60968118ad7524152c67b61b21f7102ba92be5884575cad921"
+              },
+              "expected": {
+                "length_bp": 12484,
+                "sha256": "57e23d1a07494e60968118ad7524152c67b61b21f7102ba92be5884575cad921",
+                "comparison": "Full circular sequence identity allowing rotation and whole-product reverse complement"
+              },
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "enzyme.active",
+              "passed": true,
+              "observed": true,
+              "expected": true,
+              "basis": "supplied reagent metadata; not an enzyme activity measurement"
+            },
+            {
+              "id": "4:A1.reaction_volume",
+              "passed": true,
+              "observed": 20.0,
+              "expected": {
+                "volume_ul": 20.0,
+                "tolerance_ul": 0.01
+              },
+              "basis": "NEB 20 uL reference formulation, parameterized in benchmark"
+            },
+            {
+              "id": "4:A1.reagent_identity",
+              "passed": true,
+              "observed": [],
+              "expected": [],
+              "basis": "closed reagent identity model; unmodeled additives fail"
+            },
+            {
+              "id": "4:A1.master_mix_concentration",
+              "passed": true,
+              "observed": 1.0,
+              "expected": {
+                "range_x": [
+                  0.95,
+                  1.05
+                ]
+              },
+              "basis": "NEB 2X stock diluted to 1X; tolerance is a benchmark assumption"
+            },
+            {
+              "id": "4:A1.dna_present.fragment_001",
+              "passed": true,
+              "observed": 1.0,
+              "expected": ">0 uL",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "4:A1.dna_present.fragment_002",
+              "passed": true,
+              "observed": 1.0,
+              "expected": ">0 uL",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "4:A1.dna_present.fragment_003",
+              "passed": true,
+              "observed": 1.0,
+              "expected": ">0 uL",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "4:A1.dna_present.fragment_004",
+              "passed": true,
+              "observed": 1.0,
+              "expected": ">0 uL",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "4:A1.dna_present.fragment_005",
+              "passed": true,
+              "observed": 1.0,
+              "expected": ">0 uL",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "4:A1.dna_present.fragment_006",
+              "passed": true,
+              "observed": 1.0,
+              "expected": ">0 uL",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "4:A1.dna_present.backbone",
+              "passed": true,
+              "observed": 1.0,
+              "expected": ">0 uL",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "4:A1.vector_mass",
+              "passed": true,
+              "observed": 104.325,
+              "expected": {
+                "range_ng": [
+                  100,
+                  110
+                ]
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "4:A1.total_dna",
+              "passed": true,
+              "observed": 0.21,
+              "expected": {
+                "range_pmol": [
+                  0.2,
+                  0.5
+                ],
+                "formula": "mass_ng * 1000 / (length_bp * molecular_weight_per_bp)",
+                "molecular_weight_g_mol_bp": 650.0
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "4:A1.molar_ratio.fragment_001",
+              "passed": true,
+              "observed": 1.0,
+              "expected": {
+                "insert_to_backbone_range": [
+                  0.95,
+                  1.05
+                ]
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "4:A1.molar_ratio.fragment_002",
+              "passed": true,
+              "observed": 1.0,
+              "expected": {
+                "insert_to_backbone_range": [
+                  0.95,
+                  1.05
+                ]
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "4:A1.molar_ratio.fragment_003",
+              "passed": true,
+              "observed": 1.0,
+              "expected": {
+                "insert_to_backbone_range": [
+                  0.95,
+                  1.05
+                ]
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "4:A1.molar_ratio.fragment_004",
+              "passed": true,
+              "observed": 1.0,
+              "expected": {
+                "insert_to_backbone_range": [
+                  0.95,
+                  1.05
+                ]
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "4:A1.molar_ratio.fragment_005",
+              "passed": true,
+              "observed": 1.0,
+              "expected": {
+                "insert_to_backbone_range": [
+                  0.95,
+                  1.05
+                ]
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "4:A1.molar_ratio.fragment_006",
+              "passed": true,
+              "observed": 1.0,
+              "expected": {
+                "insert_to_backbone_range": [
+                  0.95,
+                  1.05
+                ]
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "4:A1.incubation",
+              "passed": true,
+              "observed": {
+                "qualified_seconds": 3600.0,
+                "all_incubation_events": [
+                  {
+                    "action": "incubate",
+                    "well": "4:A1",
+                    "temperature_c": 50.0,
+                    "setpoint_c": 50.0,
+                    "seconds": 3600.0,
+                    "components_ul": {
+                      "water": 3.0,
+                      "gibson_master_mix": 10.0,
+                      "fragment_001": 1.0,
+                      "fragment_002": 1.0,
+                      "fragment_003": 1.0,
+                      "fragment_004": 1.0,
+                      "fragment_005": 1.0,
+                      "fragment_006": 1.0,
+                      "backbone": 1.0
+                    },
+                    "mixed": true,
+                    "revision": 9
+                  }
+                ]
+              },
+              "expected": {
+                "seconds": [
+                  3600,
+                  3600
+                ],
+                "temperature_c": [
+                  49,
+                  51
+                ],
+                "after_final_addition_and_mixing": true
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "execution.liquid_handling",
+              "passed": true,
+              "observed": true,
+              "expected": true,
+              "basis": "independent virtual-robot and liquid-accounting checks"
+            },
+            {
+              "id": "reaction.assembly_outcome",
+              "passed": false,
+              "observed": "Expected complete product not obtained",
+              "expected": "Complete expected assembly",
+              "basis": "constructed persistent-fault benchmark"
+            }
+          ],
+          "reactions": [
+            {
+              "well": "4:A1",
+              "volume_ul": 20.0,
+              "master_mix_final_x": 1.0,
+              "dna": {
+                "fragment_001": {
+                  "volume_ul": 1.0,
+                  "mass_ng": 15.054,
+                  "length_bp": 772,
+                  "pmol": 0.03,
+                  "concentration_ng_ul": 15.054
+                },
+                "fragment_002": {
+                  "volume_ul": 1.0,
+                  "mass_ng": 30.537,
+                  "length_bp": 1566,
+                  "pmol": 0.03,
+                  "concentration_ng_ul": 30.537
+                },
+                "fragment_003": {
+                  "volume_ul": 1.0,
+                  "mass_ng": 22.1325,
+                  "length_bp": 1135,
+                  "pmol": 0.03,
+                  "concentration_ng_ul": 22.1325
+                },
+                "fragment_004": {
+                  "volume_ul": 1.0,
+                  "mass_ng": 12.636,
+                  "length_bp": 648,
+                  "pmol": 0.03,
+                  "concentration_ng_ul": 12.636
+                },
+                "fragment_005": {
+                  "volume_ul": 1.0,
+                  "mass_ng": 37.4985,
+                  "length_bp": 1923,
+                  "pmol": 0.03,
+                  "concentration_ng_ul": 37.4985
+                },
+                "fragment_006": {
+                  "volume_ul": 1.0,
+                  "mass_ng": 25.35,
+                  "length_bp": 1300,
+                  "pmol": 0.03,
+                  "concentration_ng_ul": 25.35
+                },
+                "backbone": {
+                  "volume_ul": 1.0,
+                  "mass_ng": 104.325,
+                  "length_bp": 5350,
+                  "pmol": 0.03,
+                  "concentration_ng_ul": 104.325
+                }
+              },
+              "insert_backbone_ratios": {
+                "fragment_001": 1.0,
+                "fragment_002": 1.0,
+                "fragment_003": 1.0,
+                "fragment_004": 1.0,
+                "fragment_005": 1.0,
+                "fragment_006": 1.0
+              },
+              "total_dna_pmol": 0.21,
+              "qualified_incubation_seconds": 3600.0
+            }
+          ],
+          "references": [
+            {
+              "url": "https://nebuilderv1.neb.com/media/manualE2611.pdf",
+              "description": "NEB E2611 manual: DNA mass-to-pmol calculation, total DNA, vector mass/insert ratios, 2X mix dilution and 50 C incubation."
+            },
+            {
+              "url": "https://www.neb.com/en/products/e2611-gibson-assembly-master-mix",
+              "description": "NEB product protocol overview; appropriate terminal overlaps and 50 C incubation."
+            }
+          ],
+          "assumptions": [
+            "Seven prepared stocks each contain an exact data/sequences core plus a constructed 30 bp closing/adjacent overlap. Preparation is assumed, not performed by the OT-2.",
+            "Equal 0.03 pmol per piece at 1 uL each is set by constructed stock concentrations. 20 uL reaction, 1X master mix, 50 C and 60 min are benchmark gates.",
+            "Seven-piece acceptance criteria extrapolate beyond the cited NEB 4-6 piece formulation; no seven-piece efficiency or yield is claimed.",
+            "The sequence called backbone is the original trailing genomic remainder, not a cloning vector. Circularity is a constructed target topology.",
+            "No kinetic/yield or functional biological model. Heating must follow final additions/mixing."
+          ],
+          "assembly": {
+            "order": [
+              "fragment_001",
+              "fragment_002",
+              "fragment_003",
+              "fragment_004",
+              "fragment_005",
+              "fragment_006",
+              "backbone"
+            ],
+            "topology": "circular",
+            "junctions": [
+              {
+                "left": "fragment_001",
+                "right": "fragment_002",
+                "overlap_bp": 30,
+                "overlap_sequence": "GAAGGTGATTTCACCCGCTCCTTCCCCACC"
+              },
+              {
+                "left": "fragment_002",
+                "right": "fragment_003",
+                "overlap_bp": 30,
+                "overlap_sequence": "CAAGCGCACAGAGCCGCGCAGCGAGGCAGA"
+              },
+              {
+                "left": "fragment_003",
+                "right": "fragment_004",
+                "overlap_bp": 30,
+                "overlap_sequence": "GCCGGATCTGAAGCCTGGAGTGGGGTCCCG"
+              },
+              {
+                "left": "fragment_004",
+                "right": "fragment_005",
+                "overlap_bp": 30,
+                "overlap_sequence": "AAGTGGCGCAGCTCACAGAGCTGGGGGCCA"
+              },
+              {
+                "left": "fragment_005",
+                "right": "fragment_006",
+                "overlap_bp": 30,
+                "overlap_sequence": "TTGTCTTCGCAGAGGTGTAAGGACAAGTTG"
+              },
+              {
+                "left": "fragment_006",
+                "right": "backbone",
+                "overlap_bp": 30,
+                "overlap_sequence": "TGTGCGGCCCGGAGAGCTCCCGGCTGCAGG"
+              },
+              {
+                "left": "backbone",
+                "right": "fragment_001",
+                "overlap_bp": 30,
+                "overlap_sequence": "ACAAGCTCTCCAGGCTTGCTACCATTTAAA"
+              }
+            ],
+            "predicted_sequence": "ACAAGCTCTCCAGGCTTGCTACCATTTAAAATCAGACTCTTTTTGTCTTTTGATTGCTGTCTCGCGACCCAACTCCGATGTGTTCCGTTATCAGCGGCCGGCAGCCTGCCATTCCAGCCCCTGTCTGGGTGGGGAGCGGTGGAGAGTCCCCCGCAGCCGCGGCGGGCAAGGTTATATAGGAAGAGAAAGAGCGAGGCAGCCAGCGAGGGAGAGAGCGAGCGGGCGAGCCGGAGCGAGGAAGGGAAAGCGCAAGAGAGAGCGCACACGCACACACCCGCCGCGCGCACTCGCGCACGGACCCGCACGGGGACAGCTCGGAAGTCATCAGTTCCATGGGCGAGATGCTGCTGCTGGCGAGATGTCTGCTGCTAGTCCTCGTCTCCTCGCTGCTGGTATGCTCGGGACTGGCGTGCGGACCGGGCAGGGGGTTCGGGAAGAGGAGGCACCCCAAAAAGCTGACCCCTTTAGCCTACAAGCAGTTTATCCCCAATGTGGCCGAGAAGACCCTAGGCGCCAGCGGAAGGTATGAAGGGAAGATCTCCAGAAACTCCGAGCGATTTAAGGAACTCACCCCCAATTACAACCCCGACATCATATTTAAGGATGAAGAAAACACCGGAGCGGACAGGCTGATGACTCAGGTAGGAACCCAGCGCCGGGGCGTGGAATGTGTGGCTTTCCAGGGGGTTACGAGAAGCCGAACACTTCCAGACTTAACTCTGTTTGCTCTTCGGGCAGATAGGAAGGTGATTTCACCCGCTCCTTCCCCACCCACCTGCCCGCCCCCCATCTCTTCCTCTTCCTGGAGGAGAATGGAGGTCAAGGGTCCAGCTGGAGAAGTTTAGGGTGTGGTGGGGGTGAGGACGGTAACAGACGTGGTTCATTATGGCCCTGATTTGATGAGTCTTGCTACAATGGCCTTCCCCATCCTACCTCTGCCCTGGCTTGTAACTTGGGGAGACCTTCACTTTGGGGGCGTCGGCCCTTTCCAAGTCAGGAGTGGAAATGGAAGGAGAGGCTGGGAATCCCCCTCCCACAAACATGAAGTGGTCTCCTGGTACTGTACGAACGAACGAACGTAGCCTTGGGCATTGGAGCTCAGAGCCCCCACGTTTCCCGTTGCCTCTGTGGTTTTCTTTCCCACCACTACCCCCACCCTGCACCTCCCCACCAAAGAATTCTCAACTGGAAAAGCCAGGAGGCGGTTCTGACAAAAGGCAGGGGCTCCAGGGGAGACTCCGCCCGTCCCTGGGTGGCTGGCTGTATCGCAGAGCTGGCTTTGCGATTGCGTGTCCGCAATTGTGCCCATCAGAGTGTGAATGTATTGATATTTCTTTAAGGATGCTCTTTCGTTCTTCCAAGCCCGAGGTACCTTAGGGGAGGGACTTAGAACTTATTGGCATTGCATCACTTTAGTTTTCAACCTGCTTGCATAAGAATTAAGAGCGAATAAATATTAGTGTGGGGGGAGGGGAAGCTAAGCAAAATATGAATTCCTCTCTCTCTCCCCACCTCCTTTGAGATTTCTGAGCTGCCAATCTCCCAGCCAATTCTAGACTTTCTGAAACTCCATGCACGTATAACTGAAGCCAGAAATGGGTTTCCTTGCAAATATAGGTCAACATCCTTTTTATTGCCCTATTAAAATATTCAAGTCCTACCTTTAGGGCTAGGTGCGTACAGCGGCTGATGGAGTGGCGCTGGTGGGGCGCAAGTGCAGGGGGAGGGTACTGACGGCAGAGAGAGAGGAGCTACCTCCGTGCCGCCCTGCTTCCCGACCCGATTCCCAGGCTTGCTTGAGGCCGAGAAAGGCGAGGGGCAGGCAAGGTAGCCTGCTCCAGCTGTCGGAAGGGAGAGGAATGGGAAATGGTCCTGATTTCCTTGCTCTCCCTCATCTGCTCCCGACCACCTTAAATCTGGACCGCGAGTGTGGACGCGCGCGCCAGTGCCAGACAGCAGCGCGATCCACAATTAACTCTGCACGGGCCATGGGGTGCCCGTTGCGTGCAGCTGGCTGGAGGGAGTTCTCCGGCTAGCCCGAGGCGCCCATCCTCTCGTCACCCTCACTCCCCGCGGAGGAGGGGCCTTGCCAGGGTCCCTCGGAACCCGAGAGGAGGGAGGCACTGCGGAGAGAGCGGCGGGGGCGTGGATACCCGAGGTCCCAGAGCCAGAGTGGGTCAGCTTCTGCCCTGCTCTGCGGGAGGCCAATACCGCAGAAGGGGTCCTGGGCTCGCACACCTTCCCAGGGCTTGGGCCTTGCAGCCCTGCTGCAAAGCTGCAAGCGCACAGAGCCGCGCAGCGAGGCAGACGCCTGCAGCCCCACTTACTCCCGGGTTATCGATCCCCCGCGGCTAGGGTTTCAGTGCGCGAGGGGCTGGGCTGGAGCCGCCGGGCTCTGCTGCTCCACGCGCGGGAGCGCAGGCACCGCAGGAGCTAACAGCAGCGCCGGGCTCGCTGTAGTGTCCCCGGCGGCGGGGGCGCGGAGATGGGGGCGCCCGCGCAGGGGCCGGGGCGCATCGCGGGCTCCGCCGGCCTGCCCTGGGACGCGCCCCCATCCCCAGTCCGCCGCCTGCCTGGCCTCTAGGCCTCCGCGTCCCAGCCGGAGCCCCCAGCCCGGGGGCCTCCCCCCGACCCCCGTCCGCCCTGCCGGGGGACGCAGGGCCCAGCGGCCCCGCGCCCGGCCACTCTCGCCGCCGCGCGCACAGGCAGCATTTGAACTTCTGACCTTCTGTCAACTTCCCTCAGACGAACGAAACGAAAACAAATACTTTTTTCCTTGGGCAGTGGCTATTCCCGTTCCCAACACAAAAGGAGGGGGAAGGACGGCCCAAGTGGGGGTTGGGTGAGGAGAGCCAGGCCGGGATTATCAGGCAGACCCCACAAAGGTCCCCTAAAACCGAGGGGGGTAGGGGCTGGCAGTCTGTGAGGTATCCCCGGTTGATCCCTCCCCTACCTTCCTTCTCCCGATTCCAGGAGTTAAGGGTGGGGGAGGAAGGGATGGGGAAGGCGGAGGCTCGGGTGCTGAGGGCAGGGGCGGGGTGCAGGAGGCGGCAGGGGAGCCCCAGGCCGGCGGGAGGTTTGGGGAGCCTGCTCGGCCGCCCTCATTTTAAATAACCACCTAGGCTCTGCCCCAGGTGCGTGACCCTCTTCTTCTGTCTCCCTCCCTGTCTCTGGGTCTCTAATGTGACTGCCGCCCAAGTCCCTCAACCATGGCGAGATCGTCCCCAGTGGAACTTTCGGAGCAGTTCCGGAACGCAGGAGCTGCCGGTTAATATTAACCCGGGAGAGGAAAGCGCAGACAGACACGCTCTCCCCGCGCGGGCCTAGGTGCCAGGCGAGGGTGCTGGCGGCCAGGGGGCTCCTAAGGGGCAGGAGGCCAGAGGGCCGGATCTGAAGCCTGGAGTGGGGTCCCGAGCCGCTACACTAAATAGATTTAATGTGCGCTCTGGGGCCGCCAGGAAAGACGCTCAGGTATGGGGTTGGGGAGGGGCTGTTCCACCAAGCTTGGGGGAAAGGACAGTGGAGAGAGGTGCGTTTAGGGGCTGGGGCTGTCTTGAAGCTGGGACGCCCCCGCCCCCGCGCTGGGGGAAGCCCACCGGCTGCTGGCGGTGACACTCGCCGGCGCGGCTCGCAGATCAGGGAGGTAGGCGGGAGCTCAGGCGTGGGGAACAACTTGGCCTCCGCCGACACAAAGCCCGGCCCCGGCGGCCCTGCTGGGCTTCACGGTGGCTGCACAGAGTCGGGCTTGATTCGCGGCACACGACCCAATGAATTAATAACCGGCCTGGGCTTCCCGGCTTTGCCTGCGACAATCCCGCCCAGCGCGGGCGGAGGAGAGGCCGCCAGCCGAGGCCGCGCGGAGCCCGGGCCGGAGGAGGGCGCAAGGGGCGGGGGCGCCAACTCCAGCAACCCTCGGCCTCCGCCCCTCACTCGCGCAGCCACCTCCCGTCGCGGCCCGGCTGGACCCGGGTCTCCCTGCCCGGGGTCCTCCATGCCTGCCCAAGTGGCGCAGCTCACAGAGCTGGGGGCCAGGTCATCCTCACCCTGCCGCCCTCTCCCTGGCTGCCCTCCTGGGAAGCTGTTTAAAGCTTCTTCGGCACAGCCCCAGGGGAGGGAGCTGCGGTGGGGTGGGGGGCTTGCATGGGGGTCCCTGTGCGTGTTGGTGGTGTGCGCCTGCGCGCAACGGGCCTCACATCATAGCTCTACACTGACCCTGGTTTACTGATTGATTTTCATGTAAAACGCGTTCAATCCTCAAGATGACCTCACTCAAACTCTGCCCTTCCGACTTTTTTTTTTAACTGCTGGCAGGCCCACAAACATGCAGGCACTGACCTGTTACCAGGGCGGCCCCCAGCCCTACCCCACCCCCAGTTGTTGCATGTTGAACTCTACAACCATATTACTGGGTTTTATTGCTGCCAGATACACAGGACTTTTCCTGTTGCGCAATTTGTCACGTCCCCTTAAAGCGCCGCAGCAGTGGGGCCAGCGTCCTCGCCCCACCCTCTCGAAAGAGTCCCCCCAACCCACGCTACAGTTAGGGCCCTGGATAGAAGCTGTCCCTCCATGGCGACAACCAGACTCCAAGCAGAGCATCCTTCCAGACTGGAGGAGGTTAGAGGTCAGCCCCGCCCTCTGCAGAAGTCACCTTGAAATTGCCCCTCGGCCTCCACTTGGCGCAGCTTCTTGGGGGATGCCACCATCGTCATCTGTGCCAGTTCCCCCTCTTTAAATCCCATGTCCCACCAGCAGCAGCAGGGTAAACATCCAGGAAGCAAGTCAGTGCCCCCACAAACACACACAGTGGATTCAACTGCTTTCTGTCGCATCCTTATCTGAGGGTGACCCCAGAATTCCAGGGGAACCCCCACAATCTGAATCCCAGGTAACCCCGTCTGCATCTGCCTAGTCAGTGTTTCCTGCCTCCTCCCAGGCAACTTCCTGGGAAACTCCCCAGGCGGAGGACTCCGAGACCTCAGGCCTTCCTGTCTCCCCTCCCCCTCCTCTCAAACCCCTCCCCCTCCCTCCACCTCTTCAGTTTGCTCTTCAAACTTGCTGGACGCCATTCTATGCTGGGGCCAAGAACACAAGAGCGGAGGAAGGGAACAGGTTAAAGAAAACAAGAAACACAATCAGACCACAGAAAAGCCAGGCAGAAAAGGGTTCGACGGGCAAAAAGAATGTGGCTGTCCAGATAAAGAATGTCTGTCCCGGCCCCGGCCTGTGCTGCAAGTGGCAACTCACCTAGCCGCCTGCCACCCAGGCTCCCGCCCACCGCGCAGCCCCGCCAGCGGCTTCTCGCCTCCCCTCTGCCTCGGATAGGGTTAGGGCCTGAGGTAAATAAATGCAAGGCCTTCAATTCTCCAAGCAGTGCGCAGTGCATTTTTCTTTATTTCTGGGAACTTGCGCCCAGGTCTCTGTCAGGCCTGCTGTGAGGGATTCTACGCGGGGAGAAGGTGGAGGCTGCGCAGGTGGAGAAAGGGGCCCCAGAAGGGGGGCTAGAAGTGGAGGGCAACGTGGGGGCGGGGCGGGTATCCCAGAGGGTGCCCCTGGAGGGTCCTGTAGTTGATGTCTTAAACATGCAGGTCACTTGTTTCAGAGAAACTTTATTTGCTTCTTAGGCCTCGCTAGGAGCATCGGCTGTTTCAGGACCTGGAGAAAGGCCCCCAGCTCTACCCTGAGAGGACGTGCTCCTCCACGCTCCTCCGCAAATGCTGTCCCTCTTCCCCAGCCCAGGGCCCGGCTCTTCGGTGTGTCTGGGCCATTCCAACCCCCGTCTCCCCACCTCTCCGCATGGCCCTCGCGCCTTGAGACTGGGCAGGGCAGGCTGATGGAGGGGCCGGGAGGGGTGGCGGTTGCCCAGGCTAACGTGTCCGTCGGTGGGGGTCCCCTTGTCTTCGCAGAGGTGTAAGGACAAGTTGAACGCTTTGGCCATCTCGGTGATGAACCAGTGGCCAGGAGTGAAACTGCGGGTGACCGAGGGCTGGGACGAAGATGGCCACCACTCAGAGGAGTCTCTGCACTACGAGGGCCGCGCAGTGGACATCACCACGTCTGACCGCGACCGCAGCAAGTACGGCATGCTGGCCCGCCTGGCGGTGGAGGCCGGCTTCGACTGGGTGTACTACGAGTCCAAGGCACATATCCACTGCTCGGTGAAAGCAGGTAAGCTGGCCCTGGCCCCCCGGATCCGACCCAAGGAAGGCCATTGGCGCACCTCGGCTTGATTCAAGAGAAAAAGAAACCTGGGGGGAGGCTGAGGGCCAGGAGCAGGGTCGCTGGGCGATGACTGCGTTTCCGCGGTGGAACCTGCCCTGTGAGGTGCCGGCCCCTCGAAATCACCCCTACCTTTGAGGCCACAGAGCCCAAGGTTCTCCATGCCCCGAGATGGGGTCCTGTGGCTTCCTGCCCGCTTCTGGAGCCCCCACTGCAGGGGGTGGGAAAGCGTGACTGGGGGAGGGGCGCTAGGCCCTTCCAGGCGAGGGAAGACAGCCCTGCGCGGTTAGCCAGGTCTGGGCGAGCTCCTTCCTCTCGTTTAGGGCTTAAGAACCAACCGCCCCCACCCGCTATCCCAAGCGCAGGGGTGTCTATCCTGCCCCGGAGCCCGCGTCCTGGCTCCTCCCCGCCGGGCGCCCGTGGATCCTAAGCTGCCTTTGGGGAGAGGCCTGGTGGGCGGCAGTAAACCCAGGGGCAACCACCTCCAGCATCTGGAGGCGGCGCGCCCGGAGCCTGCGTTCCTACTGGGAGCCGGGCCGGGACGCCCTGGGCGGCGGGCAGGCCCCGAAACGCCGGCCCGAGTCGGCGCGAGGCTGTCTTCTCTGGGCCTGCAACGCCACACGCTGTTGCCGGCGAGGAACAGCCGTGGAGGAGGCGCCATCGCGCGCACGCAAACCTCCGGCCCGAGGCTGTGTGCACAGCGCTCTTCTCCGCCCGCATAAATTGGCACGTTTAGCAAAGCCGTTCACGGTGAATTTCGGGGAAACTCTGCCTTCCTCAACCCCCTTCCAGGCTTCCCTACTTGTCTCCTAAATTCCATGTTAATGGCACTATGTTAGTAGGAAAACACTGTTAAGGTGTCAAGGCACACTTGTAGGTAAAGGCTAGAGTGGCTTCTCGTCCCCACAGAAAGCAAAGGCGTGGAGCGGGGGCGGCAGGGGCGGGTGTGCGGCCCGGAGAGCTCCCGGCTGCAGGCAGGCAGGAGGCGGCGCCCCCACCTCGCGGGCTCGGCGGCGGCCCCTGGGCCCAGGGCGCCCCCTGCGCAAAACCTCCTCCCCGGCTCCCTGCCCGCGGGGTCCCCCTAGCGGGGGTCTCCGGAGGCCTCCTCCCAAGTGAGCAGCGCTAATCCATCCCCCGGATCGCGCCGGGAGAGCGGAGCCGCGGCGCGGGAGCCGCTCATTGGCATTCTGAGCACACGGGCGGGGGCGCGGGGCGCAGCGTGTCAAGCCGGGCCGTGCGACTCGACGACTCGGGCTCGCCAGCGCCCGGGGTCGCATTCCGGGGGGCTACGGAGGGCCTCCAACGGCCAGCCCCGCACTTCATGCCAGAGAAACCGATGAGAAGATTAAAAGCCCCCTGTAATTCCAGCAGGAAGATTCTTTCTGGCAATCTCTATTTGCAAAAAGCATGATCCCGGAGATTGGAATGCAAAGAAGACGGCCCTCCCCGCCCTCCTCCCCGGCCCCCTGCGCTCCGCCCCAACTTCAATTATTGTCCTGGGGACAGTGAGCCTCAGAGAGCGACAGAGGGCTCGAGAAAGCGGGTAGTCAAGGGGCCTTGAGACCCGGCGCTTCCAGCGCTCCGAACAGGCCCCGCCATTTAAAATTCAAATACACATCTTGAGTGCTTGGAAGAGAGGCCTGGCTGTGCAAATAGTGCTTGTGAATTGCACACGGGGTGGGGGGGGGTTGCACCTGAGCAAATAGGGAGGGGGAGGCCCGCGAGCTGGGGAGAGAGTGAGCTGAGAACAGGGAGGGGAGAAAATGGAAGTGTCCCCTTCCAAGAGTGTCTCCTGTTTATCCCAGAAATCACAATGACAATGCTGGGCCCTTTATTGGATTTTAATTAGAAAATCCACACAAGCCTCGGATTTTCACACCTCGGCCAATCTCTGGAATGTTTGTCCAGTTGCTACAACTACTGCAGCTATTTTTCACTCCCCGCCCCCGCCCCTCCGCAGGCCCACGCCGAGGCGCGGCAGGGTGCTGCGGGCAGGCGGGCAGGCGGGCAGGCGGGCCAGGGGTTTCCGCCGCGCAGCCCGGGTGCTGAGTGCGCGAGCAGGCGCCGCGCCCCGCGCCGGGGCGGGAGGGAAGGAGGGTGCGCCCGGCGCCCGCGGGAGCTCAAGGAGGCTTCCTGAGGAATCCAAGTGCAGAGCAAACACCCTCTGGATGGATTCGCGGCGAGGCCGGGTGTGTGCGGAGCTGGGGGTGGGGTTGGAGGAAGGCGGAAGGAAAGAGTGTCACCGGCCTCTGCAGGAAACGCCAGCCAACCTCTGTGACCGCCAGCCCAGACTTAGAGAGTCGTTAAGGAATGTGTCGGAATCCTGTCCCTGGGGCAGTGGGGTTGGGGGAGGGAGGTGTGTGCGGGACCCGCCTGGAATCAATCGCCCCGCCCCGCGCCTTGCGCACCCCTGGCCTAGGAGCGCGGGCACCAAGCGTGCGCCCTCCTCCCCGAGACGCGCCTCCCTCTCGGAACTCAATGCCCTGTCCTCTCTTCTTTCCCTTCTCCTCACCCGCAGAGAACTCGGTGGCGGCCAAATCGGGAGGCTGCTTCCCGGGCTCGGCCACGGTGCACCTGGAGCAGGGCGGCACCAAGCTGGTGAAGGACCTGAGCCCCGGGGACCGCGTGCTGGCGGCGGACGACCAGGGCCGGCTGCTCTACAGCGACTTCCTCACTTTCCTGGACCGCGACGACGGCGCCAAGAAGGTCTTCTACGTGATCGAGACGCGGGAGCCGCGCGAGCGCCTGCTGCTCACCGCCGCGCACCTGCTCTTTGTGGCGCCGCACAACGACTCGGCCACCGGGGAGCCCGAGGCGTCCTCGGGCTCGGGGCCGCCTTCCGGGGGCGCACTGGGGCCTCGGGCGCTGTTCGCCAGCCGCGTGCGCCCGGGCCAGCGCGTGTACGTGGTGGCCGAGCGTGACGGGGACCGCCGGCTCCTGCCCGCCGCTGTGCACAGCGTGACCCTAAGCGAGGAGGCCGCGGGCGCCTACGCGCCGCTCACGGCCCAGGGCACCATTCTCATCAACCGGGTGCTGGCCTCGTGCTACGCGGTCATCGAGGAGCACAGCTGGGCGCACCGGGCCTTCGCGCCCTTCCGCCTGGCGCACGCGCTCCTGGCTGCACTGGCGCCCGCGCGCACGGACCGCGGCGGGGACAGCGGCGGCGGGGACCGCGGGGGCGGCGGCGGCAGAGTAGCCCTAACCGCTCCAGGTGCTGCCGACGCTCCGGGTGCGGGGGCCACCGCGGGCATCCACTGGTACTCGCAGCTGCTCTACCAAATAGGCACCTGGCTCCTGGACAGCGAGGCCCTGCACCCGCTGGGCATGGCGGTCAAGTCCAGCTGAAGCCGGGGGGCCGGGGGAGGGGCGCGGGAGGGGGCGGGGCGGGGCAGCAACAGCAACGCAAAGCAAAAAGACACTCGGAAAAGGCGCACGAACCAGACTGAGTTATAATAAGAATAAGAATAATAAAGTAGGACAGTCCAAAGTAGACTCTAAGGAAACAAGGACCCCGGGAAGTTTTGTTGTTGTGCTTAGTTGATATATATTTTTTGAATTTTTTTGGTTATTGTTTTATTTTGGTTATTTTTTCCTCCTCTCCTGGCTATTTATTTGTTTGGTATGAATAGATGTTTTAAATAATATGAACCGGACCTTCAAGAGCCTTAAATAGTTTGTTTCTTGGATAATTTATTATGATCATGTGAACTGTACTCACGGGGGAAAGATTATTTTGTGAGGCCAAGCAACCTGCTCAGAGTCTATTTTTCTACATGTCCCTCGTCCCGGCTGTCAGAAAGCAAACCTCTGTCCCCGCCATCCCTCCCTTCCATCTCCTGCTTCTCAGCAAGTGCAAACTCAAACGTGCTTCATGGGGGTCCACAAATTATATTTTTATACACAGAATTGTAAATTAGATTTTTTGAGAGATCAATACTTAACTGAATTACATTTCATTTTTGAAATAGTGTAAAATATGAAAATATATTATTTTAATTTAACTAGTTTCCGATGTAACAGCCATCTCCTCTGTTGTCTTTATGGTTTCATATTCCCTTTGTATTCACCATTTTGCCACATTCTTGGAAGCCAAGACTGTTACACACACAACATACACACACACTTTTCTTTTTCTTTTCTTTTCTTTTTTTTTTTTTTTTTTTTTTTTGGACAAACTGGAAGAACTGTTATTTTTAACTTCAAAGAATTTATTAGAAAATAATATTTTTTAAAAGCGCACATAGTGACGAGCCCACGAGGATGGAGCCTGCAGTTTGTACAGAGAAAACAAAGGATGTTTTTGCATTAATAAATTGAGAAATAACGCTGTAAATTTACTAAAATGTATTTTTGAATATTTTGTAATAGTTTTATAGAAATAAAATGTGCCATGCACAGAACGCTTAGTATCTAATAACTAAGAATTCCTGTTGCAGCCCTTTTTCTTTTAGTTTTTGGCTTCTTTGTTTGGGAAACCTAGCGCTGACAGGAGCTCCCAATATTCTATTTAGATGTGTTGCTTATACTGTGAACTCAGACTGACTGACTTAGGTAACCAAAGTAGGCACACAAACCAACTTGTTTCTTCTCATGGCTGGAGAAACCTCAGCTCTGTTTGTATTTATTGTGTGAAGCTCTTTCTACACTCCCAAAGGTTGGGAGTGCCATTCGTGGGGACTGTGCTGTCCCCCTCACCCCACCCCTTAACTAGCAAAGCCTGATGTGTAAGCCCAGAGGAGGTGGCCTGGGGATGGCCACCAACAACCTTCTCTTAGGACTCCTGTGTGTGGTTGCTGGGCAGACCCCTGGCCTGACCCTGTTTGTGCTTCTCTGATCTGTAGGGAGGAGGCTCATTGCTGCTTTCTGAGGTCCTGTTGTGTCCCTTCCAGAAAGCATCCTTAGAAGAGAGGACCCGGTTTGATCTTCTCTGAAGCTCCTATCCTCTTTTCTTGAGGGTCCCCTTAAATCTGAGTGGCAAGCCCACAGTGGCGAGGGCCAGTCGCTGGAATGTCGGGGCTGCTGTTGAGGTCCTCAGGCTACACTGGTTGTCTGTGTCACATGGCGGTCGGGCGTGGACTTTGATCCCTGTTGAGAGAGCATGCTGCTGTGGGCGCTGGGCTGGGGAAGGTCCTTCCATGCTTCATGCTGCCTTGGAGGTTTGGCCAAGAGGGTCTCTGCCCTTGGCGGTTGTCAGGGTCCCAGGTGGAGGACTACTCCCAGTTCTTTGGCTTACGGAAGGTGTCTGCCATGCTTTGTGCTTTGGGCCGAATCGTCTGAGCAGGCTGGGCCTTGGAAGAGTTGCGCTGCATGAGCTTGGGGCCTCCCAGCAGCTGCAGCCTGTGTAGAAGGTGGTCCAGGCTTAGGGAACAGGAGTGAACAGACTTCAGCCCCACCTGGCAGGGGCTGGCTCCCGAGGTTGGGCCCAGTCCCTGAGGGTCTGCTCTGCTACGGGTCTGCCCTTGAGTGGCCTTCCGTGGAGGGTGTGTGACCAGGTGGATGGCGCAGGGCCTCTGGAGCCCTCTCCTCAGGAGCAGTCCTCAGCCTTTTTCTGTAAAAGACTTTTCTTTGGTGTTCTAGGTGGTCAGCAGGTTCCAGGCTGGTGTTTACAATCTCGGAGGAAGTGCGATGGTTTCTGTTCTTTTGACAGTTCAGTCTGATTTCAAGTCAGTCGAAAGCGAACCAGAAGCACCGGGCACAGCAGCTCCTCTGGCTGTGTAGACAGACCTGGCAATGTGGCCGTGCAGCCCAGACGATCAGAGAGAAGCCAGGCGTTGACCAAGCCCCAAGGTGCCTGAGGCCATGGTGCAACTCTGCTGGTGACTGGGGCACCTTGGAGCAGAGCTTCACCCGGATGGGAAATCCTCACTCCTGGGTGGCACTCCCTCCTGGACAGGCCCGGTGGCAGAGTGTCCGTGCTGCTGGGTGCTGTCCCCAGCCCTCCTGGTCCATCTTCTTAAGATGCGTCCACTGCTTTATATTTAAAATTCTCTTTTTCACAGGCAAGGAAAGGAAACCACTGCTTAGAGACACTAGGTACAGGGCATCAAGAGGGTGCAGCCCAGCCCCGCCAGGACGAGGCGCCGACTTCTCATTCAGGGTTGACGGAGCCAAGAGTTTGTGCAAAATGTATGCATGGTGGTTGCTGCCAGCCTCCCTCATGACTAAATGCATATCTATTCCTGTCAAAACGTGTATCACAATGTACTTGAAACTGTTATCTTTGTGCTCTATTGTTTGAATAATTAAAGAAATTACAGAGACTCTC",
+            "expected_sequence": "ACAAGCTCTCCAGGCTTGCTACCATTTAAAATCAGACTCTTTTTGTCTTTTGATTGCTGTCTCGCGACCCAACTCCGATGTGTTCCGTTATCAGCGGCCGGCAGCCTGCCATTCCAGCCCCTGTCTGGGTGGGGAGCGGTGGAGAGTCCCCCGCAGCCGCGGCGGGCAAGGTTATATAGGAAGAGAAAGAGCGAGGCAGCCAGCGAGGGAGAGAGCGAGCGGGCGAGCCGGAGCGAGGAAGGGAAAGCGCAAGAGAGAGCGCACACGCACACACCCGCCGCGCGCACTCGCGCACGGACCCGCACGGGGACAGCTCGGAAGTCATCAGTTCCATGGGCGAGATGCTGCTGCTGGCGAGATGTCTGCTGCTAGTCCTCGTCTCCTCGCTGCTGGTATGCTCGGGACTGGCGTGCGGACCGGGCAGGGGGTTCGGGAAGAGGAGGCACCCCAAAAAGCTGACCCCTTTAGCCTACAAGCAGTTTATCCCCAATGTGGCCGAGAAGACCCTAGGCGCCAGCGGAAGGTATGAAGGGAAGATCTCCAGAAACTCCGAGCGATTTAAGGAACTCACCCCCAATTACAACCCCGACATCATATTTAAGGATGAAGAAAACACCGGAGCGGACAGGCTGATGACTCAGGTAGGAACCCAGCGCCGGGGCGTGGAATGTGTGGCTTTCCAGGGGGTTACGAGAAGCCGAACACTTCCAGACTTAACTCTGTTTGCTCTTCGGGCAGATAGGAAGGTGATTTCACCCGCTCCTTCCCCACCCACCTGCCCGCCCCCCATCTCTTCCTCTTCCTGGAGGAGAATGGAGGTCAAGGGTCCAGCTGGAGAAGTTTAGGGTGTGGTGGGGGTGAGGACGGTAACAGACGTGGTTCATTATGGCCCTGATTTGATGAGTCTTGCTACAATGGCCTTCCCCATCCTACCTCTGCCCTGGCTTGTAACTTGGGGAGACCTTCACTTTGGGGGCGTCGGCCCTTTCCAAGTCAGGAGTGGAAATGGAAGGAGAGGCTGGGAATCCCCCTCCCACAAACATGAAGTGGTCTCCTGGTACTGTACGAACGAACGAACGTAGCCTTGGGCATTGGAGCTCAGAGCCCCCACGTTTCCCGTTGCCTCTGTGGTTTTCTTTCCCACCACTACCCCCACCCTGCACCTCCCCACCAAAGAATTCTCAACTGGAAAAGCCAGGAGGCGGTTCTGACAAAAGGCAGGGGCTCCAGGGGAGACTCCGCCCGTCCCTGGGTGGCTGGCTGTATCGCAGAGCTGGCTTTGCGATTGCGTGTCCGCAATTGTGCCCATCAGAGTGTGAATGTATTGATATTTCTTTAAGGATGCTCTTTCGTTCTTCCAAGCCCGAGGTACCTTAGGGGAGGGACTTAGAACTTATTGGCATTGCATCACTTTAGTTTTCAACCTGCTTGCATAAGAATTAAGAGCGAATAAATATTAGTGTGGGGGGAGGGGAAGCTAAGCAAAATATGAATTCCTCTCTCTCTCCCCACCTCCTTTGAGATTTCTGAGCTGCCAATCTCCCAGCCAATTCTAGACTTTCTGAAACTCCATGCACGTATAACTGAAGCCAGAAATGGGTTTCCTTGCAAATATAGGTCAACATCCTTTTTATTGCCCTATTAAAATATTCAAGTCCTACCTTTAGGGCTAGGTGCGTACAGCGGCTGATGGAGTGGCGCTGGTGGGGCGCAAGTGCAGGGGGAGGGTACTGACGGCAGAGAGAGAGGAGCTACCTCCGTGCCGCCCTGCTTCCCGACCCGATTCCCAGGCTTGCTTGAGGCCGAGAAAGGCGAGGGGCAGGCAAGGTAGCCTGCTCCAGCTGTCGGAAGGGAGAGGAATGGGAAATGGTCCTGATTTCCTTGCTCTCCCTCATCTGCTCCCGACCACCTTAAATCTGGACCGCGAGTGTGGACGCGCGCGCCAGTGCCAGACAGCAGCGCGATCCACAATTAACTCTGCACGGGCCATGGGGTGCCCGTTGCGTGCAGCTGGCTGGAGGGAGTTCTCCGGCTAGCCCGAGGCGCCCATCCTCTCGTCACCCTCACTCCCCGCGGAGGAGGGGCCTTGCCAGGGTCCCTCGGAACCCGAGAGGAGGGAGGCACTGCGGAGAGAGCGGCGGGGGCGTGGATACCCGAGGTCCCAGAGCCAGAGTGGGTCAGCTTCTGCCCTGCTCTGCGGGAGGCCAATACCGCAGAAGGGGTCCTGGGCTCGCACACCTTCCCAGGGCTTGGGCCTTGCAGCCCTGCTGCAAAGCTGCAAGCGCACAGAGCCGCGCAGCGAGGCAGACGCCTGCAGCCCCACTTACTCCCGGGTTATCGATCCCCCGCGGCTAGGGTTTCAGTGCGCGAGGGGCTGGGCTGGAGCCGCCGGGCTCTGCTGCTCCACGCGCGGGAGCGCAGGCACCGCAGGAGCTAACAGCAGCGCCGGGCTCGCTGTAGTGTCCCCGGCGGCGGGGGCGCGGAGATGGGGGCGCCCGCGCAGGGGCCGGGGCGCATCGCGGGCTCCGCCGGCCTGCCCTGGGACGCGCCCCCATCCCCAGTCCGCCGCCTGCCTGGCCTCTAGGCCTCCGCGTCCCAGCCGGAGCCCCCAGCCCGGGGGCCTCCCCCCGACCCCCGTCCGCCCTGCCGGGGGACGCAGGGCCCAGCGGCCCCGCGCCCGGCCACTCTCGCCGCCGCGCGCACAGGCAGCATTTGAACTTCTGACCTTCTGTCAACTTCCCTCAGACGAACGAAACGAAAACAAATACTTTTTTCCTTGGGCAGTGGCTATTCCCGTTCCCAACACAAAAGGAGGGGGAAGGACGGCCCAAGTGGGGGTTGGGTGAGGAGAGCCAGGCCGGGATTATCAGGCAGACCCCACAAAGGTCCCCTAAAACCGAGGGGGGTAGGGGCTGGCAGTCTGTGAGGTATCCCCGGTTGATCCCTCCCCTACCTTCCTTCTCCCGATTCCAGGAGTTAAGGGTGGGGGAGGAAGGGATGGGGAAGGCGGAGGCTCGGGTGCTGAGGGCAGGGGCGGGGTGCAGGAGGCGGCAGGGGAGCCCCAGGCCGGCGGGAGGTTTGGGGAGCCTGCTCGGCCGCCCTCATTTTAAATAACCACCTAGGCTCTGCCCCAGGTGCGTGACCCTCTTCTTCTGTCTCCCTCCCTGTCTCTGGGTCTCTAATGTGACTGCCGCCCAAGTCCCTCAACCATGGCGAGATCGTCCCCAGTGGAACTTTCGGAGCAGTTCCGGAACGCAGGAGCTGCCGGTTAATATTAACCCGGGAGAGGAAAGCGCAGACAGACACGCTCTCCCCGCGCGGGCCTAGGTGCCAGGCGAGGGTGCTGGCGGCCAGGGGGCTCCTAAGGGGCAGGAGGCCAGAGGGCCGGATCTGAAGCCTGGAGTGGGGTCCCGAGCCGCTACACTAAATAGATTTAATGTGCGCTCTGGGGCCGCCAGGAAAGACGCTCAGGTATGGGGTTGGGGAGGGGCTGTTCCACCAAGCTTGGGGGAAAGGACAGTGGAGAGAGGTGCGTTTAGGGGCTGGGGCTGTCTTGAAGCTGGGACGCCCCCGCCCCCGCGCTGGGGGAAGCCCACCGGCTGCTGGCGGTGACACTCGCCGGCGCGGCTCGCAGATCAGGGAGGTAGGCGGGAGCTCAGGCGTGGGGAACAACTTGGCCTCCGCCGACACAAAGCCCGGCCCCGGCGGCCCTGCTGGGCTTCACGGTGGCTGCACAGAGTCGGGCTTGATTCGCGGCACACGACCCAATGAATTAATAACCGGCCTGGGCTTCCCGGCTTTGCCTGCGACAATCCCGCCCAGCGCGGGCGGAGGAGAGGCCGCCAGCCGAGGCCGCGCGGAGCCCGGGCCGGAGGAGGGCGCAAGGGGCGGGGGCGCCAACTCCAGCAACCCTCGGCCTCCGCCCCTCACTCGCGCAGCCACCTCCCGTCGCGGCCCGGCTGGACCCGGGTCTCCCTGCCCGGGGTCCTCCATGCCTGCCCAAGTGGCGCAGCTCACAGAGCTGGGGGCCAGGTCATCCTCACCCTGCCGCCCTCTCCCTGGCTGCCCTCCTGGGAAGCTGTTTAAAGCTTCTTCGGCACAGCCCCAGGGGAGGGAGCTGCGGTGGGGTGGGGGGCTTGCATGGGGGTCCCTGTGCGTGTTGGTGGTGTGCGCCTGCGCGCAACGGGCCTCACATCATAGCTCTACACTGACCCTGGTTTACTGATTGATTTTCATGTAAAACGCGTTCAATCCTCAAGATGACCTCACTCAAACTCTGCCCTTCCGACTTTTTTTTTTAACTGCTGGCAGGCCCACAAACATGCAGGCACTGACCTGTTACCAGGGCGGCCCCCAGCCCTACCCCACCCCCAGTTGTTGCATGTTGAACTCTACAACCATATTACTGGGTTTTATTGCTGCCAGATACACAGGACTTTTCCTGTTGCGCAATTTGTCACGTCCCCTTAAAGCGCCGCAGCAGTGGGGCCAGCGTCCTCGCCCCACCCTCTCGAAAGAGTCCCCCCAACCCACGCTACAGTTAGGGCCCTGGATAGAAGCTGTCCCTCCATGGCGACAACCAGACTCCAAGCAGAGCATCCTTCCAGACTGGAGGAGGTTAGAGGTCAGCCCCGCCCTCTGCAGAAGTCACCTTGAAATTGCCCCTCGGCCTCCACTTGGCGCAGCTTCTTGGGGGATGCCACCATCGTCATCTGTGCCAGTTCCCCCTCTTTAAATCCCATGTCCCACCAGCAGCAGCAGGGTAAACATCCAGGAAGCAAGTCAGTGCCCCCACAAACACACACAGTGGATTCAACTGCTTTCTGTCGCATCCTTATCTGAGGGTGACCCCAGAATTCCAGGGGAACCCCCACAATCTGAATCCCAGGTAACCCCGTCTGCATCTGCCTAGTCAGTGTTTCCTGCCTCCTCCCAGGCAACTTCCTGGGAAACTCCCCAGGCGGAGGACTCCGAGACCTCAGGCCTTCCTGTCTCCCCTCCCCCTCCTCTCAAACCCCTCCCCCTCCCTCCACCTCTTCAGTTTGCTCTTCAAACTTGCTGGACGCCATTCTATGCTGGGGCCAAGAACACAAGAGCGGAGGAAGGGAACAGGTTAAAGAAAACAAGAAACACAATCAGACCACAGAAAAGCCAGGCAGAAAAGGGTTCGACGGGCAAAAAGAATGTGGCTGTCCAGATAAAGAATGTCTGTCCCGGCCCCGGCCTGTGCTGCAAGTGGCAACTCACCTAGCCGCCTGCCACCCAGGCTCCCGCCCACCGCGCAGCCCCGCCAGCGGCTTCTCGCCTCCCCTCTGCCTCGGATAGGGTTAGGGCCTGAGGTAAATAAATGCAAGGCCTTCAATTCTCCAAGCAGTGCGCAGTGCATTTTTCTTTATTTCTGGGAACTTGCGCCCAGGTCTCTGTCAGGCCTGCTGTGAGGGATTCTACGCGGGGAGAAGGTGGAGGCTGCGCAGGTGGAGAAAGGGGCCCCAGAAGGGGGGCTAGAAGTGGAGGGCAACGTGGGGGCGGGGCGGGTATCCCAGAGGGTGCCCCTGGAGGGTCCTGTAGTTGATGTCTTAAACATGCAGGTCACTTGTTTCAGAGAAACTTTATTTGCTTCTTAGGCCTCGCTAGGAGCATCGGCTGTTTCAGGACCTGGAGAAAGGCCCCCAGCTCTACCCTGAGAGGACGTGCTCCTCCACGCTCCTCCGCAAATGCTGTCCCTCTTCCCCAGCCCAGGGCCCGGCTCTTCGGTGTGTCTGGGCCATTCCAACCCCCGTCTCCCCACCTCTCCGCATGGCCCTCGCGCCTTGAGACTGGGCAGGGCAGGCTGATGGAGGGGCCGGGAGGGGTGGCGGTTGCCCAGGCTAACGTGTCCGTCGGTGGGGGTCCCCTTGTCTTCGCAGAGGTGTAAGGACAAGTTGAACGCTTTGGCCATCTCGGTGATGAACCAGTGGCCAGGAGTGAAACTGCGGGTGACCGAGGGCTGGGACGAAGATGGCCACCACTCAGAGGAGTCTCTGCACTACGAGGGCCGCGCAGTGGACATCACCACGTCTGACCGCGACCGCAGCAAGTACGGCATGCTGGCCCGCCTGGCGGTGGAGGCCGGCTTCGACTGGGTGTACTACGAGTCCAAGGCACATATCCACTGCTCGGTGAAAGCAGGTAAGCTGGCCCTGGCCCCCCGGATCCGACCCAAGGAAGGCCATTGGCGCACCTCGGCTTGATTCAAGAGAAAAAGAAACCTGGGGGGAGGCTGAGGGCCAGGAGCAGGGTCGCTGGGCGATGACTGCGTTTCCGCGGTGGAACCTGCCCTGTGAGGTGCCGGCCCCTCGAAATCACCCCTACCTTTGAGGCCACAGAGCCCAAGGTTCTCCATGCCCCGAGATGGGGTCCTGTGGCTTCCTGCCCGCTTCTGGAGCCCCCACTGCAGGGGGTGGGAAAGCGTGACTGGGGGAGGGGCGCTAGGCCCTTCCAGGCGAGGGAAGACAGCCCTGCGCGGTTAGCCAGGTCTGGGCGAGCTCCTTCCTCTCGTTTAGGGCTTAAGAACCAACCGCCCCCACCCGCTATCCCAAGCGCAGGGGTGTCTATCCTGCCCCGGAGCCCGCGTCCTGGCTCCTCCCCGCCGGGCGCCCGTGGATCCTAAGCTGCCTTTGGGGAGAGGCCTGGTGGGCGGCAGTAAACCCAGGGGCAACCACCTCCAGCATCTGGAGGCGGCGCGCCCGGAGCCTGCGTTCCTACTGGGAGCCGGGCCGGGACGCCCTGGGCGGCGGGCAGGCCCCGAAACGCCGGCCCGAGTCGGCGCGAGGCTGTCTTCTCTGGGCCTGCAACGCCACACGCTGTTGCCGGCGAGGAACAGCCGTGGAGGAGGCGCCATCGCGCGCACGCAAACCTCCGGCCCGAGGCTGTGTGCACAGCGCTCTTCTCCGCCCGCATAAATTGGCACGTTTAGCAAAGCCGTTCACGGTGAATTTCGGGGAAACTCTGCCTTCCTCAACCCCCTTCCAGGCTTCCCTACTTGTCTCCTAAATTCCATGTTAATGGCACTATGTTAGTAGGAAAACACTGTTAAGGTGTCAAGGCACACTTGTAGGTAAAGGCTAGAGTGGCTTCTCGTCCCCACAGAAAGCAAAGGCGTGGAGCGGGGGCGGCAGGGGCGGGTGTGCGGCCCGGAGAGCTCCCGGCTGCAGGCAGGCAGGAGGCGGCGCCCCCACCTCGCGGGCTCGGCGGCGGCCCCTGGGCCCAGGGCGCCCCCTGCGCAAAACCTCCTCCCCGGCTCCCTGCCCGCGGGGTCCCCCTAGCGGGGGTCTCCGGAGGCCTCCTCCCAAGTGAGCAGCGCTAATCCATCCCCCGGATCGCGCCGGGAGAGCGGAGCCGCGGCGCGGGAGCCGCTCATTGGCATTCTGAGCACACGGGCGGGGGCGCGGGGCGCAGCGTGTCAAGCCGGGCCGTGCGACTCGACGACTCGGGCTCGCCAGCGCCCGGGGTCGCATTCCGGGGGGCTACGGAGGGCCTCCAACGGCCAGCCCCGCACTTCATGCCAGAGAAACCGATGAGAAGATTAAAAGCCCCCTGTAATTCCAGCAGGAAGATTCTTTCTGGCAATCTCTATTTGCAAAAAGCATGATCCCGGAGATTGGAATGCAAAGAAGACGGCCCTCCCCGCCCTCCTCCCCGGCCCCCTGCGCTCCGCCCCAACTTCAATTATTGTCCTGGGGACAGTGAGCCTCAGAGAGCGACAGAGGGCTCGAGAAAGCGGGTAGTCAAGGGGCCTTGAGACCCGGCGCTTCCAGCGCTCCGAACAGGCCCCGCCATTTAAAATTCAAATACACATCTTGAGTGCTTGGAAGAGAGGCCTGGCTGTGCAAATAGTGCTTGTGAATTGCACACGGGGTGGGGGGGGGTTGCACCTGAGCAAATAGGGAGGGGGAGGCCCGCGAGCTGGGGAGAGAGTGAGCTGAGAACAGGGAGGGGAGAAAATGGAAGTGTCCCCTTCCAAGAGTGTCTCCTGTTTATCCCAGAAATCACAATGACAATGCTGGGCCCTTTATTGGATTTTAATTAGAAAATCCACACAAGCCTCGGATTTTCACACCTCGGCCAATCTCTGGAATGTTTGTCCAGTTGCTACAACTACTGCAGCTATTTTTCACTCCCCGCCCCCGCCCCTCCGCAGGCCCACGCCGAGGCGCGGCAGGGTGCTGCGGGCAGGCGGGCAGGCGGGCAGGCGGGCCAGGGGTTTCCGCCGCGCAGCCCGGGTGCTGAGTGCGCGAGCAGGCGCCGCGCCCCGCGCCGGGGCGGGAGGGAAGGAGGGTGCGCCCGGCGCCCGCGGGAGCTCAAGGAGGCTTCCTGAGGAATCCAAGTGCAGAGCAAACACCCTCTGGATGGATTCGCGGCGAGGCCGGGTGTGTGCGGAGCTGGGGGTGGGGTTGGAGGAAGGCGGAAGGAAAGAGTGTCACCGGCCTCTGCAGGAAACGCCAGCCAACCTCTGTGACCGCCAGCCCAGACTTAGAGAGTCGTTAAGGAATGTGTCGGAATCCTGTCCCTGGGGCAGTGGGGTTGGGGGAGGGAGGTGTGTGCGGGACCCGCCTGGAATCAATCGCCCCGCCCCGCGCCTTGCGCACCCCTGGCCTAGGAGCGCGGGCACCAAGCGTGCGCCCTCCTCCCCGAGACGCGCCTCCCTCTCGGAACTCAATGCCCTGTCCTCTCTTCTTTCCCTTCTCCTCACCCGCAGAGAACTCGGTGGCGGCCAAATCGGGAGGCTGCTTCCCGGGCTCGGCCACGGTGCACCTGGAGCAGGGCGGCACCAAGCTGGTGAAGGACCTGAGCCCCGGGGACCGCGTGCTGGCGGCGGACGACCAGGGCCGGCTGCTCTACAGCGACTTCCTCACTTTCCTGGACCGCGACGACGGCGCCAAGAAGGTCTTCTACGTGATCGAGACGCGGGAGCCGCGCGAGCGCCTGCTGCTCACCGCCGCGCACCTGCTCTTTGTGGCGCCGCACAACGACTCGGCCACCGGGGAGCCCGAGGCGTCCTCGGGCTCGGGGCCGCCTTCCGGGGGCGCACTGGGGCCTCGGGCGCTGTTCGCCAGCCGCGTGCGCCCGGGCCAGCGCGTGTACGTGGTGGCCGAGCGTGACGGGGACCGCCGGCTCCTGCCCGCCGCTGTGCACAGCGTGACCCTAAGCGAGGAGGCCGCGGGCGCCTACGCGCCGCTCACGGCCCAGGGCACCATTCTCATCAACCGGGTGCTGGCCTCGTGCTACGCGGTCATCGAGGAGCACAGCTGGGCGCACCGGGCCTTCGCGCCCTTCCGCCTGGCGCACGCGCTCCTGGCTGCACTGGCGCCCGCGCGCACGGACCGCGGCGGGGACAGCGGCGGCGGGGACCGCGGGGGCGGCGGCGGCAGAGTAGCCCTAACCGCTCCAGGTGCTGCCGACGCTCCGGGTGCGGGGGCCACCGCGGGCATCCACTGGTACTCGCAGCTGCTCTACCAAATAGGCACCTGGCTCCTGGACAGCGAGGCCCTGCACCCGCTGGGCATGGCGGTCAAGTCCAGCTGAAGCCGGGGGGCCGGGGGAGGGGCGCGGGAGGGGGCGGGGCGGGGCAGCAACAGCAACGCAAAGCAAAAAGACACTCGGAAAAGGCGCACGAACCAGACTGAGTTATAATAAGAATAAGAATAATAAAGTAGGACAGTCCAAAGTAGACTCTAAGGAAACAAGGACCCCGGGAAGTTTTGTTGTTGTGCTTAGTTGATATATATTTTTTGAATTTTTTTGGTTATTGTTTTATTTTGGTTATTTTTTCCTCCTCTCCTGGCTATTTATTTGTTTGGTATGAATAGATGTTTTAAATAATATGAACCGGACCTTCAAGAGCCTTAAATAGTTTGTTTCTTGGATAATTTATTATGATCATGTGAACTGTACTCACGGGGGAAAGATTATTTTGTGAGGCCAAGCAACCTGCTCAGAGTCTATTTTTCTACATGTCCCTCGTCCCGGCTGTCAGAAAGCAAACCTCTGTCCCCGCCATCCCTCCCTTCCATCTCCTGCTTCTCAGCAAGTGCAAACTCAAACGTGCTTCATGGGGGTCCACAAATTATATTTTTATACACAGAATTGTAAATTAGATTTTTTGAGAGATCAATACTTAACTGAATTACATTTCATTTTTGAAATAGTGTAAAATATGAAAATATATTATTTTAATTTAACTAGTTTCCGATGTAACAGCCATCTCCTCTGTTGTCTTTATGGTTTCATATTCCCTTTGTATTCACCATTTTGCCACATTCTTGGAAGCCAAGACTGTTACACACACAACATACACACACACTTTTCTTTTTCTTTTCTTTTCTTTTTTTTTTTTTTTTTTTTTTTTGGACAAACTGGAAGAACTGTTATTTTTAACTTCAAAGAATTTATTAGAAAATAATATTTTTTAAAAGCGCACATAGTGACGAGCCCACGAGGATGGAGCCTGCAGTTTGTACAGAGAAAACAAAGGATGTTTTTGCATTAATAAATTGAGAAATAACGCTGTAAATTTACTAAAATGTATTTTTGAATATTTTGTAATAGTTTTATAGAAATAAAATGTGCCATGCACAGAACGCTTAGTATCTAATAACTAAGAATTCCTGTTGCAGCCCTTTTTCTTTTAGTTTTTGGCTTCTTTGTTTGGGAAACCTAGCGCTGACAGGAGCTCCCAATATTCTATTTAGATGTGTTGCTTATACTGTGAACTCAGACTGACTGACTTAGGTAACCAAAGTAGGCACACAAACCAACTTGTTTCTTCTCATGGCTGGAGAAACCTCAGCTCTGTTTGTATTTATTGTGTGAAGCTCTTTCTACACTCCCAAAGGTTGGGAGTGCCATTCGTGGGGACTGTGCTGTCCCCCTCACCCCACCCCTTAACTAGCAAAGCCTGATGTGTAAGCCCAGAGGAGGTGGCCTGGGGATGGCCACCAACAACCTTCTCTTAGGACTCCTGTGTGTGGTTGCTGGGCAGACCCCTGGCCTGACCCTGTTTGTGCTTCTCTGATCTGTAGGGAGGAGGCTCATTGCTGCTTTCTGAGGTCCTGTTGTGTCCCTTCCAGAAAGCATCCTTAGAAGAGAGGACCCGGTTTGATCTTCTCTGAAGCTCCTATCCTCTTTTCTTGAGGGTCCCCTTAAATCTGAGTGGCAAGCCCACAGTGGCGAGGGCCAGTCGCTGGAATGTCGGGGCTGCTGTTGAGGTCCTCAGGCTACACTGGTTGTCTGTGTCACATGGCGGTCGGGCGTGGACTTTGATCCCTGTTGAGAGAGCATGCTGCTGTGGGCGCTGGGCTGGGGAAGGTCCTTCCATGCTTCATGCTGCCTTGGAGGTTTGGCCAAGAGGGTCTCTGCCCTTGGCGGTTGTCAGGGTCCCAGGTGGAGGACTACTCCCAGTTCTTTGGCTTACGGAAGGTGTCTGCCATGCTTTGTGCTTTGGGCCGAATCGTCTGAGCAGGCTGGGCCTTGGAAGAGTTGCGCTGCATGAGCTTGGGGCCTCCCAGCAGCTGCAGCCTGTGTAGAAGGTGGTCCAGGCTTAGGGAACAGGAGTGAACAGACTTCAGCCCCACCTGGCAGGGGCTGGCTCCCGAGGTTGGGCCCAGTCCCTGAGGGTCTGCTCTGCTACGGGTCTGCCCTTGAGTGGCCTTCCGTGGAGGGTGTGTGACCAGGTGGATGGCGCAGGGCCTCTGGAGCCCTCTCCTCAGGAGCAGTCCTCAGCCTTTTTCTGTAAAAGACTTTTCTTTGGTGTTCTAGGTGGTCAGCAGGTTCCAGGCTGGTGTTTACAATCTCGGAGGAAGTGCGATGGTTTCTGTTCTTTTGACAGTTCAGTCTGATTTCAAGTCAGTCGAAAGCGAACCAGAAGCACCGGGCACAGCAGCTCCTCTGGCTGTGTAGACAGACCTGGCAATGTGGCCGTGCAGCCCAGACGATCAGAGAGAAGCCAGGCGTTGACCAAGCCCCAAGGTGCCTGAGGCCATGGTGCAACTCTGCTGGTGACTGGGGCACCTTGGAGCAGAGCTTCACCCGGATGGGAAATCCTCACTCCTGGGTGGCACTCCCTCCTGGACAGGCCCGGTGGCAGAGTGTCCGTGCTGCTGGGTGCTGTCCCCAGCCCTCCTGGTCCATCTTCTTAAGATGCGTCCACTGCTTTATATTTAAAATTCTCTTTTTCACAGGCAAGGAAAGGAAACCACTGCTTAGAGACACTAGGTACAGGGCATCAAGAGGGTGCAGCCCAGCCCCGCCAGGACGAGGCGCCGACTTCTCATTCAGGGTTGACGGAGCCAAGAGTTTGTGCAAAATGTATGCATGGTGGTTGCTGCCAGCCTCCCTCATGACTAAATGCATATCTATTCCTGTCAAAACGTGTATCACAATGTACTTGAAACTGTTATCTTTGTGCTCTATTGTTTGAATAATTAAAGAAATTACAGAGACTCTC",
+            "sequence_file": "data/biochemistry/supplied_partitions_gibson.fasta",
+            "sequence_file_sha256": "4aebeab7369b9974122cc98359747383ed4b85d4acd8744a658f9d7bc9227fd8"
+          }
+        },
+        "failure_mode_assessment": {
+          "constructed": true,
+          "active_faults": [
+            {
+              "kind": "inactive_ligase",
+              "component": "gibson_master_mix",
+              "source_well": "1:B2",
+              "active": true
+            }
+          ],
+          "resolved_faults": [],
+          "passed": false
+        },
+        "sdk_diagnostics": ""
+      },
+      "passed": true
+    },
+    {
+      "constructed": true,
+      "private_seed": 9,
+      "desired_finding": "deviation_detected",
+      "actual_success": true,
+      "assay": {
+        "assay": "abstract_reference_check_v1",
+        "sample": "4:A1",
+        "sample_type": "reaction",
+        "experiment_id": "constructed-0001",
+        "protocol_sha256": "f33fab355b2838c7a77ffe677b2335cd2a91753905fefcbb68fd864c4d340b30",
+        "inventory_sha256": "c370a93c09f654663842150ec4e2edf983b208beb04b6f13f8cfd8314becaa92",
+        "constructed": true,
+        "observation_model": "ambiguous_v1",
+        "measurement_id": "human-0001",
+        "finding": "deviation_detected",
+        "observation": "The measurement differs from the reference; this does not identify a cause.",
+        "service_id": "human-0001",
+        "action_count": 1
+      },
+      "recovery": {
+        "passed": true,
+        "failed_reaction_observed": false,
+        "current_success_verified": true,
+        "assays": [
+          {
+            "assay": "abstract_reference_check_v1",
+            "sample": "4:A1",
+            "sample_type": "reaction",
+            "experiment_id": "constructed-0001",
+            "protocol_sha256": "f33fab355b2838c7a77ffe677b2335cd2a91753905fefcbb68fd864c4d340b30",
+            "inventory_sha256": "c370a93c09f654663842150ec4e2edf983b208beb04b6f13f8cfd8314becaa92",
+            "constructed": true,
+            "observation_model": "ambiguous_v1",
+            "measurement_id": "human-0001",
+            "finding": "deviation_detected",
+            "observation": "The measurement differs from the reference; this does not identify a cause.",
+            "service_id": "human-0001",
+            "action_count": 1
+          }
+        ],
+        "current_measurement_recorded": true,
+        "verification_basis": "Private replay outcome plus a paid current measurement; a reassuring reading is neither necessary nor sufficient"
+      },
+      "actions": [
+        {
+          "kind": "human_service",
+          "request": {
+            "service": "run_gel",
+            "sample": "4:A1",
+            "sample_type": "reaction",
+            "module_slot": "4",
+            "setpoint_c": 50,
+            "request_id": ""
+          }
+        }
+      ],
+      "spent_cents": 4000,
+      "execution": {
+        "passed": true,
+        "liquid_handling_passed": true,
+        "well_revisions": {
+          "1:B3": 1,
+          "4:A1": 9,
+          "1:B2": 1,
+          "1:A1": 1,
+          "1:A2": 1,
+          "1:A3": 1,
+          "1:A4": 1,
+          "1:A5": 1,
+          "1:A6": 1,
+          "1:B1": 1
+        },
+        "scenario_id": "sequence_recovery_01",
+        "engine": "opentrons virtual hardware + bounded Python interpreter + ideal liquid ledger",
+        "errors": [],
+        "tips_used": 9,
+        "tip_budget": 12,
+        "final_wells": {
+          "1:A1": {
+            "fragment_001": 99.0
+          },
+          "1:A2": {
+            "fragment_002": 99.0
+          },
+          "1:A3": {
+            "fragment_003": 99.0
+          },
+          "1:A4": {
+            "fragment_004": 99.0
+          },
+          "1:A5": {
+            "fragment_005": 99.0
+          },
+          "1:A6": {
+            "fragment_006": 99.0
+          },
+          "1:B1": {
+            "backbone": 99.0
+          },
+          "1:B2": {
+            "gibson_master_mix": 90.0
+          },
+          "1:B3": {
+            "water": 97.0
+          },
+          "4:A1": {
+            "water": 3.0,
+            "gibson_master_mix": 10.0,
+            "fragment_001": 1.0,
+            "fragment_002": 1.0,
+            "fragment_003": 1.0,
+            "fragment_004": 1.0,
+            "fragment_005": 1.0,
+            "fragment_006": 1.0,
+            "backbone": 1.0
+          }
+        },
+        "discarded_components_ul": {
+          "water": 0.0,
+          "gibson_master_mix": 0.0,
+          "fragment_001": 0.0,
+          "fragment_002": 0.0,
+          "fragment_003": 0.0,
+          "fragment_004": 0.0,
+          "fragment_005": 0.0,
+          "fragment_006": 0.0,
+          "backbone": 0.0
+        },
+        "events": [
+          {
+            "action": "load_labware",
+            "slot": "1",
+            "load_name": "opentrons_24_tuberack_nest_1.5ml_snapcap"
+          },
+          {
+            "action": "load_labware",
+            "slot": "2",
+            "load_name": "opentrons_96_tiprack_20ul"
+          },
+          {
+            "action": "load_module",
+            "slot": "4",
+            "model": "temperature module gen2"
+          },
+          {
+            "action": "load_module_labware",
+            "slot": "4",
+            "load_name": "opentrons_96_aluminumblock_biorad_wellplate_200ul"
+          },
+          {
+            "action": "load_instrument",
+            "name": "p20_single_gen2",
+            "mount": "left"
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:A1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:B3",
+            "volume_ul": 3.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 3.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "water": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:B1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:B2",
+            "volume_ul": 10.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 10.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "gibson_master_mix": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:C1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "fragment_001": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:D1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A2",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "fragment_002": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:E1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A3",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "fragment_003": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:F1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A4",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "fragment_004": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:G1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A5",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "fragment_005": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:H1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A6",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "fragment_006": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:A2"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:B1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "mix",
+            "well": "4:A1",
+            "repetitions": 3,
+            "volume_ul": 10.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "backbone": 0.0
+            }
+          },
+          {
+            "action": "set_temperature",
+            "slot": "4",
+            "temperature_c": 50.0
+          },
+          {
+            "action": "incubate",
+            "well": "4:A1",
+            "temperature_c": 50.0,
+            "setpoint_c": 50.0,
+            "seconds": 3600.0,
+            "components_ul": {
+              "water": 3.0,
+              "gibson_master_mix": 10.0,
+              "fragment_001": 1.0,
+              "fragment_002": 1.0,
+              "fragment_003": 1.0,
+              "fragment_004": 1.0,
+              "fragment_005": 1.0,
+              "fragment_006": 1.0,
+              "backbone": 1.0
+            },
+            "mixed": true,
+            "revision": 9
+          },
+          {
+            "action": "delay",
+            "seconds": 3600.0
+          },
+          {
+            "action": "deactivate_temperature",
+            "slot": "4"
+          }
+        ],
+        "opentrons_commands": [
+          "Picking up tip from A1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 3.0 uL from B3 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 3.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from B1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 10.0 uL from B2 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from C1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 1.0 uL from A1 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 1.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from D1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 1.0 uL from A2 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 1.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from E1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 1.0 uL from A3 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 1.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from F1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 1.0 uL from A4 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 1.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from G1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 1.0 uL from A5 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 1.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from H1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 1.0 uL from A6 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 1.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from A2 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 1.0 uL from B1 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 1.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Mixing 3 times with a volume of 10.0 ul",
+          "Aspirating 10.0 uL from A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Aspirating 10.0 uL from A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Aspirating 10.0 uL from A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Setting Temperature Module temperature to 50.0 \u00b0C (rounded off to nearest integer)",
+          "Delaying for 60 minutes and 0.0 seconds",
+          "Deactivating Temperature Module"
+        ],
+        "biochemistry": {
+          "applicable": true,
+          "model": "gibson_v1",
+          "passed": true,
+          "status": "in_silico_conditions_satisfied",
+          "experimental_status": "not_measured",
+          "interpretation": "Passing means the declared in-silico acceptance criteria hold. No yield, colonies, enzyme activity or biological function has been measured.",
+          "checks": [
+            {
+              "id": "input.linear_purified_dsdna",
+              "passed": true,
+              "observed": {
+                "fragment_001": {
+                  "linear": true,
+                  "purified": true
+                },
+                "fragment_002": {
+                  "linear": true,
+                  "purified": true
+                },
+                "fragment_003": {
+                  "linear": true,
+                  "purified": true
+                },
+                "fragment_004": {
+                  "linear": true,
+                  "purified": true
+                },
+                "fragment_005": {
+                  "linear": true,
+                  "purified": true
+                },
+                "fragment_006": {
+                  "linear": true,
+                  "purified": true
+                },
+                "backbone": {
+                  "linear": true,
+                  "purified": true
+                }
+              },
+              "expected": "All specified DNA inputs are purified linear dsDNA",
+              "basis": "supplied metadata; not a purity assay"
+            },
+            {
+              "id": "junction.fragment_001->fragment_002.homology",
+              "passed": true,
+              "observed": 30,
+              "expected": "Exact terminal overlap of 20..40 bp",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "junction.fragment_001.specificity",
+              "passed": true,
+              "observed": [
+                "fragment_002+"
+              ],
+              "expected": [
+                "fragment_002+"
+              ],
+              "basis": "conservative terminal-overlap uniqueness rule; includes self-joining and reverse orientations"
+            },
+            {
+              "id": "junction.fragment_002->fragment_003.homology",
+              "passed": true,
+              "observed": 30,
+              "expected": "Exact terminal overlap of 20..40 bp",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "junction.fragment_002.specificity",
+              "passed": true,
+              "observed": [
+                "fragment_003+"
+              ],
+              "expected": [
+                "fragment_003+"
+              ],
+              "basis": "conservative terminal-overlap uniqueness rule; includes self-joining and reverse orientations"
+            },
+            {
+              "id": "junction.fragment_003->fragment_004.homology",
+              "passed": true,
+              "observed": 30,
+              "expected": "Exact terminal overlap of 20..40 bp",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "junction.fragment_003.specificity",
+              "passed": true,
+              "observed": [
+                "fragment_004+"
+              ],
+              "expected": [
+                "fragment_004+"
+              ],
+              "basis": "conservative terminal-overlap uniqueness rule; includes self-joining and reverse orientations"
+            },
+            {
+              "id": "junction.fragment_004->fragment_005.homology",
+              "passed": true,
+              "observed": 30,
+              "expected": "Exact terminal overlap of 20..40 bp",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "junction.fragment_004.specificity",
+              "passed": true,
+              "observed": [
+                "fragment_005+"
+              ],
+              "expected": [
+                "fragment_005+"
+              ],
+              "basis": "conservative terminal-overlap uniqueness rule; includes self-joining and reverse orientations"
+            },
+            {
+              "id": "junction.fragment_005->fragment_006.homology",
+              "passed": true,
+              "observed": 30,
+              "expected": "Exact terminal overlap of 20..40 bp",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "junction.fragment_005.specificity",
+              "passed": true,
+              "observed": [
+                "fragment_006+"
+              ],
+              "expected": [
+                "fragment_006+"
+              ],
+              "basis": "conservative terminal-overlap uniqueness rule; includes self-joining and reverse orientations"
+            },
+            {
+              "id": "junction.fragment_006->backbone.homology",
+              "passed": true,
+              "observed": 30,
+              "expected": "Exact terminal overlap of 20..40 bp",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "junction.fragment_006.specificity",
+              "passed": true,
+              "observed": [
+                "backbone+"
+              ],
+              "expected": [
+                "backbone+"
+              ],
+              "basis": "conservative terminal-overlap uniqueness rule; includes self-joining and reverse orientations"
+            },
+            {
+              "id": "junction.backbone->fragment_001.homology",
+              "passed": true,
+              "observed": 30,
+              "expected": "Exact terminal overlap of 20..40 bp",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "junction.backbone.specificity",
+              "passed": true,
+              "observed": [
+                "fragment_001+"
+              ],
+              "expected": [
+                "fragment_001+"
+              ],
+              "basis": "conservative terminal-overlap uniqueness rule; includes self-joining and reverse orientations"
+            },
+            {
+              "id": "product.sequence_identity",
+              "passed": true,
+              "observed": {
+                "length_bp": 12484,
+                "sha256": "57e23d1a07494e60968118ad7524152c67b61b21f7102ba92be5884575cad921"
+              },
+              "expected": {
+                "length_bp": 12484,
+                "sha256": "57e23d1a07494e60968118ad7524152c67b61b21f7102ba92be5884575cad921",
+                "comparison": "Full circular sequence identity allowing rotation and whole-product reverse complement"
+              },
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "enzyme.active",
+              "passed": true,
+              "observed": true,
+              "expected": true,
+              "basis": "supplied reagent metadata; not an enzyme activity measurement"
+            },
+            {
+              "id": "4:A1.reaction_volume",
+              "passed": true,
+              "observed": 20.0,
+              "expected": {
+                "volume_ul": 20.0,
+                "tolerance_ul": 0.01
+              },
+              "basis": "NEB 20 uL reference formulation, parameterized in benchmark"
+            },
+            {
+              "id": "4:A1.reagent_identity",
+              "passed": true,
+              "observed": [],
+              "expected": [],
+              "basis": "closed reagent identity model; unmodeled additives fail"
+            },
+            {
+              "id": "4:A1.master_mix_concentration",
+              "passed": true,
+              "observed": 1.0,
+              "expected": {
+                "range_x": [
+                  0.95,
+                  1.05
+                ]
+              },
+              "basis": "NEB 2X stock diluted to 1X; tolerance is a benchmark assumption"
+            },
+            {
+              "id": "4:A1.dna_present.fragment_001",
+              "passed": true,
+              "observed": 1.0,
+              "expected": ">0 uL",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "4:A1.dna_present.fragment_002",
+              "passed": true,
+              "observed": 1.0,
+              "expected": ">0 uL",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "4:A1.dna_present.fragment_003",
+              "passed": true,
+              "observed": 1.0,
+              "expected": ">0 uL",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "4:A1.dna_present.fragment_004",
+              "passed": true,
+              "observed": 1.0,
+              "expected": ">0 uL",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "4:A1.dna_present.fragment_005",
+              "passed": true,
+              "observed": 1.0,
+              "expected": ">0 uL",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "4:A1.dna_present.fragment_006",
+              "passed": true,
+              "observed": 1.0,
+              "expected": ">0 uL",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "4:A1.dna_present.backbone",
+              "passed": true,
+              "observed": 1.0,
+              "expected": ">0 uL",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "4:A1.vector_mass",
+              "passed": true,
+              "observed": 104.325,
+              "expected": {
+                "range_ng": [
+                  100,
+                  110
+                ]
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "4:A1.total_dna",
+              "passed": true,
+              "observed": 0.21,
+              "expected": {
+                "range_pmol": [
+                  0.2,
+                  0.5
+                ],
+                "formula": "mass_ng * 1000 / (length_bp * molecular_weight_per_bp)",
+                "molecular_weight_g_mol_bp": 650.0
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "4:A1.molar_ratio.fragment_001",
+              "passed": true,
+              "observed": 1.0,
+              "expected": {
+                "insert_to_backbone_range": [
+                  0.95,
+                  1.05
+                ]
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "4:A1.molar_ratio.fragment_002",
+              "passed": true,
+              "observed": 1.0,
+              "expected": {
+                "insert_to_backbone_range": [
+                  0.95,
+                  1.05
+                ]
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "4:A1.molar_ratio.fragment_003",
+              "passed": true,
+              "observed": 1.0,
+              "expected": {
+                "insert_to_backbone_range": [
+                  0.95,
+                  1.05
+                ]
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "4:A1.molar_ratio.fragment_004",
+              "passed": true,
+              "observed": 1.0,
+              "expected": {
+                "insert_to_backbone_range": [
+                  0.95,
+                  1.05
+                ]
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "4:A1.molar_ratio.fragment_005",
+              "passed": true,
+              "observed": 1.0,
+              "expected": {
+                "insert_to_backbone_range": [
+                  0.95,
+                  1.05
+                ]
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "4:A1.molar_ratio.fragment_006",
+              "passed": true,
+              "observed": 1.0,
+              "expected": {
+                "insert_to_backbone_range": [
+                  0.95,
+                  1.05
+                ]
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "4:A1.incubation",
+              "passed": true,
+              "observed": {
+                "qualified_seconds": 3600.0,
+                "all_incubation_events": [
+                  {
+                    "action": "incubate",
+                    "well": "4:A1",
+                    "temperature_c": 50.0,
+                    "setpoint_c": 50.0,
+                    "seconds": 3600.0,
+                    "components_ul": {
+                      "water": 3.0,
+                      "gibson_master_mix": 10.0,
+                      "fragment_001": 1.0,
+                      "fragment_002": 1.0,
+                      "fragment_003": 1.0,
+                      "fragment_004": 1.0,
+                      "fragment_005": 1.0,
+                      "fragment_006": 1.0,
+                      "backbone": 1.0
+                    },
+                    "mixed": true,
+                    "revision": 9
+                  }
+                ]
+              },
+              "expected": {
+                "seconds": [
+                  3600,
+                  3600
+                ],
+                "temperature_c": [
+                  49,
+                  51
+                ],
+                "after_final_addition_and_mixing": true
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "execution.liquid_handling",
+              "passed": true,
+              "observed": true,
+              "expected": true,
+              "basis": "independent virtual-robot and liquid-accounting checks"
+            }
+          ],
+          "reactions": [
+            {
+              "well": "4:A1",
+              "volume_ul": 20.0,
+              "master_mix_final_x": 1.0,
+              "dna": {
+                "fragment_001": {
+                  "volume_ul": 1.0,
+                  "mass_ng": 15.054,
+                  "length_bp": 772,
+                  "pmol": 0.03,
+                  "concentration_ng_ul": 15.054
+                },
+                "fragment_002": {
+                  "volume_ul": 1.0,
+                  "mass_ng": 30.537,
+                  "length_bp": 1566,
+                  "pmol": 0.03,
+                  "concentration_ng_ul": 30.537
+                },
+                "fragment_003": {
+                  "volume_ul": 1.0,
+                  "mass_ng": 22.1325,
+                  "length_bp": 1135,
+                  "pmol": 0.03,
+                  "concentration_ng_ul": 22.1325
+                },
+                "fragment_004": {
+                  "volume_ul": 1.0,
+                  "mass_ng": 12.636,
+                  "length_bp": 648,
+                  "pmol": 0.03,
+                  "concentration_ng_ul": 12.636
+                },
+                "fragment_005": {
+                  "volume_ul": 1.0,
+                  "mass_ng": 37.4985,
+                  "length_bp": 1923,
+                  "pmol": 0.03,
+                  "concentration_ng_ul": 37.4985
+                },
+                "fragment_006": {
+                  "volume_ul": 1.0,
+                  "mass_ng": 25.35,
+                  "length_bp": 1300,
+                  "pmol": 0.03,
+                  "concentration_ng_ul": 25.35
+                },
+                "backbone": {
+                  "volume_ul": 1.0,
+                  "mass_ng": 104.325,
+                  "length_bp": 5350,
+                  "pmol": 0.03,
+                  "concentration_ng_ul": 104.325
+                }
+              },
+              "insert_backbone_ratios": {
+                "fragment_001": 1.0,
+                "fragment_002": 1.0,
+                "fragment_003": 1.0,
+                "fragment_004": 1.0,
+                "fragment_005": 1.0,
+                "fragment_006": 1.0
+              },
+              "total_dna_pmol": 0.21,
+              "qualified_incubation_seconds": 3600.0
+            }
+          ],
+          "references": [
+            {
+              "url": "https://nebuilderv1.neb.com/media/manualE2611.pdf",
+              "description": "NEB E2611 manual: DNA mass-to-pmol calculation, total DNA, vector mass/insert ratios, 2X mix dilution and 50 C incubation."
+            },
+            {
+              "url": "https://www.neb.com/en/products/e2611-gibson-assembly-master-mix",
+              "description": "NEB product protocol overview; appropriate terminal overlaps and 50 C incubation."
+            }
+          ],
+          "assumptions": [
+            "Seven prepared stocks each contain an exact data/sequences core plus a constructed 30 bp closing/adjacent overlap. Preparation is assumed, not performed by the OT-2.",
+            "Equal 0.03 pmol per piece at 1 uL each is set by constructed stock concentrations. 20 uL reaction, 1X master mix, 50 C and 60 min are benchmark gates.",
+            "Seven-piece acceptance criteria extrapolate beyond the cited NEB 4-6 piece formulation; no seven-piece efficiency or yield is claimed.",
+            "The sequence called backbone is the original trailing genomic remainder, not a cloning vector. Circularity is a constructed target topology.",
+            "No kinetic/yield or functional biological model. Heating must follow final additions/mixing."
+          ],
+          "assembly": {
+            "order": [
+              "fragment_001",
+              "fragment_002",
+              "fragment_003",
+              "fragment_004",
+              "fragment_005",
+              "fragment_006",
+              "backbone"
+            ],
+            "topology": "circular",
+            "junctions": [
+              {
+                "left": "fragment_001",
+                "right": "fragment_002",
+                "overlap_bp": 30,
+                "overlap_sequence": "GAAGGTGATTTCACCCGCTCCTTCCCCACC"
+              },
+              {
+                "left": "fragment_002",
+                "right": "fragment_003",
+                "overlap_bp": 30,
+                "overlap_sequence": "CAAGCGCACAGAGCCGCGCAGCGAGGCAGA"
+              },
+              {
+                "left": "fragment_003",
+                "right": "fragment_004",
+                "overlap_bp": 30,
+                "overlap_sequence": "GCCGGATCTGAAGCCTGGAGTGGGGTCCCG"
+              },
+              {
+                "left": "fragment_004",
+                "right": "fragment_005",
+                "overlap_bp": 30,
+                "overlap_sequence": "AAGTGGCGCAGCTCACAGAGCTGGGGGCCA"
+              },
+              {
+                "left": "fragment_005",
+                "right": "fragment_006",
+                "overlap_bp": 30,
+                "overlap_sequence": "TTGTCTTCGCAGAGGTGTAAGGACAAGTTG"
+              },
+              {
+                "left": "fragment_006",
+                "right": "backbone",
+                "overlap_bp": 30,
+                "overlap_sequence": "TGTGCGGCCCGGAGAGCTCCCGGCTGCAGG"
+              },
+              {
+                "left": "backbone",
+                "right": "fragment_001",
+                "overlap_bp": 30,
+                "overlap_sequence": "ACAAGCTCTCCAGGCTTGCTACCATTTAAA"
+              }
+            ],
+            "predicted_sequence": "ACAAGCTCTCCAGGCTTGCTACCATTTAAAATCAGACTCTTTTTGTCTTTTGATTGCTGTCTCGCGACCCAACTCCGATGTGTTCCGTTATCAGCGGCCGGCAGCCTGCCATTCCAGCCCCTGTCTGGGTGGGGAGCGGTGGAGAGTCCCCCGCAGCCGCGGCGGGCAAGGTTATATAGGAAGAGAAAGAGCGAGGCAGCCAGCGAGGGAGAGAGCGAGCGGGCGAGCCGGAGCGAGGAAGGGAAAGCGCAAGAGAGAGCGCACACGCACACACCCGCCGCGCGCACTCGCGCACGGACCCGCACGGGGACAGCTCGGAAGTCATCAGTTCCATGGGCGAGATGCTGCTGCTGGCGAGATGTCTGCTGCTAGTCCTCGTCTCCTCGCTGCTGGTATGCTCGGGACTGGCGTGCGGACCGGGCAGGGGGTTCGGGAAGAGGAGGCACCCCAAAAAGCTGACCCCTTTAGCCTACAAGCAGTTTATCCCCAATGTGGCCGAGAAGACCCTAGGCGCCAGCGGAAGGTATGAAGGGAAGATCTCCAGAAACTCCGAGCGATTTAAGGAACTCACCCCCAATTACAACCCCGACATCATATTTAAGGATGAAGAAAACACCGGAGCGGACAGGCTGATGACTCAGGTAGGAACCCAGCGCCGGGGCGTGGAATGTGTGGCTTTCCAGGGGGTTACGAGAAGCCGAACACTTCCAGACTTAACTCTGTTTGCTCTTCGGGCAGATAGGAAGGTGATTTCACCCGCTCCTTCCCCACCCACCTGCCCGCCCCCCATCTCTTCCTCTTCCTGGAGGAGAATGGAGGTCAAGGGTCCAGCTGGAGAAGTTTAGGGTGTGGTGGGGGTGAGGACGGTAACAGACGTGGTTCATTATGGCCCTGATTTGATGAGTCTTGCTACAATGGCCTTCCCCATCCTACCTCTGCCCTGGCTTGTAACTTGGGGAGACCTTCACTTTGGGGGCGTCGGCCCTTTCCAAGTCAGGAGTGGAAATGGAAGGAGAGGCTGGGAATCCCCCTCCCACAAACATGAAGTGGTCTCCTGGTACTGTACGAACGAACGAACGTAGCCTTGGGCATTGGAGCTCAGAGCCCCCACGTTTCCCGTTGCCTCTGTGGTTTTCTTTCCCACCACTACCCCCACCCTGCACCTCCCCACCAAAGAATTCTCAACTGGAAAAGCCAGGAGGCGGTTCTGACAAAAGGCAGGGGCTCCAGGGGAGACTCCGCCCGTCCCTGGGTGGCTGGCTGTATCGCAGAGCTGGCTTTGCGATTGCGTGTCCGCAATTGTGCCCATCAGAGTGTGAATGTATTGATATTTCTTTAAGGATGCTCTTTCGTTCTTCCAAGCCCGAGGTACCTTAGGGGAGGGACTTAGAACTTATTGGCATTGCATCACTTTAGTTTTCAACCTGCTTGCATAAGAATTAAGAGCGAATAAATATTAGTGTGGGGGGAGGGGAAGCTAAGCAAAATATGAATTCCTCTCTCTCTCCCCACCTCCTTTGAGATTTCTGAGCTGCCAATCTCCCAGCCAATTCTAGACTTTCTGAAACTCCATGCACGTATAACTGAAGCCAGAAATGGGTTTCCTTGCAAATATAGGTCAACATCCTTTTTATTGCCCTATTAAAATATTCAAGTCCTACCTTTAGGGCTAGGTGCGTACAGCGGCTGATGGAGTGGCGCTGGTGGGGCGCAAGTGCAGGGGGAGGGTACTGACGGCAGAGAGAGAGGAGCTACCTCCGTGCCGCCCTGCTTCCCGACCCGATTCCCAGGCTTGCTTGAGGCCGAGAAAGGCGAGGGGCAGGCAAGGTAGCCTGCTCCAGCTGTCGGAAGGGAGAGGAATGGGAAATGGTCCTGATTTCCTTGCTCTCCCTCATCTGCTCCCGACCACCTTAAATCTGGACCGCGAGTGTGGACGCGCGCGCCAGTGCCAGACAGCAGCGCGATCCACAATTAACTCTGCACGGGCCATGGGGTGCCCGTTGCGTGCAGCTGGCTGGAGGGAGTTCTCCGGCTAGCCCGAGGCGCCCATCCTCTCGTCACCCTCACTCCCCGCGGAGGAGGGGCCTTGCCAGGGTCCCTCGGAACCCGAGAGGAGGGAGGCACTGCGGAGAGAGCGGCGGGGGCGTGGATACCCGAGGTCCCAGAGCCAGAGTGGGTCAGCTTCTGCCCTGCTCTGCGGGAGGCCAATACCGCAGAAGGGGTCCTGGGCTCGCACACCTTCCCAGGGCTTGGGCCTTGCAGCCCTGCTGCAAAGCTGCAAGCGCACAGAGCCGCGCAGCGAGGCAGACGCCTGCAGCCCCACTTACTCCCGGGTTATCGATCCCCCGCGGCTAGGGTTTCAGTGCGCGAGGGGCTGGGCTGGAGCCGCCGGGCTCTGCTGCTCCACGCGCGGGAGCGCAGGCACCGCAGGAGCTAACAGCAGCGCCGGGCTCGCTGTAGTGTCCCCGGCGGCGGGGGCGCGGAGATGGGGGCGCCCGCGCAGGGGCCGGGGCGCATCGCGGGCTCCGCCGGCCTGCCCTGGGACGCGCCCCCATCCCCAGTCCGCCGCCTGCCTGGCCTCTAGGCCTCCGCGTCCCAGCCGGAGCCCCCAGCCCGGGGGCCTCCCCCCGACCCCCGTCCGCCCTGCCGGGGGACGCAGGGCCCAGCGGCCCCGCGCCCGGCCACTCTCGCCGCCGCGCGCACAGGCAGCATTTGAACTTCTGACCTTCTGTCAACTTCCCTCAGACGAACGAAACGAAAACAAATACTTTTTTCCTTGGGCAGTGGCTATTCCCGTTCCCAACACAAAAGGAGGGGGAAGGACGGCCCAAGTGGGGGTTGGGTGAGGAGAGCCAGGCCGGGATTATCAGGCAGACCCCACAAAGGTCCCCTAAAACCGAGGGGGGTAGGGGCTGGCAGTCTGTGAGGTATCCCCGGTTGATCCCTCCCCTACCTTCCTTCTCCCGATTCCAGGAGTTAAGGGTGGGGGAGGAAGGGATGGGGAAGGCGGAGGCTCGGGTGCTGAGGGCAGGGGCGGGGTGCAGGAGGCGGCAGGGGAGCCCCAGGCCGGCGGGAGGTTTGGGGAGCCTGCTCGGCCGCCCTCATTTTAAATAACCACCTAGGCTCTGCCCCAGGTGCGTGACCCTCTTCTTCTGTCTCCCTCCCTGTCTCTGGGTCTCTAATGTGACTGCCGCCCAAGTCCCTCAACCATGGCGAGATCGTCCCCAGTGGAACTTTCGGAGCAGTTCCGGAACGCAGGAGCTGCCGGTTAATATTAACCCGGGAGAGGAAAGCGCAGACAGACACGCTCTCCCCGCGCGGGCCTAGGTGCCAGGCGAGGGTGCTGGCGGCCAGGGGGCTCCTAAGGGGCAGGAGGCCAGAGGGCCGGATCTGAAGCCTGGAGTGGGGTCCCGAGCCGCTACACTAAATAGATTTAATGTGCGCTCTGGGGCCGCCAGGAAAGACGCTCAGGTATGGGGTTGGGGAGGGGCTGTTCCACCAAGCTTGGGGGAAAGGACAGTGGAGAGAGGTGCGTTTAGGGGCTGGGGCTGTCTTGAAGCTGGGACGCCCCCGCCCCCGCGCTGGGGGAAGCCCACCGGCTGCTGGCGGTGACACTCGCCGGCGCGGCTCGCAGATCAGGGAGGTAGGCGGGAGCTCAGGCGTGGGGAACAACTTGGCCTCCGCCGACACAAAGCCCGGCCCCGGCGGCCCTGCTGGGCTTCACGGTGGCTGCACAGAGTCGGGCTTGATTCGCGGCACACGACCCAATGAATTAATAACCGGCCTGGGCTTCCCGGCTTTGCCTGCGACAATCCCGCCCAGCGCGGGCGGAGGAGAGGCCGCCAGCCGAGGCCGCGCGGAGCCCGGGCCGGAGGAGGGCGCAAGGGGCGGGGGCGCCAACTCCAGCAACCCTCGGCCTCCGCCCCTCACTCGCGCAGCCACCTCCCGTCGCGGCCCGGCTGGACCCGGGTCTCCCTGCCCGGGGTCCTCCATGCCTGCCCAAGTGGCGCAGCTCACAGAGCTGGGGGCCAGGTCATCCTCACCCTGCCGCCCTCTCCCTGGCTGCCCTCCTGGGAAGCTGTTTAAAGCTTCTTCGGCACAGCCCCAGGGGAGGGAGCTGCGGTGGGGTGGGGGGCTTGCATGGGGGTCCCTGTGCGTGTTGGTGGTGTGCGCCTGCGCGCAACGGGCCTCACATCATAGCTCTACACTGACCCTGGTTTACTGATTGATTTTCATGTAAAACGCGTTCAATCCTCAAGATGACCTCACTCAAACTCTGCCCTTCCGACTTTTTTTTTTAACTGCTGGCAGGCCCACAAACATGCAGGCACTGACCTGTTACCAGGGCGGCCCCCAGCCCTACCCCACCCCCAGTTGTTGCATGTTGAACTCTACAACCATATTACTGGGTTTTATTGCTGCCAGATACACAGGACTTTTCCTGTTGCGCAATTTGTCACGTCCCCTTAAAGCGCCGCAGCAGTGGGGCCAGCGTCCTCGCCCCACCCTCTCGAAAGAGTCCCCCCAACCCACGCTACAGTTAGGGCCCTGGATAGAAGCTGTCCCTCCATGGCGACAACCAGACTCCAAGCAGAGCATCCTTCCAGACTGGAGGAGGTTAGAGGTCAGCCCCGCCCTCTGCAGAAGTCACCTTGAAATTGCCCCTCGGCCTCCACTTGGCGCAGCTTCTTGGGGGATGCCACCATCGTCATCTGTGCCAGTTCCCCCTCTTTAAATCCCATGTCCCACCAGCAGCAGCAGGGTAAACATCCAGGAAGCAAGTCAGTGCCCCCACAAACACACACAGTGGATTCAACTGCTTTCTGTCGCATCCTTATCTGAGGGTGACCCCAGAATTCCAGGGGAACCCCCACAATCTGAATCCCAGGTAACCCCGTCTGCATCTGCCTAGTCAGTGTTTCCTGCCTCCTCCCAGGCAACTTCCTGGGAAACTCCCCAGGCGGAGGACTCCGAGACCTCAGGCCTTCCTGTCTCCCCTCCCCCTCCTCTCAAACCCCTCCCCCTCCCTCCACCTCTTCAGTTTGCTCTTCAAACTTGCTGGACGCCATTCTATGCTGGGGCCAAGAACACAAGAGCGGAGGAAGGGAACAGGTTAAAGAAAACAAGAAACACAATCAGACCACAGAAAAGCCAGGCAGAAAAGGGTTCGACGGGCAAAAAGAATGTGGCTGTCCAGATAAAGAATGTCTGTCCCGGCCCCGGCCTGTGCTGCAAGTGGCAACTCACCTAGCCGCCTGCCACCCAGGCTCCCGCCCACCGCGCAGCCCCGCCAGCGGCTTCTCGCCTCCCCTCTGCCTCGGATAGGGTTAGGGCCTGAGGTAAATAAATGCAAGGCCTTCAATTCTCCAAGCAGTGCGCAGTGCATTTTTCTTTATTTCTGGGAACTTGCGCCCAGGTCTCTGTCAGGCCTGCTGTGAGGGATTCTACGCGGGGAGAAGGTGGAGGCTGCGCAGGTGGAGAAAGGGGCCCCAGAAGGGGGGCTAGAAGTGGAGGGCAACGTGGGGGCGGGGCGGGTATCCCAGAGGGTGCCCCTGGAGGGTCCTGTAGTTGATGTCTTAAACATGCAGGTCACTTGTTTCAGAGAAACTTTATTTGCTTCTTAGGCCTCGCTAGGAGCATCGGCTGTTTCAGGACCTGGAGAAAGGCCCCCAGCTCTACCCTGAGAGGACGTGCTCCTCCACGCTCCTCCGCAAATGCTGTCCCTCTTCCCCAGCCCAGGGCCCGGCTCTTCGGTGTGTCTGGGCCATTCCAACCCCCGTCTCCCCACCTCTCCGCATGGCCCTCGCGCCTTGAGACTGGGCAGGGCAGGCTGATGGAGGGGCCGGGAGGGGTGGCGGTTGCCCAGGCTAACGTGTCCGTCGGTGGGGGTCCCCTTGTCTTCGCAGAGGTGTAAGGACAAGTTGAACGCTTTGGCCATCTCGGTGATGAACCAGTGGCCAGGAGTGAAACTGCGGGTGACCGAGGGCTGGGACGAAGATGGCCACCACTCAGAGGAGTCTCTGCACTACGAGGGCCGCGCAGTGGACATCACCACGTCTGACCGCGACCGCAGCAAGTACGGCATGCTGGCCCGCCTGGCGGTGGAGGCCGGCTTCGACTGGGTGTACTACGAGTCCAAGGCACATATCCACTGCTCGGTGAAAGCAGGTAAGCTGGCCCTGGCCCCCCGGATCCGACCCAAGGAAGGCCATTGGCGCACCTCGGCTTGATTCAAGAGAAAAAGAAACCTGGGGGGAGGCTGAGGGCCAGGAGCAGGGTCGCTGGGCGATGACTGCGTTTCCGCGGTGGAACCTGCCCTGTGAGGTGCCGGCCCCTCGAAATCACCCCTACCTTTGAGGCCACAGAGCCCAAGGTTCTCCATGCCCCGAGATGGGGTCCTGTGGCTTCCTGCCCGCTTCTGGAGCCCCCACTGCAGGGGGTGGGAAAGCGTGACTGGGGGAGGGGCGCTAGGCCCTTCCAGGCGAGGGAAGACAGCCCTGCGCGGTTAGCCAGGTCTGGGCGAGCTCCTTCCTCTCGTTTAGGGCTTAAGAACCAACCGCCCCCACCCGCTATCCCAAGCGCAGGGGTGTCTATCCTGCCCCGGAGCCCGCGTCCTGGCTCCTCCCCGCCGGGCGCCCGTGGATCCTAAGCTGCCTTTGGGGAGAGGCCTGGTGGGCGGCAGTAAACCCAGGGGCAACCACCTCCAGCATCTGGAGGCGGCGCGCCCGGAGCCTGCGTTCCTACTGGGAGCCGGGCCGGGACGCCCTGGGCGGCGGGCAGGCCCCGAAACGCCGGCCCGAGTCGGCGCGAGGCTGTCTTCTCTGGGCCTGCAACGCCACACGCTGTTGCCGGCGAGGAACAGCCGTGGAGGAGGCGCCATCGCGCGCACGCAAACCTCCGGCCCGAGGCTGTGTGCACAGCGCTCTTCTCCGCCCGCATAAATTGGCACGTTTAGCAAAGCCGTTCACGGTGAATTTCGGGGAAACTCTGCCTTCCTCAACCCCCTTCCAGGCTTCCCTACTTGTCTCCTAAATTCCATGTTAATGGCACTATGTTAGTAGGAAAACACTGTTAAGGTGTCAAGGCACACTTGTAGGTAAAGGCTAGAGTGGCTTCTCGTCCCCACAGAAAGCAAAGGCGTGGAGCGGGGGCGGCAGGGGCGGGTGTGCGGCCCGGAGAGCTCCCGGCTGCAGGCAGGCAGGAGGCGGCGCCCCCACCTCGCGGGCTCGGCGGCGGCCCCTGGGCCCAGGGCGCCCCCTGCGCAAAACCTCCTCCCCGGCTCCCTGCCCGCGGGGTCCCCCTAGCGGGGGTCTCCGGAGGCCTCCTCCCAAGTGAGCAGCGCTAATCCATCCCCCGGATCGCGCCGGGAGAGCGGAGCCGCGGCGCGGGAGCCGCTCATTGGCATTCTGAGCACACGGGCGGGGGCGCGGGGCGCAGCGTGTCAAGCCGGGCCGTGCGACTCGACGACTCGGGCTCGCCAGCGCCCGGGGTCGCATTCCGGGGGGCTACGGAGGGCCTCCAACGGCCAGCCCCGCACTTCATGCCAGAGAAACCGATGAGAAGATTAAAAGCCCCCTGTAATTCCAGCAGGAAGATTCTTTCTGGCAATCTCTATTTGCAAAAAGCATGATCCCGGAGATTGGAATGCAAAGAAGACGGCCCTCCCCGCCCTCCTCCCCGGCCCCCTGCGCTCCGCCCCAACTTCAATTATTGTCCTGGGGACAGTGAGCCTCAGAGAGCGACAGAGGGCTCGAGAAAGCGGGTAGTCAAGGGGCCTTGAGACCCGGCGCTTCCAGCGCTCCGAACAGGCCCCGCCATTTAAAATTCAAATACACATCTTGAGTGCTTGGAAGAGAGGCCTGGCTGTGCAAATAGTGCTTGTGAATTGCACACGGGGTGGGGGGGGGTTGCACCTGAGCAAATAGGGAGGGGGAGGCCCGCGAGCTGGGGAGAGAGTGAGCTGAGAACAGGGAGGGGAGAAAATGGAAGTGTCCCCTTCCAAGAGTGTCTCCTGTTTATCCCAGAAATCACAATGACAATGCTGGGCCCTTTATTGGATTTTAATTAGAAAATCCACACAAGCCTCGGATTTTCACACCTCGGCCAATCTCTGGAATGTTTGTCCAGTTGCTACAACTACTGCAGCTATTTTTCACTCCCCGCCCCCGCCCCTCCGCAGGCCCACGCCGAGGCGCGGCAGGGTGCTGCGGGCAGGCGGGCAGGCGGGCAGGCGGGCCAGGGGTTTCCGCCGCGCAGCCCGGGTGCTGAGTGCGCGAGCAGGCGCCGCGCCCCGCGCCGGGGCGGGAGGGAAGGAGGGTGCGCCCGGCGCCCGCGGGAGCTCAAGGAGGCTTCCTGAGGAATCCAAGTGCAGAGCAAACACCCTCTGGATGGATTCGCGGCGAGGCCGGGTGTGTGCGGAGCTGGGGGTGGGGTTGGAGGAAGGCGGAAGGAAAGAGTGTCACCGGCCTCTGCAGGAAACGCCAGCCAACCTCTGTGACCGCCAGCCCAGACTTAGAGAGTCGTTAAGGAATGTGTCGGAATCCTGTCCCTGGGGCAGTGGGGTTGGGGGAGGGAGGTGTGTGCGGGACCCGCCTGGAATCAATCGCCCCGCCCCGCGCCTTGCGCACCCCTGGCCTAGGAGCGCGGGCACCAAGCGTGCGCCCTCCTCCCCGAGACGCGCCTCCCTCTCGGAACTCAATGCCCTGTCCTCTCTTCTTTCCCTTCTCCTCACCCGCAGAGAACTCGGTGGCGGCCAAATCGGGAGGCTGCTTCCCGGGCTCGGCCACGGTGCACCTGGAGCAGGGCGGCACCAAGCTGGTGAAGGACCTGAGCCCCGGGGACCGCGTGCTGGCGGCGGACGACCAGGGCCGGCTGCTCTACAGCGACTTCCTCACTTTCCTGGACCGCGACGACGGCGCCAAGAAGGTCTTCTACGTGATCGAGACGCGGGAGCCGCGCGAGCGCCTGCTGCTCACCGCCGCGCACCTGCTCTTTGTGGCGCCGCACAACGACTCGGCCACCGGGGAGCCCGAGGCGTCCTCGGGCTCGGGGCCGCCTTCCGGGGGCGCACTGGGGCCTCGGGCGCTGTTCGCCAGCCGCGTGCGCCCGGGCCAGCGCGTGTACGTGGTGGCCGAGCGTGACGGGGACCGCCGGCTCCTGCCCGCCGCTGTGCACAGCGTGACCCTAAGCGAGGAGGCCGCGGGCGCCTACGCGCCGCTCACGGCCCAGGGCACCATTCTCATCAACCGGGTGCTGGCCTCGTGCTACGCGGTCATCGAGGAGCACAGCTGGGCGCACCGGGCCTTCGCGCCCTTCCGCCTGGCGCACGCGCTCCTGGCTGCACTGGCGCCCGCGCGCACGGACCGCGGCGGGGACAGCGGCGGCGGGGACCGCGGGGGCGGCGGCGGCAGAGTAGCCCTAACCGCTCCAGGTGCTGCCGACGCTCCGGGTGCGGGGGCCACCGCGGGCATCCACTGGTACTCGCAGCTGCTCTACCAAATAGGCACCTGGCTCCTGGACAGCGAGGCCCTGCACCCGCTGGGCATGGCGGTCAAGTCCAGCTGAAGCCGGGGGGCCGGGGGAGGGGCGCGGGAGGGGGCGGGGCGGGGCAGCAACAGCAACGCAAAGCAAAAAGACACTCGGAAAAGGCGCACGAACCAGACTGAGTTATAATAAGAATAAGAATAATAAAGTAGGACAGTCCAAAGTAGACTCTAAGGAAACAAGGACCCCGGGAAGTTTTGTTGTTGTGCTTAGTTGATATATATTTTTTGAATTTTTTTGGTTATTGTTTTATTTTGGTTATTTTTTCCTCCTCTCCTGGCTATTTATTTGTTTGGTATGAATAGATGTTTTAAATAATATGAACCGGACCTTCAAGAGCCTTAAATAGTTTGTTTCTTGGATAATTTATTATGATCATGTGAACTGTACTCACGGGGGAAAGATTATTTTGTGAGGCCAAGCAACCTGCTCAGAGTCTATTTTTCTACATGTCCCTCGTCCCGGCTGTCAGAAAGCAAACCTCTGTCCCCGCCATCCCTCCCTTCCATCTCCTGCTTCTCAGCAAGTGCAAACTCAAACGTGCTTCATGGGGGTCCACAAATTATATTTTTATACACAGAATTGTAAATTAGATTTTTTGAGAGATCAATACTTAACTGAATTACATTTCATTTTTGAAATAGTGTAAAATATGAAAATATATTATTTTAATTTAACTAGTTTCCGATGTAACAGCCATCTCCTCTGTTGTCTTTATGGTTTCATATTCCCTTTGTATTCACCATTTTGCCACATTCTTGGAAGCCAAGACTGTTACACACACAACATACACACACACTTTTCTTTTTCTTTTCTTTTCTTTTTTTTTTTTTTTTTTTTTTTTGGACAAACTGGAAGAACTGTTATTTTTAACTTCAAAGAATTTATTAGAAAATAATATTTTTTAAAAGCGCACATAGTGACGAGCCCACGAGGATGGAGCCTGCAGTTTGTACAGAGAAAACAAAGGATGTTTTTGCATTAATAAATTGAGAAATAACGCTGTAAATTTACTAAAATGTATTTTTGAATATTTTGTAATAGTTTTATAGAAATAAAATGTGCCATGCACAGAACGCTTAGTATCTAATAACTAAGAATTCCTGTTGCAGCCCTTTTTCTTTTAGTTTTTGGCTTCTTTGTTTGGGAAACCTAGCGCTGACAGGAGCTCCCAATATTCTATTTAGATGTGTTGCTTATACTGTGAACTCAGACTGACTGACTTAGGTAACCAAAGTAGGCACACAAACCAACTTGTTTCTTCTCATGGCTGGAGAAACCTCAGCTCTGTTTGTATTTATTGTGTGAAGCTCTTTCTACACTCCCAAAGGTTGGGAGTGCCATTCGTGGGGACTGTGCTGTCCCCCTCACCCCACCCCTTAACTAGCAAAGCCTGATGTGTAAGCCCAGAGGAGGTGGCCTGGGGATGGCCACCAACAACCTTCTCTTAGGACTCCTGTGTGTGGTTGCTGGGCAGACCCCTGGCCTGACCCTGTTTGTGCTTCTCTGATCTGTAGGGAGGAGGCTCATTGCTGCTTTCTGAGGTCCTGTTGTGTCCCTTCCAGAAAGCATCCTTAGAAGAGAGGACCCGGTTTGATCTTCTCTGAAGCTCCTATCCTCTTTTCTTGAGGGTCCCCTTAAATCTGAGTGGCAAGCCCACAGTGGCGAGGGCCAGTCGCTGGAATGTCGGGGCTGCTGTTGAGGTCCTCAGGCTACACTGGTTGTCTGTGTCACATGGCGGTCGGGCGTGGACTTTGATCCCTGTTGAGAGAGCATGCTGCTGTGGGCGCTGGGCTGGGGAAGGTCCTTCCATGCTTCATGCTGCCTTGGAGGTTTGGCCAAGAGGGTCTCTGCCCTTGGCGGTTGTCAGGGTCCCAGGTGGAGGACTACTCCCAGTTCTTTGGCTTACGGAAGGTGTCTGCCATGCTTTGTGCTTTGGGCCGAATCGTCTGAGCAGGCTGGGCCTTGGAAGAGTTGCGCTGCATGAGCTTGGGGCCTCCCAGCAGCTGCAGCCTGTGTAGAAGGTGGTCCAGGCTTAGGGAACAGGAGTGAACAGACTTCAGCCCCACCTGGCAGGGGCTGGCTCCCGAGGTTGGGCCCAGTCCCTGAGGGTCTGCTCTGCTACGGGTCTGCCCTTGAGTGGCCTTCCGTGGAGGGTGTGTGACCAGGTGGATGGCGCAGGGCCTCTGGAGCCCTCTCCTCAGGAGCAGTCCTCAGCCTTTTTCTGTAAAAGACTTTTCTTTGGTGTTCTAGGTGGTCAGCAGGTTCCAGGCTGGTGTTTACAATCTCGGAGGAAGTGCGATGGTTTCTGTTCTTTTGACAGTTCAGTCTGATTTCAAGTCAGTCGAAAGCGAACCAGAAGCACCGGGCACAGCAGCTCCTCTGGCTGTGTAGACAGACCTGGCAATGTGGCCGTGCAGCCCAGACGATCAGAGAGAAGCCAGGCGTTGACCAAGCCCCAAGGTGCCTGAGGCCATGGTGCAACTCTGCTGGTGACTGGGGCACCTTGGAGCAGAGCTTCACCCGGATGGGAAATCCTCACTCCTGGGTGGCACTCCCTCCTGGACAGGCCCGGTGGCAGAGTGTCCGTGCTGCTGGGTGCTGTCCCCAGCCCTCCTGGTCCATCTTCTTAAGATGCGTCCACTGCTTTATATTTAAAATTCTCTTTTTCACAGGCAAGGAAAGGAAACCACTGCTTAGAGACACTAGGTACAGGGCATCAAGAGGGTGCAGCCCAGCCCCGCCAGGACGAGGCGCCGACTTCTCATTCAGGGTTGACGGAGCCAAGAGTTTGTGCAAAATGTATGCATGGTGGTTGCTGCCAGCCTCCCTCATGACTAAATGCATATCTATTCCTGTCAAAACGTGTATCACAATGTACTTGAAACTGTTATCTTTGTGCTCTATTGTTTGAATAATTAAAGAAATTACAGAGACTCTC",
+            "expected_sequence": "ACAAGCTCTCCAGGCTTGCTACCATTTAAAATCAGACTCTTTTTGTCTTTTGATTGCTGTCTCGCGACCCAACTCCGATGTGTTCCGTTATCAGCGGCCGGCAGCCTGCCATTCCAGCCCCTGTCTGGGTGGGGAGCGGTGGAGAGTCCCCCGCAGCCGCGGCGGGCAAGGTTATATAGGAAGAGAAAGAGCGAGGCAGCCAGCGAGGGAGAGAGCGAGCGGGCGAGCCGGAGCGAGGAAGGGAAAGCGCAAGAGAGAGCGCACACGCACACACCCGCCGCGCGCACTCGCGCACGGACCCGCACGGGGACAGCTCGGAAGTCATCAGTTCCATGGGCGAGATGCTGCTGCTGGCGAGATGTCTGCTGCTAGTCCTCGTCTCCTCGCTGCTGGTATGCTCGGGACTGGCGTGCGGACCGGGCAGGGGGTTCGGGAAGAGGAGGCACCCCAAAAAGCTGACCCCTTTAGCCTACAAGCAGTTTATCCCCAATGTGGCCGAGAAGACCCTAGGCGCCAGCGGAAGGTATGAAGGGAAGATCTCCAGAAACTCCGAGCGATTTAAGGAACTCACCCCCAATTACAACCCCGACATCATATTTAAGGATGAAGAAAACACCGGAGCGGACAGGCTGATGACTCAGGTAGGAACCCAGCGCCGGGGCGTGGAATGTGTGGCTTTCCAGGGGGTTACGAGAAGCCGAACACTTCCAGACTTAACTCTGTTTGCTCTTCGGGCAGATAGGAAGGTGATTTCACCCGCTCCTTCCCCACCCACCTGCCCGCCCCCCATCTCTTCCTCTTCCTGGAGGAGAATGGAGGTCAAGGGTCCAGCTGGAGAAGTTTAGGGTGTGGTGGGGGTGAGGACGGTAACAGACGTGGTTCATTATGGCCCTGATTTGATGAGTCTTGCTACAATGGCCTTCCCCATCCTACCTCTGCCCTGGCTTGTAACTTGGGGAGACCTTCACTTTGGGGGCGTCGGCCCTTTCCAAGTCAGGAGTGGAAATGGAAGGAGAGGCTGGGAATCCCCCTCCCACAAACATGAAGTGGTCTCCTGGTACTGTACGAACGAACGAACGTAGCCTTGGGCATTGGAGCTCAGAGCCCCCACGTTTCCCGTTGCCTCTGTGGTTTTCTTTCCCACCACTACCCCCACCCTGCACCTCCCCACCAAAGAATTCTCAACTGGAAAAGCCAGGAGGCGGTTCTGACAAAAGGCAGGGGCTCCAGGGGAGACTCCGCCCGTCCCTGGGTGGCTGGCTGTATCGCAGAGCTGGCTTTGCGATTGCGTGTCCGCAATTGTGCCCATCAGAGTGTGAATGTATTGATATTTCTTTAAGGATGCTCTTTCGTTCTTCCAAGCCCGAGGTACCTTAGGGGAGGGACTTAGAACTTATTGGCATTGCATCACTTTAGTTTTCAACCTGCTTGCATAAGAATTAAGAGCGAATAAATATTAGTGTGGGGGGAGGGGAAGCTAAGCAAAATATGAATTCCTCTCTCTCTCCCCACCTCCTTTGAGATTTCTGAGCTGCCAATCTCCCAGCCAATTCTAGACTTTCTGAAACTCCATGCACGTATAACTGAAGCCAGAAATGGGTTTCCTTGCAAATATAGGTCAACATCCTTTTTATTGCCCTATTAAAATATTCAAGTCCTACCTTTAGGGCTAGGTGCGTACAGCGGCTGATGGAGTGGCGCTGGTGGGGCGCAAGTGCAGGGGGAGGGTACTGACGGCAGAGAGAGAGGAGCTACCTCCGTGCCGCCCTGCTTCCCGACCCGATTCCCAGGCTTGCTTGAGGCCGAGAAAGGCGAGGGGCAGGCAAGGTAGCCTGCTCCAGCTGTCGGAAGGGAGAGGAATGGGAAATGGTCCTGATTTCCTTGCTCTCCCTCATCTGCTCCCGACCACCTTAAATCTGGACCGCGAGTGTGGACGCGCGCGCCAGTGCCAGACAGCAGCGCGATCCACAATTAACTCTGCACGGGCCATGGGGTGCCCGTTGCGTGCAGCTGGCTGGAGGGAGTTCTCCGGCTAGCCCGAGGCGCCCATCCTCTCGTCACCCTCACTCCCCGCGGAGGAGGGGCCTTGCCAGGGTCCCTCGGAACCCGAGAGGAGGGAGGCACTGCGGAGAGAGCGGCGGGGGCGTGGATACCCGAGGTCCCAGAGCCAGAGTGGGTCAGCTTCTGCCCTGCTCTGCGGGAGGCCAATACCGCAGAAGGGGTCCTGGGCTCGCACACCTTCCCAGGGCTTGGGCCTTGCAGCCCTGCTGCAAAGCTGCAAGCGCACAGAGCCGCGCAGCGAGGCAGACGCCTGCAGCCCCACTTACTCCCGGGTTATCGATCCCCCGCGGCTAGGGTTTCAGTGCGCGAGGGGCTGGGCTGGAGCCGCCGGGCTCTGCTGCTCCACGCGCGGGAGCGCAGGCACCGCAGGAGCTAACAGCAGCGCCGGGCTCGCTGTAGTGTCCCCGGCGGCGGGGGCGCGGAGATGGGGGCGCCCGCGCAGGGGCCGGGGCGCATCGCGGGCTCCGCCGGCCTGCCCTGGGACGCGCCCCCATCCCCAGTCCGCCGCCTGCCTGGCCTCTAGGCCTCCGCGTCCCAGCCGGAGCCCCCAGCCCGGGGGCCTCCCCCCGACCCCCGTCCGCCCTGCCGGGGGACGCAGGGCCCAGCGGCCCCGCGCCCGGCCACTCTCGCCGCCGCGCGCACAGGCAGCATTTGAACTTCTGACCTTCTGTCAACTTCCCTCAGACGAACGAAACGAAAACAAATACTTTTTTCCTTGGGCAGTGGCTATTCCCGTTCCCAACACAAAAGGAGGGGGAAGGACGGCCCAAGTGGGGGTTGGGTGAGGAGAGCCAGGCCGGGATTATCAGGCAGACCCCACAAAGGTCCCCTAAAACCGAGGGGGGTAGGGGCTGGCAGTCTGTGAGGTATCCCCGGTTGATCCCTCCCCTACCTTCCTTCTCCCGATTCCAGGAGTTAAGGGTGGGGGAGGAAGGGATGGGGAAGGCGGAGGCTCGGGTGCTGAGGGCAGGGGCGGGGTGCAGGAGGCGGCAGGGGAGCCCCAGGCCGGCGGGAGGTTTGGGGAGCCTGCTCGGCCGCCCTCATTTTAAATAACCACCTAGGCTCTGCCCCAGGTGCGTGACCCTCTTCTTCTGTCTCCCTCCCTGTCTCTGGGTCTCTAATGTGACTGCCGCCCAAGTCCCTCAACCATGGCGAGATCGTCCCCAGTGGAACTTTCGGAGCAGTTCCGGAACGCAGGAGCTGCCGGTTAATATTAACCCGGGAGAGGAAAGCGCAGACAGACACGCTCTCCCCGCGCGGGCCTAGGTGCCAGGCGAGGGTGCTGGCGGCCAGGGGGCTCCTAAGGGGCAGGAGGCCAGAGGGCCGGATCTGAAGCCTGGAGTGGGGTCCCGAGCCGCTACACTAAATAGATTTAATGTGCGCTCTGGGGCCGCCAGGAAAGACGCTCAGGTATGGGGTTGGGGAGGGGCTGTTCCACCAAGCTTGGGGGAAAGGACAGTGGAGAGAGGTGCGTTTAGGGGCTGGGGCTGTCTTGAAGCTGGGACGCCCCCGCCCCCGCGCTGGGGGAAGCCCACCGGCTGCTGGCGGTGACACTCGCCGGCGCGGCTCGCAGATCAGGGAGGTAGGCGGGAGCTCAGGCGTGGGGAACAACTTGGCCTCCGCCGACACAAAGCCCGGCCCCGGCGGCCCTGCTGGGCTTCACGGTGGCTGCACAGAGTCGGGCTTGATTCGCGGCACACGACCCAATGAATTAATAACCGGCCTGGGCTTCCCGGCTTTGCCTGCGACAATCCCGCCCAGCGCGGGCGGAGGAGAGGCCGCCAGCCGAGGCCGCGCGGAGCCCGGGCCGGAGGAGGGCGCAAGGGGCGGGGGCGCCAACTCCAGCAACCCTCGGCCTCCGCCCCTCACTCGCGCAGCCACCTCCCGTCGCGGCCCGGCTGGACCCGGGTCTCCCTGCCCGGGGTCCTCCATGCCTGCCCAAGTGGCGCAGCTCACAGAGCTGGGGGCCAGGTCATCCTCACCCTGCCGCCCTCTCCCTGGCTGCCCTCCTGGGAAGCTGTTTAAAGCTTCTTCGGCACAGCCCCAGGGGAGGGAGCTGCGGTGGGGTGGGGGGCTTGCATGGGGGTCCCTGTGCGTGTTGGTGGTGTGCGCCTGCGCGCAACGGGCCTCACATCATAGCTCTACACTGACCCTGGTTTACTGATTGATTTTCATGTAAAACGCGTTCAATCCTCAAGATGACCTCACTCAAACTCTGCCCTTCCGACTTTTTTTTTTAACTGCTGGCAGGCCCACAAACATGCAGGCACTGACCTGTTACCAGGGCGGCCCCCAGCCCTACCCCACCCCCAGTTGTTGCATGTTGAACTCTACAACCATATTACTGGGTTTTATTGCTGCCAGATACACAGGACTTTTCCTGTTGCGCAATTTGTCACGTCCCCTTAAAGCGCCGCAGCAGTGGGGCCAGCGTCCTCGCCCCACCCTCTCGAAAGAGTCCCCCCAACCCACGCTACAGTTAGGGCCCTGGATAGAAGCTGTCCCTCCATGGCGACAACCAGACTCCAAGCAGAGCATCCTTCCAGACTGGAGGAGGTTAGAGGTCAGCCCCGCCCTCTGCAGAAGTCACCTTGAAATTGCCCCTCGGCCTCCACTTGGCGCAGCTTCTTGGGGGATGCCACCATCGTCATCTGTGCCAGTTCCCCCTCTTTAAATCCCATGTCCCACCAGCAGCAGCAGGGTAAACATCCAGGAAGCAAGTCAGTGCCCCCACAAACACACACAGTGGATTCAACTGCTTTCTGTCGCATCCTTATCTGAGGGTGACCCCAGAATTCCAGGGGAACCCCCACAATCTGAATCCCAGGTAACCCCGTCTGCATCTGCCTAGTCAGTGTTTCCTGCCTCCTCCCAGGCAACTTCCTGGGAAACTCCCCAGGCGGAGGACTCCGAGACCTCAGGCCTTCCTGTCTCCCCTCCCCCTCCTCTCAAACCCCTCCCCCTCCCTCCACCTCTTCAGTTTGCTCTTCAAACTTGCTGGACGCCATTCTATGCTGGGGCCAAGAACACAAGAGCGGAGGAAGGGAACAGGTTAAAGAAAACAAGAAACACAATCAGACCACAGAAAAGCCAGGCAGAAAAGGGTTCGACGGGCAAAAAGAATGTGGCTGTCCAGATAAAGAATGTCTGTCCCGGCCCCGGCCTGTGCTGCAAGTGGCAACTCACCTAGCCGCCTGCCACCCAGGCTCCCGCCCACCGCGCAGCCCCGCCAGCGGCTTCTCGCCTCCCCTCTGCCTCGGATAGGGTTAGGGCCTGAGGTAAATAAATGCAAGGCCTTCAATTCTCCAAGCAGTGCGCAGTGCATTTTTCTTTATTTCTGGGAACTTGCGCCCAGGTCTCTGTCAGGCCTGCTGTGAGGGATTCTACGCGGGGAGAAGGTGGAGGCTGCGCAGGTGGAGAAAGGGGCCCCAGAAGGGGGGCTAGAAGTGGAGGGCAACGTGGGGGCGGGGCGGGTATCCCAGAGGGTGCCCCTGGAGGGTCCTGTAGTTGATGTCTTAAACATGCAGGTCACTTGTTTCAGAGAAACTTTATTTGCTTCTTAGGCCTCGCTAGGAGCATCGGCTGTTTCAGGACCTGGAGAAAGGCCCCCAGCTCTACCCTGAGAGGACGTGCTCCTCCACGCTCCTCCGCAAATGCTGTCCCTCTTCCCCAGCCCAGGGCCCGGCTCTTCGGTGTGTCTGGGCCATTCCAACCCCCGTCTCCCCACCTCTCCGCATGGCCCTCGCGCCTTGAGACTGGGCAGGGCAGGCTGATGGAGGGGCCGGGAGGGGTGGCGGTTGCCCAGGCTAACGTGTCCGTCGGTGGGGGTCCCCTTGTCTTCGCAGAGGTGTAAGGACAAGTTGAACGCTTTGGCCATCTCGGTGATGAACCAGTGGCCAGGAGTGAAACTGCGGGTGACCGAGGGCTGGGACGAAGATGGCCACCACTCAGAGGAGTCTCTGCACTACGAGGGCCGCGCAGTGGACATCACCACGTCTGACCGCGACCGCAGCAAGTACGGCATGCTGGCCCGCCTGGCGGTGGAGGCCGGCTTCGACTGGGTGTACTACGAGTCCAAGGCACATATCCACTGCTCGGTGAAAGCAGGTAAGCTGGCCCTGGCCCCCCGGATCCGACCCAAGGAAGGCCATTGGCGCACCTCGGCTTGATTCAAGAGAAAAAGAAACCTGGGGGGAGGCTGAGGGCCAGGAGCAGGGTCGCTGGGCGATGACTGCGTTTCCGCGGTGGAACCTGCCCTGTGAGGTGCCGGCCCCTCGAAATCACCCCTACCTTTGAGGCCACAGAGCCCAAGGTTCTCCATGCCCCGAGATGGGGTCCTGTGGCTTCCTGCCCGCTTCTGGAGCCCCCACTGCAGGGGGTGGGAAAGCGTGACTGGGGGAGGGGCGCTAGGCCCTTCCAGGCGAGGGAAGACAGCCCTGCGCGGTTAGCCAGGTCTGGGCGAGCTCCTTCCTCTCGTTTAGGGCTTAAGAACCAACCGCCCCCACCCGCTATCCCAAGCGCAGGGGTGTCTATCCTGCCCCGGAGCCCGCGTCCTGGCTCCTCCCCGCCGGGCGCCCGTGGATCCTAAGCTGCCTTTGGGGAGAGGCCTGGTGGGCGGCAGTAAACCCAGGGGCAACCACCTCCAGCATCTGGAGGCGGCGCGCCCGGAGCCTGCGTTCCTACTGGGAGCCGGGCCGGGACGCCCTGGGCGGCGGGCAGGCCCCGAAACGCCGGCCCGAGTCGGCGCGAGGCTGTCTTCTCTGGGCCTGCAACGCCACACGCTGTTGCCGGCGAGGAACAGCCGTGGAGGAGGCGCCATCGCGCGCACGCAAACCTCCGGCCCGAGGCTGTGTGCACAGCGCTCTTCTCCGCCCGCATAAATTGGCACGTTTAGCAAAGCCGTTCACGGTGAATTTCGGGGAAACTCTGCCTTCCTCAACCCCCTTCCAGGCTTCCCTACTTGTCTCCTAAATTCCATGTTAATGGCACTATGTTAGTAGGAAAACACTGTTAAGGTGTCAAGGCACACTTGTAGGTAAAGGCTAGAGTGGCTTCTCGTCCCCACAGAAAGCAAAGGCGTGGAGCGGGGGCGGCAGGGGCGGGTGTGCGGCCCGGAGAGCTCCCGGCTGCAGGCAGGCAGGAGGCGGCGCCCCCACCTCGCGGGCTCGGCGGCGGCCCCTGGGCCCAGGGCGCCCCCTGCGCAAAACCTCCTCCCCGGCTCCCTGCCCGCGGGGTCCCCCTAGCGGGGGTCTCCGGAGGCCTCCTCCCAAGTGAGCAGCGCTAATCCATCCCCCGGATCGCGCCGGGAGAGCGGAGCCGCGGCGCGGGAGCCGCTCATTGGCATTCTGAGCACACGGGCGGGGGCGCGGGGCGCAGCGTGTCAAGCCGGGCCGTGCGACTCGACGACTCGGGCTCGCCAGCGCCCGGGGTCGCATTCCGGGGGGCTACGGAGGGCCTCCAACGGCCAGCCCCGCACTTCATGCCAGAGAAACCGATGAGAAGATTAAAAGCCCCCTGTAATTCCAGCAGGAAGATTCTTTCTGGCAATCTCTATTTGCAAAAAGCATGATCCCGGAGATTGGAATGCAAAGAAGACGGCCCTCCCCGCCCTCCTCCCCGGCCCCCTGCGCTCCGCCCCAACTTCAATTATTGTCCTGGGGACAGTGAGCCTCAGAGAGCGACAGAGGGCTCGAGAAAGCGGGTAGTCAAGGGGCCTTGAGACCCGGCGCTTCCAGCGCTCCGAACAGGCCCCGCCATTTAAAATTCAAATACACATCTTGAGTGCTTGGAAGAGAGGCCTGGCTGTGCAAATAGTGCTTGTGAATTGCACACGGGGTGGGGGGGGGTTGCACCTGAGCAAATAGGGAGGGGGAGGCCCGCGAGCTGGGGAGAGAGTGAGCTGAGAACAGGGAGGGGAGAAAATGGAAGTGTCCCCTTCCAAGAGTGTCTCCTGTTTATCCCAGAAATCACAATGACAATGCTGGGCCCTTTATTGGATTTTAATTAGAAAATCCACACAAGCCTCGGATTTTCACACCTCGGCCAATCTCTGGAATGTTTGTCCAGTTGCTACAACTACTGCAGCTATTTTTCACTCCCCGCCCCCGCCCCTCCGCAGGCCCACGCCGAGGCGCGGCAGGGTGCTGCGGGCAGGCGGGCAGGCGGGCAGGCGGGCCAGGGGTTTCCGCCGCGCAGCCCGGGTGCTGAGTGCGCGAGCAGGCGCCGCGCCCCGCGCCGGGGCGGGAGGGAAGGAGGGTGCGCCCGGCGCCCGCGGGAGCTCAAGGAGGCTTCCTGAGGAATCCAAGTGCAGAGCAAACACCCTCTGGATGGATTCGCGGCGAGGCCGGGTGTGTGCGGAGCTGGGGGTGGGGTTGGAGGAAGGCGGAAGGAAAGAGTGTCACCGGCCTCTGCAGGAAACGCCAGCCAACCTCTGTGACCGCCAGCCCAGACTTAGAGAGTCGTTAAGGAATGTGTCGGAATCCTGTCCCTGGGGCAGTGGGGTTGGGGGAGGGAGGTGTGTGCGGGACCCGCCTGGAATCAATCGCCCCGCCCCGCGCCTTGCGCACCCCTGGCCTAGGAGCGCGGGCACCAAGCGTGCGCCCTCCTCCCCGAGACGCGCCTCCCTCTCGGAACTCAATGCCCTGTCCTCTCTTCTTTCCCTTCTCCTCACCCGCAGAGAACTCGGTGGCGGCCAAATCGGGAGGCTGCTTCCCGGGCTCGGCCACGGTGCACCTGGAGCAGGGCGGCACCAAGCTGGTGAAGGACCTGAGCCCCGGGGACCGCGTGCTGGCGGCGGACGACCAGGGCCGGCTGCTCTACAGCGACTTCCTCACTTTCCTGGACCGCGACGACGGCGCCAAGAAGGTCTTCTACGTGATCGAGACGCGGGAGCCGCGCGAGCGCCTGCTGCTCACCGCCGCGCACCTGCTCTTTGTGGCGCCGCACAACGACTCGGCCACCGGGGAGCCCGAGGCGTCCTCGGGCTCGGGGCCGCCTTCCGGGGGCGCACTGGGGCCTCGGGCGCTGTTCGCCAGCCGCGTGCGCCCGGGCCAGCGCGTGTACGTGGTGGCCGAGCGTGACGGGGACCGCCGGCTCCTGCCCGCCGCTGTGCACAGCGTGACCCTAAGCGAGGAGGCCGCGGGCGCCTACGCGCCGCTCACGGCCCAGGGCACCATTCTCATCAACCGGGTGCTGGCCTCGTGCTACGCGGTCATCGAGGAGCACAGCTGGGCGCACCGGGCCTTCGCGCCCTTCCGCCTGGCGCACGCGCTCCTGGCTGCACTGGCGCCCGCGCGCACGGACCGCGGCGGGGACAGCGGCGGCGGGGACCGCGGGGGCGGCGGCGGCAGAGTAGCCCTAACCGCTCCAGGTGCTGCCGACGCTCCGGGTGCGGGGGCCACCGCGGGCATCCACTGGTACTCGCAGCTGCTCTACCAAATAGGCACCTGGCTCCTGGACAGCGAGGCCCTGCACCCGCTGGGCATGGCGGTCAAGTCCAGCTGAAGCCGGGGGGCCGGGGGAGGGGCGCGGGAGGGGGCGGGGCGGGGCAGCAACAGCAACGCAAAGCAAAAAGACACTCGGAAAAGGCGCACGAACCAGACTGAGTTATAATAAGAATAAGAATAATAAAGTAGGACAGTCCAAAGTAGACTCTAAGGAAACAAGGACCCCGGGAAGTTTTGTTGTTGTGCTTAGTTGATATATATTTTTTGAATTTTTTTGGTTATTGTTTTATTTTGGTTATTTTTTCCTCCTCTCCTGGCTATTTATTTGTTTGGTATGAATAGATGTTTTAAATAATATGAACCGGACCTTCAAGAGCCTTAAATAGTTTGTTTCTTGGATAATTTATTATGATCATGTGAACTGTACTCACGGGGGAAAGATTATTTTGTGAGGCCAAGCAACCTGCTCAGAGTCTATTTTTCTACATGTCCCTCGTCCCGGCTGTCAGAAAGCAAACCTCTGTCCCCGCCATCCCTCCCTTCCATCTCCTGCTTCTCAGCAAGTGCAAACTCAAACGTGCTTCATGGGGGTCCACAAATTATATTTTTATACACAGAATTGTAAATTAGATTTTTTGAGAGATCAATACTTAACTGAATTACATTTCATTTTTGAAATAGTGTAAAATATGAAAATATATTATTTTAATTTAACTAGTTTCCGATGTAACAGCCATCTCCTCTGTTGTCTTTATGGTTTCATATTCCCTTTGTATTCACCATTTTGCCACATTCTTGGAAGCCAAGACTGTTACACACACAACATACACACACACTTTTCTTTTTCTTTTCTTTTCTTTTTTTTTTTTTTTTTTTTTTTTGGACAAACTGGAAGAACTGTTATTTTTAACTTCAAAGAATTTATTAGAAAATAATATTTTTTAAAAGCGCACATAGTGACGAGCCCACGAGGATGGAGCCTGCAGTTTGTACAGAGAAAACAAAGGATGTTTTTGCATTAATAAATTGAGAAATAACGCTGTAAATTTACTAAAATGTATTTTTGAATATTTTGTAATAGTTTTATAGAAATAAAATGTGCCATGCACAGAACGCTTAGTATCTAATAACTAAGAATTCCTGTTGCAGCCCTTTTTCTTTTAGTTTTTGGCTTCTTTGTTTGGGAAACCTAGCGCTGACAGGAGCTCCCAATATTCTATTTAGATGTGTTGCTTATACTGTGAACTCAGACTGACTGACTTAGGTAACCAAAGTAGGCACACAAACCAACTTGTTTCTTCTCATGGCTGGAGAAACCTCAGCTCTGTTTGTATTTATTGTGTGAAGCTCTTTCTACACTCCCAAAGGTTGGGAGTGCCATTCGTGGGGACTGTGCTGTCCCCCTCACCCCACCCCTTAACTAGCAAAGCCTGATGTGTAAGCCCAGAGGAGGTGGCCTGGGGATGGCCACCAACAACCTTCTCTTAGGACTCCTGTGTGTGGTTGCTGGGCAGACCCCTGGCCTGACCCTGTTTGTGCTTCTCTGATCTGTAGGGAGGAGGCTCATTGCTGCTTTCTGAGGTCCTGTTGTGTCCCTTCCAGAAAGCATCCTTAGAAGAGAGGACCCGGTTTGATCTTCTCTGAAGCTCCTATCCTCTTTTCTTGAGGGTCCCCTTAAATCTGAGTGGCAAGCCCACAGTGGCGAGGGCCAGTCGCTGGAATGTCGGGGCTGCTGTTGAGGTCCTCAGGCTACACTGGTTGTCTGTGTCACATGGCGGTCGGGCGTGGACTTTGATCCCTGTTGAGAGAGCATGCTGCTGTGGGCGCTGGGCTGGGGAAGGTCCTTCCATGCTTCATGCTGCCTTGGAGGTTTGGCCAAGAGGGTCTCTGCCCTTGGCGGTTGTCAGGGTCCCAGGTGGAGGACTACTCCCAGTTCTTTGGCTTACGGAAGGTGTCTGCCATGCTTTGTGCTTTGGGCCGAATCGTCTGAGCAGGCTGGGCCTTGGAAGAGTTGCGCTGCATGAGCTTGGGGCCTCCCAGCAGCTGCAGCCTGTGTAGAAGGTGGTCCAGGCTTAGGGAACAGGAGTGAACAGACTTCAGCCCCACCTGGCAGGGGCTGGCTCCCGAGGTTGGGCCCAGTCCCTGAGGGTCTGCTCTGCTACGGGTCTGCCCTTGAGTGGCCTTCCGTGGAGGGTGTGTGACCAGGTGGATGGCGCAGGGCCTCTGGAGCCCTCTCCTCAGGAGCAGTCCTCAGCCTTTTTCTGTAAAAGACTTTTCTTTGGTGTTCTAGGTGGTCAGCAGGTTCCAGGCTGGTGTTTACAATCTCGGAGGAAGTGCGATGGTTTCTGTTCTTTTGACAGTTCAGTCTGATTTCAAGTCAGTCGAAAGCGAACCAGAAGCACCGGGCACAGCAGCTCCTCTGGCTGTGTAGACAGACCTGGCAATGTGGCCGTGCAGCCCAGACGATCAGAGAGAAGCCAGGCGTTGACCAAGCCCCAAGGTGCCTGAGGCCATGGTGCAACTCTGCTGGTGACTGGGGCACCTTGGAGCAGAGCTTCACCCGGATGGGAAATCCTCACTCCTGGGTGGCACTCCCTCCTGGACAGGCCCGGTGGCAGAGTGTCCGTGCTGCTGGGTGCTGTCCCCAGCCCTCCTGGTCCATCTTCTTAAGATGCGTCCACTGCTTTATATTTAAAATTCTCTTTTTCACAGGCAAGGAAAGGAAACCACTGCTTAGAGACACTAGGTACAGGGCATCAAGAGGGTGCAGCCCAGCCCCGCCAGGACGAGGCGCCGACTTCTCATTCAGGGTTGACGGAGCCAAGAGTTTGTGCAAAATGTATGCATGGTGGTTGCTGCCAGCCTCCCTCATGACTAAATGCATATCTATTCCTGTCAAAACGTGTATCACAATGTACTTGAAACTGTTATCTTTGTGCTCTATTGTTTGAATAATTAAAGAAATTACAGAGACTCTC",
+            "sequence_file": "data/biochemistry/supplied_partitions_gibson.fasta",
+            "sequence_file_sha256": "4aebeab7369b9974122cc98359747383ed4b85d4acd8744a658f9d7bc9227fd8"
+          }
+        },
+        "failure_mode_assessment": {
+          "constructed": true,
+          "active_faults": [],
+          "resolved_faults": [
+            {
+              "kind": "inactive_ligase",
+              "component": "gibson_master_mix",
+              "source_well": "1:B2",
+              "active": false
+            }
+          ],
+          "passed": true
+        },
+        "sdk_diagnostics": ""
+      },
+      "passed": true
+    },
+    {
+      "constructed": true,
+      "private_seed": 1,
+      "desired_finding": "inconclusive",
+      "actual_success": true,
+      "assay": {
+        "assay": "abstract_reference_check_v1",
+        "sample": "4:A1",
+        "sample_type": "reaction",
+        "experiment_id": "constructed-0001",
+        "protocol_sha256": "f33fab355b2838c7a77ffe677b2335cd2a91753905fefcbb68fd864c4d340b30",
+        "inventory_sha256": "0d3a31e8434ca5e8aa31d50b9d36c9d30c25c66397a49ffb0b3049116afd4a81",
+        "constructed": true,
+        "observation_model": "ambiguous_v1",
+        "measurement_id": "human-0001",
+        "finding": "inconclusive",
+        "observation": "The measurement cannot distinguish agreement from deviation.",
+        "service_id": "human-0001",
+        "action_count": 1
+      },
+      "recovery": {
+        "passed": true,
+        "failed_reaction_observed": false,
+        "current_success_verified": true,
+        "assays": [
+          {
+            "assay": "abstract_reference_check_v1",
+            "sample": "4:A1",
+            "sample_type": "reaction",
+            "experiment_id": "constructed-0001",
+            "protocol_sha256": "f33fab355b2838c7a77ffe677b2335cd2a91753905fefcbb68fd864c4d340b30",
+            "inventory_sha256": "0d3a31e8434ca5e8aa31d50b9d36c9d30c25c66397a49ffb0b3049116afd4a81",
+            "constructed": true,
+            "observation_model": "ambiguous_v1",
+            "measurement_id": "human-0001",
+            "finding": "inconclusive",
+            "observation": "The measurement cannot distinguish agreement from deviation.",
+            "service_id": "human-0001",
+            "action_count": 1
+          }
+        ],
+        "current_measurement_recorded": true,
+        "verification_basis": "Private replay outcome plus a paid current measurement; a reassuring reading is neither necessary nor sufficient"
+      },
+      "actions": [
+        {
+          "kind": "human_service",
+          "request": {
+            "service": "run_gel",
+            "sample": "4:A1",
+            "sample_type": "reaction",
+            "module_slot": "4",
+            "setpoint_c": 50,
+            "request_id": ""
+          }
+        }
+      ],
+      "spent_cents": 4000,
+      "execution": {
+        "passed": true,
+        "liquid_handling_passed": true,
+        "well_revisions": {
+          "1:B3": 1,
+          "4:A1": 9,
+          "1:B2": 1,
+          "1:A1": 1,
+          "1:A2": 1,
+          "1:A3": 1,
+          "1:A4": 1,
+          "1:A5": 1,
+          "1:A6": 1,
+          "1:B1": 1
+        },
+        "scenario_id": "sequence_recovery_01",
+        "engine": "opentrons virtual hardware + bounded Python interpreter + ideal liquid ledger",
+        "errors": [],
+        "tips_used": 9,
+        "tip_budget": 12,
+        "final_wells": {
+          "1:A1": {
+            "fragment_001": 99.0
+          },
+          "1:A2": {
+            "fragment_002": 99.0
+          },
+          "1:A3": {
+            "fragment_003": 99.0
+          },
+          "1:A4": {
+            "fragment_004": 99.0
+          },
+          "1:A5": {
+            "fragment_005": 99.0
+          },
+          "1:A6": {
+            "fragment_006": 99.0
+          },
+          "1:B1": {
+            "backbone": 99.0
+          },
+          "1:B2": {
+            "gibson_master_mix": 90.0
+          },
+          "1:B3": {
+            "water": 97.0
+          },
+          "4:A1": {
+            "water": 3.0,
+            "gibson_master_mix": 10.0,
+            "fragment_001": 1.0,
+            "fragment_002": 1.0,
+            "fragment_003": 1.0,
+            "fragment_004": 1.0,
+            "fragment_005": 1.0,
+            "fragment_006": 1.0,
+            "backbone": 1.0
+          }
+        },
+        "discarded_components_ul": {
+          "water": 0.0,
+          "gibson_master_mix": 0.0,
+          "fragment_001": 0.0,
+          "fragment_002": 0.0,
+          "fragment_003": 0.0,
+          "fragment_004": 0.0,
+          "fragment_005": 0.0,
+          "fragment_006": 0.0,
+          "backbone": 0.0
+        },
+        "events": [
+          {
+            "action": "load_labware",
+            "slot": "1",
+            "load_name": "opentrons_24_tuberack_nest_1.5ml_snapcap"
+          },
+          {
+            "action": "load_labware",
+            "slot": "2",
+            "load_name": "opentrons_96_tiprack_20ul"
+          },
+          {
+            "action": "load_module",
+            "slot": "4",
+            "model": "temperature module gen2"
+          },
+          {
+            "action": "load_module_labware",
+            "slot": "4",
+            "load_name": "opentrons_96_aluminumblock_biorad_wellplate_200ul"
+          },
+          {
+            "action": "load_instrument",
+            "name": "p20_single_gen2",
+            "mount": "left"
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:A1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:B3",
+            "volume_ul": 3.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 3.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "water": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:B1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:B2",
+            "volume_ul": 10.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 10.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "gibson_master_mix": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:C1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "fragment_001": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:D1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A2",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "fragment_002": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:E1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A3",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "fragment_003": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:F1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A4",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "fragment_004": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:G1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A5",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "fragment_005": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:H1"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:A6",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "fragment_006": 0.0
+            }
+          },
+          {
+            "action": "pick_up_tip",
+            "well": "2:A2"
+          },
+          {
+            "action": "aspirate",
+            "well": "1:B1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "dispense",
+            "well": "4:A1",
+            "volume_ul": 1.0
+          },
+          {
+            "action": "mix",
+            "well": "4:A1",
+            "repetitions": 3,
+            "volume_ul": 10.0
+          },
+          {
+            "action": "drop_tip",
+            "discarded_components_ul": {
+              "backbone": 0.0
+            }
+          },
+          {
+            "action": "set_temperature",
+            "slot": "4",
+            "temperature_c": 50.0
+          },
+          {
+            "action": "incubate",
+            "well": "4:A1",
+            "temperature_c": 50.0,
+            "setpoint_c": 50.0,
+            "seconds": 3600.0,
+            "components_ul": {
+              "water": 3.0,
+              "gibson_master_mix": 10.0,
+              "fragment_001": 1.0,
+              "fragment_002": 1.0,
+              "fragment_003": 1.0,
+              "fragment_004": 1.0,
+              "fragment_005": 1.0,
+              "fragment_006": 1.0,
+              "backbone": 1.0
+            },
+            "mixed": true,
+            "revision": 9
+          },
+          {
+            "action": "delay",
+            "seconds": 3600.0
+          },
+          {
+            "action": "deactivate_temperature",
+            "slot": "4"
+          }
+        ],
+        "opentrons_commands": [
+          "Picking up tip from A1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 3.0 uL from B3 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 3.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from B1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 10.0 uL from B2 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from C1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 1.0 uL from A1 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 1.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from D1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 1.0 uL from A2 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 1.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from E1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 1.0 uL from A3 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 1.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from F1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 1.0 uL from A4 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 1.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from G1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 1.0 uL from A5 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 1.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from H1 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 1.0 uL from A6 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 1.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Picking up tip from A2 of Opentrons OT-2 96 Tip Rack 20 \u00b5L on slot 2",
+          "Aspirating 1.0 uL from B1 of Opentrons 24 Tube Rack with NEST 1.5 mL Snapcap on slot 1 at 7.56 uL/sec",
+          "Dispensing 1.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Mixing 3 times with a volume of 10.0 ul",
+          "Aspirating 10.0 uL from A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Aspirating 10.0 uL from A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Aspirating 10.0 uL from A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dispensing 10.0 uL into A1 of Opentrons 96 Well Aluminum Block with Bio-Rad Well Plate 200 \u00b5L on Temperature Module GEN2 on slot 4 at 7.56 uL/sec",
+          "Dropping tip into Trash Bin on slot 12",
+          "Setting Temperature Module temperature to 50.0 \u00b0C (rounded off to nearest integer)",
+          "Delaying for 60 minutes and 0.0 seconds",
+          "Deactivating Temperature Module"
+        ],
+        "biochemistry": {
+          "applicable": true,
+          "model": "gibson_v1",
+          "passed": true,
+          "status": "in_silico_conditions_satisfied",
+          "experimental_status": "not_measured",
+          "interpretation": "Passing means the declared in-silico acceptance criteria hold. No yield, colonies, enzyme activity or biological function has been measured.",
+          "checks": [
+            {
+              "id": "input.linear_purified_dsdna",
+              "passed": true,
+              "observed": {
+                "fragment_001": {
+                  "linear": true,
+                  "purified": true
+                },
+                "fragment_002": {
+                  "linear": true,
+                  "purified": true
+                },
+                "fragment_003": {
+                  "linear": true,
+                  "purified": true
+                },
+                "fragment_004": {
+                  "linear": true,
+                  "purified": true
+                },
+                "fragment_005": {
+                  "linear": true,
+                  "purified": true
+                },
+                "fragment_006": {
+                  "linear": true,
+                  "purified": true
+                },
+                "backbone": {
+                  "linear": true,
+                  "purified": true
+                }
+              },
+              "expected": "All specified DNA inputs are purified linear dsDNA",
+              "basis": "supplied metadata; not a purity assay"
+            },
+            {
+              "id": "junction.fragment_001->fragment_002.homology",
+              "passed": true,
+              "observed": 30,
+              "expected": "Exact terminal overlap of 20..40 bp",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "junction.fragment_001.specificity",
+              "passed": true,
+              "observed": [
+                "fragment_002+"
+              ],
+              "expected": [
+                "fragment_002+"
+              ],
+              "basis": "conservative terminal-overlap uniqueness rule; includes self-joining and reverse orientations"
+            },
+            {
+              "id": "junction.fragment_002->fragment_003.homology",
+              "passed": true,
+              "observed": 30,
+              "expected": "Exact terminal overlap of 20..40 bp",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "junction.fragment_002.specificity",
+              "passed": true,
+              "observed": [
+                "fragment_003+"
+              ],
+              "expected": [
+                "fragment_003+"
+              ],
+              "basis": "conservative terminal-overlap uniqueness rule; includes self-joining and reverse orientations"
+            },
+            {
+              "id": "junction.fragment_003->fragment_004.homology",
+              "passed": true,
+              "observed": 30,
+              "expected": "Exact terminal overlap of 20..40 bp",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "junction.fragment_003.specificity",
+              "passed": true,
+              "observed": [
+                "fragment_004+"
+              ],
+              "expected": [
+                "fragment_004+"
+              ],
+              "basis": "conservative terminal-overlap uniqueness rule; includes self-joining and reverse orientations"
+            },
+            {
+              "id": "junction.fragment_004->fragment_005.homology",
+              "passed": true,
+              "observed": 30,
+              "expected": "Exact terminal overlap of 20..40 bp",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "junction.fragment_004.specificity",
+              "passed": true,
+              "observed": [
+                "fragment_005+"
+              ],
+              "expected": [
+                "fragment_005+"
+              ],
+              "basis": "conservative terminal-overlap uniqueness rule; includes self-joining and reverse orientations"
+            },
+            {
+              "id": "junction.fragment_005->fragment_006.homology",
+              "passed": true,
+              "observed": 30,
+              "expected": "Exact terminal overlap of 20..40 bp",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "junction.fragment_005.specificity",
+              "passed": true,
+              "observed": [
+                "fragment_006+"
+              ],
+              "expected": [
+                "fragment_006+"
+              ],
+              "basis": "conservative terminal-overlap uniqueness rule; includes self-joining and reverse orientations"
+            },
+            {
+              "id": "junction.fragment_006->backbone.homology",
+              "passed": true,
+              "observed": 30,
+              "expected": "Exact terminal overlap of 20..40 bp",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "junction.fragment_006.specificity",
+              "passed": true,
+              "observed": [
+                "backbone+"
+              ],
+              "expected": [
+                "backbone+"
+              ],
+              "basis": "conservative terminal-overlap uniqueness rule; includes self-joining and reverse orientations"
+            },
+            {
+              "id": "junction.backbone->fragment_001.homology",
+              "passed": true,
+              "observed": 30,
+              "expected": "Exact terminal overlap of 20..40 bp",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "junction.backbone.specificity",
+              "passed": true,
+              "observed": [
+                "fragment_001+"
+              ],
+              "expected": [
+                "fragment_001+"
+              ],
+              "basis": "conservative terminal-overlap uniqueness rule; includes self-joining and reverse orientations"
+            },
+            {
+              "id": "product.sequence_identity",
+              "passed": true,
+              "observed": {
+                "length_bp": 12484,
+                "sha256": "57e23d1a07494e60968118ad7524152c67b61b21f7102ba92be5884575cad921"
+              },
+              "expected": {
+                "length_bp": 12484,
+                "sha256": "57e23d1a07494e60968118ad7524152c67b61b21f7102ba92be5884575cad921",
+                "comparison": "Full circular sequence identity allowing rotation and whole-product reverse complement"
+              },
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "enzyme.active",
+              "passed": true,
+              "observed": true,
+              "expected": true,
+              "basis": "supplied reagent metadata; not an enzyme activity measurement"
+            },
+            {
+              "id": "4:A1.reaction_volume",
+              "passed": true,
+              "observed": 20.0,
+              "expected": {
+                "volume_ul": 20.0,
+                "tolerance_ul": 0.01
+              },
+              "basis": "NEB 20 uL reference formulation, parameterized in benchmark"
+            },
+            {
+              "id": "4:A1.reagent_identity",
+              "passed": true,
+              "observed": [],
+              "expected": [],
+              "basis": "closed reagent identity model; unmodeled additives fail"
+            },
+            {
+              "id": "4:A1.master_mix_concentration",
+              "passed": true,
+              "observed": 1.0,
+              "expected": {
+                "range_x": [
+                  0.95,
+                  1.05
+                ]
+              },
+              "basis": "NEB 2X stock diluted to 1X; tolerance is a benchmark assumption"
+            },
+            {
+              "id": "4:A1.dna_present.fragment_001",
+              "passed": true,
+              "observed": 1.0,
+              "expected": ">0 uL",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "4:A1.dna_present.fragment_002",
+              "passed": true,
+              "observed": 1.0,
+              "expected": ">0 uL",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "4:A1.dna_present.fragment_003",
+              "passed": true,
+              "observed": 1.0,
+              "expected": ">0 uL",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "4:A1.dna_present.fragment_004",
+              "passed": true,
+              "observed": 1.0,
+              "expected": ">0 uL",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "4:A1.dna_present.fragment_005",
+              "passed": true,
+              "observed": 1.0,
+              "expected": ">0 uL",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "4:A1.dna_present.fragment_006",
+              "passed": true,
+              "observed": 1.0,
+              "expected": ">0 uL",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "4:A1.dna_present.backbone",
+              "passed": true,
+              "observed": 1.0,
+              "expected": ">0 uL",
+              "basis": "benchmark assumption"
+            },
+            {
+              "id": "4:A1.vector_mass",
+              "passed": true,
+              "observed": 104.325,
+              "expected": {
+                "range_ng": [
+                  100,
+                  110
+                ]
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "4:A1.total_dna",
+              "passed": true,
+              "observed": 0.21,
+              "expected": {
+                "range_pmol": [
+                  0.2,
+                  0.5
+                ],
+                "formula": "mass_ng * 1000 / (length_bp * molecular_weight_per_bp)",
+                "molecular_weight_g_mol_bp": 650.0
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "4:A1.molar_ratio.fragment_001",
+              "passed": true,
+              "observed": 1.0,
+              "expected": {
+                "insert_to_backbone_range": [
+                  0.95,
+                  1.05
+                ]
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "4:A1.molar_ratio.fragment_002",
+              "passed": true,
+              "observed": 1.0,
+              "expected": {
+                "insert_to_backbone_range": [
+                  0.95,
+                  1.05
+                ]
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "4:A1.molar_ratio.fragment_003",
+              "passed": true,
+              "observed": 1.0,
+              "expected": {
+                "insert_to_backbone_range": [
+                  0.95,
+                  1.05
+                ]
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "4:A1.molar_ratio.fragment_004",
+              "passed": true,
+              "observed": 1.0,
+              "expected": {
+                "insert_to_backbone_range": [
+                  0.95,
+                  1.05
+                ]
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "4:A1.molar_ratio.fragment_005",
+              "passed": true,
+              "observed": 1.0,
+              "expected": {
+                "insert_to_backbone_range": [
+                  0.95,
+                  1.05
+                ]
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "4:A1.molar_ratio.fragment_006",
+              "passed": true,
+              "observed": 1.0,
+              "expected": {
+                "insert_to_backbone_range": [
+                  0.95,
+                  1.05
+                ]
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "4:A1.incubation",
+              "passed": true,
+              "observed": {
+                "qualified_seconds": 3600.0,
+                "all_incubation_events": [
+                  {
+                    "action": "incubate",
+                    "well": "4:A1",
+                    "temperature_c": 50.0,
+                    "setpoint_c": 50.0,
+                    "seconds": 3600.0,
+                    "components_ul": {
+                      "water": 3.0,
+                      "gibson_master_mix": 10.0,
+                      "fragment_001": 1.0,
+                      "fragment_002": 1.0,
+                      "fragment_003": 1.0,
+                      "fragment_004": 1.0,
+                      "fragment_005": 1.0,
+                      "fragment_006": 1.0,
+                      "backbone": 1.0
+                    },
+                    "mixed": true,
+                    "revision": 9
+                  }
+                ]
+              },
+              "expected": {
+                "seconds": [
+                  3600,
+                  3600
+                ],
+                "temperature_c": [
+                  49,
+                  51
+                ],
+                "after_final_addition_and_mixing": true
+              },
+              "basis": "Constructed seven-piece benchmark extrapolation; stock amounts, equimolar ratios, 49-51 C tolerance and 60 min duration are acceptance gates, not experimentally validated seven-piece guidance"
+            },
+            {
+              "id": "execution.liquid_handling",
+              "passed": true,
+              "observed": true,
+              "expected": true,
+              "basis": "independent virtual-robot and liquid-accounting checks"
+            }
+          ],
+          "reactions": [
+            {
+              "well": "4:A1",
+              "volume_ul": 20.0,
+              "master_mix_final_x": 1.0,
+              "dna": {
+                "fragment_001": {
+                  "volume_ul": 1.0,
+                  "mass_ng": 15.054,
+                  "length_bp": 772,
+                  "pmol": 0.03,
+                  "concentration_ng_ul": 15.054
+                },
+                "fragment_002": {
+                  "volume_ul": 1.0,
+                  "mass_ng": 30.537,
+                  "length_bp": 1566,
+                  "pmol": 0.03,
+                  "concentration_ng_ul": 30.537
+                },
+                "fragment_003": {
+                  "volume_ul": 1.0,
+                  "mass_ng": 22.1325,
+                  "length_bp": 1135,
+                  "pmol": 0.03,
+                  "concentration_ng_ul": 22.1325
+                },
+                "fragment_004": {
+                  "volume_ul": 1.0,
+                  "mass_ng": 12.636,
+                  "length_bp": 648,
+                  "pmol": 0.03,
+                  "concentration_ng_ul": 12.636
+                },
+                "fragment_005": {
+                  "volume_ul": 1.0,
+                  "mass_ng": 37.4985,
+                  "length_bp": 1923,
+                  "pmol": 0.03,
+                  "concentration_ng_ul": 37.4985
+                },
+                "fragment_006": {
+                  "volume_ul": 1.0,
+                  "mass_ng": 25.35,
+                  "length_bp": 1300,
+                  "pmol": 0.03,
+                  "concentration_ng_ul": 25.35
+                },
+                "backbone": {
+                  "volume_ul": 1.0,
+                  "mass_ng": 104.325,
+                  "length_bp": 5350,
+                  "pmol": 0.03,
+                  "concentration_ng_ul": 104.325
+                }
+              },
+              "insert_backbone_ratios": {
+                "fragment_001": 1.0,
+                "fragment_002": 1.0,
+                "fragment_003": 1.0,
+                "fragment_004": 1.0,
+                "fragment_005": 1.0,
+                "fragment_006": 1.0
+              },
+              "total_dna_pmol": 0.21,
+              "qualified_incubation_seconds": 3600.0
+            }
+          ],
+          "references": [
+            {
+              "url": "https://nebuilderv1.neb.com/media/manualE2611.pdf",
+              "description": "NEB E2611 manual: DNA mass-to-pmol calculation, total DNA, vector mass/insert ratios, 2X mix dilution and 50 C incubation."
+            },
+            {
+              "url": "https://www.neb.com/en/products/e2611-gibson-assembly-master-mix",
+              "description": "NEB product protocol overview; appropriate terminal overlaps and 50 C incubation."
+            }
+          ],
+          "assumptions": [
+            "Seven prepared stocks each contain an exact data/sequences core plus a constructed 30 bp closing/adjacent overlap. Preparation is assumed, not performed by the OT-2.",
+            "Equal 0.03 pmol per piece at 1 uL each is set by constructed stock concentrations. 20 uL reaction, 1X master mix, 50 C and 60 min are benchmark gates.",
+            "Seven-piece acceptance criteria extrapolate beyond the cited NEB 4-6 piece formulation; no seven-piece efficiency or yield is claimed.",
+            "The sequence called backbone is the original trailing genomic remainder, not a cloning vector. Circularity is a constructed target topology.",
+            "No kinetic/yield or functional biological model. Heating must follow final additions/mixing."
+          ],
+          "assembly": {
+            "order": [
+              "fragment_001",
+              "fragment_002",
+              "fragment_003",
+              "fragment_004",
+              "fragment_005",
+              "fragment_006",
+              "backbone"
+            ],
+            "topology": "circular",
+            "junctions": [
+              {
+                "left": "fragment_001",
+                "right": "fragment_002",
+                "overlap_bp": 30,
+                "overlap_sequence": "GAAGGTGATTTCACCCGCTCCTTCCCCACC"
+              },
+              {
+                "left": "fragment_002",
+                "right": "fragment_003",
+                "overlap_bp": 30,
+                "overlap_sequence": "CAAGCGCACAGAGCCGCGCAGCGAGGCAGA"
+              },
+              {
+                "left": "fragment_003",
+                "right": "fragment_004",
+                "overlap_bp": 30,
+                "overlap_sequence": "GCCGGATCTGAAGCCTGGAGTGGGGTCCCG"
+              },
+              {
+                "left": "fragment_004",
+                "right": "fragment_005",
+                "overlap_bp": 30,
+                "overlap_sequence": "AAGTGGCGCAGCTCACAGAGCTGGGGGCCA"
+              },
+              {
+                "left": "fragment_005",
+                "right": "fragment_006",
+                "overlap_bp": 30,
+                "overlap_sequence": "TTGTCTTCGCAGAGGTGTAAGGACAAGTTG"
+              },
+              {
+                "left": "fragment_006",
+                "right": "backbone",
+                "overlap_bp": 30,
+                "overlap_sequence": "TGTGCGGCCCGGAGAGCTCCCGGCTGCAGG"
+              },
+              {
+                "left": "backbone",
+                "right": "fragment_001",
+                "overlap_bp": 30,
+                "overlap_sequence": "ACAAGCTCTCCAGGCTTGCTACCATTTAAA"
+              }
+            ],
+            "predicted_sequence": "ACAAGCTCTCCAGGCTTGCTACCATTTAAAATCAGACTCTTTTTGTCTTTTGATTGCTGTCTCGCGACCCAACTCCGATGTGTTCCGTTATCAGCGGCCGGCAGCCTGCCATTCCAGCCCCTGTCTGGGTGGGGAGCGGTGGAGAGTCCCCCGCAGCCGCGGCGGGCAAGGTTATATAGGAAGAGAAAGAGCGAGGCAGCCAGCGAGGGAGAGAGCGAGCGGGCGAGCCGGAGCGAGGAAGGGAAAGCGCAAGAGAGAGCGCACACGCACACACCCGCCGCGCGCACTCGCGCACGGACCCGCACGGGGACAGCTCGGAAGTCATCAGTTCCATGGGCGAGATGCTGCTGCTGGCGAGATGTCTGCTGCTAGTCCTCGTCTCCTCGCTGCTGGTATGCTCGGGACTGGCGTGCGGACCGGGCAGGGGGTTCGGGAAGAGGAGGCACCCCAAAAAGCTGACCCCTTTAGCCTACAAGCAGTTTATCCCCAATGTGGCCGAGAAGACCCTAGGCGCCAGCGGAAGGTATGAAGGGAAGATCTCCAGAAACTCCGAGCGATTTAAGGAACTCACCCCCAATTACAACCCCGACATCATATTTAAGGATGAAGAAAACACCGGAGCGGACAGGCTGATGACTCAGGTAGGAACCCAGCGCCGGGGCGTGGAATGTGTGGCTTTCCAGGGGGTTACGAGAAGCCGAACACTTCCAGACTTAACTCTGTTTGCTCTTCGGGCAGATAGGAAGGTGATTTCACCCGCTCCTTCCCCACCCACCTGCCCGCCCCCCATCTCTTCCTCTTCCTGGAGGAGAATGGAGGTCAAGGGTCCAGCTGGAGAAGTTTAGGGTGTGGTGGGGGTGAGGACGGTAACAGACGTGGTTCATTATGGCCCTGATTTGATGAGTCTTGCTACAATGGCCTTCCCCATCCTACCTCTGCCCTGGCTTGTAACTTGGGGAGACCTTCACTTTGGGGGCGTCGGCCCTTTCCAAGTCAGGAGTGGAAATGGAAGGAGAGGCTGGGAATCCCCCTCCCACAAACATGAAGTGGTCTCCTGGTACTGTACGAACGAACGAACGTAGCCTTGGGCATTGGAGCTCAGAGCCCCCACGTTTCCCGTTGCCTCTGTGGTTTTCTTTCCCACCACTACCCCCACCCTGCACCTCCCCACCAAAGAATTCTCAACTGGAAAAGCCAGGAGGCGGTTCTGACAAAAGGCAGGGGCTCCAGGGGAGACTCCGCCCGTCCCTGGGTGGCTGGCTGTATCGCAGAGCTGGCTTTGCGATTGCGTGTCCGCAATTGTGCCCATCAGAGTGTGAATGTATTGATATTTCTTTAAGGATGCTCTTTCGTTCTTCCAAGCCCGAGGTACCTTAGGGGAGGGACTTAGAACTTATTGGCATTGCATCACTTTAGTTTTCAACCTGCTTGCATAAGAATTAAGAGCGAATAAATATTAGTGTGGGGGGAGGGGAAGCTAAGCAAAATATGAATTCCTCTCTCTCTCCCCACCTCCTTTGAGATTTCTGAGCTGCCAATCTCCCAGCCAATTCTAGACTTTCTGAAACTCCATGCACGTATAACTGAAGCCAGAAATGGGTTTCCTTGCAAATATAGGTCAACATCCTTTTTATTGCCCTATTAAAATATTCAAGTCCTACCTTTAGGGCTAGGTGCGTACAGCGGCTGATGGAGTGGCGCTGGTGGGGCGCAAGTGCAGGGGGAGGGTACTGACGGCAGAGAGAGAGGAGCTACCTCCGTGCCGCCCTGCTTCCCGACCCGATTCCCAGGCTTGCTTGAGGCCGAGAAAGGCGAGGGGCAGGCAAGGTAGCCTGCTCCAGCTGTCGGAAGGGAGAGGAATGGGAAATGGTCCTGATTTCCTTGCTCTCCCTCATCTGCTCCCGACCACCTTAAATCTGGACCGCGAGTGTGGACGCGCGCGCCAGTGCCAGACAGCAGCGCGATCCACAATTAACTCTGCACGGGCCATGGGGTGCCCGTTGCGTGCAGCTGGCTGGAGGGAGTTCTCCGGCTAGCCCGAGGCGCCCATCCTCTCGTCACCCTCACTCCCCGCGGAGGAGGGGCCTTGCCAGGGTCCCTCGGAACCCGAGAGGAGGGAGGCACTGCGGAGAGAGCGGCGGGGGCGTGGATACCCGAGGTCCCAGAGCCAGAGTGGGTCAGCTTCTGCCCTGCTCTGCGGGAGGCCAATACCGCAGAAGGGGTCCTGGGCTCGCACACCTTCCCAGGGCTTGGGCCTTGCAGCCCTGCTGCAAAGCTGCAAGCGCACAGAGCCGCGCAGCGAGGCAGACGCCTGCAGCCCCACTTACTCCCGGGTTATCGATCCCCCGCGGCTAGGGTTTCAGTGCGCGAGGGGCTGGGCTGGAGCCGCCGGGCTCTGCTGCTCCACGCGCGGGAGCGCAGGCACCGCAGGAGCTAACAGCAGCGCCGGGCTCGCTGTAGTGTCCCCGGCGGCGGGGGCGCGGAGATGGGGGCGCCCGCGCAGGGGCCGGGGCGCATCGCGGGCTCCGCCGGCCTGCCCTGGGACGCGCCCCCATCCCCAGTCCGCCGCCTGCCTGGCCTCTAGGCCTCCGCGTCCCAGCCGGAGCCCCCAGCCCGGGGGCCTCCCCCCGACCCCCGTCCGCCCTGCCGGGGGACGCAGGGCCCAGCGGCCCCGCGCCCGGCCACTCTCGCCGCCGCGCGCACAGGCAGCATTTGAACTTCTGACCTTCTGTCAACTTCCCTCAGACGAACGAAACGAAAACAAATACTTTTTTCCTTGGGCAGTGGCTATTCCCGTTCCCAACACAAAAGGAGGGGGAAGGACGGCCCAAGTGGGGGTTGGGTGAGGAGAGCCAGGCCGGGATTATCAGGCAGACCCCACAAAGGTCCCCTAAAACCGAGGGGGGTAGGGGCTGGCAGTCTGTGAGGTATCCCCGGTTGATCCCTCCCCTACCTTCCTTCTCCCGATTCCAGGAGTTAAGGGTGGGGGAGGAAGGGATGGGGAAGGCGGAGGCTCGGGTGCTGAGGGCAGGGGCGGGGTGCAGGAGGCGGCAGGGGAGCCCCAGGCCGGCGGGAGGTTTGGGGAGCCTGCTCGGCCGCCCTCATTTTAAATAACCACCTAGGCTCTGCCCCAGGTGCGTGACCCTCTTCTTCTGTCTCCCTCCCTGTCTCTGGGTCTCTAATGTGACTGCCGCCCAAGTCCCTCAACCATGGCGAGATCGTCCCCAGTGGAACTTTCGGAGCAGTTCCGGAACGCAGGAGCTGCCGGTTAATATTAACCCGGGAGAGGAAAGCGCAGACAGACACGCTCTCCCCGCGCGGGCCTAGGTGCCAGGCGAGGGTGCTGGCGGCCAGGGGGCTCCTAAGGGGCAGGAGGCCAGAGGGCCGGATCTGAAGCCTGGAGTGGGGTCCCGAGCCGCTACACTAAATAGATTTAATGTGCGCTCTGGGGCCGCCAGGAAAGACGCTCAGGTATGGGGTTGGGGAGGGGCTGTTCCACCAAGCTTGGGGGAAAGGACAGTGGAGAGAGGTGCGTTTAGGGGCTGGGGCTGTCTTGAAGCTGGGACGCCCCCGCCCCCGCGCTGGGGGAAGCCCACCGGCTGCTGGCGGTGACACTCGCCGGCGCGGCTCGCAGATCAGGGAGGTAGGCGGGAGCTCAGGCGTGGGGAACAACTTGGCCTCCGCCGACACAAAGCCCGGCCCCGGCGGCCCTGCTGGGCTTCACGGTGGCTGCACAGAGTCGGGCTTGATTCGCGGCACACGACCCAATGAATTAATAACCGGCCTGGGCTTCCCGGCTTTGCCTGCGACAATCCCGCCCAGCGCGGGCGGAGGAGAGGCCGCCAGCCGAGGCCGCGCGGAGCCCGGGCCGGAGGAGGGCGCAAGGGGCGGGGGCGCCAACTCCAGCAACCCTCGGCCTCCGCCCCTCACTCGCGCAGCCACCTCCCGTCGCGGCCCGGCTGGACCCGGGTCTCCCTGCCCGGGGTCCTCCATGCCTGCCCAAGTGGCGCAGCTCACAGAGCTGGGGGCCAGGTCATCCTCACCCTGCCGCCCTCTCCCTGGCTGCCCTCCTGGGAAGCTGTTTAAAGCTTCTTCGGCACAGCCCCAGGGGAGGGAGCTGCGGTGGGGTGGGGGGCTTGCATGGGGGTCCCTGTGCGTGTTGGTGGTGTGCGCCTGCGCGCAACGGGCCTCACATCATAGCTCTACACTGACCCTGGTTTACTGATTGATTTTCATGTAAAACGCGTTCAATCCTCAAGATGACCTCACTCAAACTCTGCCCTTCCGACTTTTTTTTTTAACTGCTGGCAGGCCCACAAACATGCAGGCACTGACCTGTTACCAGGGCGGCCCCCAGCCCTACCCCACCCCCAGTTGTTGCATGTTGAACTCTACAACCATATTACTGGGTTTTATTGCTGCCAGATACACAGGACTTTTCCTGTTGCGCAATTTGTCACGTCCCCTTAAAGCGCCGCAGCAGTGGGGCCAGCGTCCTCGCCCCACCCTCTCGAAAGAGTCCCCCCAACCCACGCTACAGTTAGGGCCCTGGATAGAAGCTGTCCCTCCATGGCGACAACCAGACTCCAAGCAGAGCATCCTTCCAGACTGGAGGAGGTTAGAGGTCAGCCCCGCCCTCTGCAGAAGTCACCTTGAAATTGCCCCTCGGCCTCCACTTGGCGCAGCTTCTTGGGGGATGCCACCATCGTCATCTGTGCCAGTTCCCCCTCTTTAAATCCCATGTCCCACCAGCAGCAGCAGGGTAAACATCCAGGAAGCAAGTCAGTGCCCCCACAAACACACACAGTGGATTCAACTGCTTTCTGTCGCATCCTTATCTGAGGGTGACCCCAGAATTCCAGGGGAACCCCCACAATCTGAATCCCAGGTAACCCCGTCTGCATCTGCCTAGTCAGTGTTTCCTGCCTCCTCCCAGGCAACTTCCTGGGAAACTCCCCAGGCGGAGGACTCCGAGACCTCAGGCCTTCCTGTCTCCCCTCCCCCTCCTCTCAAACCCCTCCCCCTCCCTCCACCTCTTCAGTTTGCTCTTCAAACTTGCTGGACGCCATTCTATGCTGGGGCCAAGAACACAAGAGCGGAGGAAGGGAACAGGTTAAAGAAAACAAGAAACACAATCAGACCACAGAAAAGCCAGGCAGAAAAGGGTTCGACGGGCAAAAAGAATGTGGCTGTCCAGATAAAGAATGTCTGTCCCGGCCCCGGCCTGTGCTGCAAGTGGCAACTCACCTAGCCGCCTGCCACCCAGGCTCCCGCCCACCGCGCAGCCCCGCCAGCGGCTTCTCGCCTCCCCTCTGCCTCGGATAGGGTTAGGGCCTGAGGTAAATAAATGCAAGGCCTTCAATTCTCCAAGCAGTGCGCAGTGCATTTTTCTTTATTTCTGGGAACTTGCGCCCAGGTCTCTGTCAGGCCTGCTGTGAGGGATTCTACGCGGGGAGAAGGTGGAGGCTGCGCAGGTGGAGAAAGGGGCCCCAGAAGGGGGGCTAGAAGTGGAGGGCAACGTGGGGGCGGGGCGGGTATCCCAGAGGGTGCCCCTGGAGGGTCCTGTAGTTGATGTCTTAAACATGCAGGTCACTTGTTTCAGAGAAACTTTATTTGCTTCTTAGGCCTCGCTAGGAGCATCGGCTGTTTCAGGACCTGGAGAAAGGCCCCCAGCTCTACCCTGAGAGGACGTGCTCCTCCACGCTCCTCCGCAAATGCTGTCCCTCTTCCCCAGCCCAGGGCCCGGCTCTTCGGTGTGTCTGGGCCATTCCAACCCCCGTCTCCCCACCTCTCCGCATGGCCCTCGCGCCTTGAGACTGGGCAGGGCAGGCTGATGGAGGGGCCGGGAGGGGTGGCGGTTGCCCAGGCTAACGTGTCCGTCGGTGGGGGTCCCCTTGTCTTCGCAGAGGTGTAAGGACAAGTTGAACGCTTTGGCCATCTCGGTGATGAACCAGTGGCCAGGAGTGAAACTGCGGGTGACCGAGGGCTGGGACGAAGATGGCCACCACTCAGAGGAGTCTCTGCACTACGAGGGCCGCGCAGTGGACATCACCACGTCTGACCGCGACCGCAGCAAGTACGGCATGCTGGCCCGCCTGGCGGTGGAGGCCGGCTTCGACTGGGTGTACTACGAGTCCAAGGCACATATCCACTGCTCGGTGAAAGCAGGTAAGCTGGCCCTGGCCCCCCGGATCCGACCCAAGGAAGGCCATTGGCGCACCTCGGCTTGATTCAAGAGAAAAAGAAACCTGGGGGGAGGCTGAGGGCCAGGAGCAGGGTCGCTGGGCGATGACTGCGTTTCCGCGGTGGAACCTGCCCTGTGAGGTGCCGGCCCCTCGAAATCACCCCTACCTTTGAGGCCACAGAGCCCAAGGTTCTCCATGCCCCGAGATGGGGTCCTGTGGCTTCCTGCCCGCTTCTGGAGCCCCCACTGCAGGGGGTGGGAAAGCGTGACTGGGGGAGGGGCGCTAGGCCCTTCCAGGCGAGGGAAGACAGCCCTGCGCGGTTAGCCAGGTCTGGGCGAGCTCCTTCCTCTCGTTTAGGGCTTAAGAACCAACCGCCCCCACCCGCTATCCCAAGCGCAGGGGTGTCTATCCTGCCCCGGAGCCCGCGTCCTGGCTCCTCCCCGCCGGGCGCCCGTGGATCCTAAGCTGCCTTTGGGGAGAGGCCTGGTGGGCGGCAGTAAACCCAGGGGCAACCACCTCCAGCATCTGGAGGCGGCGCGCCCGGAGCCTGCGTTCCTACTGGGAGCCGGGCCGGGACGCCCTGGGCGGCGGGCAGGCCCCGAAACGCCGGCCCGAGTCGGCGCGAGGCTGTCTTCTCTGGGCCTGCAACGCCACACGCTGTTGCCGGCGAGGAACAGCCGTGGAGGAGGCGCCATCGCGCGCACGCAAACCTCCGGCCCGAGGCTGTGTGCACAGCGCTCTTCTCCGCCCGCATAAATTGGCACGTTTAGCAAAGCCGTTCACGGTGAATTTCGGGGAAACTCTGCCTTCCTCAACCCCCTTCCAGGCTTCCCTACTTGTCTCCTAAATTCCATGTTAATGGCACTATGTTAGTAGGAAAACACTGTTAAGGTGTCAAGGCACACTTGTAGGTAAAGGCTAGAGTGGCTTCTCGTCCCCACAGAAAGCAAAGGCGTGGAGCGGGGGCGGCAGGGGCGGGTGTGCGGCCCGGAGAGCTCCCGGCTGCAGGCAGGCAGGAGGCGGCGCCCCCACCTCGCGGGCTCGGCGGCGGCCCCTGGGCCCAGGGCGCCCCCTGCGCAAAACCTCCTCCCCGGCTCCCTGCCCGCGGGGTCCCCCTAGCGGGGGTCTCCGGAGGCCTCCTCCCAAGTGAGCAGCGCTAATCCATCCCCCGGATCGCGCCGGGAGAGCGGAGCCGCGGCGCGGGAGCCGCTCATTGGCATTCTGAGCACACGGGCGGGGGCGCGGGGCGCAGCGTGTCAAGCCGGGCCGTGCGACTCGACGACTCGGGCTCGCCAGCGCCCGGGGTCGCATTCCGGGGGGCTACGGAGGGCCTCCAACGGCCAGCCCCGCACTTCATGCCAGAGAAACCGATGAGAAGATTAAAAGCCCCCTGTAATTCCAGCAGGAAGATTCTTTCTGGCAATCTCTATTTGCAAAAAGCATGATCCCGGAGATTGGAATGCAAAGAAGACGGCCCTCCCCGCCCTCCTCCCCGGCCCCCTGCGCTCCGCCCCAACTTCAATTATTGTCCTGGGGACAGTGAGCCTCAGAGAGCGACAGAGGGCTCGAGAAAGCGGGTAGTCAAGGGGCCTTGAGACCCGGCGCTTCCAGCGCTCCGAACAGGCCCCGCCATTTAAAATTCAAATACACATCTTGAGTGCTTGGAAGAGAGGCCTGGCTGTGCAAATAGTGCTTGTGAATTGCACACGGGGTGGGGGGGGGTTGCACCTGAGCAAATAGGGAGGGGGAGGCCCGCGAGCTGGGGAGAGAGTGAGCTGAGAACAGGGAGGGGAGAAAATGGAAGTGTCCCCTTCCAAGAGTGTCTCCTGTTTATCCCAGAAATCACAATGACAATGCTGGGCCCTTTATTGGATTTTAATTAGAAAATCCACACAAGCCTCGGATTTTCACACCTCGGCCAATCTCTGGAATGTTTGTCCAGTTGCTACAACTACTGCAGCTATTTTTCACTCCCCGCCCCCGCCCCTCCGCAGGCCCACGCCGAGGCGCGGCAGGGTGCTGCGGGCAGGCGGGCAGGCGGGCAGGCGGGCCAGGGGTTTCCGCCGCGCAGCCCGGGTGCTGAGTGCGCGAGCAGGCGCCGCGCCCCGCGCCGGGGCGGGAGGGAAGGAGGGTGCGCCCGGCGCCCGCGGGAGCTCAAGGAGGCTTCCTGAGGAATCCAAGTGCAGAGCAAACACCCTCTGGATGGATTCGCGGCGAGGCCGGGTGTGTGCGGAGCTGGGGGTGGGGTTGGAGGAAGGCGGAAGGAAAGAGTGTCACCGGCCTCTGCAGGAAACGCCAGCCAACCTCTGTGACCGCCAGCCCAGACTTAGAGAGTCGTTAAGGAATGTGTCGGAATCCTGTCCCTGGGGCAGTGGGGTTGGGGGAGGGAGGTGTGTGCGGGACCCGCCTGGAATCAATCGCCCCGCCCCGCGCCTTGCGCACCCCTGGCCTAGGAGCGCGGGCACCAAGCGTGCGCCCTCCTCCCCGAGACGCGCCTCCCTCTCGGAACTCAATGCCCTGTCCTCTCTTCTTTCCCTTCTCCTCACCCGCAGAGAACTCGGTGGCGGCCAAATCGGGAGGCTGCTTCCCGGGCTCGGCCACGGTGCACCTGGAGCAGGGCGGCACCAAGCTGGTGAAGGACCTGAGCCCCGGGGACCGCGTGCTGGCGGCGGACGACCAGGGCCGGCTGCTCTACAGCGACTTCCTCACTTTCCTGGACCGCGACGACGGCGCCAAGAAGGTCTTCTACGTGATCGAGACGCGGGAGCCGCGCGAGCGCCTGCTGCTCACCGCCGCGCACCTGCTCTTTGTGGCGCCGCACAACGACTCGGCCACCGGGGAGCCCGAGGCGTCCTCGGGCTCGGGGCCGCCTTCCGGGGGCGCACTGGGGCCTCGGGCGCTGTTCGCCAGCCGCGTGCGCCCGGGCCAGCGCGTGTACGTGGTGGCCGAGCGTGACGGGGACCGCCGGCTCCTGCCCGCCGCTGTGCACAGCGTGACCCTAAGCGAGGAGGCCGCGGGCGCCTACGCGCCGCTCACGGCCCAGGGCACCATTCTCATCAACCGGGTGCTGGCCTCGTGCTACGCGGTCATCGAGGAGCACAGCTGGGCGCACCGGGCCTTCGCGCCCTTCCGCCTGGCGCACGCGCTCCTGGCTGCACTGGCGCCCGCGCGCACGGACCGCGGCGGGGACAGCGGCGGCGGGGACCGCGGGGGCGGCGGCGGCAGAGTAGCCCTAACCGCTCCAGGTGCTGCCGACGCTCCGGGTGCGGGGGCCACCGCGGGCATCCACTGGTACTCGCAGCTGCTCTACCAAATAGGCACCTGGCTCCTGGACAGCGAGGCCCTGCACCCGCTGGGCATGGCGGTCAAGTCCAGCTGAAGCCGGGGGGCCGGGGGAGGGGCGCGGGAGGGGGCGGGGCGGGGCAGCAACAGCAACGCAAAGCAAAAAGACACTCGGAAAAGGCGCACGAACCAGACTGAGTTATAATAAGAATAAGAATAATAAAGTAGGACAGTCCAAAGTAGACTCTAAGGAAACAAGGACCCCGGGAAGTTTTGTTGTTGTGCTTAGTTGATATATATTTTTTGAATTTTTTTGGTTATTGTTTTATTTTGGTTATTTTTTCCTCCTCTCCTGGCTATTTATTTGTTTGGTATGAATAGATGTTTTAAATAATATGAACCGGACCTTCAAGAGCCTTAAATAGTTTGTTTCTTGGATAATTTATTATGATCATGTGAACTGTACTCACGGGGGAAAGATTATTTTGTGAGGCCAAGCAACCTGCTCAGAGTCTATTTTTCTACATGTCCCTCGTCCCGGCTGTCAGAAAGCAAACCTCTGTCCCCGCCATCCCTCCCTTCCATCTCCTGCTTCTCAGCAAGTGCAAACTCAAACGTGCTTCATGGGGGTCCACAAATTATATTTTTATACACAGAATTGTAAATTAGATTTTTTGAGAGATCAATACTTAACTGAATTACATTTCATTTTTGAAATAGTGTAAAATATGAAAATATATTATTTTAATTTAACTAGTTTCCGATGTAACAGCCATCTCCTCTGTTGTCTTTATGGTTTCATATTCCCTTTGTATTCACCATTTTGCCACATTCTTGGAAGCCAAGACTGTTACACACACAACATACACACACACTTTTCTTTTTCTTTTCTTTTCTTTTTTTTTTTTTTTTTTTTTTTTGGACAAACTGGAAGAACTGTTATTTTTAACTTCAAAGAATTTATTAGAAAATAATATTTTTTAAAAGCGCACATAGTGACGAGCCCACGAGGATGGAGCCTGCAGTTTGTACAGAGAAAACAAAGGATGTTTTTGCATTAATAAATTGAGAAATAACGCTGTAAATTTACTAAAATGTATTTTTGAATATTTTGTAATAGTTTTATAGAAATAAAATGTGCCATGCACAGAACGCTTAGTATCTAATAACTAAGAATTCCTGTTGCAGCCCTTTTTCTTTTAGTTTTTGGCTTCTTTGTTTGGGAAACCTAGCGCTGACAGGAGCTCCCAATATTCTATTTAGATGTGTTGCTTATACTGTGAACTCAGACTGACTGACTTAGGTAACCAAAGTAGGCACACAAACCAACTTGTTTCTTCTCATGGCTGGAGAAACCTCAGCTCTGTTTGTATTTATTGTGTGAAGCTCTTTCTACACTCCCAAAGGTTGGGAGTGCCATTCGTGGGGACTGTGCTGTCCCCCTCACCCCACCCCTTAACTAGCAAAGCCTGATGTGTAAGCCCAGAGGAGGTGGCCTGGGGATGGCCACCAACAACCTTCTCTTAGGACTCCTGTGTGTGGTTGCTGGGCAGACCCCTGGCCTGACCCTGTTTGTGCTTCTCTGATCTGTAGGGAGGAGGCTCATTGCTGCTTTCTGAGGTCCTGTTGTGTCCCTTCCAGAAAGCATCCTTAGAAGAGAGGACCCGGTTTGATCTTCTCTGAAGCTCCTATCCTCTTTTCTTGAGGGTCCCCTTAAATCTGAGTGGCAAGCCCACAGTGGCGAGGGCCAGTCGCTGGAATGTCGGGGCTGCTGTTGAGGTCCTCAGGCTACACTGGTTGTCTGTGTCACATGGCGGTCGGGCGTGGACTTTGATCCCTGTTGAGAGAGCATGCTGCTGTGGGCGCTGGGCTGGGGAAGGTCCTTCCATGCTTCATGCTGCCTTGGAGGTTTGGCCAAGAGGGTCTCTGCCCTTGGCGGTTGTCAGGGTCCCAGGTGGAGGACTACTCCCAGTTCTTTGGCTTACGGAAGGTGTCTGCCATGCTTTGTGCTTTGGGCCGAATCGTCTGAGCAGGCTGGGCCTTGGAAGAGTTGCGCTGCATGAGCTTGGGGCCTCCCAGCAGCTGCAGCCTGTGTAGAAGGTGGTCCAGGCTTAGGGAACAGGAGTGAACAGACTTCAGCCCCACCTGGCAGGGGCTGGCTCCCGAGGTTGGGCCCAGTCCCTGAGGGTCTGCTCTGCTACGGGTCTGCCCTTGAGTGGCCTTCCGTGGAGGGTGTGTGACCAGGTGGATGGCGCAGGGCCTCTGGAGCCCTCTCCTCAGGAGCAGTCCTCAGCCTTTTTCTGTAAAAGACTTTTCTTTGGTGTTCTAGGTGGTCAGCAGGTTCCAGGCTGGTGTTTACAATCTCGGAGGAAGTGCGATGGTTTCTGTTCTTTTGACAGTTCAGTCTGATTTCAAGTCAGTCGAAAGCGAACCAGAAGCACCGGGCACAGCAGCTCCTCTGGCTGTGTAGACAGACCTGGCAATGTGGCCGTGCAGCCCAGACGATCAGAGAGAAGCCAGGCGTTGACCAAGCCCCAAGGTGCCTGAGGCCATGGTGCAACTCTGCTGGTGACTGGGGCACCTTGGAGCAGAGCTTCACCCGGATGGGAAATCCTCACTCCTGGGTGGCACTCCCTCCTGGACAGGCCCGGTGGCAGAGTGTCCGTGCTGCTGGGTGCTGTCCCCAGCCCTCCTGGTCCATCTTCTTAAGATGCGTCCACTGCTTTATATTTAAAATTCTCTTTTTCACAGGCAAGGAAAGGAAACCACTGCTTAGAGACACTAGGTACAGGGCATCAAGAGGGTGCAGCCCAGCCCCGCCAGGACGAGGCGCCGACTTCTCATTCAGGGTTGACGGAGCCAAGAGTTTGTGCAAAATGTATGCATGGTGGTTGCTGCCAGCCTCCCTCATGACTAAATGCATATCTATTCCTGTCAAAACGTGTATCACAATGTACTTGAAACTGTTATCTTTGTGCTCTATTGTTTGAATAATTAAAGAAATTACAGAGACTCTC",
+            "expected_sequence": "ACAAGCTCTCCAGGCTTGCTACCATTTAAAATCAGACTCTTTTTGTCTTTTGATTGCTGTCTCGCGACCCAACTCCGATGTGTTCCGTTATCAGCGGCCGGCAGCCTGCCATTCCAGCCCCTGTCTGGGTGGGGAGCGGTGGAGAGTCCCCCGCAGCCGCGGCGGGCAAGGTTATATAGGAAGAGAAAGAGCGAGGCAGCCAGCGAGGGAGAGAGCGAGCGGGCGAGCCGGAGCGAGGAAGGGAAAGCGCAAGAGAGAGCGCACACGCACACACCCGCCGCGCGCACTCGCGCACGGACCCGCACGGGGACAGCTCGGAAGTCATCAGTTCCATGGGCGAGATGCTGCTGCTGGCGAGATGTCTGCTGCTAGTCCTCGTCTCCTCGCTGCTGGTATGCTCGGGACTGGCGTGCGGACCGGGCAGGGGGTTCGGGAAGAGGAGGCACCCCAAAAAGCTGACCCCTTTAGCCTACAAGCAGTTTATCCCCAATGTGGCCGAGAAGACCCTAGGCGCCAGCGGAAGGTATGAAGGGAAGATCTCCAGAAACTCCGAGCGATTTAAGGAACTCACCCCCAATTACAACCCCGACATCATATTTAAGGATGAAGAAAACACCGGAGCGGACAGGCTGATGACTCAGGTAGGAACCCAGCGCCGGGGCGTGGAATGTGTGGCTTTCCAGGGGGTTACGAGAAGCCGAACACTTCCAGACTTAACTCTGTTTGCTCTTCGGGCAGATAGGAAGGTGATTTCACCCGCTCCTTCCCCACCCACCTGCCCGCCCCCCATCTCTTCCTCTTCCTGGAGGAGAATGGAGGTCAAGGGTCCAGCTGGAGAAGTTTAGGGTGTGGTGGGGGTGAGGACGGTAACAGACGTGGTTCATTATGGCCCTGATTTGATGAGTCTTGCTACAATGGCCTTCCCCATCCTACCTCTGCCCTGGCTTGTAACTTGGGGAGACCTTCACTTTGGGGGCGTCGGCCCTTTCCAAGTCAGGAGTGGAAATGGAAGGAGAGGCTGGGAATCCCCCTCCCACAAACATGAAGTGGTCTCCTGGTACTGTACGAACGAACGAACGTAGCCTTGGGCATTGGAGCTCAGAGCCCCCACGTTTCCCGTTGCCTCTGTGGTTTTCTTTCCCACCACTACCCCCACCCTGCACCTCCCCACCAAAGAATTCTCAACTGGAAAAGCCAGGAGGCGGTTCTGACAAAAGGCAGGGGCTCCAGGGGAGACTCCGCCCGTCCCTGGGTGGCTGGCTGTATCGCAGAGCTGGCTTTGCGATTGCGTGTCCGCAATTGTGCCCATCAGAGTGTGAATGTATTGATATTTCTTTAAGGATGCTCTTTCGTTCTTCCAAGCCCGAGGTACCTTAGGGGAGGGACTTAGAACTTATTGGCATTGCATCACTTTAGTTTTCAACCTGCTTGCATAAGAATTAAGAGCGAATAAATATTAGTGTGGGGGGAGGGGAAGCTAAGCAAAATATGAATTCCTCTCTCTCTCCCCACCTCCTTTGAGATTTCTGAGCTGCCAATCTCCCAGCCAATTCTAGACTTTCTGAAACTCCATGCACGTATAACTGAAGCCAGAAATGGGTTTCCTTGCAAATATAGGTCAACATCCTTTTTATTGCCCTATTAAAATATTCAAGTCCTACCTTTAGGGCTAGGTGCGTACAGCGGCTGATGGAGTGGCGCTGGTGGGGCGCAAGTGCAGGGGGAGGGTACTGACGGCAGAGAGAGAGGAGCTACCTCCGTGCCGCCCTGCTTCCCGACCCGATTCCCAGGCTTGCTTGAGGCCGAGAAAGGCGAGGGGCAGGCAAGGTAGCCTGCTCCAGCTGTCGGAAGGGAGAGGAATGGGAAATGGTCCTGATTTCCTTGCTCTCCCTCATCTGCTCCCGACCACCTTAAATCTGGACCGCGAGTGTGGACGCGCGCGCCAGTGCCAGACAGCAGCGCGATCCACAATTAACTCTGCACGGGCCATGGGGTGCCCGTTGCGTGCAGCTGGCTGGAGGGAGTTCTCCGGCTAGCCCGAGGCGCCCATCCTCTCGTCACCCTCACTCCCCGCGGAGGAGGGGCCTTGCCAGGGTCCCTCGGAACCCGAGAGGAGGGAGGCACTGCGGAGAGAGCGGCGGGGGCGTGGATACCCGAGGTCCCAGAGCCAGAGTGGGTCAGCTTCTGCCCTGCTCTGCGGGAGGCCAATACCGCAGAAGGGGTCCTGGGCTCGCACACCTTCCCAGGGCTTGGGCCTTGCAGCCCTGCTGCAAAGCTGCAAGCGCACAGAGCCGCGCAGCGAGGCAGACGCCTGCAGCCCCACTTACTCCCGGGTTATCGATCCCCCGCGGCTAGGGTTTCAGTGCGCGAGGGGCTGGGCTGGAGCCGCCGGGCTCTGCTGCTCCACGCGCGGGAGCGCAGGCACCGCAGGAGCTAACAGCAGCGCCGGGCTCGCTGTAGTGTCCCCGGCGGCGGGGGCGCGGAGATGGGGGCGCCCGCGCAGGGGCCGGGGCGCATCGCGGGCTCCGCCGGCCTGCCCTGGGACGCGCCCCCATCCCCAGTCCGCCGCCTGCCTGGCCTCTAGGCCTCCGCGTCCCAGCCGGAGCCCCCAGCCCGGGGGCCTCCCCCCGACCCCCGTCCGCCCTGCCGGGGGACGCAGGGCCCAGCGGCCCCGCGCCCGGCCACTCTCGCCGCCGCGCGCACAGGCAGCATTTGAACTTCTGACCTTCTGTCAACTTCCCTCAGACGAACGAAACGAAAACAAATACTTTTTTCCTTGGGCAGTGGCTATTCCCGTTCCCAACACAAAAGGAGGGGGAAGGACGGCCCAAGTGGGGGTTGGGTGAGGAGAGCCAGGCCGGGATTATCAGGCAGACCCCACAAAGGTCCCCTAAAACCGAGGGGGGTAGGGGCTGGCAGTCTGTGAGGTATCCCCGGTTGATCCCTCCCCTACCTTCCTTCTCCCGATTCCAGGAGTTAAGGGTGGGGGAGGAAGGGATGGGGAAGGCGGAGGCTCGGGTGCTGAGGGCAGGGGCGGGGTGCAGGAGGCGGCAGGGGAGCCCCAGGCCGGCGGGAGGTTTGGGGAGCCTGCTCGGCCGCCCTCATTTTAAATAACCACCTAGGCTCTGCCCCAGGTGCGTGACCCTCTTCTTCTGTCTCCCTCCCTGTCTCTGGGTCTCTAATGTGACTGCCGCCCAAGTCCCTCAACCATGGCGAGATCGTCCCCAGTGGAACTTTCGGAGCAGTTCCGGAACGCAGGAGCTGCCGGTTAATATTAACCCGGGAGAGGAAAGCGCAGACAGACACGCTCTCCCCGCGCGGGCCTAGGTGCCAGGCGAGGGTGCTGGCGGCCAGGGGGCTCCTAAGGGGCAGGAGGCCAGAGGGCCGGATCTGAAGCCTGGAGTGGGGTCCCGAGCCGCTACACTAAATAGATTTAATGTGCGCTCTGGGGCCGCCAGGAAAGACGCTCAGGTATGGGGTTGGGGAGGGGCTGTTCCACCAAGCTTGGGGGAAAGGACAGTGGAGAGAGGTGCGTTTAGGGGCTGGGGCTGTCTTGAAGCTGGGACGCCCCCGCCCCCGCGCTGGGGGAAGCCCACCGGCTGCTGGCGGTGACACTCGCCGGCGCGGCTCGCAGATCAGGGAGGTAGGCGGGAGCTCAGGCGTGGGGAACAACTTGGCCTCCGCCGACACAAAGCCCGGCCCCGGCGGCCCTGCTGGGCTTCACGGTGGCTGCACAGAGTCGGGCTTGATTCGCGGCACACGACCCAATGAATTAATAACCGGCCTGGGCTTCCCGGCTTTGCCTGCGACAATCCCGCCCAGCGCGGGCGGAGGAGAGGCCGCCAGCCGAGGCCGCGCGGAGCCCGGGCCGGAGGAGGGCGCAAGGGGCGGGGGCGCCAACTCCAGCAACCCTCGGCCTCCGCCCCTCACTCGCGCAGCCACCTCCCGTCGCGGCCCGGCTGGACCCGGGTCTCCCTGCCCGGGGTCCTCCATGCCTGCCCAAGTGGCGCAGCTCACAGAGCTGGGGGCCAGGTCATCCTCACCCTGCCGCCCTCTCCCTGGCTGCCCTCCTGGGAAGCTGTTTAAAGCTTCTTCGGCACAGCCCCAGGGGAGGGAGCTGCGGTGGGGTGGGGGGCTTGCATGGGGGTCCCTGTGCGTGTTGGTGGTGTGCGCCTGCGCGCAACGGGCCTCACATCATAGCTCTACACTGACCCTGGTTTACTGATTGATTTTCATGTAAAACGCGTTCAATCCTCAAGATGACCTCACTCAAACTCTGCCCTTCCGACTTTTTTTTTTAACTGCTGGCAGGCCCACAAACATGCAGGCACTGACCTGTTACCAGGGCGGCCCCCAGCCCTACCCCACCCCCAGTTGTTGCATGTTGAACTCTACAACCATATTACTGGGTTTTATTGCTGCCAGATACACAGGACTTTTCCTGTTGCGCAATTTGTCACGTCCCCTTAAAGCGCCGCAGCAGTGGGGCCAGCGTCCTCGCCCCACCCTCTCGAAAGAGTCCCCCCAACCCACGCTACAGTTAGGGCCCTGGATAGAAGCTGTCCCTCCATGGCGACAACCAGACTCCAAGCAGAGCATCCTTCCAGACTGGAGGAGGTTAGAGGTCAGCCCCGCCCTCTGCAGAAGTCACCTTGAAATTGCCCCTCGGCCTCCACTTGGCGCAGCTTCTTGGGGGATGCCACCATCGTCATCTGTGCCAGTTCCCCCTCTTTAAATCCCATGTCCCACCAGCAGCAGCAGGGTAAACATCCAGGAAGCAAGTCAGTGCCCCCACAAACACACACAGTGGATTCAACTGCTTTCTGTCGCATCCTTATCTGAGGGTGACCCCAGAATTCCAGGGGAACCCCCACAATCTGAATCCCAGGTAACCCCGTCTGCATCTGCCTAGTCAGTGTTTCCTGCCTCCTCCCAGGCAACTTCCTGGGAAACTCCCCAGGCGGAGGACTCCGAGACCTCAGGCCTTCCTGTCTCCCCTCCCCCTCCTCTCAAACCCCTCCCCCTCCCTCCACCTCTTCAGTTTGCTCTTCAAACTTGCTGGACGCCATTCTATGCTGGGGCCAAGAACACAAGAGCGGAGGAAGGGAACAGGTTAAAGAAAACAAGAAACACAATCAGACCACAGAAAAGCCAGGCAGAAAAGGGTTCGACGGGCAAAAAGAATGTGGCTGTCCAGATAAAGAATGTCTGTCCCGGCCCCGGCCTGTGCTGCAAGTGGCAACTCACCTAGCCGCCTGCCACCCAGGCTCCCGCCCACCGCGCAGCCCCGCCAGCGGCTTCTCGCCTCCCCTCTGCCTCGGATAGGGTTAGGGCCTGAGGTAAATAAATGCAAGGCCTTCAATTCTCCAAGCAGTGCGCAGTGCATTTTTCTTTATTTCTGGGAACTTGCGCCCAGGTCTCTGTCAGGCCTGCTGTGAGGGATTCTACGCGGGGAGAAGGTGGAGGCTGCGCAGGTGGAGAAAGGGGCCCCAGAAGGGGGGCTAGAAGTGGAGGGCAACGTGGGGGCGGGGCGGGTATCCCAGAGGGTGCCCCTGGAGGGTCCTGTAGTTGATGTCTTAAACATGCAGGTCACTTGTTTCAGAGAAACTTTATTTGCTTCTTAGGCCTCGCTAGGAGCATCGGCTGTTTCAGGACCTGGAGAAAGGCCCCCAGCTCTACCCTGAGAGGACGTGCTCCTCCACGCTCCTCCGCAAATGCTGTCCCTCTTCCCCAGCCCAGGGCCCGGCTCTTCGGTGTGTCTGGGCCATTCCAACCCCCGTCTCCCCACCTCTCCGCATGGCCCTCGCGCCTTGAGACTGGGCAGGGCAGGCTGATGGAGGGGCCGGGAGGGGTGGCGGTTGCCCAGGCTAACGTGTCCGTCGGTGGGGGTCCCCTTGTCTTCGCAGAGGTGTAAGGACAAGTTGAACGCTTTGGCCATCTCGGTGATGAACCAGTGGCCAGGAGTGAAACTGCGGGTGACCGAGGGCTGGGACGAAGATGGCCACCACTCAGAGGAGTCTCTGCACTACGAGGGCCGCGCAGTGGACATCACCACGTCTGACCGCGACCGCAGCAAGTACGGCATGCTGGCCCGCCTGGCGGTGGAGGCCGGCTTCGACTGGGTGTACTACGAGTCCAAGGCACATATCCACTGCTCGGTGAAAGCAGGTAAGCTGGCCCTGGCCCCCCGGATCCGACCCAAGGAAGGCCATTGGCGCACCTCGGCTTGATTCAAGAGAAAAAGAAACCTGGGGGGAGGCTGAGGGCCAGGAGCAGGGTCGCTGGGCGATGACTGCGTTTCCGCGGTGGAACCTGCCCTGTGAGGTGCCGGCCCCTCGAAATCACCCCTACCTTTGAGGCCACAGAGCCCAAGGTTCTCCATGCCCCGAGATGGGGTCCTGTGGCTTCCTGCCCGCTTCTGGAGCCCCCACTGCAGGGGGTGGGAAAGCGTGACTGGGGGAGGGGCGCTAGGCCCTTCCAGGCGAGGGAAGACAGCCCTGCGCGGTTAGCCAGGTCTGGGCGAGCTCCTTCCTCTCGTTTAGGGCTTAAGAACCAACCGCCCCCACCCGCTATCCCAAGCGCAGGGGTGTCTATCCTGCCCCGGAGCCCGCGTCCTGGCTCCTCCCCGCCGGGCGCCCGTGGATCCTAAGCTGCCTTTGGGGAGAGGCCTGGTGGGCGGCAGTAAACCCAGGGGCAACCACCTCCAGCATCTGGAGGCGGCGCGCCCGGAGCCTGCGTTCCTACTGGGAGCCGGGCCGGGACGCCCTGGGCGGCGGGCAGGCCCCGAAACGCCGGCCCGAGTCGGCGCGAGGCTGTCTTCTCTGGGCCTGCAACGCCACACGCTGTTGCCGGCGAGGAACAGCCGTGGAGGAGGCGCCATCGCGCGCACGCAAACCTCCGGCCCGAGGCTGTGTGCACAGCGCTCTTCTCCGCCCGCATAAATTGGCACGTTTAGCAAAGCCGTTCACGGTGAATTTCGGGGAAACTCTGCCTTCCTCAACCCCCTTCCAGGCTTCCCTACTTGTCTCCTAAATTCCATGTTAATGGCACTATGTTAGTAGGAAAACACTGTTAAGGTGTCAAGGCACACTTGTAGGTAAAGGCTAGAGTGGCTTCTCGTCCCCACAGAAAGCAAAGGCGTGGAGCGGGGGCGGCAGGGGCGGGTGTGCGGCCCGGAGAGCTCCCGGCTGCAGGCAGGCAGGAGGCGGCGCCCCCACCTCGCGGGCTCGGCGGCGGCCCCTGGGCCCAGGGCGCCCCCTGCGCAAAACCTCCTCCCCGGCTCCCTGCCCGCGGGGTCCCCCTAGCGGGGGTCTCCGGAGGCCTCCTCCCAAGTGAGCAGCGCTAATCCATCCCCCGGATCGCGCCGGGAGAGCGGAGCCGCGGCGCGGGAGCCGCTCATTGGCATTCTGAGCACACGGGCGGGGGCGCGGGGCGCAGCGTGTCAAGCCGGGCCGTGCGACTCGACGACTCGGGCTCGCCAGCGCCCGGGGTCGCATTCCGGGGGGCTACGGAGGGCCTCCAACGGCCAGCCCCGCACTTCATGCCAGAGAAACCGATGAGAAGATTAAAAGCCCCCTGTAATTCCAGCAGGAAGATTCTTTCTGGCAATCTCTATTTGCAAAAAGCATGATCCCGGAGATTGGAATGCAAAGAAGACGGCCCTCCCCGCCCTCCTCCCCGGCCCCCTGCGCTCCGCCCCAACTTCAATTATTGTCCTGGGGACAGTGAGCCTCAGAGAGCGACAGAGGGCTCGAGAAAGCGGGTAGTCAAGGGGCCTTGAGACCCGGCGCTTCCAGCGCTCCGAACAGGCCCCGCCATTTAAAATTCAAATACACATCTTGAGTGCTTGGAAGAGAGGCCTGGCTGTGCAAATAGTGCTTGTGAATTGCACACGGGGTGGGGGGGGGTTGCACCTGAGCAAATAGGGAGGGGGAGGCCCGCGAGCTGGGGAGAGAGTGAGCTGAGAACAGGGAGGGGAGAAAATGGAAGTGTCCCCTTCCAAGAGTGTCTCCTGTTTATCCCAGAAATCACAATGACAATGCTGGGCCCTTTATTGGATTTTAATTAGAAAATCCACACAAGCCTCGGATTTTCACACCTCGGCCAATCTCTGGAATGTTTGTCCAGTTGCTACAACTACTGCAGCTATTTTTCACTCCCCGCCCCCGCCCCTCCGCAGGCCCACGCCGAGGCGCGGCAGGGTGCTGCGGGCAGGCGGGCAGGCGGGCAGGCGGGCCAGGGGTTTCCGCCGCGCAGCCCGGGTGCTGAGTGCGCGAGCAGGCGCCGCGCCCCGCGCCGGGGCGGGAGGGAAGGAGGGTGCGCCCGGCGCCCGCGGGAGCTCAAGGAGGCTTCCTGAGGAATCCAAGTGCAGAGCAAACACCCTCTGGATGGATTCGCGGCGAGGCCGGGTGTGTGCGGAGCTGGGGGTGGGGTTGGAGGAAGGCGGAAGGAAAGAGTGTCACCGGCCTCTGCAGGAAACGCCAGCCAACCTCTGTGACCGCCAGCCCAGACTTAGAGAGTCGTTAAGGAATGTGTCGGAATCCTGTCCCTGGGGCAGTGGGGTTGGGGGAGGGAGGTGTGTGCGGGACCCGCCTGGAATCAATCGCCCCGCCCCGCGCCTTGCGCACCCCTGGCCTAGGAGCGCGGGCACCAAGCGTGCGCCCTCCTCCCCGAGACGCGCCTCCCTCTCGGAACTCAATGCCCTGTCCTCTCTTCTTTCCCTTCTCCTCACCCGCAGAGAACTCGGTGGCGGCCAAATCGGGAGGCTGCTTCCCGGGCTCGGCCACGGTGCACCTGGAGCAGGGCGGCACCAAGCTGGTGAAGGACCTGAGCCCCGGGGACCGCGTGCTGGCGGCGGACGACCAGGGCCGGCTGCTCTACAGCGACTTCCTCACTTTCCTGGACCGCGACGACGGCGCCAAGAAGGTCTTCTACGTGATCGAGACGCGGGAGCCGCGCGAGCGCCTGCTGCTCACCGCCGCGCACCTGCTCTTTGTGGCGCCGCACAACGACTCGGCCACCGGGGAGCCCGAGGCGTCCTCGGGCTCGGGGCCGCCTTCCGGGGGCGCACTGGGGCCTCGGGCGCTGTTCGCCAGCCGCGTGCGCCCGGGCCAGCGCGTGTACGTGGTGGCCGAGCGTGACGGGGACCGCCGGCTCCTGCCCGCCGCTGTGCACAGCGTGACCCTAAGCGAGGAGGCCGCGGGCGCCTACGCGCCGCTCACGGCCCAGGGCACCATTCTCATCAACCGGGTGCTGGCCTCGTGCTACGCGGTCATCGAGGAGCACAGCTGGGCGCACCGGGCCTTCGCGCCCTTCCGCCTGGCGCACGCGCTCCTGGCTGCACTGGCGCCCGCGCGCACGGACCGCGGCGGGGACAGCGGCGGCGGGGACCGCGGGGGCGGCGGCGGCAGAGTAGCCCTAACCGCTCCAGGTGCTGCCGACGCTCCGGGTGCGGGGGCCACCGCGGGCATCCACTGGTACTCGCAGCTGCTCTACCAAATAGGCACCTGGCTCCTGGACAGCGAGGCCCTGCACCCGCTGGGCATGGCGGTCAAGTCCAGCTGAAGCCGGGGGGCCGGGGGAGGGGCGCGGGAGGGGGCGGGGCGGGGCAGCAACAGCAACGCAAAGCAAAAAGACACTCGGAAAAGGCGCACGAACCAGACTGAGTTATAATAAGAATAAGAATAATAAAGTAGGACAGTCCAAAGTAGACTCTAAGGAAACAAGGACCCCGGGAAGTTTTGTTGTTGTGCTTAGTTGATATATATTTTTTGAATTTTTTTGGTTATTGTTTTATTTTGGTTATTTTTTCCTCCTCTCCTGGCTATTTATTTGTTTGGTATGAATAGATGTTTTAAATAATATGAACCGGACCTTCAAGAGCCTTAAATAGTTTGTTTCTTGGATAATTTATTATGATCATGTGAACTGTACTCACGGGGGAAAGATTATTTTGTGAGGCCAAGCAACCTGCTCAGAGTCTATTTTTCTACATGTCCCTCGTCCCGGCTGTCAGAAAGCAAACCTCTGTCCCCGCCATCCCTCCCTTCCATCTCCTGCTTCTCAGCAAGTGCAAACTCAAACGTGCTTCATGGGGGTCCACAAATTATATTTTTATACACAGAATTGTAAATTAGATTTTTTGAGAGATCAATACTTAACTGAATTACATTTCATTTTTGAAATAGTGTAAAATATGAAAATATATTATTTTAATTTAACTAGTTTCCGATGTAACAGCCATCTCCTCTGTTGTCTTTATGGTTTCATATTCCCTTTGTATTCACCATTTTGCCACATTCTTGGAAGCCAAGACTGTTACACACACAACATACACACACACTTTTCTTTTTCTTTTCTTTTCTTTTTTTTTTTTTTTTTTTTTTTTGGACAAACTGGAAGAACTGTTATTTTTAACTTCAAAGAATTTATTAGAAAATAATATTTTTTAAAAGCGCACATAGTGACGAGCCCACGAGGATGGAGCCTGCAGTTTGTACAGAGAAAACAAAGGATGTTTTTGCATTAATAAATTGAGAAATAACGCTGTAAATTTACTAAAATGTATTTTTGAATATTTTGTAATAGTTTTATAGAAATAAAATGTGCCATGCACAGAACGCTTAGTATCTAATAACTAAGAATTCCTGTTGCAGCCCTTTTTCTTTTAGTTTTTGGCTTCTTTGTTTGGGAAACCTAGCGCTGACAGGAGCTCCCAATATTCTATTTAGATGTGTTGCTTATACTGTGAACTCAGACTGACTGACTTAGGTAACCAAAGTAGGCACACAAACCAACTTGTTTCTTCTCATGGCTGGAGAAACCTCAGCTCTGTTTGTATTTATTGTGTGAAGCTCTTTCTACACTCCCAAAGGTTGGGAGTGCCATTCGTGGGGACTGTGCTGTCCCCCTCACCCCACCCCTTAACTAGCAAAGCCTGATGTGTAAGCCCAGAGGAGGTGGCCTGGGGATGGCCACCAACAACCTTCTCTTAGGACTCCTGTGTGTGGTTGCTGGGCAGACCCCTGGCCTGACCCTGTTTGTGCTTCTCTGATCTGTAGGGAGGAGGCTCATTGCTGCTTTCTGAGGTCCTGTTGTGTCCCTTCCAGAAAGCATCCTTAGAAGAGAGGACCCGGTTTGATCTTCTCTGAAGCTCCTATCCTCTTTTCTTGAGGGTCCCCTTAAATCTGAGTGGCAAGCCCACAGTGGCGAGGGCCAGTCGCTGGAATGTCGGGGCTGCTGTTGAGGTCCTCAGGCTACACTGGTTGTCTGTGTCACATGGCGGTCGGGCGTGGACTTTGATCCCTGTTGAGAGAGCATGCTGCTGTGGGCGCTGGGCTGGGGAAGGTCCTTCCATGCTTCATGCTGCCTTGGAGGTTTGGCCAAGAGGGTCTCTGCCCTTGGCGGTTGTCAGGGTCCCAGGTGGAGGACTACTCCCAGTTCTTTGGCTTACGGAAGGTGTCTGCCATGCTTTGTGCTTTGGGCCGAATCGTCTGAGCAGGCTGGGCCTTGGAAGAGTTGCGCTGCATGAGCTTGGGGCCTCCCAGCAGCTGCAGCCTGTGTAGAAGGTGGTCCAGGCTTAGGGAACAGGAGTGAACAGACTTCAGCCCCACCTGGCAGGGGCTGGCTCCCGAGGTTGGGCCCAGTCCCTGAGGGTCTGCTCTGCTACGGGTCTGCCCTTGAGTGGCCTTCCGTGGAGGGTGTGTGACCAGGTGGATGGCGCAGGGCCTCTGGAGCCCTCTCCTCAGGAGCAGTCCTCAGCCTTTTTCTGTAAAAGACTTTTCTTTGGTGTTCTAGGTGGTCAGCAGGTTCCAGGCTGGTGTTTACAATCTCGGAGGAAGTGCGATGGTTTCTGTTCTTTTGACAGTTCAGTCTGATTTCAAGTCAGTCGAAAGCGAACCAGAAGCACCGGGCACAGCAGCTCCTCTGGCTGTGTAGACAGACCTGGCAATGTGGCCGTGCAGCCCAGACGATCAGAGAGAAGCCAGGCGTTGACCAAGCCCCAAGGTGCCTGAGGCCATGGTGCAACTCTGCTGGTGACTGGGGCACCTTGGAGCAGAGCTTCACCCGGATGGGAAATCCTCACTCCTGGGTGGCACTCCCTCCTGGACAGGCCCGGTGGCAGAGTGTCCGTGCTGCTGGGTGCTGTCCCCAGCCCTCCTGGTCCATCTTCTTAAGATGCGTCCACTGCTTTATATTTAAAATTCTCTTTTTCACAGGCAAGGAAAGGAAACCACTGCTTAGAGACACTAGGTACAGGGCATCAAGAGGGTGCAGCCCAGCCCCGCCAGGACGAGGCGCCGACTTCTCATTCAGGGTTGACGGAGCCAAGAGTTTGTGCAAAATGTATGCATGGTGGTTGCTGCCAGCCTCCCTCATGACTAAATGCATATCTATTCCTGTCAAAACGTGTATCACAATGTACTTGAAACTGTTATCTTTGTGCTCTATTGTTTGAATAATTAAAGAAATTACAGAGACTCTC",
+            "sequence_file": "data/biochemistry/supplied_partitions_gibson.fasta",
+            "sequence_file_sha256": "4aebeab7369b9974122cc98359747383ed4b85d4acd8744a658f9d7bc9227fd8"
+          }
+        },
+        "failure_mode_assessment": {
+          "constructed": true,
+          "active_faults": [],
+          "resolved_faults": [
+            {
+              "kind": "inactive_ligase",
+              "component": "gibson_master_mix",
+              "source_well": "1:B2",
+              "active": false
+            }
+          ],
+          "passed": true
+        },
+        "sdk_diagnostics": ""
+      },
+      "passed": true
+    }
+  ],
+  "passed": true
+}

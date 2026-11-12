@@ -1,0 +1,27 @@
+[11/10/26 16:37:12] WARNING  sample=ambiguous_recovery_01            run.py:2555
+                             Sample error (id:                                  
+                             ambiguous_recovery_01, epoch: 1):                  
+                             RetryError(<Future at 0x16c218440                  
+                             state=finished raised RateLimitError>))            
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ot2_mixing (6 samples): openrouter/moonshotai/kimi-k3                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+max_retries: 1, max_connections: 1, max_tokens: 5000, temperature: 0.0,         
+fail_on_error: False, max_samples: 1, log_model_api: True, message_limit: None, 
+suite: failures, judge_model: None, judge_max_tokens: 8000, observation_mode:   
+ambiguous, observation_seed: 41, dataset: (samples)                             
+                                                                                
+total time:                    0:31:32                                          
+openrouter/moonshotai/kimi-k3  3,690,798 tokens [I: 224,225, CW: 0, CR:         
+                             3,323,392, O: 143,181, R: 115,598]                 
+                                                                                
+ot2_mixture                                                                     
+accuracy     0.800                                                              
+stderr       0.200                                                              
+                                                                                
+WARNING: 1 of 6 executed samples (16%) had errors and were not scored.          
+                                                                                
+Log:                                                                            
+results/kimi_k3_budget10/failures_ambiguous/20261110T053504Z/2026-11-10T05-35-04
+-00-00_ot2-mixing_drfSx7nTdWiL4GLMEFoPsw.eval                                   
+                                                                                Run record and artifacts: /Users/aedanmccarthy/projects/MATS-work-test/results/kimi_k3_budget10/failures_ambiguous/20261110T053504Z

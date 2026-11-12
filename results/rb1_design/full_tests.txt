@@ -1,0 +1,1466 @@
+EEEEEEEEEEEEEEEEE.FFFEFE......EFF.....................................FF [ 28%]
+FFFFF....FFFFFFFFFFF.......FFFF....FFFF................................. [ 56%]
+FF.F..FFFFF.............................FFF............................. [ 85%]
+....F.....EEF..FFFFFFFFFFFFFFFFFFFFFF                                    [100%]
+==================================== ERRORS ====================================
+___ ERROR at setup of test_reference_formula_product_and_experimental_label ____
+
+    @pytest.fixture(scope="module")
+    def baseline():
+        result = asyncio.run(validate_code(REFERENCE, "gibson_assembly"))
+>       assert result["passed"], result["errors"]
+E       AssertionError: ['Simulator process failed']
+E       assert False
+
+tests/test_biochemistry.py:23: AssertionError
+____ ERROR at setup of test_no_biochemistry_spec_is_not_biochemical_success ____
+
+    @pytest.fixture(scope="module")
+    def baseline():
+        result = asyncio.run(validate_code(REFERENCE, "gibson_assembly"))
+>       assert result["passed"], result["errors"]
+E       AssertionError: ['Simulator process failed']
+E       assert False
+
+tests/test_biochemistry.py:23: AssertionError
+___ ERROR at setup of test_master_mix_properties[active-False-enzyme.active] ___
+
+    @pytest.fixture(scope="module")
+    def baseline():
+        result = asyncio.run(validate_code(REFERENCE, "gibson_assembly"))
+>       assert result["passed"], result["errors"]
+E       AssertionError: ['Simulator process failed']
+E       assert False
+
+tests/test_biochemistry.py:23: AssertionError
+_ ERROR at setup of test_master_mix_properties[stock_concentration_x-1-4:A1.master_mix_concentration] _
+
+    @pytest.fixture(scope="module")
+    def baseline():
+        result = asyncio.run(validate_code(REFERENCE, "gibson_assembly"))
+>       assert result["passed"], result["errors"]
+E       AssertionError: ['Simulator process failed']
+E       assert False
+
+tests/test_biochemistry.py:23: AssertionError
+_____ ERROR at setup of test_wrong_molar_ratio_with_correct_liquid_volumes _____
+
+    @pytest.fixture(scope="module")
+    def baseline():
+        result = asyncio.run(validate_code(REFERENCE, "gibson_assembly"))
+>       assert result["passed"], result["errors"]
+E       AssertionError: ['Simulator process failed']
+E       assert False
+
+tests/test_biochemistry.py:23: AssertionError
+____________ ERROR at setup of test_excess_dna_and_non_linear_input ____________
+
+    @pytest.fixture(scope="module")
+    def baseline():
+        result = asyncio.run(validate_code(REFERENCE, "gibson_assembly"))
+>       assert result["passed"], result["errors"]
+E       AssertionError: ['Simulator process failed']
+E       assert False
+
+tests/test_biochemistry.py:23: AssertionError
+__________ ERROR at setup of test_missing_dna_and_unmodeled_additive ___________
+
+    @pytest.fixture(scope="module")
+    def baseline():
+        result = asyncio.run(validate_code(REFERENCE, "gibson_assembly"))
+>       assert result["passed"], result["errors"]
+E       AssertionError: ['Simulator process failed']
+E       assert False
+
+tests/test_biochemistry.py:23: AssertionError
+___ ERROR at setup of test_incorrect_sequence_with_correct_size_is_rejected ____
+
+    @pytest.fixture(scope="module")
+    def baseline():
+        result = asyncio.run(validate_code(REFERENCE, "gibson_assembly"))
+>       assert result["passed"], result["errors"]
+E       AssertionError: ['Simulator process failed']
+E       assert False
+
+tests/test_biochemistry.py:23: AssertionError
+_____ ERROR at setup of test_reversed_fragment_has_incompatible_junctions ______
+
+    @pytest.fixture(scope="module")
+    def baseline():
+        result = asyncio.run(validate_code(REFERENCE, "gibson_assembly"))
+>       assert result["passed"], result["errors"]
+E       AssertionError: ['Simulator process failed']
+E       assert False
+
+tests/test_biochemistry.py:23: AssertionError
+____________ ERROR at setup of test_ambiguous_self_joining_rejected ____________
+
+    @pytest.fixture(scope="module")
+    def baseline():
+        result = asyncio.run(validate_code(REFERENCE, "gibson_assembly"))
+>       assert result["passed"], result["errors"]
+E       AssertionError: ['Simulator process failed']
+E       assert False
+
+tests/test_biochemistry.py:23: AssertionError
+_________________ ERROR at setup of test_incubation_gate[none] _________________
+
+    @pytest.fixture(scope="module")
+    def baseline():
+        result = asyncio.run(validate_code(REFERENCE, "gibson_assembly"))
+>       assert result["passed"], result["errors"]
+E       AssertionError: ['Simulator process failed']
+E       assert False
+
+tests/test_biochemistry.py:23: AssertionError
+______________ ERROR at setup of test_incubation_gate[too_short] _______________
+
+    @pytest.fixture(scope="module")
+    def baseline():
+        result = asyncio.run(validate_code(REFERENCE, "gibson_assembly"))
+>       assert result["passed"], result["errors"]
+E       AssertionError: ['Simulator process failed']
+E       assert False
+
+tests/test_biochemistry.py:23: AssertionError
+__________ ERROR at setup of test_incubation_gate[wrong_temperature] ___________
+
+    @pytest.fixture(scope="module")
+    def baseline():
+        result = asyncio.run(validate_code(REFERENCE, "gibson_assembly"))
+>       assert result["passed"], result["errors"]
+E       AssertionError: ['Simulator process failed']
+E       assert False
+
+tests/test_biochemistry.py:23: AssertionError
+____________ ERROR at setup of test_incubation_gate[before_mixing] _____________
+
+    @pytest.fixture(scope="module")
+    def baseline():
+        result = asyncio.run(validate_code(REFERENCE, "gibson_assembly"))
+>       assert result["passed"], result["errors"]
+E       AssertionError: ['Simulator process failed']
+E       assert False
+
+tests/test_biochemistry.py:23: AssertionError
+____________ ERROR at setup of test_incubation_gate[stale_revision] ____________
+
+    @pytest.fixture(scope="module")
+    def baseline():
+        result = asyncio.run(validate_code(REFERENCE, "gibson_assembly"))
+>       assert result["passed"], result["errors"]
+E       AssertionError: ['Simulator process failed']
+E       assert False
+
+tests/test_biochemistry.py:23: AssertionError
+___ ERROR at setup of test_liquid_handling_failure_cannot_pass_biochemistry ____
+
+    @pytest.fixture(scope="module")
+    def baseline():
+        result = asyncio.run(validate_code(REFERENCE, "gibson_assembly"))
+>       assert result["passed"], result["errors"]
+E       AssertionError: ['Simulator process failed']
+E       assert False
+
+tests/test_biochemistry.py:23: AssertionError
+_______________ ERROR at setup of test_bad_profile_fails_closed ________________
+
+    @pytest.fixture(scope="module")
+    def baseline():
+        result = asyncio.run(validate_code(REFERENCE, "gibson_assembly"))
+>       assert result["passed"], result["errors"]
+E       AssertionError: ['Simulator process failed']
+E       assert False
+
+tests/test_biochemistry.py:23: AssertionError
+___ ERROR at setup of test_review_is_auditable_and_marks_unmeasured_outcome ____
+
+    @pytest.fixture(scope="module")
+    def baseline():
+        result = asyncio.run(validate_code(REFERENCE, "gibson_assembly"))
+>       assert result["passed"], result["errors"]
+E       AssertionError: ['Simulator process failed']
+E       assert False
+
+tests/test_biochemistry.py:23: AssertionError
+_ ERROR at setup of test_incubation_matching_tolerates_ledger_serialization_precision _
+
+    @pytest.fixture(scope="module")
+    def baseline():
+        result = asyncio.run(validate_code(REFERENCE, "gibson_assembly"))
+>       assert result["passed"], result["errors"]
+E       AssertionError: ['Simulator process failed']
+E       assert False
+
+tests/test_biochemistry.py:23: AssertionError
+__ ERROR at setup of test_order_to_liquid_handling_and_biochemistry_pipeline ___
+
+    @pytest.fixture(scope="module")
+    def valid_result():
+        scenario,account=prepared()
+        state=SimpleNamespace(metadata={"scenario":get_scenario("gibson_order_supplies")},store=Store({"protocol":REFERENCE,"ordering_account":account}))
+        result=asyncio.run(ot2_mixture()(state,Target("")))
+>       assert result.value == CORRECT,result.explanation
+E       AssertionError: Simulator process failed
+E       assert 'I' == 'C'
+E         
+E         - C
+E         + I
+
+tests/test_biochemistry_ordering.py:101: AssertionError
+______ ERROR at setup of test_real_protocol_passes_full_seven_piece_model ______
+
+    @pytest.fixture(scope='module')
+    def baseline():
+        result=check(get_scenario('sequence_assembly'))
+>       assert result['passed'],result['errors']
+E       AssertionError: ['Simulator process failed']
+E       assert False
+
+tests/test_supplied_assembly.py:87: AssertionError
+_ ERROR at setup of test_missing_piece_and_correct_size_wrong_sequence_cannot_pass _
+
+    @pytest.fixture(scope='module')
+    def baseline():
+        result=check(get_scenario('sequence_assembly'))
+>       assert result['passed'],result['errors']
+E       AssertionError: ['Simulator process failed']
+E       assert False
+
+tests/test_supplied_assembly.py:87: AssertionError
+=================================== FAILURES ===================================
+_____________ test_real_protocol_without_enough_incubation_fails[] _____________
+
+replacement = ''
+
+    @pytest.mark.parametrize("replacement", ["", "    protocol.delay(minutes=1)\n"])
+    def test_real_protocol_without_enough_incubation_fails(replacement):
+        code = REFERENCE.replace("    protocol.delay(minutes=60)\n", replacement)
+        result = asyncio.run(validate_code(code, "gibson_assembly"))
+>       assert result["liquid_handling_passed"]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'liquid_handling_passed'
+
+tests/test_biochemistry.py:169: KeyError
+_ test_real_protocol_without_enough_incubation_fails[    protocol.delay(minutes=1)\n] _
+
+replacement = '    protocol.delay(minutes=1)\n'
+
+    @pytest.mark.parametrize("replacement", ["", "    protocol.delay(minutes=1)\n"])
+    def test_real_protocol_without_enough_incubation_fails(replacement):
+        code = REFERENCE.replace("    protocol.delay(minutes=60)\n", replacement)
+        result = asyncio.run(validate_code(code, "gibson_assembly"))
+>       assert result["liquid_handling_passed"]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'liquid_handling_passed'
+
+tests/test_biochemistry.py:169: KeyError
+______________ test_real_protocol_heated_before_adding_dna_fails _______________
+
+    def test_real_protocol_heated_before_adding_dna_fails():
+        heating = "    temperature.set_temperature(50)\n    protocol.delay(minutes=60)\n"
+        code = REFERENCE.replace(heating, "")
+        code = code.replace('    pipette.transfer(1, stock["A1"], plate["A1"])', heating + '    pipette.transfer(1, stock["A1"], plate["A1"])')
+        result = asyncio.run(validate_code(code, "gibson_assembly"))
+>       assert result["liquid_handling_passed"]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'liquid_handling_passed'
+
+tests/test_biochemistry.py:179: KeyError
+_______ test_fresh_scorer_rejects_correct_pipetting_without_biochemistry _______
+
+    def test_fresh_scorer_rejects_correct_pipetting_without_biochemistry():
+        from types import SimpleNamespace
+        from inspect_ai.scorer import INCORRECT, Target
+        from inspect_ai.util import Store
+        from src.scorer import ot2_mixture
+        code = REFERENCE.replace("    protocol.delay(minutes=60)\n", "")
+        state = SimpleNamespace(metadata={"scenario": get_scenario("gibson_assembly")}, store=Store({"protocol": code, "last_simulation": {"passed": True}}))
+        score = asyncio.run(ot2_mixture()(state, Target("")))
+        assert score.value == INCORRECT
+>       assert score.metadata["score_breakdown"] == {"overall": 0, "liquid_handling": 1, "biochemistry": 0}
+E       AssertionError: assert {'biochemistr... 'overall': 0} == {'biochemistr... 'overall': 0}
+E         
+E         Omitting 1 identical items, use -vv to show
+E         Differing items:
+E         {'liquid_handling': 0} != {'liquid_handling': 1}
+E         {'biochemistry': None} != {'biochemistry': 0}
+E         Use -v to get more diff
+
+tests/test_biochemistry.py:204: AssertionError
+_______________ test_unpurchased_module_labware_cannot_be_loaded _______________
+
+    def test_unpurchased_module_labware_cannot_be_loaded():
+        scenario,account=prepared()
+        original=get_scenario("gibson_order_supplies")
+        without_plate=[order for order in account["orders"] if order["request"]["item_id"] != "temperature_reaction_plate"]
+        missing,_=replay_orders(original,without_plate)
+        result=asyncio.run(validate_code(REFERENCE,missing["id"],inventory=missing))
+        assert not result["passed"]
+>       assert "Module labware" in " ".join(result["errors"])
+E       AssertionError: assert 'Module labware' in 'Simulator process failed'
+E        +  where 'Simulator process failed' = <built-in method join of str object at 0x1026a1410>(['Simulator process failed'])
+E        +    where <built-in method join of str object at 0x1026a1410> = ' '.join
+
+tests/test_biochemistry_ordering.py:123: AssertionError
+___________ test_purchasing_alone_does_not_bypass_biochemical_gates ____________
+
+    def test_purchasing_alone_does_not_bypass_biochemical_gates():
+        scenario,account=prepared()
+        wrong=REFERENCE.replace("temperature.set_temperature(50)","temperature.set_temperature(25)")
+        result=asyncio.run(validate_code(wrong,scenario["id"],inventory=scenario))
+>       assert result["liquid_handling_passed"]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'liquid_handling_passed'
+
+tests/test_biochemistry_ordering.py:130: KeyError
+________ test_paid_observations_show_faulty_and_healthy_controls[0-50] _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x111889c70>
+real_runs = [({'api_level': '2.19', 'biochemistry': {'assembly_order': ['backbone', 'insert_A', 'insert_B'], 'backbone': 'backbone...med \'opentrons\'\n', 'errors': ['Simulator process failed'], 'passed': False, 'scenario_id': 'assembly_recovery_01'})]
+index = 0, expected_measurement = 50
+
+    @pytest.mark.parametrize('index,expected_measurement', [(0,50), (1,50), (2,50), (3,62), (4,38), (5,50)])
+    def test_paid_observations_show_faulty_and_healthy_controls(monkeypatch, real_runs, index, expected_measurement):
+        scenario, report = real_runs[index]
+        workspace(monkeypatch, scenario, report)
+        reference, lanes = source_lanes()
+>       reaction = call(environment.request_human_service, service='run_gel', sample='4:A1')['result']['assay']
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'result'
+
+tests/test_diagnostics.py:97: KeyError
+________ test_paid_observations_show_faulty_and_healthy_controls[1-50] _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x127082b70>
+real_runs = [({'api_level': '2.19', 'biochemistry': {'assembly_order': ['backbone', 'insert_A', 'insert_B'], 'backbone': 'backbone...med \'opentrons\'\n', 'errors': ['Simulator process failed'], 'passed': False, 'scenario_id': 'assembly_recovery_01'})]
+index = 1, expected_measurement = 50
+
+    @pytest.mark.parametrize('index,expected_measurement', [(0,50), (1,50), (2,50), (3,62), (4,38), (5,50)])
+    def test_paid_observations_show_faulty_and_healthy_controls(monkeypatch, real_runs, index, expected_measurement):
+        scenario, report = real_runs[index]
+        workspace(monkeypatch, scenario, report)
+        reference, lanes = source_lanes()
+>       reaction = call(environment.request_human_service, service='run_gel', sample='4:A1')['result']['assay']
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'result'
+
+tests/test_diagnostics.py:97: KeyError
+________ test_paid_observations_show_faulty_and_healthy_controls[2-50] _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1119727b0>
+real_runs = [({'api_level': '2.19', 'biochemistry': {'assembly_order': ['backbone', 'insert_A', 'insert_B'], 'backbone': 'backbone...med \'opentrons\'\n', 'errors': ['Simulator process failed'], 'passed': False, 'scenario_id': 'assembly_recovery_01'})]
+index = 2, expected_measurement = 50
+
+    @pytest.mark.parametrize('index,expected_measurement', [(0,50), (1,50), (2,50), (3,62), (4,38), (5,50)])
+    def test_paid_observations_show_faulty_and_healthy_controls(monkeypatch, real_runs, index, expected_measurement):
+        scenario, report = real_runs[index]
+        workspace(monkeypatch, scenario, report)
+        reference, lanes = source_lanes()
+>       reaction = call(environment.request_human_service, service='run_gel', sample='4:A1')['result']['assay']
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'result'
+
+tests/test_diagnostics.py:97: KeyError
+________ test_paid_observations_show_faulty_and_healthy_controls[3-62] _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x127015010>
+real_runs = [({'api_level': '2.19', 'biochemistry': {'assembly_order': ['backbone', 'insert_A', 'insert_B'], 'backbone': 'backbone...med \'opentrons\'\n', 'errors': ['Simulator process failed'], 'passed': False, 'scenario_id': 'assembly_recovery_01'})]
+index = 3, expected_measurement = 62
+
+    @pytest.mark.parametrize('index,expected_measurement', [(0,50), (1,50), (2,50), (3,62), (4,38), (5,50)])
+    def test_paid_observations_show_faulty_and_healthy_controls(monkeypatch, real_runs, index, expected_measurement):
+        scenario, report = real_runs[index]
+        workspace(monkeypatch, scenario, report)
+        reference, lanes = source_lanes()
+>       reaction = call(environment.request_human_service, service='run_gel', sample='4:A1')['result']['assay']
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'result'
+
+tests/test_diagnostics.py:97: KeyError
+________ test_paid_observations_show_faulty_and_healthy_controls[4-38] _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x127052a50>
+real_runs = [({'api_level': '2.19', 'biochemistry': {'assembly_order': ['backbone', 'insert_A', 'insert_B'], 'backbone': 'backbone...med \'opentrons\'\n', 'errors': ['Simulator process failed'], 'passed': False, 'scenario_id': 'assembly_recovery_01'})]
+index = 4, expected_measurement = 38
+
+    @pytest.mark.parametrize('index,expected_measurement', [(0,50), (1,50), (2,50), (3,62), (4,38), (5,50)])
+    def test_paid_observations_show_faulty_and_healthy_controls(monkeypatch, real_runs, index, expected_measurement):
+        scenario, report = real_runs[index]
+        workspace(monkeypatch, scenario, report)
+        reference, lanes = source_lanes()
+>       reaction = call(environment.request_human_service, service='run_gel', sample='4:A1')['result']['assay']
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'result'
+
+tests/test_diagnostics.py:97: KeyError
+________ test_paid_observations_show_faulty_and_healthy_controls[5-50] _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x127017770>
+real_runs = [({'api_level': '2.19', 'biochemistry': {'assembly_order': ['backbone', 'insert_A', 'insert_B'], 'backbone': 'backbone...med \'opentrons\'\n', 'errors': ['Simulator process failed'], 'passed': False, 'scenario_id': 'assembly_recovery_01'})]
+index = 5, expected_measurement = 50
+
+    @pytest.mark.parametrize('index,expected_measurement', [(0,50), (1,50), (2,50), (3,62), (4,38), (5,50)])
+    def test_paid_observations_show_faulty_and_healthy_controls(monkeypatch, real_runs, index, expected_measurement):
+        scenario, report = real_runs[index]
+        workspace(monkeypatch, scenario, report)
+        reference, lanes = source_lanes()
+>       reaction = call(environment.request_human_service, service='run_gel', sample='4:A1')['result']['assay']
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'result'
+
+tests/test_diagnostics.py:97: KeyError
+____ test_gel_alone_does_not_pretend_to_disambiguate_ligase_and_temperature ____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x127103230>
+real_runs = [({'api_level': '2.19', 'biochemistry': {'assembly_order': ['backbone', 'insert_A', 'insert_B'], 'backbone': 'backbone...med \'opentrons\'\n', 'errors': ['Simulator process failed'], 'passed': False, 'scenario_id': 'assembly_recovery_01'})]
+
+    def test_gel_alone_does_not_pretend_to_disambiguate_ligase_and_temperature(monkeypatch, real_runs):
+        signatures = []
+        for index in (0,3,4):
+            scenario, report = real_runs[index]
+            workspace(monkeypatch, scenario, report)
+>           assay = call(environment.request_human_service, service='run_gel', sample='4:A1')['result']['assay']
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'result'
+
+tests/test_diagnostics.py:126: KeyError
+_____________ test_scorer_reruns_artifact_despite_claimed_success ______________
+
+    def test_scorer_reruns_artifact_despite_claimed_success():
+        wrong_code = REFERENCE.replace('transfer(15,', 'transfer(14,')
+        state = SimpleNamespace(
+            metadata={"scenario": get_scenario("two_reagent_mix")},
+            store=Store({"protocol": wrong_code, "last_simulation": {"passed": True}, "final_validation": {"passed": True}}),
+        )
+        result = asyncio.run(ot2_mixture()(state, Target("")))
+        assert result.value == INCORRECT
+        assert result.metadata["passed"] is False
+        assert result.metadata["tip_efficiency"] == 0
+>       assert "water expected 15 uL, got 14" in result.explanation
+E       assert 'water expected 15 uL, got 14' in 'Simulator process failed'
+E        +  where 'Simulator process failed' = Score(value='I', answer=None, explanation='Simulator process failed', reason=None, metadata={'passed': False, 'scenari...transfer(5, stock["A1"], plate[name], mix_after=(3, 10))\n', 'simulation_count': 0, 'tip_efficiency': 0.0}, history=[]).explanation
+
+tests/test_environment.py:65: AssertionError
+_________ test_fault_persists_until_correct_repair_then_stays_fixed[1] _________
+
+index = 1
+
+    @pytest.mark.parametrize('index', range(1, 6))
+    def test_fault_persists_until_correct_repair_then_stays_fixed(index):
+        s, account = scenario(index), new_account(scenario(index))
+        before = check(s)
+>       assert before['liquid_handling_passed']
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'liquid_handling_passed'
+
+tests/test_failures.py:56: KeyError
+_________ test_fault_persists_until_correct_repair_then_stays_fixed[2] _________
+
+index = 2
+
+    @pytest.mark.parametrize('index', range(1, 6))
+    def test_fault_persists_until_correct_repair_then_stays_fixed(index):
+        s, account = scenario(index), new_account(scenario(index))
+        before = check(s)
+>       assert before['liquid_handling_passed']
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'liquid_handling_passed'
+
+tests/test_failures.py:56: KeyError
+_________ test_fault_persists_until_correct_repair_then_stays_fixed[3] _________
+
+index = 3
+
+    @pytest.mark.parametrize('index', range(1, 6))
+    def test_fault_persists_until_correct_repair_then_stays_fixed(index):
+        s, account = scenario(index), new_account(scenario(index))
+        before = check(s)
+>       assert before['liquid_handling_passed']
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'liquid_handling_passed'
+
+tests/test_failures.py:56: KeyError
+_________ test_fault_persists_until_correct_repair_then_stays_fixed[4] _________
+
+index = 4
+
+    @pytest.mark.parametrize('index', range(1, 6))
+    def test_fault_persists_until_correct_repair_then_stays_fixed(index):
+        s, account = scenario(index), new_account(scenario(index))
+        before = check(s)
+>       assert before['liquid_handling_passed']
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'liquid_handling_passed'
+
+tests/test_failures.py:56: KeyError
+_________ test_fault_persists_until_correct_repair_then_stays_fixed[5] _________
+
+index = 5
+
+    @pytest.mark.parametrize('index', range(1, 6))
+    def test_fault_persists_until_correct_repair_then_stays_fixed(index):
+        s, account = scenario(index), new_account(scenario(index))
+        before = check(s)
+>       assert before['liquid_handling_passed']
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'liquid_handling_passed'
+
+tests/test_failures.py:56: KeyError
+______________ test_full_paid_tool_recovery_and_fresh_scoring[1] _______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x127016390>, index = 1
+
+    @pytest.mark.parametrize('index', range(1, 6))
+    def test_full_paid_tool_recovery_and_fresh_scoring(monkeypatch, index):
+        original, workspace = setup(monkeypatch, index)
+        feedback = simulate()
+        assert not feedback['passed'] and 'failure_mode_assessment' not in feedback
+        first = service(service='run_gel', sample='4:A1', request_id='initial')
+>       assert first['total_cents'] == 4000
+               ^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'total_cents'
+
+tests/test_failures.py:83: KeyError
+______________ test_full_paid_tool_recovery_and_fresh_scoring[2] _______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x111973620>, index = 2
+
+    @pytest.mark.parametrize('index', range(1, 6))
+    def test_full_paid_tool_recovery_and_fresh_scoring(monkeypatch, index):
+        original, workspace = setup(monkeypatch, index)
+        feedback = simulate()
+        assert not feedback['passed'] and 'failure_mode_assessment' not in feedback
+        first = service(service='run_gel', sample='4:A1', request_id='initial')
+>       assert first['total_cents'] == 4000
+               ^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'total_cents'
+
+tests/test_failures.py:83: KeyError
+______________ test_full_paid_tool_recovery_and_fresh_scoring[3] _______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x127052f90>, index = 3
+
+    @pytest.mark.parametrize('index', range(1, 6))
+    def test_full_paid_tool_recovery_and_fresh_scoring(monkeypatch, index):
+        original, workspace = setup(monkeypatch, index)
+        feedback = simulate()
+        assert not feedback['passed'] and 'failure_mode_assessment' not in feedback
+        first = service(service='run_gel', sample='4:A1', request_id='initial')
+>       assert first['total_cents'] == 4000
+               ^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'total_cents'
+
+tests/test_failures.py:83: KeyError
+______________ test_full_paid_tool_recovery_and_fresh_scoring[4] _______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x127051a30>, index = 4
+
+    @pytest.mark.parametrize('index', range(1, 6))
+    def test_full_paid_tool_recovery_and_fresh_scoring(monkeypatch, index):
+        original, workspace = setup(monkeypatch, index)
+        feedback = simulate()
+        assert not feedback['passed'] and 'failure_mode_assessment' not in feedback
+        first = service(service='run_gel', sample='4:A1', request_id='initial')
+>       assert first['total_cents'] == 4000
+               ^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'total_cents'
+
+tests/test_failures.py:83: KeyError
+______________ test_full_paid_tool_recovery_and_fresh_scoring[5] _______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1270502c0>, index = 5
+
+    @pytest.mark.parametrize('index', range(1, 6))
+    def test_full_paid_tool_recovery_and_fresh_scoring(monkeypatch, index):
+        original, workspace = setup(monkeypatch, index)
+        feedback = simulate()
+        assert not feedback['passed'] and 'failure_mode_assessment' not in feedback
+        first = service(service='run_gel', sample='4:A1', request_id='initial')
+>       assert first['total_cents'] == 4000
+               ^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'total_cents'
+
+tests/test_failures.py:83: KeyError
+___________ test_invalid_assay_not_charged_and_idempotent_gel_cached ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1271104d0>
+
+    def test_invalid_assay_not_charged_and_idempotent_gel_cached(monkeypatch):
+        _, workspace = setup(monkeypatch)
+        assert "Simulate a protocol" in service(service="run_gel", sample="4:A1")["error"]
+        assert "DNA stock" in service(service="run_gel", sample="1:A4", sample_type="source")["error"]
+        assert workspace.get('ordering_account')['spent_cents'] == 0
+        simulate()
+        first = service(service='run_gel', sample='4:A1', request_id='lane')
+        asyncio.run(environment.order_supplies()('gibson_master_mix', '1:A4', replace=True))
+        simulate()
+        before = workspace.get('ordering_account')['spent_cents']
+        retry = service(service='run_gel', sample='4:A1', request_id='lane')
+        assert retry == first
+        assert workspace.get('ordering_account')['spent_cents'] == before
+>       assert len(workspace.get('assays')) == 1
+E       AssertionError: assert 0 == 1
+E        +  where 0 = len([])
+E        +    where [] = get('assays')
+E        +      where get = <inspect_ai.util._store.Store object at 0x127110890>.get
+
+tests/test_failures.py:187: AssertionError
+_ test_temperature_software_compensation_does_not_substitute_for_human_repair __
+
+    def test_temperature_software_compensation_does_not_substitute_for_human_repair():
+        s = scenario(4)
+        corrected_setpoint = REFERENCE.replace('set_temperature(50)', 'set_temperature(38)')
+        report = check(s, corrected_setpoint)
+>       assert any(event.get('temperature_c') == 50 for event in report['events'] if event['action'] == 'incubate')
+                                                                 ^^^^^^^^^^^^^^^^
+E       KeyError: 'events'
+
+tests/test_failures.py:194: KeyError
+________________ test_simultaneous_faults_require_both_repairs _________________
+
+    def test_simultaneous_faults_require_both_repairs():
+        s = scenario()
+        s['failure_modes'].append(copy.deepcopy(scenario(3)['failure_modes'][0]))
+        account = new_account(s)
+        s, account, _ = place_order(s, account, 'gibson_master_mix', '1:A4', replace=True)
+        assert len(active_faults(s)) == 1 and not check(s)['passed']
+        s, account, _ = place_order(s, account, 'gibson_insert_B', '1:A3', replace=True)
+>       assert check(s)['passed']
+E       assert False
+
+tests/test_failures.py:205: AssertionError
+_________ test_forged_cached_success_cannot_override_unrepaired_fault __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x127053d70>
+
+    def test_forged_cached_success_cannot_override_unrepaired_fault(monkeypatch):
+        original, workspace = setup(monkeypatch)
+        fake = copy.deepcopy(original)
+        fake['failure_modes'][0]['active'] = False
+        workspace.set('scenario', fake)
+        workspace.set('final_validation', {'passed': True})
+        state = SimpleNamespace(metadata={'scenario': original}, store=workspace)
+        result = asyncio.run(ot2_mixture()(state, Target('')))
+        assert result.value == INCORRECT
+>       assert result.metadata['failure_mode_assessment']['active_faults']
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'failure_mode_assessment'
+
+tests/test_failures.py:217: KeyError
+____________ test_fault_category_not_in_any_public_simulation_field ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x121413ef0>
+
+    def test_fault_category_not_in_any_public_simulation_field(monkeypatch):
+        # Use one public task identity and rotate only its hidden fault. Comparing
+        # the complete tool response catches derived leaks, not only fault names.
+        base = load_scenarios('failures')[0]
+        before = copy.deepcopy(base)
+        feedbacks = []
+        private_seconds = []
+        for fault_scenario in load_scenarios('failures'):
+            scenario = copy.deepcopy(base)
+            scenario['failure_modes'] = copy.deepcopy(fault_scenario['failure_modes'])
+            workspace = Store({'scenario': scenario, 'ordering_account': new_account(scenario),
+                               'protocol': REFERENCE, 'simulation_count': 0, 'lab_actions': [], 'experiments': []})
+            monkeypatch.setattr(environment, 'store', lambda: workspace)
+            feedback = json.loads(asyncio.run(environment.simulate_protocol()()))
+            text = json.dumps(feedback)
+            for forbidden in ('qualified_seconds', 'qualified_incubation_seconds', '.incubation', 'all_incubation_events', 'failure_mode_assessment', 'offset_c'):
+                assert forbidden not in text
+            feedbacks.append(feedback)
+            report = workspace.get('last_simulation')
+>           private_seconds.append(report['biochemistry']['reactions'][0]['qualified_incubation_seconds'])
+                                   ^^^^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'biochemistry'
+
+tests/test_feedback_privacy.py:36: KeyError
+_________ test_healthy_biochemistry_tool_hides_qualifying_seconds_too __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1118e31d0>
+
+    def test_healthy_biochemistry_tool_hides_qualifying_seconds_too(monkeypatch):
+        scenario = get_scenario('sequence_assembly')
+        workspace = Store({'scenario': scenario, 'ordering_account': new_account(scenario),
+                           'protocol': REFERENCE, 'simulation_count': 0, 'lab_actions': []})
+        monkeypatch.setattr(environment, 'store', lambda: workspace)
+        feedback = json.loads(asyncio.run(environment.simulate_protocol()()))
+>       assert feedback['passed']
+E       assert False
+
+tests/test_feedback_privacy.py:51: AssertionError
+_ test_projection_preserves_private_failures_and_unrelated_errors[public_feedback] _
+
+project = <function public_feedback at 0x1214737e0>
+
+    @pytest.mark.parametrize('project', [public_feedback, without_incubation_details])
+    def test_projection_preserves_private_failures_and_unrelated_errors(project):
+        scenario = load_scenarios('failures')[3]
+        report = asyncio.run(validate_code(REFERENCE, scenario['id'], inventory=scenario))
+        # Constructed unrelated error: its presence must survive privacy filtering.
+        report['errors'].append('Biochemistry: 4:A1.reagent_identity')
+        before = copy.deepcopy(report)
+        visible = project(report)
+        assert report == before
+>       assert not visible['passed'] and not visible['biochemistry']['passed']
+                                             ^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'biochemistry'
+
+tests/test_feedback_privacy.py:66: KeyError
+_ test_projection_preserves_private_failures_and_unrelated_errors[without_incubation_details] _
+
+project = <function without_incubation_details at 0x121473740>
+
+    @pytest.mark.parametrize('project', [public_feedback, without_incubation_details])
+    def test_projection_preserves_private_failures_and_unrelated_errors(project):
+        scenario = load_scenarios('failures')[3]
+        report = asyncio.run(validate_code(REFERENCE, scenario['id'], inventory=scenario))
+        # Constructed unrelated error: its presence must survive privacy filtering.
+        report['errors'].append('Biochemistry: 4:A1.reagent_identity')
+        before = copy.deepcopy(report)
+        visible = project(report)
+        assert report == before
+>       assert not visible['passed'] and not visible['biochemistry']['passed']
+                                             ^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'biochemistry'
+
+tests/test_feedback_privacy.py:66: KeyError
+___________ test_public_dry_run_identical_for_healthy_and_all_faults ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x127082ba0>
+
+    def test_public_dry_run_identical_for_healthy_and_all_faults(monkeypatch):
+        base = scenario()
+        visible = []
+        for candidate in [*load_scenarios("failures"), scenario(healthy=True)]:
+            original = copy.deepcopy(base)
+            original["failure_modes"] = candidate["failure_modes"]
+            workspace = setup(monkeypatch, original)
+            feedback = call(environment.simulate_protocol)
+>           assert feedback["liquid_handling_passed"]
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'liquid_handling_passed'
+
+tests/test_observations.py:89: KeyError
+_____________________ test_execution_errors_remain_visible _____________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1271031d0>
+
+    def test_execution_errors_remain_visible(monkeypatch):
+        setup(monkeypatch, scenario())
+        asyncio.run(environment.write_protocol()(code="def run(protocol):\n    protocol.no_such_method()\n"))
+        result = call(environment.simulate_protocol)
+>       assert not result["liquid_handling_passed"]
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'liquid_handling_passed'
+
+tests/test_observations.py:100: KeyError
+____________ test_receipts_replay_idempotency_and_no_private_hashes ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1270531a0>
+
+    def test_receipts_replay_idempotency_and_no_private_hashes(monkeypatch):
+        original = scenario()
+        workspace = setup(monkeypatch, original)
+        invalid = call(environment.request_human_service, service="run_gel", sample="4:A1", request_id="invalid")
+        assert invalid["charged"] is False and workspace.get("ordering_account")["spent_cents"] == 0
+        call(environment.simulate_protocol)
+        first = call(environment.request_human_service, service="run_gel", sample="4:A1", request_id="first")
+>       assert "inventory_sha256" not in first["result"]["assay"]
+                                         ^^^^^^^^^^^^^^^
+E       KeyError: 'result'
+
+tests/test_observations.py:135: KeyError
+_ test_grade_uses_truth_even_when_measurement_disagrees[False-consistent_with_reference] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1119712e0>
+healthy = False, wanted = 'consistent_with_reference'
+
+    @pytest.mark.parametrize("healthy,wanted", [(False, "consistent_with_reference"), (True, "deviation_detected"), (True, "inconclusive")])
+    def test_grade_uses_truth_even_when_measurement_disagrees(monkeypatch, healthy, wanted):
+        # Select a deterministic seed for a specified rare observation. This is a
+        # constructed adversarial grading control, not a model success claim.
+        original = scenario(healthy=healthy)
+        for seed in range(1000):
+            original["observation_model"]["seed"] = seed
+            finding = observations.measurement(original, sample_id="reaction:experiment-0001:4:A1",
+                                               measurement_id="human-0001", deviates=not healthy)
+            if finding["finding"] == wanted:
+                break
+        else:
+            pytest.fail("Could not construct the requested observation")
+        workspace = setup(monkeypatch, original)
+        call(environment.simulate_protocol)
+        observation = call(environment.request_human_service, service="run_gel", sample="4:A1")
+>       assert observation["result"]["assay"]["finding"] == wanted
+               ^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'result'
+
+tests/test_observations.py:200: KeyError
+_ test_grade_uses_truth_even_when_measurement_disagrees[True-deviation_detected] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1214f0290>
+healthy = True, wanted = 'deviation_detected'
+
+    @pytest.mark.parametrize("healthy,wanted", [(False, "consistent_with_reference"), (True, "deviation_detected"), (True, "inconclusive")])
+    def test_grade_uses_truth_even_when_measurement_disagrees(monkeypatch, healthy, wanted):
+        # Select a deterministic seed for a specified rare observation. This is a
+        # constructed adversarial grading control, not a model success claim.
+        original = scenario(healthy=healthy)
+        for seed in range(1000):
+            original["observation_model"]["seed"] = seed
+            finding = observations.measurement(original, sample_id="reaction:experiment-0001:4:A1",
+                                               measurement_id="human-0001", deviates=not healthy)
+            if finding["finding"] == wanted:
+                break
+        else:
+            pytest.fail("Could not construct the requested observation")
+        workspace = setup(monkeypatch, original)
+        call(environment.simulate_protocol)
+        observation = call(environment.request_human_service, service="run_gel", sample="4:A1")
+>       assert observation["result"]["assay"]["finding"] == wanted
+               ^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'result'
+
+tests/test_observations.py:200: KeyError
+___ test_grade_uses_truth_even_when_measurement_disagrees[True-inconclusive] ___
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x127113620>
+healthy = True, wanted = 'inconclusive'
+
+    @pytest.mark.parametrize("healthy,wanted", [(False, "consistent_with_reference"), (True, "deviation_detected"), (True, "inconclusive")])
+    def test_grade_uses_truth_even_when_measurement_disagrees(monkeypatch, healthy, wanted):
+        # Select a deterministic seed for a specified rare observation. This is a
+        # constructed adversarial grading control, not a model success claim.
+        original = scenario(healthy=healthy)
+        for seed in range(1000):
+            original["observation_model"]["seed"] = seed
+            finding = observations.measurement(original, sample_id="reaction:experiment-0001:4:A1",
+                                               measurement_id="human-0001", deviates=not healthy)
+            if finding["finding"] == wanted:
+                break
+        else:
+            pytest.fail("Could not construct the requested observation")
+        workspace = setup(monkeypatch, original)
+        call(environment.simulate_protocol)
+        observation = call(environment.request_human_service, service="run_gel", sample="4:A1")
+>       assert observation["result"]["assay"]["finding"] == wanted
+               ^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'result'
+
+tests/test_observations.py:200: KeyError
+_____ test_final_assessment_required_and_invalidated_by_later_measurement ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x127111970>
+
+    def test_final_assessment_required_and_invalidated_by_later_measurement(monkeypatch):
+        original = scenario(healthy=True)
+        workspace = setup(monkeypatch, original)
+        call(environment.simulate_protocol)
+        call(environment.request_human_service, service="run_gel", sample="4:A1")
+        assert score(original, workspace).value == INCORRECT
+        call(environment.record_assessment, probability_success=0.8, decision="accept")
+>       assert score(original, workspace).value == CORRECT
+E       AssertionError: assert 'I' == 'C'
+E         
+E         - C
+E         + I
+
+tests/test_observations.py:220: AssertionError
+____________ test_new_experiment_requires_its_own_paid_measurement _____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x127111250>
+
+    def test_new_experiment_requires_its_own_paid_measurement(monkeypatch):
+        original = scenario(healthy=True)
+        workspace = setup(monkeypatch, original)
+        call(environment.simulate_protocol)
+        call(environment.request_human_service, service="run_gel", sample="4:A1")
+        call(environment.simulate_protocol)
+        call(environment.record_assessment, probability_success=0.7, decision="accept")
+        unmeasured = score(original, workspace)
+        assert unmeasured.value == INCORRECT
+        assert not unmeasured.metadata["recovery"]["current_measurement_recorded"]
+        call(environment.request_human_service, service="run_gel", sample="4:A1")
+        call(environment.record_assessment, probability_success=0.7, decision="accept")
+>       assert score(original, workspace).value == CORRECT
+E       AssertionError: assert 'I' == 'C'
+E         
+E         - C
+E         + I
+
+tests/test_observations.py:242: AssertionError
+______ test_missing_supplies_fail_then_ordered_inventory_passes_real_sdk _______
+
+    def test_missing_supplies_fail_then_ordered_inventory_passes_real_sdk():
+        missing = asyncio.run(validate_code(REFERENCE, "order_supplies"))
+        assert not missing["passed"]
+>       assert "unavailable" in " ".join(missing["errors"])
+E       AssertionError: assert 'unavailable' in 'Simulator process failed'
+E        +  where 'Simulator process failed' = <built-in method join of str object at 0x1026a1410>(['Simulator process failed'])
+E        +    where <built-in method join of str object at 0x1026a1410> = ' '.join
+
+tests/test_ordering.py:133: AssertionError
+_______ test_repeated_replacement_orders_do_not_inject_failures_real_sdk _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x127224a10>
+
+    def test_repeated_replacement_orders_do_not_inject_failures_real_sdk(monkeypatch):
+        # Isolate the unrelated invalid genomic partitions; catalogue entries and SDK
+        # are real. This does not assert that the current global catalogue loads.
+        catalogue = get_catalogue(include_partitions=False)
+        monkeypatch.setattr(ordering, "get_catalogue", lambda: copy.deepcopy(catalogue))
+        scenario = get_scenario("order_supplies")
+        scenario["ordering"]["budget_cents"] = 10000
+        account = new_account(scenario)
+        for item, destination in ITEMS:
+            scenario, account, _ = place_order(scenario, account, item, destination)
+        for attempt in range(3):
+            ready = asyncio.run(validate_code(REFERENCE, scenario["id"], inventory=scenario))
+>           assert ready["passed"], ready["errors"]
+E           AssertionError: ['Simulator process failed']
+E           assert False
+
+tests/test_ordering.py:154: AssertionError
+_________________ test_scorer_rebuilds_inventory_and_finances __________________
+
+    def test_scorer_rebuilds_inventory_and_finances():
+        scenario, account = prepared()
+        state = SimpleNamespace(metadata={"scenario": get_scenario("order_supplies")}, store=Store({"protocol": REFERENCE, "scenario": {"fake": "inventory"}, "ordering_account": account}))
+        result = asyncio.run(ot2_mixture()(state, Target("")))
+>       assert result.value == CORRECT
+E       AssertionError: assert 'I' == 'C'
+E         
+E         - C
+E         + I
+
+tests/test_ordering.py:164: AssertionError
+_________ test_sequence_ordering_and_protocol_pass_real_sdk_and_scorer _________
+
+    def test_sequence_ordering_and_protocol_pass_real_sdk_and_scorer():
+        scenario, account = supplies()
+        code = (ROOT / "examples/sequence_partitions.py").read_text()
+        state = SimpleNamespace(metadata={"scenario": ordering_scenario()}, store=Store({"protocol":code,"ordering_account":account}))
+        result = asyncio.run(ot2_mixture()(state, Target("")))
+>       assert result.value == CORRECT, result.explanation
+E       AssertionError: Simulator process failed
+E       assert 'I' == 'C'
+E         
+E         - C
+E         + I
+
+tests/test_sequences.py:126: AssertionError
+__ test_seven_piece_ordering_delivers_correct_prepared_identities_and_scores ___
+
+    def test_seven_piece_ordering_delivers_correct_prepared_identities_and_scores():
+        scenario=get_scenario('sequence_assembly_order_supplies')
+        original=copy.deepcopy(scenario)
+        account=new_account(scenario)
+        for well,source in scenario['sources'].items():
+            component=next(iter(source['components']))
+            item='gibson_master_mix' if component=='gibson_master_mix' else 'nuclease_free_water' if component=='water' else 'sequence_'+component
+            scenario,account,_=place_order(scenario,account,item,well)
+        for item,slot in [('filtered_tips_20ul','2'),('temperature_reaction_plate','4')]:
+            scenario,account,_=place_order(scenario,account,item,slot)
+        result=asyncio.run(ot2_mixture()(SimpleNamespace(metadata={'scenario':original},store=Store({'protocol':REFERENCE,'ordering_account':account})),Target('')))
+>       assert result.value==CORRECT,result.explanation
+E       AssertionError: Simulator process failed
+E       assert 'I' == 'C'
+E         
+E         - C
+E         + I
+
+tests/test_supplied_assembly.py:135: AssertionError
+____________ test_all_five_faults_recover_with_seven_dna_inputs[1] _____________
+
+index = 1
+
+    @pytest.mark.parametrize('index',range(1,6))
+    def test_all_five_faults_recover_with_seven_dna_inputs(index):
+        scenario=get_scenario(f'sequence_recovery_{index:02d}')
+        account=new_account(scenario)
+        before=check(scenario)
+>       assert before['liquid_handling_passed'] and not before['passed']
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'liquid_handling_passed'
+
+tests/test_supplied_assembly.py:172: KeyError
+____________ test_all_five_faults_recover_with_seven_dna_inputs[2] _____________
+
+index = 2
+
+    @pytest.mark.parametrize('index',range(1,6))
+    def test_all_five_faults_recover_with_seven_dna_inputs(index):
+        scenario=get_scenario(f'sequence_recovery_{index:02d}')
+        account=new_account(scenario)
+        before=check(scenario)
+>       assert before['liquid_handling_passed'] and not before['passed']
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'liquid_handling_passed'
+
+tests/test_supplied_assembly.py:172: KeyError
+____________ test_all_five_faults_recover_with_seven_dna_inputs[3] _____________
+
+index = 3
+
+    @pytest.mark.parametrize('index',range(1,6))
+    def test_all_five_faults_recover_with_seven_dna_inputs(index):
+        scenario=get_scenario(f'sequence_recovery_{index:02d}')
+        account=new_account(scenario)
+        before=check(scenario)
+>       assert before['liquid_handling_passed'] and not before['passed']
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'liquid_handling_passed'
+
+tests/test_supplied_assembly.py:172: KeyError
+____________ test_all_five_faults_recover_with_seven_dna_inputs[4] _____________
+
+index = 4
+
+    @pytest.mark.parametrize('index',range(1,6))
+    def test_all_five_faults_recover_with_seven_dna_inputs(index):
+        scenario=get_scenario(f'sequence_recovery_{index:02d}')
+        account=new_account(scenario)
+        before=check(scenario)
+>       assert before['liquid_handling_passed'] and not before['passed']
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'liquid_handling_passed'
+
+tests/test_supplied_assembly.py:172: KeyError
+____________ test_all_five_faults_recover_with_seven_dna_inputs[5] _____________
+
+index = 5
+
+    @pytest.mark.parametrize('index',range(1,6))
+    def test_all_five_faults_recover_with_seven_dna_inputs(index):
+        scenario=get_scenario(f'sequence_recovery_{index:02d}')
+        account=new_account(scenario)
+        before=check(scenario)
+>       assert before['liquid_handling_passed'] and not before['passed']
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'liquid_handling_passed'
+
+tests/test_supplied_assembly.py:172: KeyError
+______________________ test_reference_and_native_commands ______________________
+
+    def test_reference_and_native_commands():
+        result = check(REFERENCE)
+>       assert result["passed"], result["errors"]
+E       AssertionError: ['Simulator process failed']
+E       assert False
+
+tests/test_validation.py:18: AssertionError
+_ test_physical_failures[    pipette.aspirate(5, stock["A1"])\n-No tip attached] _
+
+body = '    pipette.aspirate(5, stock["A1"])\n', error = 'No tip attached'
+
+    @pytest.mark.parametrize("body,error", [
+        ('    pipette.aspirate(5, stock["A1"])\n', "No tip attached"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(21, stock["A1"])\n', "outside pipette range"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(0.5, stock["A1"])\n', "outside pipette range"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(15, stock["A1"])\n    pipette.aspirate(10, stock["A1"])\n', "exceeds pipette capacity"),
+        ('    pipette.pick_up_tip()\n    pipette.dispense(5, plate["A1"])\n', "exceeds liquid held"),
+        ('    pipette.transfer(100, stock["A1"], plate["A1"])\n', "Insufficient usable liquid"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(5, stock["A1"])\n    pipette.dispense(5, plate["A1"])\n    pipette.aspirate(5, stock["A2"])\n', "carryover"),
+        ('    for i in range(7):\n        pipette.pick_up_tip()\n        pipette.drop_tip()\n', "Tip budget"),
+        ('    pipette.pick_up_tip(tips["A1"])\n    pipette.drop_tip()\n    pipette.pick_up_tip(tips["A1"])\n', "already been used"),
+        ('    pipette.transfer(180, stock["A2"], plate["A1"])\n    pipette.transfer(20, stock["A1"], plate["A1"])\n    pipette.transfer(20, stock["A1"], plate["A1"])\n', "Well overflow"),
+    ])
+    def test_physical_failures(body, error):
+        result = check(HEADER + body)
+        assert not result["passed"]
+>       assert error in " ".join(result["errors"])
+E       AssertionError: assert 'No tip attached' in 'Simulator process failed'
+E        +  where 'Simulator process failed' = <built-in method join of str object at 0x1026a1410>(['Simulator process failed'])
+E        +    where <built-in method join of str object at 0x1026a1410> = ' '.join
+
+tests/test_validation.py:39: AssertionError
+_ test_physical_failures[    pipette.pick_up_tip()\n    pipette.aspirate(21, stock["A1"])\n-outside pipette range] _
+
+body = '    pipette.pick_up_tip()\n    pipette.aspirate(21, stock["A1"])\n'
+error = 'outside pipette range'
+
+    @pytest.mark.parametrize("body,error", [
+        ('    pipette.aspirate(5, stock["A1"])\n', "No tip attached"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(21, stock["A1"])\n', "outside pipette range"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(0.5, stock["A1"])\n', "outside pipette range"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(15, stock["A1"])\n    pipette.aspirate(10, stock["A1"])\n', "exceeds pipette capacity"),
+        ('    pipette.pick_up_tip()\n    pipette.dispense(5, plate["A1"])\n', "exceeds liquid held"),
+        ('    pipette.transfer(100, stock["A1"], plate["A1"])\n', "Insufficient usable liquid"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(5, stock["A1"])\n    pipette.dispense(5, plate["A1"])\n    pipette.aspirate(5, stock["A2"])\n', "carryover"),
+        ('    for i in range(7):\n        pipette.pick_up_tip()\n        pipette.drop_tip()\n', "Tip budget"),
+        ('    pipette.pick_up_tip(tips["A1"])\n    pipette.drop_tip()\n    pipette.pick_up_tip(tips["A1"])\n', "already been used"),
+        ('    pipette.transfer(180, stock["A2"], plate["A1"])\n    pipette.transfer(20, stock["A1"], plate["A1"])\n    pipette.transfer(20, stock["A1"], plate["A1"])\n', "Well overflow"),
+    ])
+    def test_physical_failures(body, error):
+        result = check(HEADER + body)
+        assert not result["passed"]
+>       assert error in " ".join(result["errors"])
+E       AssertionError: assert 'outside pipette range' in 'Simulator process failed'
+E        +  where 'Simulator process failed' = <built-in method join of str object at 0x1026a1410>(['Simulator process failed'])
+E        +    where <built-in method join of str object at 0x1026a1410> = ' '.join
+
+tests/test_validation.py:39: AssertionError
+_ test_physical_failures[    pipette.pick_up_tip()\n    pipette.aspirate(0.5, stock["A1"])\n-outside pipette range] _
+
+body = '    pipette.pick_up_tip()\n    pipette.aspirate(0.5, stock["A1"])\n'
+error = 'outside pipette range'
+
+    @pytest.mark.parametrize("body,error", [
+        ('    pipette.aspirate(5, stock["A1"])\n', "No tip attached"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(21, stock["A1"])\n', "outside pipette range"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(0.5, stock["A1"])\n', "outside pipette range"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(15, stock["A1"])\n    pipette.aspirate(10, stock["A1"])\n', "exceeds pipette capacity"),
+        ('    pipette.pick_up_tip()\n    pipette.dispense(5, plate["A1"])\n', "exceeds liquid held"),
+        ('    pipette.transfer(100, stock["A1"], plate["A1"])\n', "Insufficient usable liquid"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(5, stock["A1"])\n    pipette.dispense(5, plate["A1"])\n    pipette.aspirate(5, stock["A2"])\n', "carryover"),
+        ('    for i in range(7):\n        pipette.pick_up_tip()\n        pipette.drop_tip()\n', "Tip budget"),
+        ('    pipette.pick_up_tip(tips["A1"])\n    pipette.drop_tip()\n    pipette.pick_up_tip(tips["A1"])\n', "already been used"),
+        ('    pipette.transfer(180, stock["A2"], plate["A1"])\n    pipette.transfer(20, stock["A1"], plate["A1"])\n    pipette.transfer(20, stock["A1"], plate["A1"])\n', "Well overflow"),
+    ])
+    def test_physical_failures(body, error):
+        result = check(HEADER + body)
+        assert not result["passed"]
+>       assert error in " ".join(result["errors"])
+E       AssertionError: assert 'outside pipette range' in 'Simulator process failed'
+E        +  where 'Simulator process failed' = <built-in method join of str object at 0x1026a1410>(['Simulator process failed'])
+E        +    where <built-in method join of str object at 0x1026a1410> = ' '.join
+
+tests/test_validation.py:39: AssertionError
+_ test_physical_failures[    pipette.pick_up_tip()\n    pipette.aspirate(15, stock["A1"])\n    pipette.aspirate(10, stock["A1"])\n-exceeds pipette capacity] _
+
+body = '    pipette.pick_up_tip()\n    pipette.aspirate(15, stock["A1"])\n    pipette.aspirate(10, stock["A1"])\n'
+error = 'exceeds pipette capacity'
+
+    @pytest.mark.parametrize("body,error", [
+        ('    pipette.aspirate(5, stock["A1"])\n', "No tip attached"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(21, stock["A1"])\n', "outside pipette range"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(0.5, stock["A1"])\n', "outside pipette range"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(15, stock["A1"])\n    pipette.aspirate(10, stock["A1"])\n', "exceeds pipette capacity"),
+        ('    pipette.pick_up_tip()\n    pipette.dispense(5, plate["A1"])\n', "exceeds liquid held"),
+        ('    pipette.transfer(100, stock["A1"], plate["A1"])\n', "Insufficient usable liquid"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(5, stock["A1"])\n    pipette.dispense(5, plate["A1"])\n    pipette.aspirate(5, stock["A2"])\n', "carryover"),
+        ('    for i in range(7):\n        pipette.pick_up_tip()\n        pipette.drop_tip()\n', "Tip budget"),
+        ('    pipette.pick_up_tip(tips["A1"])\n    pipette.drop_tip()\n    pipette.pick_up_tip(tips["A1"])\n', "already been used"),
+        ('    pipette.transfer(180, stock["A2"], plate["A1"])\n    pipette.transfer(20, stock["A1"], plate["A1"])\n    pipette.transfer(20, stock["A1"], plate["A1"])\n', "Well overflow"),
+    ])
+    def test_physical_failures(body, error):
+        result = check(HEADER + body)
+        assert not result["passed"]
+>       assert error in " ".join(result["errors"])
+E       AssertionError: assert 'exceeds pipette capacity' in 'Simulator process failed'
+E        +  where 'Simulator process failed' = <built-in method join of str object at 0x1026a1410>(['Simulator process failed'])
+E        +    where <built-in method join of str object at 0x1026a1410> = ' '.join
+
+tests/test_validation.py:39: AssertionError
+_ test_physical_failures[    pipette.pick_up_tip()\n    pipette.dispense(5, plate["A1"])\n-exceeds liquid held] _
+
+body = '    pipette.pick_up_tip()\n    pipette.dispense(5, plate["A1"])\n'
+error = 'exceeds liquid held'
+
+    @pytest.mark.parametrize("body,error", [
+        ('    pipette.aspirate(5, stock["A1"])\n', "No tip attached"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(21, stock["A1"])\n', "outside pipette range"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(0.5, stock["A1"])\n', "outside pipette range"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(15, stock["A1"])\n    pipette.aspirate(10, stock["A1"])\n', "exceeds pipette capacity"),
+        ('    pipette.pick_up_tip()\n    pipette.dispense(5, plate["A1"])\n', "exceeds liquid held"),
+        ('    pipette.transfer(100, stock["A1"], plate["A1"])\n', "Insufficient usable liquid"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(5, stock["A1"])\n    pipette.dispense(5, plate["A1"])\n    pipette.aspirate(5, stock["A2"])\n', "carryover"),
+        ('    for i in range(7):\n        pipette.pick_up_tip()\n        pipette.drop_tip()\n', "Tip budget"),
+        ('    pipette.pick_up_tip(tips["A1"])\n    pipette.drop_tip()\n    pipette.pick_up_tip(tips["A1"])\n', "already been used"),
+        ('    pipette.transfer(180, stock["A2"], plate["A1"])\n    pipette.transfer(20, stock["A1"], plate["A1"])\n    pipette.transfer(20, stock["A1"], plate["A1"])\n', "Well overflow"),
+    ])
+    def test_physical_failures(body, error):
+        result = check(HEADER + body)
+        assert not result["passed"]
+>       assert error in " ".join(result["errors"])
+E       AssertionError: assert 'exceeds liquid held' in 'Simulator process failed'
+E        +  where 'Simulator process failed' = <built-in method join of str object at 0x1026a1410>(['Simulator process failed'])
+E        +    where <built-in method join of str object at 0x1026a1410> = ' '.join
+
+tests/test_validation.py:39: AssertionError
+_ test_physical_failures[    pipette.transfer(100, stock["A1"], plate["A1"])\n-Insufficient usable liquid] _
+
+body = '    pipette.transfer(100, stock["A1"], plate["A1"])\n'
+error = 'Insufficient usable liquid'
+
+    @pytest.mark.parametrize("body,error", [
+        ('    pipette.aspirate(5, stock["A1"])\n', "No tip attached"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(21, stock["A1"])\n', "outside pipette range"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(0.5, stock["A1"])\n', "outside pipette range"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(15, stock["A1"])\n    pipette.aspirate(10, stock["A1"])\n', "exceeds pipette capacity"),
+        ('    pipette.pick_up_tip()\n    pipette.dispense(5, plate["A1"])\n', "exceeds liquid held"),
+        ('    pipette.transfer(100, stock["A1"], plate["A1"])\n', "Insufficient usable liquid"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(5, stock["A1"])\n    pipette.dispense(5, plate["A1"])\n    pipette.aspirate(5, stock["A2"])\n', "carryover"),
+        ('    for i in range(7):\n        pipette.pick_up_tip()\n        pipette.drop_tip()\n', "Tip budget"),
+        ('    pipette.pick_up_tip(tips["A1"])\n    pipette.drop_tip()\n    pipette.pick_up_tip(tips["A1"])\n', "already been used"),
+        ('    pipette.transfer(180, stock["A2"], plate["A1"])\n    pipette.transfer(20, stock["A1"], plate["A1"])\n    pipette.transfer(20, stock["A1"], plate["A1"])\n', "Well overflow"),
+    ])
+    def test_physical_failures(body, error):
+        result = check(HEADER + body)
+        assert not result["passed"]
+>       assert error in " ".join(result["errors"])
+E       AssertionError: assert 'Insufficient usable liquid' in 'Simulator process failed'
+E        +  where 'Simulator process failed' = <built-in method join of str object at 0x1026a1410>(['Simulator process failed'])
+E        +    where <built-in method join of str object at 0x1026a1410> = ' '.join
+
+tests/test_validation.py:39: AssertionError
+_ test_physical_failures[    pipette.pick_up_tip()\n    pipette.aspirate(5, stock["A1"])\n    pipette.dispense(5, plate["A1"])\n    pipette.aspirate(5, stock["A2"])\n-carryover] _
+
+body = '    pipette.pick_up_tip()\n    pipette.aspirate(5, stock["A1"])\n    pipette.dispense(5, plate["A1"])\n    pipette.aspirate(5, stock["A2"])\n'
+error = 'carryover'
+
+    @pytest.mark.parametrize("body,error", [
+        ('    pipette.aspirate(5, stock["A1"])\n', "No tip attached"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(21, stock["A1"])\n', "outside pipette range"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(0.5, stock["A1"])\n', "outside pipette range"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(15, stock["A1"])\n    pipette.aspirate(10, stock["A1"])\n', "exceeds pipette capacity"),
+        ('    pipette.pick_up_tip()\n    pipette.dispense(5, plate["A1"])\n', "exceeds liquid held"),
+        ('    pipette.transfer(100, stock["A1"], plate["A1"])\n', "Insufficient usable liquid"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(5, stock["A1"])\n    pipette.dispense(5, plate["A1"])\n    pipette.aspirate(5, stock["A2"])\n', "carryover"),
+        ('    for i in range(7):\n        pipette.pick_up_tip()\n        pipette.drop_tip()\n', "Tip budget"),
+        ('    pipette.pick_up_tip(tips["A1"])\n    pipette.drop_tip()\n    pipette.pick_up_tip(tips["A1"])\n', "already been used"),
+        ('    pipette.transfer(180, stock["A2"], plate["A1"])\n    pipette.transfer(20, stock["A1"], plate["A1"])\n    pipette.transfer(20, stock["A1"], plate["A1"])\n', "Well overflow"),
+    ])
+    def test_physical_failures(body, error):
+        result = check(HEADER + body)
+        assert not result["passed"]
+>       assert error in " ".join(result["errors"])
+E       AssertionError: assert 'carryover' in 'Simulator process failed'
+E        +  where 'Simulator process failed' = <built-in method join of str object at 0x1026a1410>(['Simulator process failed'])
+E        +    where <built-in method join of str object at 0x1026a1410> = ' '.join
+
+tests/test_validation.py:39: AssertionError
+_ test_physical_failures[    for i in range(7):\n        pipette.pick_up_tip()\n        pipette.drop_tip()\n-Tip budget] _
+
+body = '    for i in range(7):\n        pipette.pick_up_tip()\n        pipette.drop_tip()\n'
+error = 'Tip budget'
+
+    @pytest.mark.parametrize("body,error", [
+        ('    pipette.aspirate(5, stock["A1"])\n', "No tip attached"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(21, stock["A1"])\n', "outside pipette range"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(0.5, stock["A1"])\n', "outside pipette range"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(15, stock["A1"])\n    pipette.aspirate(10, stock["A1"])\n', "exceeds pipette capacity"),
+        ('    pipette.pick_up_tip()\n    pipette.dispense(5, plate["A1"])\n', "exceeds liquid held"),
+        ('    pipette.transfer(100, stock["A1"], plate["A1"])\n', "Insufficient usable liquid"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(5, stock["A1"])\n    pipette.dispense(5, plate["A1"])\n    pipette.aspirate(5, stock["A2"])\n', "carryover"),
+        ('    for i in range(7):\n        pipette.pick_up_tip()\n        pipette.drop_tip()\n', "Tip budget"),
+        ('    pipette.pick_up_tip(tips["A1"])\n    pipette.drop_tip()\n    pipette.pick_up_tip(tips["A1"])\n', "already been used"),
+        ('    pipette.transfer(180, stock["A2"], plate["A1"])\n    pipette.transfer(20, stock["A1"], plate["A1"])\n    pipette.transfer(20, stock["A1"], plate["A1"])\n', "Well overflow"),
+    ])
+    def test_physical_failures(body, error):
+        result = check(HEADER + body)
+        assert not result["passed"]
+>       assert error in " ".join(result["errors"])
+E       AssertionError: assert 'Tip budget' in 'Simulator process failed'
+E        +  where 'Simulator process failed' = <built-in method join of str object at 0x1026a1410>(['Simulator process failed'])
+E        +    where <built-in method join of str object at 0x1026a1410> = ' '.join
+
+tests/test_validation.py:39: AssertionError
+_ test_physical_failures[    pipette.pick_up_tip(tips["A1"])\n    pipette.drop_tip()\n    pipette.pick_up_tip(tips["A1"])\n-already been used] _
+
+body = '    pipette.pick_up_tip(tips["A1"])\n    pipette.drop_tip()\n    pipette.pick_up_tip(tips["A1"])\n'
+error = 'already been used'
+
+    @pytest.mark.parametrize("body,error", [
+        ('    pipette.aspirate(5, stock["A1"])\n', "No tip attached"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(21, stock["A1"])\n', "outside pipette range"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(0.5, stock["A1"])\n', "outside pipette range"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(15, stock["A1"])\n    pipette.aspirate(10, stock["A1"])\n', "exceeds pipette capacity"),
+        ('    pipette.pick_up_tip()\n    pipette.dispense(5, plate["A1"])\n', "exceeds liquid held"),
+        ('    pipette.transfer(100, stock["A1"], plate["A1"])\n', "Insufficient usable liquid"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(5, stock["A1"])\n    pipette.dispense(5, plate["A1"])\n    pipette.aspirate(5, stock["A2"])\n', "carryover"),
+        ('    for i in range(7):\n        pipette.pick_up_tip()\n        pipette.drop_tip()\n', "Tip budget"),
+        ('    pipette.pick_up_tip(tips["A1"])\n    pipette.drop_tip()\n    pipette.pick_up_tip(tips["A1"])\n', "already been used"),
+        ('    pipette.transfer(180, stock["A2"], plate["A1"])\n    pipette.transfer(20, stock["A1"], plate["A1"])\n    pipette.transfer(20, stock["A1"], plate["A1"])\n', "Well overflow"),
+    ])
+    def test_physical_failures(body, error):
+        result = check(HEADER + body)
+        assert not result["passed"]
+>       assert error in " ".join(result["errors"])
+E       AssertionError: assert 'already been used' in 'Simulator process failed'
+E        +  where 'Simulator process failed' = <built-in method join of str object at 0x1026a1410>(['Simulator process failed'])
+E        +    where <built-in method join of str object at 0x1026a1410> = ' '.join
+
+tests/test_validation.py:39: AssertionError
+_ test_physical_failures[    pipette.transfer(180, stock["A2"], plate["A1"])\n    pipette.transfer(20, stock["A1"], plate["A1"])\n    pipette.transfer(20, stock["A1"], plate["A1"])\n-Well overflow] _
+
+body = '    pipette.transfer(180, stock["A2"], plate["A1"])\n    pipette.transfer(20, stock["A1"], plate["A1"])\n    pipette.transfer(20, stock["A1"], plate["A1"])\n'
+error = 'Well overflow'
+
+    @pytest.mark.parametrize("body,error", [
+        ('    pipette.aspirate(5, stock["A1"])\n', "No tip attached"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(21, stock["A1"])\n', "outside pipette range"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(0.5, stock["A1"])\n', "outside pipette range"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(15, stock["A1"])\n    pipette.aspirate(10, stock["A1"])\n', "exceeds pipette capacity"),
+        ('    pipette.pick_up_tip()\n    pipette.dispense(5, plate["A1"])\n', "exceeds liquid held"),
+        ('    pipette.transfer(100, stock["A1"], plate["A1"])\n', "Insufficient usable liquid"),
+        ('    pipette.pick_up_tip()\n    pipette.aspirate(5, stock["A1"])\n    pipette.dispense(5, plate["A1"])\n    pipette.aspirate(5, stock["A2"])\n', "carryover"),
+        ('    for i in range(7):\n        pipette.pick_up_tip()\n        pipette.drop_tip()\n', "Tip budget"),
+        ('    pipette.pick_up_tip(tips["A1"])\n    pipette.drop_tip()\n    pipette.pick_up_tip(tips["A1"])\n', "already been used"),
+        ('    pipette.transfer(180, stock["A2"], plate["A1"])\n    pipette.transfer(20, stock["A1"], plate["A1"])\n    pipette.transfer(20, stock["A1"], plate["A1"])\n', "Well overflow"),
+    ])
+    def test_physical_failures(body, error):
+        result = check(HEADER + body)
+        assert not result["passed"]
+>       assert error in " ".join(result["errors"])
+E       AssertionError: assert 'Well overflow' in 'Simulator process failed'
+E        +  where 'Simulator process failed' = <built-in method join of str object at 0x1026a1410>(['Simulator process failed'])
+E        +    where <built-in method join of str object at 0x1026a1410> = ' '.join
+
+tests/test_validation.py:39: AssertionError
+____________ test_wrong_recipe_fails_even_with_valid_robot_commands ____________
+
+    def test_wrong_recipe_fails_even_with_valid_robot_commands():
+        result = check(REFERENCE.replace('transfer(15,', 'transfer(14,'))
+        assert not result["passed"]
+>       assert "water expected 15 uL, got 14" in " ".join(result["errors"])
+E       AssertionError: assert 'water expected 15 uL, got 14' in 'Simulator process failed'
+E        +  where 'Simulator process failed' = <built-in method join of str object at 0x1026a1410>(['Simulator process failed'])
+E        +    where <built-in method join of str object at 0x1026a1410> = ' '.join
+
+tests/test_validation.py:45: AssertionError
+_______________________________ test_missing_mix _______________________________
+
+    def test_missing_mix():
+        result = check(REFERENCE.replace(', mix_after=(3, 10)', ''))
+        assert not result["passed"]
+>       assert "not been mixed" in " ".join(result["errors"])
+E       AssertionError: assert 'not been mixed' in 'Simulator process failed'
+E        +  where 'Simulator process failed' = <built-in method join of str object at 0x1026a1410>(['Simulator process failed'])
+E        +    where <built-in method join of str object at 0x1026a1410> = ' '.join
+
+tests/test_validation.py:51: AssertionError
+_________________ test_early_mix_does_not_count_after_addition _________________
+
+    def test_early_mix_does_not_count_after_addition():
+        code = REFERENCE.replace('transfer(15, stock["A2"], plate[name])', 'transfer(15, stock["A2"], plate[name], mix_after=(3, 10))').replace('transfer(5, stock["A1"], plate[name], mix_after=(3, 10))', 'transfer(5, stock["A1"], plate[name])')
+        result = check(code)
+        assert not result["passed"]
+>       assert "not been mixed" in " ".join(result["errors"])
+E       AssertionError: assert 'not been mixed' in 'Simulator process failed'
+E        +  where 'Simulator process failed' = <built-in method join of str object at 0x1026a1410>(['Simulator process failed'])
+E        +    where <built-in method join of str object at 0x1026a1410> = ' '.join
+
+tests/test_validation.py:58: AssertionError
+_____________________ test_saved_scenarios_are_independent _____________________
+
+    def test_saved_scenarios_are_independent():
+        first = check(REFERENCE)
+        second = check(REFERENCE)
+>       assert first["passed"] and second["passed"]
+E       assert (False)
+
+tests/test_validation.py:64: AssertionError
+_____________________________ test_panel_reference _____________________________
+
+    def test_panel_reference():
+        code = (ROOT / "examples/three_reagent_panel.py").read_text()
+        result = check(code, "three_reagent_panel")
+>       assert result["passed"], result["errors"]
+E       AssertionError: ['Simulator process failed']
+E       assert False
+
+tests/test_validation.py:72: AssertionError
+________________ test_serial_dilution_tracks_mixture_components ________________
+
+    def test_serial_dilution_tracks_mixture_components():
+        code = (ROOT / "examples/serial_dilution.py").read_text()
+        result = check(code, "serial_dilution")
+>       assert result["passed"], result["errors"]
+E       AssertionError: ['Simulator process failed']
+E       assert False
+
+tests/test_validation.py:78: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_biochemistry.py::test_real_protocol_without_enough_incubation_fails[]
+FAILED tests/test_biochemistry.py::test_real_protocol_without_enough_incubation_fails[    protocol.delay(minutes=1)\n]
+FAILED tests/test_biochemistry.py::test_real_protocol_heated_before_adding_dna_fails
+FAILED tests/test_biochemistry.py::test_fresh_scorer_rejects_correct_pipetting_without_biochemistry
+FAILED tests/test_biochemistry_ordering.py::test_unpurchased_module_labware_cannot_be_loaded
+FAILED tests/test_biochemistry_ordering.py::test_purchasing_alone_does_not_bypass_biochemical_gates
+FAILED tests/test_diagnostics.py::test_paid_observations_show_faulty_and_healthy_controls[0-50]
+FAILED tests/test_diagnostics.py::test_paid_observations_show_faulty_and_healthy_controls[1-50]
+FAILED tests/test_diagnostics.py::test_paid_observations_show_faulty_and_healthy_controls[2-50]
+FAILED tests/test_diagnostics.py::test_paid_observations_show_faulty_and_healthy_controls[3-62]
+FAILED tests/test_diagnostics.py::test_paid_observations_show_faulty_and_healthy_controls[4-38]
+FAILED tests/test_diagnostics.py::test_paid_observations_show_faulty_and_healthy_controls[5-50]
+FAILED tests/test_diagnostics.py::test_gel_alone_does_not_pretend_to_disambiguate_ligase_and_temperature
+FAILED tests/test_environment.py::test_scorer_reruns_artifact_despite_claimed_success
+FAILED tests/test_failures.py::test_fault_persists_until_correct_repair_then_stays_fixed[1]
+FAILED tests/test_failures.py::test_fault_persists_until_correct_repair_then_stays_fixed[2]
+FAILED tests/test_failures.py::test_fault_persists_until_correct_repair_then_stays_fixed[3]
+FAILED tests/test_failures.py::test_fault_persists_until_correct_repair_then_stays_fixed[4]
+FAILED tests/test_failures.py::test_fault_persists_until_correct_repair_then_stays_fixed[5]
+FAILED tests/test_failures.py::test_full_paid_tool_recovery_and_fresh_scoring[1]
+FAILED tests/test_failures.py::test_full_paid_tool_recovery_and_fresh_scoring[2]
+FAILED tests/test_failures.py::test_full_paid_tool_recovery_and_fresh_scoring[3]
+FAILED tests/test_failures.py::test_full_paid_tool_recovery_and_fresh_scoring[4]
+FAILED tests/test_failures.py::test_full_paid_tool_recovery_and_fresh_scoring[5]
+FAILED tests/test_failures.py::test_invalid_assay_not_charged_and_idempotent_gel_cached
+FAILED tests/test_failures.py::test_temperature_software_compensation_does_not_substitute_for_human_repair
+FAILED tests/test_failures.py::test_simultaneous_faults_require_both_repairs
+FAILED tests/test_failures.py::test_forged_cached_success_cannot_override_unrepaired_fault
+FAILED tests/test_feedback_privacy.py::test_fault_category_not_in_any_public_simulation_field
+FAILED tests/test_feedback_privacy.py::test_healthy_biochemistry_tool_hides_qualifying_seconds_too
+FAILED tests/test_feedback_privacy.py::test_projection_preserves_private_failures_and_unrelated_errors[public_feedback]
+FAILED tests/test_feedback_privacy.py::test_projection_preserves_private_failures_and_unrelated_errors[without_incubation_details]
+FAILED tests/test_observations.py::test_public_dry_run_identical_for_healthy_and_all_faults
+FAILED tests/test_observations.py::test_execution_errors_remain_visible - Key...
+FAILED tests/test_observations.py::test_receipts_replay_idempotency_and_no_private_hashes
+FAILED tests/test_observations.py::test_grade_uses_truth_even_when_measurement_disagrees[False-consistent_with_reference]
+FAILED tests/test_observations.py::test_grade_uses_truth_even_when_measurement_disagrees[True-deviation_detected]
+FAILED tests/test_observations.py::test_grade_uses_truth_even_when_measurement_disagrees[True-inconclusive]
+FAILED tests/test_observations.py::test_final_assessment_required_and_invalidated_by_later_measurement
+FAILED tests/test_observations.py::test_new_experiment_requires_its_own_paid_measurement
+FAILED tests/test_ordering.py::test_missing_supplies_fail_then_ordered_inventory_passes_real_sdk
+FAILED tests/test_ordering.py::test_repeated_replacement_orders_do_not_inject_failures_real_sdk
+FAILED tests/test_ordering.py::test_scorer_rebuilds_inventory_and_finances - ...
+FAILED tests/test_sequences.py::test_sequence_ordering_and_protocol_pass_real_sdk_and_scorer
+FAILED tests/test_supplied_assembly.py::test_seven_piece_ordering_delivers_correct_prepared_identities_and_scores
+FAILED tests/test_supplied_assembly.py::test_all_five_faults_recover_with_seven_dna_inputs[1]
+FAILED tests/test_supplied_assembly.py::test_all_five_faults_recover_with_seven_dna_inputs[2]
+FAILED tests/test_supplied_assembly.py::test_all_five_faults_recover_with_seven_dna_inputs[3]
+FAILED tests/test_supplied_assembly.py::test_all_five_faults_recover_with_seven_dna_inputs[4]
+FAILED tests/test_supplied_assembly.py::test_all_five_faults_recover_with_seven_dna_inputs[5]
+FAILED tests/test_validation.py::test_reference_and_native_commands - Asserti...
+FAILED tests/test_validation.py::test_physical_failures[    pipette.aspirate(5, stock["A1"])\n-No tip attached]
+FAILED tests/test_validation.py::test_physical_failures[    pipette.pick_up_tip()\n    pipette.aspirate(21, stock["A1"])\n-outside pipette range]
+FAILED tests/test_validation.py::test_physical_failures[    pipette.pick_up_tip()\n    pipette.aspirate(0.5, stock["A1"])\n-outside pipette range]
+FAILED tests/test_validation.py::test_physical_failures[    pipette.pick_up_tip()\n    pipette.aspirate(15, stock["A1"])\n    pipette.aspirate(10, stock["A1"])\n-exceeds pipette capacity]
+FAILED tests/test_validation.py::test_physical_failures[    pipette.pick_up_tip()\n    pipette.dispense(5, plate["A1"])\n-exceeds liquid held]
+FAILED tests/test_validation.py::test_physical_failures[    pipette.transfer(100, stock["A1"], plate["A1"])\n-Insufficient usable liquid]
+FAILED tests/test_validation.py::test_physical_failures[    pipette.pick_up_tip()\n    pipette.aspirate(5, stock["A1"])\n    pipette.dispense(5, plate["A1"])\n    pipette.aspirate(5, stock["A2"])\n-carryover]
+FAILED tests/test_validation.py::test_physical_failures[    for i in range(7):\n        pipette.pick_up_tip()\n        pipette.drop_tip()\n-Tip budget]
+FAILED tests/test_validation.py::test_physical_failures[    pipette.pick_up_tip(tips["A1"])\n    pipette.drop_tip()\n    pipette.pick_up_tip(tips["A1"])\n-already been used]
+FAILED tests/test_validation.py::test_physical_failures[    pipette.transfer(180, stock["A2"], plate["A1"])\n    pipette.transfer(20, stock["A1"], plate["A1"])\n    pipette.transfer(20, stock["A1"], plate["A1"])\n-Well overflow]
+FAILED tests/test_validation.py::test_wrong_recipe_fails_even_with_valid_robot_commands
+FAILED tests/test_validation.py::test_missing_mix - AssertionError: assert 'n...
+FAILED tests/test_validation.py::test_early_mix_does_not_count_after_addition
+FAILED tests/test_validation.py::test_saved_scenarios_are_independent - asser...
+FAILED tests/test_validation.py::test_panel_reference - AssertionError: ['Sim...
+FAILED tests/test_validation.py::test_serial_dilution_tracks_mixture_components
+ERROR tests/test_biochemistry.py::test_reference_formula_product_and_experimental_label
+ERROR tests/test_biochemistry.py::test_no_biochemistry_spec_is_not_biochemical_success
+ERROR tests/test_biochemistry.py::test_master_mix_properties[active-False-enzyme.active]
+ERROR tests/test_biochemistry.py::test_master_mix_properties[stock_concentration_x-1-4:A1.master_mix_concentration]
+ERROR tests/test_biochemistry.py::test_wrong_molar_ratio_with_correct_liquid_volumes
+ERROR tests/test_biochemistry.py::test_excess_dna_and_non_linear_input - Asse...
+ERROR tests/test_biochemistry.py::test_missing_dna_and_unmodeled_additive - A...
+ERROR tests/test_biochemistry.py::test_incorrect_sequence_with_correct_size_is_rejected
+ERROR tests/test_biochemistry.py::test_reversed_fragment_has_incompatible_junctions
+ERROR tests/test_biochemistry.py::test_ambiguous_self_joining_rejected - Asse...
+ERROR tests/test_biochemistry.py::test_incubation_gate[none] - AssertionError...
+ERROR tests/test_biochemistry.py::test_incubation_gate[too_short] - Assertion...
+ERROR tests/test_biochemistry.py::test_incubation_gate[wrong_temperature] - A...
+ERROR tests/test_biochemistry.py::test_incubation_gate[before_mixing] - Asser...
+ERROR tests/test_biochemistry.py::test_incubation_gate[stale_revision] - Asse...
+ERROR tests/test_biochemistry.py::test_liquid_handling_failure_cannot_pass_biochemistry
+ERROR tests/test_biochemistry.py::test_bad_profile_fails_closed - AssertionEr...
+ERROR tests/test_biochemistry.py::test_review_is_auditable_and_marks_unmeasured_outcome
+ERROR tests/test_biochemistry.py::test_incubation_matching_tolerates_ledger_serialization_precision
+ERROR tests/test_biochemistry_ordering.py::test_order_to_liquid_handling_and_biochemistry_pipeline
+ERROR tests/test_supplied_assembly.py::test_real_protocol_passes_full_seven_piece_model
+ERROR tests/test_supplied_assembly.py::test_missing_piece_and_correct_size_wrong_sequence_cannot_pass
+67 failed, 164 passed, 22 errors in 6.85s

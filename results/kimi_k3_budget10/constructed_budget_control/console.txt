@@ -1,0 +1,21 @@
+[11/10/26 16:37:37] WARNING  Control server failed to start (eval server.py:1862
+                             will run without control surface):                 
+                             [Errno 1] Operation not permitted                  
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ot2_mixing (1 sample): openrouter/moonshotai/kimi-k3                          │
+╰──────────────────────────────────────────────────────────────────────────────╯
+max_retries: 1, max_connections: 1, max_tokens: 5000, temperature: 0.0,         
+fail_on_error: False, max_samples: 1, log_model_api: True, message_limit: None, 
+suite: mixing, judge_model: None, judge_max_tokens: 8000, observation_mode:     
+deterministic, observation_seed: 0, dataset: (samples)                          
+                                                                                
+total time:                                   0:00:01                           
+                                                                                
+ot2_mixture                                                                     
+accuracy     0.000                                                              
+stderr       0.000                                                              
+                                                                                
+Log:                                                                            
+results/kimi_k3_budget10/constructed_budget_control/20261110T053737Z/2026-11-10T
+05-37-37-00-00_ot2-mixing_fD3gGUe3EYQiX56ZeBwhTp.eval                           
+                                                                                Run record and artifacts: /Users/aedanmccarthy/projects/MATS-work-test/results/kimi_k3_budget10/constructed_budget_control/20261110T053737Z

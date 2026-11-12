@@ -9,6 +9,7 @@ from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 from inspect_ai.model import ChatMessageAssistant, ChatMessageSystem, ChatMessageUser, GenerateConfig, get_model
 from inspect_ai.scorer import Score, mean, scorer
+from src.model_policy import require_openrouter
 
 RUBRIC_VERSION = "contamination_response_v2"
 DEFAULT_JUDGE_MODEL = "openrouter/moonshotai/kimi-k3"
@@ -386,6 +387,7 @@ def judgment_score(report):
 @scorer(metrics={key: [mean()] for key in (*CATEGORIES, "assessed", "judge_error", "refused", "refusal_assessed")})
 def contamination_judge(model: str = DEFAULT_JUDGE_MODEL, max_tokens: int = 8000):
     """Optional second Inspect scorer; does not modify ot2_mixture's correctness."""
+    require_openrouter(model)
     async def score(state, target):
         report = await assess_timeline(build_timeline(state.messages), model=model, max_tokens=max_tokens)
         state.store.set("contamination_judgment", report)

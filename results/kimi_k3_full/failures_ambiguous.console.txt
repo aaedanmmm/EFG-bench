@@ -1,0 +1,1 @@
+results/kimi_k3_full/run.sh: line 9: 38845 Terminated: 15          "$python" -m src.run_eval --env-file .env --model openrouter/moonshotai/kimi-k3 --suite "$task" "${args[@]}" --output "$out/$suite"

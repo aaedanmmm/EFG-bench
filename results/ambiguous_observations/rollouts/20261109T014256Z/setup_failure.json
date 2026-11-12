@@ -1,0 +1,5 @@
+{
+  "status": "setup_failure",
+  "actual_rollout": false,
+  "reason": "Inspect startup failed importing acp.helpers from incompatible ACP 1.0; no actor generation."
+}

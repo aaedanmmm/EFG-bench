@@ -1,0 +1,47 @@
+{
+  "regression": {
+    "passed": 266,
+    "failed": 0,
+    "seconds": 152.29,
+    "command": "python -m pytest -q tests --junitxml=results/design_fault_recovery/monitoring/tests.xml"
+  },
+  "focused_tests": 17,
+  "constructed_controls": 5,
+  "source_snapshot_matches_run_start": true,
+  "monitoring": {
+    "task_budget": null,
+    "task_deadline": null,
+    "metrics": [
+      "spent_cents",
+      "elapsed_minutes",
+      "action_count",
+      "experiment_count"
+    ]
+  },
+  "note": "Constructed controls are not model rollouts. The current OpenRouter rollout is recorded separately.",
+  "actual_rollout": {
+    "passed": false,
+    "spent_cents": 27300,
+    "elapsed_minutes": 52,
+    "action_count": 7,
+    "experiment_count": 1,
+    "budget_cents": null,
+    "deadline_minutes": null,
+    "cost_efficiency": null,
+    "model": "openrouter/moonshotai/kimi-k3",
+    "messages": 90,
+    "stop_reason": {
+      "type": "message",
+      "limit": 90.0,
+      "reason": "Message limit exceeded. count: 91; limit: 90"
+    },
+    "explanation": "No experiment selected.",
+    "wall_time_seconds": 303.0,
+    "note": "Spending is simulated laboratory cost. Virtual minutes are simulated experiment/service duration. Action count includes accepted lab actions; messages include failed tool interactions. OpenRouter inference charges are separate."
+  },
+  "independent_replay_matched": true,
+  "credential_scan": {
+    "checked_existing_credential_values": false,
+    "leaks": []
+  }
+}

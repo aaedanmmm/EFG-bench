@@ -1,0 +1,36 @@
+{
+  "id": "design_fault_recovery",
+  "description": "Design and purchase fragments for this constructed noncoding target, diagnose one persistent hidden fault, repair it, and verify a new exact-target product. All experiments and services are simulated.",
+  "target_sequence": "TGAGAGACTAAACAGGGCAGTACCTACACGGAAGGGCTTTCGCCCAAGTATCACGGTAGCCTACCGGAGCAGGTCCGAAAGTGTAGACCGACTGTTACTCAATTTGCACCTTGGCTGTAACTAAATATTAAGGAGTGACTACCCTAATTTCTACTAGCACTCTACCGGCGTGTACCCTGGATTTATTTCCTCCCGAATTGGTGACACCTATTGGGTTACACAACGATCAGCCACAAACGAGTTCTGGAGGAGTTTCGGAACTCCAAGGGTACCCAATAGACAATCTTCAGTTCTAGTTGAATTTGCCGCCTCCAGATCCGGAACTGACCGTACCGGCAGTAATAGTCGACGCTCTTTCTTGCGAAGGTTCTATACGGGTGTGTACGAACTTTCGCCGCCTTAGGATCGTACACCTCGAAGGCCTTCTTCAAACCCAACTTCTGTATTGGACCGACCACCCTTGACACTACACCTTGCTGCGGCCAAAGTCAAATACTTTACGAGCGAGGATTTGGAGTCCAAATTTAGACGGCTCTGCAACTGCACCGCTGTGCTCACGCCGACGCTCCAGTAATCGGGAGAATAAATCCCACTGGTATACCCAAGGGCGGTACAGTGGTAGAGGCTGGCCGAGCCCAATATTCTGGAGGGTTCAACCAAGCTGACCCGTGCTGACCCGTGCTGACCCGTGAATTCCGGCTCAGTCCGGCTCAGTCCGGCTCAGTCCACACAGGGCGAACTCTAACGGTATTGGACTTTCTTGCTGACCAGTTGGAGATTAAATTATTGCACTTGTTTCTGTAGCCCGCAGGCAATAGCTACCCTCTCAGACCACCCTGTCCGATCACGCACTCGGTCTTATAAGTATCGCGAGTGAGTTCGTCCTGGGAGCACGTGAACACCCGGCACAGAGATATTGGCAATATATAATCCCAACGAGCAATCGGAGAACGACGGTAACCCGAACAGCCTTTGGTTATAGTGCCAGACTAGACGTTAAACTAAGAGGTACTATTCCGCGATTAAATACCCTTGGCTGGAGAACAAATAGCGATAAGCAGACTGGGAGGAATAAGTGGTAGTCGAAGCAGCTCGTGTCACCTCCGGTACGCCTTCGACTTGGGTGTCACAATCACACAGTAATCTCGTTAAACTATTTCTCAACCTGGAGAAATCACGTCAGGGTCGGGATTATAAACCCTGTTTACGAGGGAAGCTGAAATATTAGTATAGGTGATCTTTAAACTTATAGATAACGGTTTGCAAGCCTACCTTTCGGGATTAGGGACCCTGCAGTTTGCAAATACGATTATCCTCAACTCCAATCCCGCAGGGAGGGAAGGACCAATCTATACCAGGGCGCTGATAAGCGTTTATAAAGG",
+  "assembly": {
+    "min_overlap_bp": 35,
+    "max_overlap_bp": 48,
+    "restriction_enzymes": {
+      "ecori": {
+        "recognition_site": "GAATTC",
+        "top_strand_cut": "G/AATTC",
+        "cohesive_end": "AATT",
+        "minimum_flanking_bases_per_side": 6,
+        "source": "https://www.neb.com/en-us/tools-and-resources/selection-charts/alphabetized-list-of-recognition-specificities",
+        "flanking_basis": "Constructed deterministic gate based on NEB's general end-cleavage guidance",
+        "flanking_source": "https://www.neb.com/en-us/tools-and-resources/usage-guidelines/cleavage-close-to-the-end-of-dna-fragments"
+      }
+    },
+    "assumptions": "Overlap assembly and cohesive-end ligation consumables are available. Join exact terminal overlaps on uncut ends or matching cohesive ends from digestion. Input pieces are used in their displayed orientation. Select pieces with uncut outer ends for the linear target. This is an idealized sequence model."
+  },
+  "synthesis": {
+    "min_length_bp": 300,
+    "max_length_bp": 700,
+    "blocked_motifs": []
+  },
+  "budget_cents": 40000,
+  "experiments": {
+    "target_length_bp": 1382,
+    "initial_yield_ng": 100,
+    "yield_half_life_minutes": 120,
+    "background_loss_per_junction": 0.05
+  },
+  "assay_price_cents": 1000,
+  "minimum_correct_yield_ng": 40,
+  "deadline_minutes": 600
+}

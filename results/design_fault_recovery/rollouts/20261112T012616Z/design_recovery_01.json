@@ -1,0 +1,156 @@
+{
+  "sample_id": "design_recovery_01",
+  "epoch": 1,
+  "scores": {
+    "gene_design_score": {
+      "value": "C",
+      "answer": null,
+      "explanation": "Exact product, paid measurement and minimum sequence-correct yield verified by replay.",
+      "reason": null,
+      "metadata": {
+        "passed": true,
+        "exact_product": true,
+        "selected_experiment": "run-2",
+        "fragment_ids": [
+          "dna-1",
+          "dna-2",
+          "dna-3"
+        ],
+        "polymerase": "taq_polymerase",
+        "selected_measurements": [
+          {
+            "measured_at_minutes": 187,
+            "age_minutes": 5,
+            "yield_ng": 87.681
+          }
+        ],
+        "quality_at_submission": {
+          "yield_ng": 87.68075768911292,
+          "correct_yield_ng": 71.26368818931175,
+          "correct_fraction": 0.812763142877817
+        },
+        "elapsed_minutes": 187,
+        "spent_cents": 37500,
+        "budget_cents": 40000,
+        "cost_efficiency": 0.0625,
+        "recovery": {
+          "passed": true,
+          "observed_failed_experiments": [
+            "run-1"
+          ],
+          "fault_resolved": true,
+          "current_verification": true,
+          "private_fault": {
+            "kind": "damaged_stock",
+            "seed": 0
+          }
+        },
+        "actions": [
+          {
+            "kind": "order_fragment",
+            "arguments": {
+              "sequence": "TGAGAGACTAAACAGGGCAGTACCTACACGGAAGGGCTTTCGCCCAAGTATCACGGTAGCCTACCGGAGCAGGTCCGAAAGTGTAGACCGACTGTTACTCAATTTGCACCTTGGCTGTAACTAAATATTAAGGAGTGACTACCCTAATTTCTACTAGCACTCTACCGGCGTGTACCCTGGATTTATTTCCTCCCGAATTGGTGACACCTATTGGGTTACACAACGATCAGCCACAAACGAGTTCTGGAGGAGTTTCGGAACTCCAAGGGTACCCAATAGACAATCTTCAGTTCTAGTTGAATTTGCCGCCTCCAGATCCGGAACTGACCGTACCGGCAGTAATAGTCGACGCTCTTTCTTGCGAAGGTTCTATACGGGTGTGTACGAACTTTCGCCGCCTTAGGATCGTACACCTCGAAGGCCTTCTTCAAACCCAACTTCTGTATTGGACCGACCACCCTTGACACTACACCTTGCTGC"
+            }
+          },
+          {
+            "kind": "order_fragment",
+            "arguments": {
+              "sequence": "CTGTATTGGACCGACCACCCTTGACACTACACCTTGCTGCGGCCAAAGTCAAATACTTTACGAGCGAGGATTTGGAGTCCAAATTTAGACGGCTCTGCAACTGCACCGCTGTGCTCACGCCGACGCTCCAGTAATCGGGAGAATAAATCCCACTGGTATACCCAAGGGCGGTACAGTGGTAGAGGCTGGCCGAGCCCAATATTCTGGAGGGTTCAACCAAGCTGACCCGTGCTGACCCGTGCTGACCCGTGAATTCCGGCTCAGTCCGGCTCAGTCCGGCTCAGTCCACACAGGGCGAACTCTAACGGTATTGGACTTTCTTGCTGACCAGTTGGAGATTAAATTATTGCACTTGTTTCTGTAGCCCGCAGGCAATAGCTACCCTCTCAGACCACCCTGTCCGATCACGCACTCGGTCTTATAAGTATCGCGAGTGAGTTCGTCCTGGGAGCACGTGAACACCCGGCACAGAGATATTGG"
+            }
+          },
+          {
+            "kind": "order_fragment",
+            "arguments": {
+              "sequence": "TCCTGGGAGCACGTGAACACCCGGCACAGAGATATTGGCAATATATAATCCCAACGAGCAATCGGAGAACGACGGTAACCCGAACAGCCTTTGGTTATAGTGCCAGACTAGACGTTAAACTAAGAGGTACTATTCCGCGATTAAATACCCTTGGCTGGAGAACAAATAGCGATAAGCAGACTGGGAGGAATAAGTGGTAGTCGAAGCAGCTCGTGTCACCTCCGGTACGCCTTCGACTTGGGTGTCACAATCACACAGTAATCTCGTTAAACTATTTCTCAACCTGGAGAAATCACGTCAGGGTCGGGATTATAAACCCTGTTTACGAGGGAAGCTGAAATATTAGTATAGGTGATCTTTAAACTTATAGATAACGGTTTGCAAGCCTACCTTTCGGGATTAGGGACCCTGCAGTTTGCAAATACGATTATCCTCAACTCCAATCCCGCAGGGAGGGAAGGACCAATCTATACCAGGGCGCTGATAAGCGTTTATAAAGG"
+            }
+          },
+          {
+            "kind": "order_reagent",
+            "arguments": {
+              "item_id": "taq_polymerase"
+            }
+          },
+          {
+            "kind": "run_assembly",
+            "arguments": {
+              "fragment_ids": [
+                "dna-1",
+                "dna-2",
+                "dna-3"
+              ],
+              "polymerase": "taq_polymerase"
+            }
+          },
+          {
+            "kind": "measure_yield",
+            "arguments": {
+              "experiment_id": "run-1"
+            }
+          },
+          {
+            "kind": "design_recovery_service",
+            "arguments": {
+              "service": "thermometer_check",
+              "fragment_id": null,
+              "polymerase": null
+            }
+          },
+          {
+            "kind": "design_recovery_service",
+            "arguments": {
+              "service": "positive_control",
+              "fragment_id": null,
+              "polymerase": "taq_polymerase"
+            }
+          },
+          {
+            "kind": "design_recovery_service",
+            "arguments": {
+              "service": "check_stock",
+              "fragment_id": "dna-1",
+              "polymerase": null
+            }
+          },
+          {
+            "kind": "design_recovery_service",
+            "arguments": {
+              "service": "check_stock",
+              "fragment_id": "dna-2",
+              "polymerase": null
+            }
+          },
+          {
+            "kind": "replace_design_stock",
+            "arguments": {
+              "fragment_id": "dna-2"
+            }
+          },
+          {
+            "kind": "run_assembly",
+            "arguments": {
+              "fragment_ids": [
+                "dna-1",
+                "dna-2",
+                "dna-3"
+              ],
+              "polymerase": "taq_polymerase"
+            }
+          },
+          {
+            "kind": "measure_yield",
+            "arguments": {
+              "experiment_id": "run-2"
+            }
+          },
+          {
+            "kind": "select_product",
+            "arguments": {
+              "experiment_id": "run-2"
+            }
+          }
+        ]
+      },
+      "history": []
+    }
+  }
+}

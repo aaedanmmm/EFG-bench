@@ -1,0 +1,20 @@
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ot2_mixing (1 sample): openrouter/moonshotai/kimi-k3                          │
+╰──────────────────────────────────────────────────────────────────────────────╯
+max_retries: 1, max_connections: 1, max_tokens: 5000, temperature: 0.0,         
+message_limit: 60, max_samples: 1, suite: biochemistry_ordering, judge_model:   
+None, judge_max_tokens: 8000, observation_mode: deterministic, observation_seed:
+0, dataset: (samples)                                                           
+                                                                                
+total time:                    0:01:50                                          
+openrouter/moonshotai/kimi-k3  202,737 tokens [I: 44,187, CW: 0, CR: 151,040, O:
+                             7,510, R: 4,681]                                   
+                                                                                
+ot2_mixture                                                                     
+accuracy     1.000                                                              
+stderr       0.000                                                              
+                                                                                
+Log:                                                                            
+results/kimi_k3_full/biochemistry_ordering/20261110T051937Z/2026-11-10T05-19-38-
+00-00_ot2-mixing_6gTV3QNgbCNnS7kYqa5WrK.eval                                    
+                                                                                Run record and artifacts: /Users/aedanmccarthy/projects/MATS-work-test/results/kimi_k3_full/biochemistry_ordering/20261110T051937Z

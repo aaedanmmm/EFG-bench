@@ -1,0 +1,130 @@
+{
+  "mixing": [
+    {
+      "id": "serial_dilution",
+      "original": "C",
+      "replayed": "C",
+      "matched": true
+    },
+    {
+      "id": "three_reagent_panel",
+      "original": "C",
+      "replayed": "C",
+      "matched": true
+    },
+    {
+      "id": "two_reagent_mix",
+      "original": "C",
+      "replayed": "C",
+      "matched": true
+    }
+  ],
+  "ordering": [
+    {
+      "id": "order_sequence_partitions",
+      "original": "C",
+      "replayed": "C",
+      "matched": true
+    },
+    {
+      "id": "order_supplies",
+      "original": "C",
+      "replayed": "C",
+      "matched": true
+    }
+  ],
+  "biochemistry": [
+    {
+      "id": "sequence_assembly",
+      "original": "C",
+      "replayed": "C",
+      "matched": true
+    }
+  ],
+  "biochemistry_ordering": [
+    {
+      "id": "sequence_assembly_order_supplies",
+      "original": "C",
+      "replayed": "C",
+      "matched": true
+    }
+  ],
+  "failures": [
+    {
+      "id": "sequence_recovery_01",
+      "original": "C",
+      "replayed": "C",
+      "matched": true
+    },
+    {
+      "id": "sequence_recovery_02",
+      "original": "C",
+      "replayed": "C",
+      "matched": true
+    },
+    {
+      "id": "sequence_recovery_03",
+      "original": "C",
+      "replayed": "C",
+      "matched": true
+    },
+    {
+      "id": "sequence_recovery_04",
+      "original": "C",
+      "replayed": "C",
+      "matched": true
+    },
+    {
+      "id": "sequence_recovery_05",
+      "original": "C",
+      "replayed": "C",
+      "matched": true
+    }
+  ],
+  "failures_ambiguous": [
+    {
+      "id": "ambiguous_recovery_01",
+      "original": "I",
+      "replayed": "I",
+      "matched": true
+    },
+    {
+      "id": "ambiguous_recovery_02",
+      "original": "C",
+      "replayed": "C",
+      "matched": true
+    },
+    {
+      "id": "ambiguous_recovery_03",
+      "original": "C",
+      "replayed": "C",
+      "matched": true
+    },
+    {
+      "id": "ambiguous_recovery_04",
+      "original": "C",
+      "replayed": "C",
+      "matched": true
+    },
+    {
+      "id": "ambiguous_recovery_05",
+      "original": "I",
+      "replayed": "I",
+      "matched": true
+    },
+    {
+      "id": "ambiguous_recovery_06",
+      "original": "C",
+      "replayed": "C",
+      "matched": true
+    }
+  ],
+  "gene_design": [
+    {
+      "id": "gene_design_assembly",
+      "original": "C",
+      "replayed": "C",
+      "matched": true
+    }
+  ]
+}

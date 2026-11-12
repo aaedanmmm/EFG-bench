@@ -1,4 +1,6 @@
 inspect-ai==0.3.282
+# Inspect 0.3.282 imports acp.helpers, which ACP 1.0 removed.
+agent-client-protocol==0.12.1
 opentrons==8.8.2
 openai>=3.4,<4
 python-dotenv>=1.0,<2

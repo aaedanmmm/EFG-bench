@@ -8,6 +8,7 @@ import hashlib
 import json
 import math
 from src.ordering import OrderError, new_account, place_order
+from src import observations
 
 # Constructed labour pricing: technician hours x a fully loaded hourly rate
 # (wage plus benefits and institutional overhead, roughly 1.4-1.6x a ~$25-30/h
@@ -77,12 +78,19 @@ def human_service(scenario, account, service, sample="", sample_type="reaction",
     result = {"status": "completed", "simulated_human": True}
     if service == "thermometer_check":
         offset = temperature_offset(updated, module_slot)
-        result.update(module_slot=module_slot, requested_setpoint_c=setpoint_c, measured_temperature_c=setpoint_c + offset, offset_c=offset, calibration_performed=False)
+        result.update(module_slot=module_slot, requested_setpoint_c=setpoint_c, calibration_performed=False)
+        if observations.enabled(updated):
+            result.update(observations.measurement(updated, sample_id=f"module:{module_slot}",
+                          measurement_id=service_id, deviates=offset != 0))
+        else:
+            result.update(measured_temperature_c=setpoint_c + offset, offset_c=offset)
     if service == "calibrate_temperature":
         for fault in active_faults(updated):
             if fault["kind"] == "temperature_offset" and fault["module_slot"] == module_slot:
                 fault.update(active=False, resolved_by={"kind": "human_calibration", "service_id": service_id})
-        result.update(module_slot=module_slot, calibration_performed=True, remaining_offset_c=temperature_offset(updated, module_slot))
+        result.update(module_slot=module_slot, calibration_performed=True)
+        if not observations.enabled(updated):
+            result["remaining_offset_c"] = temperature_offset(updated, module_slot)
     charged["spent_cents"] += price
     receipt = {"service_id": service_id, "request": request, "currency": "USD", "total_cents": price, "remaining_cents": charged["budget_cents"] - charged["spent_cents"], "result": result}
     charged.setdefault("human_services", []).append(receipt)
@@ -170,7 +178,7 @@ def diagnostic_reference(scenario):
     spec = scenario["biochemistry"]
     assembly = load_assembly_inputs(scenario, spec)
     lengths = sequence_lengths(scenario)
-    return {
+    result = {
         "constructed": True,
         "size_unit": "bp",
         "band_sizes": "Approximate benchmark size estimates, not measured gel resolution",
@@ -189,10 +197,20 @@ def diagnostic_reference(scenario):
             "An expected product-size band is the benchmark's success observation, not proof of real sequence identity or biochemical success.",
         ],
     }
+    if observations.enabled(scenario):
+        result["diagnostic_limits"] = [
+            "All observations use the disclosed abstract probability model, not a physical assay simulation.",
+            "Each finding can occur with or without a deviation. A reaction observation cannot identify a cause.",
+            "Source observations concern the sampled stock, module observations concern its offset, and reaction observations concern the immutable experiment outcome.",
+            "Repeated measurements share sample quality. Neither a reassuring finding nor an inconclusive finding establishes success.",
+        ]
+    return result
 
 
-def gel_assay(scenario, sample, sample_type, *, experiment=None):
+def gel_assay(scenario, sample, sample_type, *, experiment=None, measurement_id=""):
     """Symptoms derive from an immutable experiment snapshot, never current repairs."""
+    if observations.enabled(scenario):
+        return ambiguous_assay(scenario, sample, sample_type, experiment=experiment, measurement_id=measurement_id)
     lengths, faults = sequence_lengths(scenario), active_faults(scenario)
     bands, smear = [], None
     result = {"constructed": True, "assay": "synthetic_gel_v1", "sample": sample, "sample_type": sample_type,
@@ -245,6 +263,39 @@ def gel_assay(scenario, sample, sample_type, *, experiment=None):
     return result
 
 
+def ambiguous_assay(scenario, sample, sample_type, *, experiment, measurement_id):
+    """Project a private condition into a generic categorical observation."""
+    result = {"assay": "abstract_reference_check_v1", "sample": sample, "sample_type": sample_type}
+    if sample_type == "source":
+        if sample not in scenario["sources"]:
+            raise OrderError("Unknown DNA source well")
+        source = scenario["sources"][sample]
+        component = next(iter(source["components"]))
+        if component not in sequence_lengths(scenario):
+            raise OrderError("Source gel requires a DNA stock")
+        deviates = (sum(source["components"].values()) <= 0 or
+                    any(f.get("source_well") == sample for f in active_faults(scenario)))
+        sample_id = f"source:{sample}:{source.get('lot_id', 'preloaded')}"
+        result.update(component=component, inventory_sha256=fingerprint(scenario))
+    elif sample_type == "reaction":
+        if experiment is None:
+            raise OrderError("Simulate a protocol before requesting a reaction gel")
+        scenario = experiment["scenario"]
+        if sample not in scenario["biochemistry"]["reaction_wells"]:
+            raise OrderError("Unknown reaction well")
+        if not experiment["report"].get("liquid_handling_passed"):
+            raise OrderError("No interpretable reaction; fix execution/configuration before assaying")
+        deviates = not experiment["report"]["passed"]
+        sample_id = f"reaction:{experiment['id']}:{sample}"
+        result.update(experiment_id=experiment["id"], protocol_sha256=experiment["protocol_sha256"],
+                      inventory_sha256=experiment["inventory_sha256"])
+    else:
+        raise OrderError("sample_type must be source or reaction")
+    result.update(observations.measurement(scenario, sample_id=sample_id,
+                  measurement_id=measurement_id, deviates=deviates))
+    return result
+
+
 def recovery_evidence(original, actions, experiments, assays, code, final_report, final_inventory):
     """Verify paid observations against trusted action replay and final execution.
 
@@ -253,7 +304,7 @@ def recovery_evidence(original, actions, experiments, assays, code, final_report
     """
     code_hash = hashlib.sha256(code.encode()).hexdigest()
     final_hash = fingerprint(final_inventory)
-    observed_failure, verified_success = False, False
+    observed_failure, verified_success, current_measurement = False, False, False
     accepted = []
     for assay in assays:
         count = assay.get("action_count", 0)
@@ -272,16 +323,26 @@ def recovery_evidence(original, actions, experiments, assays, code, final_report
         inventory, _ = replay_lab_actions(original, actions[:experiment["action_count"]])
         if fingerprint(inventory) != experiment.get("inventory_sha256") or fingerprint(experiment["scenario"]) != fingerprint(inventory):
             continue
-        expected = gel_assay(inventory, assay["sample"], "reaction", experiment=experiment)
+        expected = gel_assay(inventory, assay["sample"], "reaction", experiment=experiment,
+                             measurement_id=receipt["service_id"])
         if any(assay.get(key) != value for key, value in expected.items()):
             continue
         before_assay, _ = replay_lab_actions(original, actions[:count])
-        if active_faults(inventory) and active_faults(before_assay) and experiment["report"].get("liquid_handling_passed") and not experiment["report"]["passed"]:
+        adverse_observation = (assay.get("finding") == "deviation_detected") if observations.enabled(original) else True
+        if adverse_observation and active_faults(inventory) and active_faults(before_assay) and experiment["report"].get("liquid_handling_passed") and not experiment["report"]["passed"]:
             observed_failure = True
-        if (experiment["protocol_sha256"] == code_hash and experiment["inventory_sha256"] == final_hash
-                and final_report["passed"] and experiment["report"]["passed"]
-                and assay["bands_bp"] == [assay["expected_size_bp"]] and assay["smear_range_bp"] is None):
+        current = experiment["protocol_sha256"] == code_hash and experiment["inventory_sha256"] == final_hash
+        if observations.enabled(original):
+            current = current and bool(experiments) and experiment["id"] == experiments[-1]["id"]
+        current_measurement |= current
+        acceptable_observation = (True if observations.enabled(original) else
+                                  assay["bands_bp"] == [assay["expected_size_bp"]] and assay["smear_range_bp"] is None)
+        if current and final_report["passed"] and experiment["report"]["passed"] and acceptable_observation:
             verified_success = True
         accepted.append(copy.deepcopy(assay))
     passed = (observed_failure or not original["recovery"].get("require_failed_reaction_gel")) and (verified_success or not original["recovery"].get("require_final_reaction_gel"))
-    return {"passed": bool(passed), "failed_reaction_observed": observed_failure, "current_success_verified": verified_success, "assays": accepted}
+    result = {"passed": bool(passed), "failed_reaction_observed": observed_failure, "current_success_verified": verified_success, "assays": accepted}
+    if observations.enabled(original):
+        result.update(current_measurement_recorded=current_measurement,
+                      verification_basis="Private replay outcome plus a paid current measurement; a reassuring reading is neither necessary nor sufficient")
+    return result

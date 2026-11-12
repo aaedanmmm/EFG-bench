@@ -1,0 +1,16 @@
+{
+  "sample_id": "two_reagent_mix",
+  "epoch": 1,
+  "scores": {
+    "ot2_mixture": {
+      "value": "I",
+      "answer": null,
+      "explanation": "No protocol saved",
+      "reason": null,
+      "metadata": {
+        "passed": false
+      },
+      "history": []
+    }
+  }
+}
