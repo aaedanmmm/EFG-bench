@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-19",
+  "command": "env XDG_DATA_HOME=/private/tmp/mats-pr-data XDG_CACHE_HOME=/private/tmp/mats-pr-cache INSPECT_TRACE_FILE=/private/tmp/mats-pr-trace.json /private/tmp/mats-pr-validation-env/bin/python -m src.replay_design_recovery results/design_fault_recovery/monitoring_300/rollouts/20261112T054950Z/run.json --output results/design_fault_recovery/monitoring_300/pr_replay.json",
+  "environment": "Python 3.12.1; temporary environment installed from root requirements.txt",
+  "model": "openrouter/moonshotai/kimi-k3 (saved rollout; no new model calls)",
+  "outcome": "Independent replay matched all score metadata for one successful sample; no source mismatches.",
+  "source_validation": "All 59 recorded source, dependency and data hashes match the current files and saved source snapshot.",
+  "credential_pattern_scan": "No matches across 68 original result files, including decompressed Inspect log members; checked API token and private-key patterns, not existing credential values.",
+  "tests": "No benchmark code changed; full test suite not rerun. Original 266-test record retained.",
+  "diff_check": "Only trailing whitespace in the original captured rollout_console.txt; retained as recorded. All other added/modified files pass git diff --check."
+}

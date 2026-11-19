@@ -10,6 +10,8 @@ cues and services are constructed simulations. See
 The current task set has no task budget or deadline. It records spending, elapsed
 virtual time, action count and experiment count separately from correctness.
 The [monitoring validation record](monitoring/README.md) covers this revision.
+A [fresh 300-message-limit rerun](monitoring_300/README.md) passed in 44 messages;
+its evidence is retained separately from the earlier incomplete attempt.
 All earlier artifacts below preserve the original $400 / 600-minute settings;
 they are not evidence of model behavior under the revised instructions.
 

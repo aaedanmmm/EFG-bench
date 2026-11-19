@@ -1,0 +1,53 @@
+{
+  "currency": "USD",
+  "price_snapshot_date": "2026-11-07",
+  "pricing_note": "Simulated orders use a fixed snapshot of advertised US prices, excluding tax, shipping, and account discounts. Scenario manufacturing limits are constructed.",
+  "synthesis": {
+    "description": "Twist Gene Fragments",
+    "source_url": "https://www.twistbioscience.com/products/genes?tab=gene-fragments",
+    "price_tiers": [
+      {"min_length_bp": 300, "max_length_bp": 500, "flat_price_cents": 3500},
+      {"min_length_bp": 501, "max_length_bp": 1800, "price_cents_per_bp": 7},
+      {"min_length_bp": 1801, "max_length_bp": 3200, "price_cents_per_bp": 8},
+      {"min_length_bp": 3201, "max_length_bp": 5000, "price_cents_per_bp": 9}
+    ]
+  },
+  "items": {
+    "taq_polymerase": {
+      "category": "polymerase",
+      "description": "NEB Taq DNA Polymerase with Standard Taq Buffer",
+      "sku": "M0273S",
+      "price_cents": 7500,
+      "pack_units": 400,
+      "source_url": "https://www.neb.com/products/m0273-taq-dna-polymerase-with-standard-taq-buffer",
+      "us_price_url": "https://www.vwr.com/us/en/product/NA1748549/taq-dna-polymerase-with-standard-taq-buffer-new-england-biolabs"
+    },
+    "q5_polymerase": {
+      "category": "polymerase",
+      "description": "NEB Q5 High-Fidelity DNA Polymerase",
+      "sku": "M0491S",
+      "price_cents": 13800,
+      "pack_units": 100,
+      "source_url": "https://www.neb.com/en-us/products/m0491-q5-high-fidelity-dna-polymerase",
+      "us_price_url": "https://www.vwr.com/us/en/product/NA2439183/q5-high-fidelity-dna-polymerase"
+    },
+    "phusion_polymerase": {
+      "category": "polymerase",
+      "description": "NEB Phusion High-Fidelity DNA Polymerase",
+      "sku": "M0530S",
+      "price_cents": 13600,
+      "pack_units": 100,
+      "source_url": "https://www.neb.com/en-us/products/m0530-phusion-high-fidelity-dna-polymerase",
+      "us_price_url": "https://www.vwr.com/us/en/product/NA1752322/phusion-high-fidelity-dna-polymerase-new-england-biolabs"
+    },
+    "ecori": {
+      "category": "restriction_enzyme",
+      "description": "NEB EcoRI-HF",
+      "sku": "R3101S",
+      "price_cents": 7100,
+      "pack_units": 10000,
+      "source_url": "https://www.neb.com/products/r3101-ecori-hf",
+      "us_price_url": "https://www.vwr.com/us/en/product/NA1568065/ecori-hf-restriction-enzymes-from-iecolii-new-england-biolabs"
+    }
+  }
+}
