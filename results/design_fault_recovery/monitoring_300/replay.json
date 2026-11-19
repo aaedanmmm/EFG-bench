@@ -1,0 +1,56 @@
+{
+  "origin": "Independent replay of an actual OpenRouter rollout; all biology is simulated",
+  "model": "openrouter/moonshotai/kimi-k3",
+  "run_record": "results/design_fault_recovery/monitoring_300/rollouts/20261112T054950Z/run.json",
+  "source_mismatches": [],
+  "samples": [
+    {
+      "sample_id": "design_recovery_01",
+      "matched": true,
+      "actual_success": true,
+      "replayed": {
+        "passed": true,
+        "exact_product": true,
+        "selected_experiment": "run-2",
+        "fragment_ids": [
+          "dna-1",
+          "dna-2",
+          "dna-3"
+        ],
+        "polymerase": "q5_polymerase",
+        "selected_measurements": [
+          {
+            "measured_at_minutes": 149,
+            "age_minutes": 5,
+            "yield_ng": 87.681
+          }
+        ],
+        "quality_at_submission": {
+          "yield_ng": 87.68075768911292,
+          "correct_yield_ng": 87.61655853884838,
+          "correct_fraction": 0.9992678079893861
+        },
+        "elapsed_minutes": 149,
+        "spent_cents": 47800,
+        "budget_cents": null,
+        "cost_efficiency": null,
+        "deadline_minutes": null,
+        "action_count": 15,
+        "experiment_count": 2,
+        "recovery": {
+          "passed": true,
+          "observed_failed_experiments": [
+            "run-1"
+          ],
+          "fault_resolved": true,
+          "current_verification": true,
+          "private_fault": {
+            "kind": "damaged_stock",
+            "seed": 0
+          }
+        }
+      }
+    }
+  ],
+  "passed": true
+}

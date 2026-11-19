@@ -1,0 +1,18 @@
+{
+  "source_snapshot_mismatches": [],
+  "source_changed_from_previous_run": false,
+  "configuration_change": {
+    "message_limit": {
+      "previous": 90,
+      "current": 300
+    }
+  },
+  "independent_replay_matched": true,
+  "actual_success": true,
+  "credential_scan": {
+    "checked_existing_credential_values": false,
+    "leaks": []
+  },
+  "tests": "Source unchanged; existing 266-pass regression retained, not rerun.",
+  "interpretation": "One successful fresh rerun; finished below the previous cap too, so no causal claim about the higher cap."
+}

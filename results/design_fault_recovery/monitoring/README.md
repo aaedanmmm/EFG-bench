@@ -74,3 +74,11 @@ python -m src.replay_design_recovery \
   results/design_fault_recovery/monitoring/rollouts/20261112T033146Z/run.json \
   --output results/design_fault_recovery/monitoring/replay.json
 ```
+
+## Subsequent rerun
+
+A [fresh rerun with a 300-message limit](../monitoring_300/README.md) passed in
+44 messages. Source files and other configuration settings were unchanged.
+Because it finished below the earlier limit as well, this does not establish
+that increasing the limit caused success. The results above remain the original
+90-message attempt.

@@ -1,4 +1,4 @@
-# Gibson-budget-bench
+# EFG-Bench: An Extended Framework for Gibson Assembly Planning and Fault Recovery
 
 An Inspect AI evaluation of protocol generation, resource use, and fault
 recovery in a simulated DNA workflow, with an additional gene-design suite.
@@ -131,7 +131,7 @@ task; its guide documents custom targets and configuration.
 | Evidence | Recorded outcome | Scope |
 | --- | --- | --- |
 | [Deterministic recovery](results/supplied_sequence_assembly/README.md) | Kimi K3 succeeded on one ligase-recovery sample, spending $294 | Transcript predates the feedback privacy fix; later replay confirms scoring compatibility, not behavior under revised feedback |
-| [Design + fault recovery](results/design_fault_recovery/monitoring/README.md) | Monitoring-only Kimi K3 rollout did not complete; recorded $273 and 52 virtual minutes before the message limit | Five-fault scripted controls pass; historical capped success is preserved separately |
+| [Design + fault recovery](results/design_fault_recovery/monitoring_300/README.md) | Fresh 300-message-limit rerun passed in 44 messages, spending $478 over 149 virtual minutes | Earlier 90-message attempt was incomplete; one successful rerun does not establish an effect of the higher cap |
 | [Ambiguous recovery](results/ambiguous_observations/README.md) | Kimi K3 failed one missing-stock case, spending $664; final success probability 0.24, Brier score 0.0576 | All observations and the final score reproduced in independent replay; one sample is not a difficulty or calibration estimate |
 | [Gene design](results/gene_design/README.md) | Historical local Qwen3-8B rollout failed after ordering one fragment | No assembly or yield measurement was completed |
 | [Software validation](results/design_fault_recovery/monitoring/tests.txt) | 266 tests passed in the latest saved full-suite run | Includes constructed controls and regression tests; not experimental validation or model success |

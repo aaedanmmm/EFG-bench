@@ -1,0 +1,12 @@
+{
+  "previous_run": "results/design_fault_recovery/monitoring/rollouts/20261112T033146Z/run.json",
+  "current_run": "results/design_fault_recovery/monitoring_300/rollouts/20261112T054950Z/run.json",
+  "configuration_changes": {
+    "message_limit": {
+      "previous": 90,
+      "current": 300
+    }
+  },
+  "changed_source_files": [],
+  "note": "Fresh rollout, not a continuation. Same model, sample, seed, temperature and token cap; larger message limit."
+}
